@@ -25,10 +25,10 @@ public class Drone : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other){
-	
+		if(LayerMask.LayerToName(other.gameObject.layer) != "Persona") return;
 		Vector3 loc = other.transform.position;
 
-		print("Persona (" + other.name + ") detected at: " + loc);
+		print("Layer : "+ LayerMask.LayerToName(other.gameObject.layer) + "\tgameObject (" + other.name + ") detected at: " + loc);
 
 	}
  	

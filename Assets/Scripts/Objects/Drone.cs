@@ -22,4 +22,15 @@ public class Drone : MonoBehaviour {
 		 }
 
 	}
+
+
+	void OnTriggerEnter(Collider other){
+	
+		Vector3 loc = other.transform.position;
+
+		print("Persona (" + other.name + ") detected at: " + loc);
+
+	}
+ 	
+
 }

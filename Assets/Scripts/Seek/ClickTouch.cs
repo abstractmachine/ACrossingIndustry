@@ -30,13 +30,22 @@ public class ClickTouch : MonoBehaviour {
 
 	void checkHit(Vector2 loc) {
 
-		RaycastHit hit;
+		//RaycastHit hit;
 
 		Ray ray = Camera.main.ScreenPointToRay(loc);
 		// show in debugger
-		Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+		//Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+		
+		RaycastHit[] hits = Physics.RaycastAll(ray);
+		//Loop through all overlapping objects and disable their mesh renderer
+        if(hits.Length == 0) return;
 
-		if (Physics.Raycast(ray, out hit)) {  
+        foreach(RaycastHit hit in hits) {
+
+        	if (hit.transform.name != "Ground") continue;
+
+			// FIXME: the raycast should only work on the ground
+			//if (Physics.Raycast(ray, out hit)) {  
 
 			// get the point on the plane where we clicked
 			Vector3 hitLocation = hit.point;
@@ -49,12 +58,11 @@ public class ClickTouch : MonoBehaviour {
         		Destroy(obj);
         	}
 			// montrer où on a cliqué
-			Instantiate(exploder, hitLocation, Quaternion.identity);
+			GameObject clicker = Instantiate(exploder, hitLocation, Quaternion.identity) as GameObject;
+			clicker.name = "Clicker";
 
 			GameObject.FindWithTag("Player").GetComponent<Walking>().setTargetPosition(hitLocation);
 
-		} else {
-			// no hit
 		}
 
 	}

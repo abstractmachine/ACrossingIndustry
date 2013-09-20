@@ -16,7 +16,11 @@ public class Walking : MonoBehaviour {
     
     //The AI's speed per second
     public float speed = 100;
-    public float turnSpeed = 10.0f;
+    public float turnSpeed = 100.0f;
+
+    public float zoomOutValue = 30.0f;
+    public float zoomInValue = 5.0f;
+    public float zoom = 5.0f;
     
     //The max distance from the AI to a waypoint for it to continue to the next waypoint
     public float nextWaypointDistance = 3;
@@ -38,6 +42,7 @@ public class Walking : MonoBehaviour {
             path = p;
             //Reset the waypoint counter
             currentWaypoint = 0;
+            turnToTarget();
         }
 
     }
@@ -58,6 +63,20 @@ public class Walking : MonoBehaviour {
         seeker.StartPath (transform.position, targetPosition, OnPathComplete);
 
     }
+
+
+    void Update() {
+
+        updateCameraZoom();
+
+    }
+
+
+    void updateCameraZoom() {
+
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoom, Time.deltaTime * 2.0f);
+
+    }
  
     public void FixedUpdate () {
 
@@ -68,6 +87,7 @@ public class Walking : MonoBehaviour {
         
         if (currentWaypoint >= path.vectorPath.Count) {
             animation.Play("idle");
+            zoom = zoomInValue;
             //Debug.Log ("End Of Path Reached");
             return;
         }
@@ -75,25 +95,56 @@ public class Walking : MonoBehaviour {
         //Direction to the next waypoint
         Vector3 dir = (path.vectorPath[currentWaypoint]-transform.position).normalized;
         dir *= speed * Time.fixedDeltaTime;
-        controller.SimpleMove (dir);
+        controller.SimpleMove(dir);
 
-        // where am I going?
-        Vector3 lookTarget = path.vectorPath[currentWaypoint];
+        turnTowardsTarget();
+        
+        //Check if we are close enough to the next waypoint
+        //If we are, proceed to follow the next waypoint
+        if (Vector3.Distance(transform.position,path.vectorPath[currentWaypoint]) < nextWaypointDistance) {
+            currentWaypoint++;
+            // calculate current position compared to endpoint
+            float distanceToEndPoint = Vector3.Distance(transform.position, path.vectorPath[(int)Mathf.Max(0,path.vectorPath.Count-1)]);
+            // calculate a zoom value
+            float newZoom = Mathf.Min(zoomOutValue,Mathf.Max(zoomInValue,distanceToEndPoint*1.0f));
+            zoom += (newZoom - zoom) * 0.05f;
+            animation.Play("walk");
+            return;
+        }
+    }
+
+
+    void turnToTarget() {
+        // make sure there's a first point to point towards
+        if (path.vectorPath.Count < 2) return;
+        // get that first point
+        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[1]);
+        // point towards it
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, 360.0f);
+
+    }
+
+
+    void turnTowardsTarget() {
+
+        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[currentWaypoint]);
+        float step = turnSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, step);
+
+    }
+
+
+    // where am I going?
+    Quaternion getTargetRotation(Vector3 lookTarget) {
+
+        // make sure we remove any eventual y transformations
         lookTarget.y = transform.position.y;
 
         Vector3 relativePos = lookTarget - transform.position;
         Quaternion lookTargetRotation = Quaternion.LookRotation(relativePos);
-        //transform.rotation = rotation;
-        float step = speed * Time.deltaTime;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, step);
-        
-        //Check if we are close enough to the next waypoint
-        //If we are, proceed to follow the next waypoint
-        if (Vector3.Distance (transform.position,path.vectorPath[currentWaypoint]) < nextWaypointDistance) {
-            currentWaypoint++;
-            animation.Play("walk");
-            return;
-        }
+
+        return lookTargetRotation;
+
     }
 
 } 

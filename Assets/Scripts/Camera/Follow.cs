@@ -41,7 +41,7 @@ public class Follow : MonoBehaviour {
         resetHiddenMaterials();
         checkForOcclusion();
 
-        updateZoom();
+        //updateZoom();
 
 	}
 
@@ -103,7 +103,7 @@ public class Follow : MonoBehaviour {
         foreach(RaycastHit hit in hits){
 
             // make sure we're not trying to hide the wrong object
-        	if (hit.collider.name == "Persona" || hit.collider.name == "Ground") continue;
+        	if (hit.collider.name == "Persona" || hit.collider.name == "Ground" || hit.collider.name == "Clicker") continue;
 
             // make sure this isn't the target
             if(hit.collider.gameObject.transform != target && hit.collider.transform.root != target) {

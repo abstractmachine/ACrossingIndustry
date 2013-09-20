@@ -1,10 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
-
-using Pathfinding; // A* Pathfinding
-
-public class AstarAI : MonoBehaviour {
-
+//Note this line, if it is left out, the script won't know that the class 'Path' exists and it will throw compiler errors
+//This line should always be present at the top of scripts which use pathfinding
+using Pathfinding;
+public class Walking : MonoBehaviour {
     //The point to move to
     public Vector3 targetPosition;
     
@@ -22,22 +21,15 @@ public class AstarAI : MonoBehaviour {
  
     //The waypoint we are currently moving towards
     private int currentWaypoint = 0;
-
-
-
-	// Use this for initialization
-	void Start () {
-
+ 
+    public void Start () {
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
         
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         seeker.StartPath (transform.position,targetPosition, OnPathComplete);
-	
-	}
+    }
     
-
-
     public void OnPathComplete (Path p) {
         Debug.Log ("Yey, we got a path back. Did it have an error? "+p.error);
         if (!p.error) {
@@ -46,11 +38,8 @@ public class AstarAI : MonoBehaviour {
             currentWaypoint = 0;
         }
     }
-
-
-
-	public void FixedUpdate () {
-		
+ 
+    public void FixedUpdate () {
         if (path == null) {
             //We have no path to move after yet
             return;
@@ -58,6 +47,7 @@ public class AstarAI : MonoBehaviour {
         
         if (currentWaypoint >= path.vectorPath.Count) {
             Debug.Log ("End Of Path Reached");
+			animation.Play("idle");
             return;
         }
         
@@ -65,13 +55,30 @@ public class AstarAI : MonoBehaviour {
         Vector3 dir = (path.vectorPath[currentWaypoint]-transform.position).normalized;
         dir *= speed * Time.fixedDeltaTime;
         controller.SimpleMove (dir);
+		
+		
+		//Facing walking direction
+		Vector3 lookTarget = path.vectorPath[currentWaypoint];
+		lookTarget.y = transform.position.y;
+		
+		Vector3 relativePos = lookTarget - transform.position;
+		Quaternion lookTargetRotation = Quaternion.LookRotation(relativePos);
+		
+		float step = speed * Time.deltaTime;
+		
+		/*if(lookTargetRotation > 45){
+			transform.rotation = lookTarget; 
+		}
+		else {*/
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, step);
+		//}
         
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
         if (Vector3.Distance (transform.position,path.vectorPath[currentWaypoint]) < nextWaypointDistance) {
             currentWaypoint++;
+			animation.Play("walk");
             return;
         }
     }
-
-}
+} 

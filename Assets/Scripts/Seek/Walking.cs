@@ -47,7 +47,7 @@ public class Walking : MonoBehaviour {
     } 
 
 
-    public void setTargetPosition(Vector2 newTarget) {
+    public void setTargetPosition(Vector3 newTarget) {
 
         // remove previous path
         path = null;

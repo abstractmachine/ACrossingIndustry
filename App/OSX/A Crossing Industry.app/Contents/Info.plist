@@ -7,11 +7,11 @@
 	<key>CFBundleExecutable</key>
 	<string>ACrossingIndustry</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Unity Player version 4.1.5f1 (ed5ea3281df6). (c) 2012 Unity Technologies ApS. All rights reserved.</string>
+	<string>Unity Player version 4.2.1f4 (4d30acc925c2). (c) 2013 Unity Technologies ApS. All rights reserved.</string>
 	<key>CFBundleIconFile</key>
 	<string>UnityPlayer.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>unity.DefaultCompany.ACrossingIndustry</string>
+	<string>unity.ESAx.ACrossingIndustry</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -19,16 +19,16 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>Unity Player version 4.1.5f1</string>
+	<string>Unity Player version 4.2.1f4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4.1.5f1</string>
+	<string>4.2.1f4</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>PlayerApplication</string>
 	<key>UnityBuildNumber</key>
-	<string>ed5ea3281df6</string>
+	<string>4d30acc925c2</string>
 </dict>
 </plist>

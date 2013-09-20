@@ -68,7 +68,7 @@ public class Walking : MonoBehaviour {
         
         if (currentWaypoint >= path.vectorPath.Count) {
             animation.Play("idle");
-            Debug.Log ("End Of Path Reached");
+            //Debug.Log ("End Of Path Reached");
             return;
         }
         

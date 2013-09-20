@@ -5,7 +5,7 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   AndroidProfiler: 0
-  defaultScreenOrientation: 3
+  defaultScreenOrientation: 4
   targetDevice: 2
   targetGlesGraphics: 1
   targetResolution: 0
@@ -25,8 +25,8 @@ PlayerSettings:
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   displayResolutionDialog: 2
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -64,9 +64,9 @@ PlayerSettings:
     width: 0
     height: 0
   m_SupportedAspectRatios:
-    4:3: 0
+    4:3: 1
     5:4: 0
-    16:10: 0
+    16:10: 1
     16:9: 1
     Others: 0
   iPhoneBundleIdentifier: net.abstractmachine
@@ -106,8 +106,24 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
+    - m_Icon: {fileID: 2800000, guid: fa92308f9c62d47588c2240776382f27, type: 3}
+      m_Size: 128
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - m_Icon: {fileID: 2800000, guid: fa92308f9c62d47588c2240776382f27, type: 3}
+      m_Size: 1024
+    - m_Icon: {fileID: 0}
+      m_Size: 512
+    - m_Icon: {fileID: 0}
+      m_Size: 256
     - m_Icon: {fileID: 0}
       m_Size: 128
+    - m_Icon: {fileID: 0}
+      m_Size: 48
+    - m_Icon: {fileID: 0}
+      m_Size: 32
+    - m_Icon: {fileID: 0}
+      m_Size: 16
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:No Context Menu
   m_TemplateCustomTags: {}

@@ -74,7 +74,7 @@ public class Walking : MonoBehaviour {
 
     void updateCameraZoom() {
 
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoom, Time.deltaTime * 2.0f);
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoom, Time.deltaTime * 1.0f);
 
     }
  
@@ -106,7 +106,7 @@ public class Walking : MonoBehaviour {
             // calculate current position compared to endpoint
             float distanceToEndPoint = Vector3.Distance(transform.position, path.vectorPath[(int)Mathf.Max(0,path.vectorPath.Count-1)]);
             // calculate a zoom value
-            float newZoom = Mathf.Min(zoomOutValue,Mathf.Max(zoomInValue,distanceToEndPoint*1.0f));
+            float newZoom = Mathf.Min(zoomOutValue,Mathf.Max(zoomInValue,distanceToEndPoint*2.0f));
             zoom += (newZoom - zoom) * 0.05f;
             animation.Play("walk");
             return;

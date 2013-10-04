@@ -71,7 +71,7 @@ public class Follow : MonoBehaviour {
             setZoom(1);
         }
 
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,zoom, Time.deltaTime * 5.0f);
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoom, Time.deltaTime * 5.0f);
 
     }
 

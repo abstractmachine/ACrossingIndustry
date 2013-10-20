@@ -16,7 +16,7 @@ public class Mur : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		
-		print("Persona (" + other.gameObject + ") is approaching wall (" + gameObject +") whose parent is " + transform.parent);
+		//print("Persona (" + other.gameObject + ") is approaching wall (" + gameObject +") whose parent is " + transform.parent);
 
 	}
 

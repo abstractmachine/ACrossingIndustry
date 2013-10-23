@@ -4,6 +4,9 @@
 TagManager:
   tags:
   - 
+  - ClickTouch
+  - Machine
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -15,7 +18,7 @@ TagManager:
   User Layer 8: Ground
   User Layer 9: Obstacles
   User Layer 10: Persona
-  User Layer 11: 
+  User Layer 11: Pivert
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 

@@ -15,9 +15,9 @@ public class Drone : MonoBehaviour {
 	
 		 transform.Translate(-Vector3.up * Time.deltaTime * speed);
 
-		 if (transform.localPosition.x > 200) {
+		 if (transform.localPosition.x > 300) {
 
-		 	transform.Translate(Vector3.up * 500);
+		 	transform.Translate(Vector3.up * 1000);
 
 		 }
 

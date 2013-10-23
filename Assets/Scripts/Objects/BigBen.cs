@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Text;
 
 public class BigBen : MonoBehaviour {
 
@@ -48,8 +49,10 @@ public class BigBen : MonoBehaviour {
 		if (currentHour == GameState.Instance.getTimeHour()) return;
 		currentHour = GameState.Instance.getTimeHour();
 
+		string speech = createString("it is " + currentHour + " o'clock");
+
 		// create the phrase we have to speak
-		createString("it is " + currentHour + " o'clock");
+		speakString(speech);
 
 	}
 
@@ -62,13 +65,51 @@ public class BigBen : MonoBehaviour {
 	}
 
 
-	void createString(string newString) {
+	string createString(string newString) {
+
+		return newString;
+
+	}
+
+
+
+	string gervaisFilter(string inputString, float fluency=0.0f) {
+
+		StringBuilder str = new StringBuilder(inputString);
+
+		for(int i=0; i<inputString.Length; i++) {
+
+			char c = str[i];
+
+			// keep digits as is
+			if (char.IsDigit(c) || char.IsSeparator(c)) continue;
+
+			switch((int)Random.Range(0.0f,10.0f)) {
+				case 0 :	str[i] = '#';	break;
+				case 1 :	str[i] = '#';	break;
+				case 2 :	str[i] = '.';	break;
+				case 3 :	str[i] = ';';	break;
+				case 4 :	str[i] = ':';	break;
+				case 5 :	str[i] = '%';	break;
+				case 6 :	str[i] = '*';	break;
+				case 7 :	str[i] = '$';	break;
+				case 8 :	str[i] = '*';	break;
+				case 9 :	str[i] = '&';	break;
+			}
+		}
+
+		return str.ToString();
+
+	}
+
+
+	void speakString(string newString) {
 
 		praseIndex = 0;
 		indexCountDown = indexCountDownDuration;
 		finishedCountDown = finishedDuration;
 
-		phrase = newString;
+		phrase = gervaisFilter(newString);
 
 		//line.gameObject.SetActive(true);
 

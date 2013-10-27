@@ -123,6 +123,7 @@ public class Follow : MonoBehaviour {
 		//reset and clear all the previous objects
         if(hiddenMaterials.Count > 0){
             foreach(MeshRenderer meshRenderer in hiddenMaterials.Keys){
+                if (meshRenderer == null) continue;
             	meshRenderer.material = hiddenMaterials[meshRenderer];
             }
             hiddenMaterials.Clear();

@@ -5,6 +5,7 @@ using System.Collections;
 using Pathfinding;
 
 public class Walking : MonoBehaviour {
+
     //The point to move to
     public Vector3 targetPosition;
 
@@ -23,32 +24,36 @@ public class Walking : MonoBehaviour {
     public float zoom = 5.0f;
     
     //The max distance from the AI to a waypoint for it to continue to the next waypoint
-    public float nextWaypointDistance = 3;
+    public float nextPointRequiredDistance = 3f;
+    public float endPointRequiredDistance = 1f;
+
+    float currentDistanceToEndPoint = 0f;
  
     //The waypoint we are currently moving towards
-    private int currentWaypoint = 0;
+    private int waypointIndex = 0;
  
     public void Start () {
 
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
+
     }
     
     public void OnPathComplete (Path p) {
 
-        //Debug.Log ("Yey, we got a path back. Did it have an error? " + p.error);
-
         if (!p.error) {
             path = p;
             //Reset the waypoint counter
-            currentWaypoint = 0;
+            waypointIndex = 0;
             turnToTarget();
         }
 
     }
 
     public void OnDisable () {
+
         seeker.pathCallback -= OnPathComplete;
+
     } 
 
 
@@ -59,53 +64,131 @@ public class Walking : MonoBehaviour {
 
         targetPosition = newTarget;
         
+        // stop walking animation (in case we were previously walking)
+        animation.Play("idle");
+
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
-        seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+        seeker.StartPath(transform.position, targetPosition, OnPathComplete);
 
     }
  
     public void FixedUpdate () {
 
-        if (path == null) {
-            //We have no path to move after yet
+        // we have no path to move after yet
+        if (path == null) return;
+
+        calculatePosition();
+        turnTowardsTarget();
+        walkAStep();
+        
+        //Check if we are close enough to the next waypoint
+        float distance = Vector3.Distance(transform.position,path.vectorPath[waypointIndex]);
+        //If we are, proceed to follow the next waypoint
+        if (waypointIndex < (path.vectorPath.Count-1) && distance < nextPointRequiredDistance) {
+            waypointIndex++;
+            animation.Play("walk");
             return;
         }
         
         // are we at target?
-        if (currentWaypoint >= path.vectorPath.Count) {
-            animation.Play("idle");
-            // set zoom target to minimum
-            zoom = zoomInValue;
-            Camera.main.GetComponent<Follow>().setZoom(zoom);
-            //Debug.Log ("End Of Path Reached");
-            return;
-        } else {
-            // calculate current position compared to endpoint
-            float distanceToEndPoint = Vector3.Distance(transform.position, path.vectorPath[(int)Mathf.Max(0,path.vectorPath.Count-1)]);
-            // calculate a zoom value
-            float newZoom = Mathf.Min(zoomOutValue,Mathf.Max(zoomInValue,distanceToEndPoint*1.0f));
-            zoom += (newZoom - zoom) * 0.025f;
-            Camera.main.GetComponent<Follow>().setZoom(zoom);
+        if (isAtTarget()) {
+
+            turnTowardsTarget();
+            slideToTarget();
+
+            if (isOnTarget()) {
+                //snapToTarget();
+                stopAtEndpoint();
+            }
         }
-        
+
+    }
+
+
+    void walkAStep() {
+
         //Direction to the next waypoint
-        Vector3 dir = (path.vectorPath[currentWaypoint]-transform.position).normalized;
+        Vector3 dir = (path.vectorPath[waypointIndex]-transform.position).normalized;
         dir *= speed * Time.fixedDeltaTime;
         controller.SimpleMove(dir);
 
-        turnTowardsTarget();
-        
-        //Check if we are close enough to the next waypoint
-        //If we are, proceed to follow the next waypoint
-        if (Vector3.Distance(transform.position,path.vectorPath[currentWaypoint]) < nextWaypointDistance) {
-            currentWaypoint++;
-            animation.Play("walk");
-            return;
-        }
+    }
+
+
+    void slideToTarget() {
+
+        // get the index of the endpoint
+        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
+        Vector3 delta = path.vectorPath[endPointIndex]-transform.position;
+        delta *= 0.01f;
+        // go directly to the final waypoint
+        CollisionFlags flags = controller.Move(delta);
+
+        //print((path.vectorPath[endPointIndex]-transform.position).magnitude);
+
+    }
+
+
+    void snapToTarget() {
+
+        // get the index of the endpoint
+        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
+        Vector3 delta = path.vectorPath[endPointIndex]-transform.position;
+        // go directly to the final waypoint
+        CollisionFlags flags = controller.Move(delta);
+
+    }
+
+
+    void calculatePosition() {
+
+        // get the index of the endpoint
+        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
+        // calculate current position compared to endpoint
+        currentDistanceToEndPoint = Vector3.Distance(transform.position, path.vectorPath[endPointIndex]);
+        // calculate a zoom value
+        float newZoom = Mathf.Min(zoomOutValue,Mathf.Max(zoomInValue,currentDistanceToEndPoint*1.0f));
+        zoom += (newZoom - zoom) * 0.025f;
+        Camera.main.GetComponent<Follow>().setZoom(zoom);
+
+    }
+
+
+    bool isAtTarget() {
+
+        if (waypointIndex >= path.vectorPath.Count-1 && currentDistanceToEndPoint <= endPointRequiredDistance) return true;
+        else return false;
+
+    }
+
+
+    bool isOnTarget() {
+
+        // get the index of the endpoint
+        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
+        Vector3 delta = path.vectorPath[endPointIndex]-transform.position;
+
+        if (delta.magnitude <= 0.75f) return true;
+        else return false;
+
+    }
+
+
+    void stopAtEndpoint() {
+
+        animation.Play("idle");
+        // set zoom target to minimum
+        zoom = zoomInValue;
+        Camera.main.GetComponent<Follow>().setZoom(zoom);
+        //Debug.Log ("End Of Path Reached");
+
+        path = null;
+
     }
 
 
     void turnToTarget() {
+
         // make sure there's a first point to point towards
         if (path.vectorPath.Count < 2) return;
         // get that first point
@@ -118,7 +201,7 @@ public class Walking : MonoBehaviour {
 
     void turnTowardsTarget() {
 
-        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[currentWaypoint]);
+        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[waypointIndex]);
         float step = turnSpeed * Time.deltaTime;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, step);
 

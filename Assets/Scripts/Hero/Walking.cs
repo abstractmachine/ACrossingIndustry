@@ -5,15 +5,12 @@ using System.Collections;
 using Pathfinding;
 
 public class Walking : MonoBehaviour {
-
-    //The point to move to
-    public Vector3 targetPosition;
-
-    private Seeker seeker;
-    private CharacterController controller;
  
     //The calculated path
     public Path path;
+
+    //The point to move to
+    public Vector3 targetPosition;
     
     //The AI's speed per second
     public float speed = 100;
@@ -24,25 +21,40 @@ public class Walking : MonoBehaviour {
     public float zoom = 5.0f;
     
     //The max distance from the AI to a waypoint for it to continue to the next waypoint
-    public float nextPointRequiredDistance = 2.5f;
-    public float endPointRequiredDistance = 2f;
+    public float nextPointRequiredDistance = 1.5f;
+    public float snapToPointDistance = 0.15f;
 
     int endPointIndex = 0;
     float currentDistanceToEndPoint = 0f;
  
     //The waypoint we are currently moving towards
-    private int currentPointIndex = 0;
+    int currentPointIndex = 0;
+
+    // pointer to the Seeker algorithm
+    Seeker seeker;
+    bool isWaitingForSeeker = false;
+    public float waitForPathDelay = 0.1f;
+    float waitingForPathTimer = 0.0f;
+
+    // pointer to the character controller of this persona
+    CharacterController controller;
+
+
  
     public void Start () {
 
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
 
+        resetWaitingForPathDelay();
+
     }
     
     public void OnPathComplete (Path p) {
 
         if (!p.error) {
+            // make sure there's something in there
+            if (p.vectorPath == null || p.vectorPath.Count == 0) return;
             // set the path to this incoming path
             path = p;
             // get the index of the endpoint
@@ -51,6 +63,8 @@ public class Walking : MonoBehaviour {
             currentPointIndex = 0;
             // start by turning in the right direction
             turnToTarget();
+            // ok, we're seeking
+            isWaitingForSeeker = false;
         }
 
     }
@@ -68,12 +82,15 @@ public class Walking : MonoBehaviour {
         clearPath();
 
         targetPosition = newTarget;
-        
-        // stop walking animation (in case we were previously walking)
-        animation.Play("idle");
 
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         seeker.StartPath(transform.position, targetPosition, OnPathComplete);
+
+        // start a timer in case the path search takes too long
+        resetWaitingForPathDelay();
+
+        // flag that we're waiting for a reply from the seeker
+        isWaitingForSeeker = true;
 
     }
 
@@ -82,6 +99,7 @@ public class Walking : MonoBehaviour {
 
         path = null;
         endPointIndex = -1;
+        isWaitingForSeeker = false;
 
     }
 
@@ -89,8 +107,23 @@ public class Walking : MonoBehaviour {
  
     public void FixedUpdate () {
 
-        // we have no path to move after yet
-        if (path == null) return;
+        // are we still waiting for the seeker to reply with a new path?
+        if (isWaitingForSeeker) {
+            // start countdown
+            waitingForPathTimer -= Time.deltaTime;
+            // if too long, stop to wait
+            if (waitingForPathTimer < 0) {
+                // turn off flag
+                isWaitingForSeeker = true;
+                // stop walking animation
+                stopWalking();
+            }
+        }
+
+        // if we have no path to move after yet
+        if (path == null) {
+            return;
+        }
 
         calculatePosition();
         turnTowardsTarget();
@@ -113,14 +146,18 @@ public class Walking : MonoBehaviour {
 
             } else { // ok, we're at the endpoint, start sliding
 
+                // turn yet again (just to more quickly turn)
                 turnTowardsTarget();
+                // the endPoint acts as a magnet
                 slideToTarget();
 
-                // are we at target?
+                // are we near the target?
                 if (isNearTarget()) {
-
+                    // are we sitting on top of the target?
                     if (isOnTarget()) {
+                        // just to the target
                         snapToTarget();
+                        // stop walking animation; clear path
                         stopAtEndpoint();
                     }
                 }
@@ -134,7 +171,7 @@ public class Walking : MonoBehaviour {
 
     void calculatePosition() {
 
-        // get position of feet on floor
+        // get position of feet on floor, taking into account that our center (pelvis) is at 0.5f on y axis
         Vector3 feetPosition = transform.position + new Vector3(0f,-0.5f,0f);
 
         // calculate current position compared to endpoint
@@ -149,30 +186,37 @@ public class Walking : MonoBehaviour {
 
     bool isNearTarget() {
 
-        if (currentPointIndex >= endPointIndex && currentDistanceToEndPoint <= endPointRequiredDistance) return true;
-        else return false;
+        // if we're approaching the endPoint and that endPoint is within range
+        if (currentPointIndex >= endPointIndex && currentDistanceToEndPoint <= nextPointRequiredDistance) return true;
+        else return false; // still too far away
 
     }
 
 
     bool isOnTarget() {
 
-        float distance = Vector3.Distance(path.vectorPath[endPointIndex], transform.position + new Vector3(0f,-0.5f,0f));
+        // if we're close enough to stop
+        if (currentDistanceToEndPoint <= snapToPointDistance) return true;
+        else return false; // not on top of target
 
-        print("distance = " + distance);
+    }
 
-        // don't forget to take into account that we're 0.5 units above ground
-        if (distance <= 0.1f) return true;
-        else return false;
+
+    void stopWalking() {
+        
+        // stop walking animation (in case we were previously walking)
+        animation.Play("idle");
 
     }
 
 
     void walkAStep() {
 
-        //Direction to the next waypoint
+        // direction vector to the next waypoint without taking into account magnitude
         Vector3 dir = (path.vectorPath[currentPointIndex]-transform.position).normalized;
+        // walk in that direction
         dir *= speed * Time.fixedDeltaTime;
+        // tell controller move many units to move
         controller.SimpleMove(dir);
 
     }
@@ -258,6 +302,14 @@ public class Walking : MonoBehaviour {
         // otherwise, calculate rotation
         Quaternion lookTargetRotation = Quaternion.LookRotation(relativePos);
         return lookTargetRotation;
+
+    }
+
+
+    // this is used when the pathfinder takes too long to search (> 0.x seconds)
+    void resetWaitingForPathDelay() {
+
+        waitingForPathTimer = waitForPathDelay;
 
     }
 

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 //Note this line, if it is left out, the script won't know that the class 'Path' exists and it will throw compiler errors
 //This line should always be present at the top of scripts which use pathfinding
@@ -17,20 +17,21 @@ public class Walking : MonoBehaviour {
     
     //The AI's speed per second
     public float speed = 100;
-    public float turnSpeed = 100.0f;
+    public float turnSpeed = 180.0f;
 
     public float zoomOutValue = 30.0f;
     public float zoomInValue = 5.0f;
     public float zoom = 5.0f;
     
     //The max distance from the AI to a waypoint for it to continue to the next waypoint
-    public float nextPointRequiredDistance = 3f;
-    public float endPointRequiredDistance = 1f;
+    public float nextPointRequiredDistance = 2.5f;
+    public float endPointRequiredDistance = 2f;
 
+    int endPointIndex = 0;
     float currentDistanceToEndPoint = 0f;
  
     //The waypoint we are currently moving towards
-    private int waypointIndex = 0;
+    private int currentPointIndex = 0;
  
     public void Start () {
 
@@ -42,9 +43,13 @@ public class Walking : MonoBehaviour {
     public void OnPathComplete (Path p) {
 
         if (!p.error) {
+            // set the path to this incoming path
             path = p;
+            // get the index of the endpoint
+            endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
             //Reset the waypoint counter
-            waypointIndex = 0;
+            currentPointIndex = 0;
+            // start by turning in the right direction
             turnToTarget();
         }
 
@@ -60,7 +65,7 @@ public class Walking : MonoBehaviour {
     public void setTargetPosition(Vector3 newTarget) {
 
         // remove previous path
-        path = null;
+        clearPath();
 
         targetPosition = newTarget;
         
@@ -71,6 +76,16 @@ public class Walking : MonoBehaviour {
         seeker.StartPath(transform.position, targetPosition, OnPathComplete);
 
     }
+
+
+    void clearPath() {
+
+        path = null;
+        endPointIndex = -1;
+
+    }
+
+
  
     public void FixedUpdate () {
 
@@ -79,73 +94,51 @@ public class Walking : MonoBehaviour {
 
         calculatePosition();
         turnTowardsTarget();
-        walkAStep();
         
-        //Check if we are close enough to the next waypoint
-        float distance = Vector3.Distance(transform.position,path.vectorPath[waypointIndex]);
-        //If we are, proceed to follow the next waypoint
-        if (waypointIndex < (path.vectorPath.Count-1) && distance < nextPointRequiredDistance) {
-            waypointIndex++;
-            animation.Play("walk");
-            return;
-        }
-        
-        // are we at target?
-        if (isAtTarget()) {
+        //Check to see how close we are to the next waypoint
+        float distance = Vector3.Distance(transform.position,path.vectorPath[currentPointIndex]);
 
-            turnTowardsTarget();
-            slideToTarget();
+        // if we're not close enough
+        if (distance > nextPointRequiredDistance) {
+            // just keep walking
+            walkAStep();
 
-            if (isOnTarget()) {
-                //snapToTarget();
-                stopAtEndpoint();
+        } else { // ok, we're getting close
+
+            // if we aren't at the endpoint, proceed on to the next waypoint
+            if (currentPointIndex != endPointIndex) {
+                
+                animation.Play("walk");
+                currentPointIndex++;
+
+            } else { // ok, we're at the endpoint, start sliding
+
+                turnTowardsTarget();
+                slideToTarget();
+
+                // are we at target?
+                if (isNearTarget()) {
+
+                    if (isOnTarget()) {
+                        snapToTarget();
+                        stopAtEndpoint();
+                    }
+                }
+
             }
+
         }
-
-    }
-
-
-    void walkAStep() {
-
-        //Direction to the next waypoint
-        Vector3 dir = (path.vectorPath[waypointIndex]-transform.position).normalized;
-        dir *= speed * Time.fixedDeltaTime;
-        controller.SimpleMove(dir);
-
-    }
-
-
-    void slideToTarget() {
-
-        // get the index of the endpoint
-        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
-        Vector3 delta = path.vectorPath[endPointIndex]-transform.position;
-        delta *= 0.01f;
-        // go directly to the final waypoint
-        CollisionFlags flags = controller.Move(delta);
-
-        //print((path.vectorPath[endPointIndex]-transform.position).magnitude);
-
-    }
-
-
-    void snapToTarget() {
-
-        // get the index of the endpoint
-        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
-        Vector3 delta = path.vectorPath[endPointIndex]-transform.position;
-        // go directly to the final waypoint
-        CollisionFlags flags = controller.Move(delta);
 
     }
 
 
     void calculatePosition() {
 
-        // get the index of the endpoint
-        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
+        // get position of feet on floor
+        Vector3 feetPosition = transform.position + new Vector3(0f,-0.5f,0f);
+
         // calculate current position compared to endpoint
-        currentDistanceToEndPoint = Vector3.Distance(transform.position, path.vectorPath[endPointIndex]);
+        currentDistanceToEndPoint = Vector3.Distance(feetPosition, path.vectorPath[endPointIndex]);
         // calculate a zoom value
         float newZoom = Mathf.Min(zoomOutValue,Mathf.Max(zoomInValue,currentDistanceToEndPoint*1.0f));
         zoom += (newZoom - zoom) * 0.025f;
@@ -154,9 +147,9 @@ public class Walking : MonoBehaviour {
     }
 
 
-    bool isAtTarget() {
+    bool isNearTarget() {
 
-        if (waypointIndex >= path.vectorPath.Count-1 && currentDistanceToEndPoint <= endPointRequiredDistance) return true;
+        if (currentPointIndex >= endPointIndex && currentDistanceToEndPoint <= endPointRequiredDistance) return true;
         else return false;
 
     }
@@ -164,12 +157,55 @@ public class Walking : MonoBehaviour {
 
     bool isOnTarget() {
 
-        // get the index of the endpoint
-        int endPointIndex = (int)Mathf.Max(0,path.vectorPath.Count-1);
-        Vector3 delta = path.vectorPath[endPointIndex]-transform.position;
+        float distance = Vector3.Distance(path.vectorPath[endPointIndex], transform.position + new Vector3(0f,-0.5f,0f));
 
-        if (delta.magnitude <= 0.75f) return true;
+        print("distance = " + distance);
+
+        // don't forget to take into account that we're 0.5 units above ground
+        if (distance <= 0.1f) return true;
         else return false;
+
+    }
+
+
+    void walkAStep() {
+
+        //Direction to the next waypoint
+        Vector3 dir = (path.vectorPath[currentPointIndex]-transform.position).normalized;
+        dir *= speed * Time.fixedDeltaTime;
+        controller.SimpleMove(dir);
+
+    }
+
+
+    void slideToTarget() {
+
+        // use a Zenon to progressively move towards the target
+        Vector3 newPoint = Vector3.Lerp(transform.position + new Vector3(0f,-0.5f,0f), path.vectorPath[endPointIndex], 0.05f);
+        // get the delta vector of the target
+        Vector3 delta = newPoint-transform.position;
+        // go directly to the final waypoint
+        CollisionFlags flags = controller.Move(delta);
+        // check via bitmask flag if a side collision was detected
+        if ((flags & CollisionFlags.Sides) == CollisionFlags.Sides) {
+            print("Side collision");
+        }
+
+        //print((path.vectorPath[endPointIndex]-transform.position).magnitude);
+
+    }
+
+
+    void snapToTarget() {
+
+        // get the delta vector of the target
+        Vector3 delta = path.vectorPath[endPointIndex]-(transform.position + new Vector3(0f,-0.5f,0f));
+        // go directly to the final waypoint
+        CollisionFlags flags = controller.Move(delta);
+        // check via bitmask flag if a side collision was detected
+        if ((flags & CollisionFlags.Sides) == CollisionFlags.Sides) {
+            print("Side collision");
+        }
 
     }
 
@@ -180,9 +216,9 @@ public class Walking : MonoBehaviour {
         // set zoom target to minimum
         zoom = zoomInValue;
         Camera.main.GetComponent<Follow>().setZoom(zoom);
-        //Debug.Log ("End Of Path Reached");
-
-        path = null;
+        
+        Debug.Log ("Reached endpoint. Clearing path");
+        clearPath();
 
     }
 
@@ -201,7 +237,7 @@ public class Walking : MonoBehaviour {
 
     void turnTowardsTarget() {
 
-        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[waypointIndex]);
+        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[currentPointIndex]);
         float step = turnSpeed * Time.deltaTime;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, step);
 

@@ -417,8 +417,9 @@ public class Seeker : MonoBehaviour {
 		
 		//Cancel a previously requested path is it has not been processed yet and also make sure that it has not been recycled and used somewhere else
 		if (path != null && path.GetState() <= PathState.Processing && lastPathID == path.pathID) {
-			path.LogError ("Canceled path because a new one was requested\nGameObject: "+gameObject.name);
+			//path.LogError ("Canceled path because a new one was requested\nGameObject: "+gameObject.name);
 			//No callback should be sent for the canceled path
+			;
 		}
 		
 		path = p;

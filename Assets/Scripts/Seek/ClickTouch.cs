@@ -18,14 +18,20 @@ public class ClickTouch : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		// click to change position
-		if (Input.GetMouseButtonDown(0)) {
-			checkHit(Input.mousePosition);
-		}
+		if (Application.platform == RuntimePlatform.IPhonePlayer) {
 
-		// touch screen to change position
-		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
-			checkHit(Input.GetTouch(0).position);
+			// touch screen to change position
+			if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+				checkHit(Input.GetTouch(0).position);
+			}
+
+		} else {
+
+			// click to change position
+			if (Input.GetMouseButtonDown(0)) {
+				checkHit(Input.mousePosition);
+			}
+
 		}
 
 		// TODO: add double-click for run-to-position
@@ -45,16 +51,24 @@ public class ClickTouch : MonoBehaviour {
 		//Loop through all overlapping objects and disable their mesh renderer
         if(hits.Length == 0) return;
 
+        // first check to see if we're interacting with an already active persona
         foreach(RaycastHit hit in hits) {
 
         	// check to see if this is another Persona that we're perhaps already talking to
         	if (hit.transform.gameObject.tag == "Persona") {
+
         		// see if we're already talking to them
         		if (walking.isCollidingWith(hit.transform.gameObject)) {
         			// abort click/touch
         			return;
         		}
+
         	}
+
+        }
+
+        // ok, that's fine, now try to find the Ground
+        foreach(RaycastHit hit in hits) {
 
         	// ignore ground click/touch
         	if (hit.transform.name != "Ground") continue;

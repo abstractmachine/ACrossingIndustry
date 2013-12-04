@@ -266,7 +266,8 @@ public class Walking : MonoBehaviour {
 
     void addToCollisionList(GameObject other) {
 
-        collisions.Add(other);
+        // if it's not already listed, add to collision list
+        if (!isCollidingWith(other)) collisions.Add(other);
 
     }
 

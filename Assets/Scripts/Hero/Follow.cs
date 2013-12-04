@@ -8,8 +8,11 @@ using System.Collections.Generic;
 public class Follow : MonoBehaviour {
 
 	public GameObject target;			                // the gameObject I want to follow
-    public float zoom = 7.4f;                           // this is the zoom level
-    public float zoomSpeed = 1.0f;
+    public float zoomLevel = 7.4f;                           // this is the zoom level
+    public float zoomSpeed = 0.4f;
+
+    public float zoomMax = 30.0f;
+    public float zoomMin = 5.0f;
 
  	// previously hidden items
     private Dictionary<MeshRenderer, Material> hiddenMaterials;
@@ -47,9 +50,11 @@ public class Follow : MonoBehaviour {
 
 
 
-    public void setZoom(float distance) {
+    public void setZoom(float newZoom) {
 
-        zoom = distance;
+        zoomLevel = Mathf.Min(zoomMax,Mathf.Max(zoomMin,newZoom));
+        //zoomLevel += (newZoom - zoomLevel) * 0.025f;
+        //zoomLevel = distance;
 
     }
 
@@ -59,7 +64,7 @@ public class Follow : MonoBehaviour {
 
         float t = Time.deltaTime * zoomSpeed;
 
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoom, t);
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoomLevel, t);
 
     }
 

@@ -4,9 +4,14 @@ using System.Collections;
 public class ClickTouch : MonoBehaviour {
 
 	public GameObject exploder;
+	public GameObject xSpot;
+
+	Walking walking;
 
 	// Use this for initialization
 	void Start () {
+
+		walking = GameObject.FindWithTag("Player").GetComponent<Walking>();
 
 	}
 	
@@ -42,6 +47,16 @@ public class ClickTouch : MonoBehaviour {
 
         foreach(RaycastHit hit in hits) {
 
+        	// check to see if this is another Persona that we're perhaps already talking to
+        	if (hit.transform.gameObject.tag == "Persona") {
+        		// see if we're already talking to them
+        		if (walking.isCollidingWith(hit.transform.gameObject)) {
+        			// abort click/touch
+        			return;
+        		}
+        	}
+
+        	// ignore ground click/touch
         	if (hit.transform.name != "Ground") continue;
 
 			// FIXME: the raycast should only work on the ground
@@ -61,7 +76,8 @@ public class ClickTouch : MonoBehaviour {
 			GameObject clicker = Instantiate(exploder, hitLocation, Quaternion.identity) as GameObject;
 			clicker.name = "Clicker";
 
-			GameObject.FindWithTag("Player").GetComponent<Walking>().setTargetPosition(hitLocation);
+			// tell the player where to start walking
+			walking.setTargetPosition(hitLocation);
 
 		}
 

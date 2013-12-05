@@ -13,6 +13,7 @@ public class Walking : MonoBehaviour {
 
     // pointer to the character controller of this persona
     CharacterController controller;
+    SocialEngine socialEngine;
 
     //The calculated path
     public Path path;
@@ -63,6 +64,7 @@ public class Walking : MonoBehaviour {
 
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
+        socialEngine = GetComponent<SocialEngine>();
         follow = Camera.main.GetComponent<Follow>();
 
         resetWaitingForPathDelay();
@@ -243,7 +245,7 @@ public class Walking : MonoBehaviour {
         if ("Persona" == other.gameObject.tag) {
             abortWalking();
             addToCollisionList(other.gameObject);
-            //whoIsAroundMe(10);
+            socialEngine.activateDialog(other.gameObject);
         }
         
     }
@@ -258,6 +260,7 @@ public class Walking : MonoBehaviour {
         
         if ("Persona" == other.gameObject.tag) {
             removeFromCollisionList(other.gameObject);
+            socialEngine.abortDialog();
         }
 
     }

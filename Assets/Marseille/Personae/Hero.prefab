@@ -234,21 +234,6 @@ GameObject:
 --- !u!1002 &100025
 EditorExtensionImpl:
   serializedVersion: 6
---- !u!1 &100026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400014}
-  m_Layer: 0
-  m_Name: construction_worker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1002 &100027
 EditorExtensionImpl:
   serializedVersion: 6
@@ -280,7 +265,6 @@ GameObject:
   - 4: {fileID: 400012}
   - 111: {fileID: 11100000}
   - 143: {fileID: 14300000}
-  - 23: {fileID: 2300002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
@@ -1159,22 +1143,10 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 400010}
-  - {fileID: 400014}
   m_Father: {fileID: 0}
 --- !u!1002 &400013
 EditorExtensionImpl:
   serializedVersion: 6
---- !u!4 &400014
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100026}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.96534526, y: 1.96534491, z: 1.96534491}
-  m_Children: []
-  m_Father: {fileID: 400012}
 --- !u!1002 &400015
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1947,27 +1919,6 @@ Renderer:
 --- !u!1002 &2300001
 EditorExtensionImpl:
   serializedVersion: 6
---- !u!23 &2300002
-Renderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100030}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2087,7 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87aa3f4fef4934a0d8e49d78700f3086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phylacterePrefab: {fileID: 100002, guid: 3d7dc3cda2d3d4b658eae3eb52de7fe8, type: 2}
+  phylacterePrefab: {fileID: 100010, guid: be9dec480e4ec41c5a47ca18869fb1b2, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

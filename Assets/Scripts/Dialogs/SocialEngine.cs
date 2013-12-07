@@ -5,12 +5,13 @@ public class SocialEngine : MonoBehaviour {
 
 	// the prefab we use to generate dialog bubbles
 	public GameObject phylacterePrefab;
+	GameObject phylactere = null;
 
 	bool areTalkingToSomeone = false;
 	bool didInitiateDialog = false;
 
 	// a pointer to the other we're discussing with
-	GameObject currentOther = null;
+	GameObject otherPersona = null;
 	SocialEngine otherSocialEngine = null;
 
 	// our previous rotation
@@ -22,10 +23,40 @@ public class SocialEngine : MonoBehaviour {
 	void Start () {
 	
 	}
+
+
+	void OnApplicationQuit() {
+
+		killPhylacteres();
+
+	}
+
+
+	void OnDisable() {
+
+		killPhylacteres();
+
+	}
+
+
+	void OnDestroy() {
+
+		killPhylacteres();
+
+	}
+
+
+	void killPhylacteres() {
+
+		// if exists, kill it
+		if (phylactere != null) Destroy(phylactere);
+
+	}
+
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 
@@ -46,16 +77,11 @@ public class SocialEngine : MonoBehaviour {
 		// make sure we don't have any dangling phylacteres
 		killPhylacteres();
 
-		// instantiate new GameObject from prefab
-		GameObject obj = (GameObject)Instantiate(phylacterePrefab);
-		// attach this object to us
-		obj.transform.parent = transform;
-		// position the phylactere object
-		obj.transform.localPosition = new Vector3(0,1.5f,0);
-		// get pointer to text field
-		TextField textField = obj.transform.GetComponentInChildren<TextField>();
-		// give this phylactere object it's text, base time delay on length of text
-		textField.speak(phrase, -1);
+		phylactere = (GameObject)Instantiate(phylacterePrefab);
+		phylactere.name = "Phylactere";
+		phylactere.transform.parent = this.transform;
+		phylactere.transform.localPosition = new Vector3(0,1.5f,0);
+		phylactere.GetComponent<Phylactere>().speak(phrase,-1);
 
 	}
 
@@ -77,11 +103,11 @@ public class SocialEngine : MonoBehaviour {
 		switch(speechIndex) {
 
 			case 0:
-			phrase = "Hello " + currentOther.name;
+			phrase = "Oh hey it's you. Hello " + otherPersona.name;
 			break;
 
 			case 1:
-			phrase = "How are you, " + currentOther.name + "?";
+			phrase = "How are you, " + otherPersona.name + "?";
 			break;
 
 			case 2:
@@ -89,7 +115,7 @@ public class SocialEngine : MonoBehaviour {
 			break;
 
 			default:
-			speak("...");
+			phrase = "...";
 			break;
 
 		}
@@ -106,11 +132,11 @@ public class SocialEngine : MonoBehaviour {
 		switch(speechIndex) {
 
 			case 0:
-			phrase = "Hello " + currentOther.name;
+			phrase = "Hello " + otherPersona.name;
 			break;
 
 			case 1:
-			phrase = "I'm fine, " + currentOther.name + ". And you?";
+			phrase = "I'm fine, " + otherPersona.name + ". And you?";
 			break;
 
 			case 2:
@@ -118,7 +144,7 @@ public class SocialEngine : MonoBehaviour {
 			break;
 
 			default:
-			speak("...");
+			phrase = "...";
 			break;
 
 		}
@@ -128,28 +154,10 @@ public class SocialEngine : MonoBehaviour {
 	}
 
 
-	void abortActive() {
-
-		speak("Goodbye " + currentOther.name);
-		// tell the other it's over
-		otherSocialEngine.abortDialog();
-
-	}
-
-
-	void abortPassive() {
-
-		speak("Goodbye " + currentOther.name);
-
-		// turn back to whatever we were doing
-		transform.localRotation = previousOrientation;
-		// clear Previous Orientation variable
-		previousOrientation = Quaternion.identity;
-
-	}
-
-
 	public void finishedSpeaking() {
+
+		// if there's no more other, we must have finished speaking. No need to reply
+		if (otherPersona == null || otherSocialEngine == null) return;
 
 		// if we're the subordinate one, let the initiator reply
 		if (!didInitiateDialog) {
@@ -194,11 +202,9 @@ public class SocialEngine : MonoBehaviour {
 		// remember that I started this dialog
 		didInitiateDialog = true;
 		// remember who I'm talking to
-		currentOther = other;
+		otherPersona = other;
 		// remember who that Persona is
 		rememberOther(other);
-		// make sure we don't have any dangling phylacteres
-		killPhylacteres();
 		// the dialog has opened, start the actual discussion
 		startDialog();
 
@@ -214,8 +220,6 @@ public class SocialEngine : MonoBehaviour {
 		areTalkingToSomeone = true;
 		// remember that the other Persona started this dialog
 		didInitiateDialog = false;
-		// make sure we don't have any dangling phylacteres
-		killPhylacteres();
 		// remember who that Persona is
 		rememberOther(other);
 		// get that other's SocialEngine
@@ -231,13 +235,6 @@ public class SocialEngine : MonoBehaviour {
 
 
 	public void abortDialog() {
-
-		// if we weren't actually talking to someone (error trapping)
-		if (currentOther == null || otherSocialEngine == null) {
-			print("error " + currentOther + "\t - \t" + otherSocialEngine);
-			forgetOther();
-			return;
-		}
 
 		// if we initiated this dialog
 		if (didInitiateDialog) {
@@ -257,12 +254,23 @@ public class SocialEngine : MonoBehaviour {
 	}
 
 
-	void killPhylacteres() {
+	void abortActive() {
 
-		// kill all previous phylacteres
-		Transform previousPhylactere = transform.Find("Phylactere(Clone)");
-		// if exists, kill it
-		if (previousPhylactere != null) Destroy(previousPhylactere.gameObject);
+		speak("Goodbye " + otherPersona.name);
+		// tell the other it's over
+		otherSocialEngine.abortDialog();
+
+	}
+
+
+	void abortPassive() {
+
+		speak("Goodbye " + otherPersona.name);
+
+		// turn back to whatever we were doing
+		transform.localRotation = previousOrientation;
+		// clear Previous Orientation variable
+		previousOrientation = Quaternion.identity;
 
 	}
 
@@ -270,7 +278,7 @@ public class SocialEngine : MonoBehaviour {
 	void rememberOther(GameObject other) {
 
 		// remember who that Persona is
-		currentOther = other;
+		otherPersona = other;
 
 	}
 
@@ -279,7 +287,7 @@ public class SocialEngine : MonoBehaviour {
 		
 		areTalkingToSomeone = false;
 		didInitiateDialog = false;
-		currentOther = null;
+		otherPersona = null;
 		otherSocialEngine = null;
 
 	}

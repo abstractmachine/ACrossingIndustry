@@ -96,8 +96,10 @@ public class Follow : MonoBehaviour {
 
         foreach(RaycastHit hit in hits){
 
+            if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Obstacles")) continue;
+
             // make sure we're not trying to hide the wrong object
-        	if (hit.collider.name == "Persona" || hit.collider.name == "Ground" || hit.collider.name == "Clicker") continue;
+        	//if (hit.collider.name == "Persona" || hit.collider.name == "Player" || hit.collider.name == "Ground" || hit.collider.name == "Clicker") continue;
 
             // make sure this isn't the target
             if(hit.collider.gameObject.transform != target && hit.collider.transform.root != target) {

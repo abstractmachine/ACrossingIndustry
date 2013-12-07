@@ -5,7 +5,13 @@ public class Explode : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
+		float timeSaturation = GameState.Instance.getTimeSaturation();
+		timeSaturation = Mathf.Min(1.0f, 1.3f - timeSaturation);
+		Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
+		//renderer.material.color = c;
+		renderer.material.SetColor("_Emission", c);
+
 	}
 	
 	// Update is called once per frame

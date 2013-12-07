@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87aa3f4fef4934a0d8e49d78700f3086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phylacterePrefab: {fileID: 100002, guid: 3d7dc3cda2d3d4b658eae3eb52de7fe8, type: 2}
+  phylacterePrefab: {fileID: 100010, guid: be9dec480e4ec41c5a47ca18869fb1b2, type: 2}
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6

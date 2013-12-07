@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // used for Dictionary
 
-public class SocialEngine : MonoBehaviour {
+public class Dialog : MonoBehaviour {
 
 	// the prefab we use to generate dialog bubbles
 	public GameObject phylacterePrefab;
@@ -12,17 +13,16 @@ public class SocialEngine : MonoBehaviour {
 
 	// a pointer to the other we're discussing with
 	GameObject otherPersona = null;
-	SocialEngine otherSocialEngine = null;
+	Dialog otherDialog = null;
+	int otherId = 0;
+	// a dictionary of all the <int>GameObject.GetInstanceID, and their <int>stateIndex
+    Dictionary<int,int> conversations = new Dictionary<int,int>();
 
 	// our previous rotation
 	Quaternion previousOrientation = Quaternion.identity;
 
-	int speechIndex = -1;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+	//////////////////////////
 
 
 	void OnApplicationQuit() {
@@ -53,20 +53,53 @@ public class SocialEngine : MonoBehaviour {
 
 	}
 
-	
-	// Update is called once per frame
+
+	//////////////////////////
+
+
 	void Update () {
 
 	}
 
 
+	//////////////////////////
+
+
 	void startDialog() {
 
-		// start the index at 0 (beginning of phrasebook)
-		// TODO: change this to figure out where the last index was when we left off
-		speechIndex = 0;
 		// tell the submissive other to start the actual talking
-		otherSocialEngine.reply(speechIndex);
+		otherDialog.reply(speechIndex());
+
+	}
+
+
+
+	int speechIndex() {
+
+		// if we've never started this conversation
+		if (!conversations.ContainsKey(otherId)) {
+			// generate a dictionary entry for this instance
+			// start the index at 0 (beginning of phrasebook)
+			conversations.Add(otherId,0);
+		}
+
+		return conversations[otherId];
+
+	}
+
+
+	void setSpeechIndex(int index) {
+
+		conversations[otherId] = index;
+
+	}
+
+
+	void nextSpeechIndex() {
+
+		// TODO: check to see if this is at the end of the index
+
+		conversations[otherId]++;
 
 	}
 
@@ -88,7 +121,7 @@ public class SocialEngine : MonoBehaviour {
 
 	void reply(int index) {
 
-		speechIndex = index;
+		setSpeechIndex(index);
 
 		if (didInitiateDialog) replyActive();
 		else replyPassive();
@@ -100,7 +133,7 @@ public class SocialEngine : MonoBehaviour {
 
 		string phrase = "";
 
-		switch(speechIndex) {
+		switch(speechIndex()) {
 
 			case 0:
 			phrase = "Oh hey it's you. Hello " + otherPersona.name;
@@ -129,7 +162,7 @@ public class SocialEngine : MonoBehaviour {
 
 		string phrase = "";
 
-		switch(speechIndex) {
+		switch(speechIndex()) {
 
 			case 0:
 			phrase = "Hello " + otherPersona.name;
@@ -157,40 +190,39 @@ public class SocialEngine : MonoBehaviour {
 	public void finishedSpeaking() {
 
 		// if there's no more other, we must have finished speaking. No need to reply
-		if (otherPersona == null || otherSocialEngine == null) return;
+		if (otherPersona == null || otherDialog == null) return;
 
 		// if we're the subordinate one, let the initiator reply
 		if (!didInitiateDialog) {
 			// tell the other to reply to use
-			otherSocialEngine.reply(speechIndex);
+			otherDialog.reply(speechIndex());
 		}
 
 		// if we're the dominant one
 		if (didInitiateDialog) {
 
 			// increment the index by 1
-			speechIndex++;
+			nextSpeechIndex();
 			// tell the other to reply to use
-			otherSocialEngine.reply(speechIndex);
+			otherDialog.reply(speechIndex());
 		} 
 
 	}
 
 
-
-
+	//////////////////////////
 
 
 	// MARK: Start Dialog as Active (activateDialog) or Passive (submitPassivelyToDialog)
 
 	public void activateDialog(GameObject other) {
 
-		// get that other's SocialEngine
-		otherSocialEngine = other.GetComponent<SocialEngine>();
+		// get that other's Dialog
+		otherDialog = other.GetComponent<Dialog>();
 		// if no social engine, quit discussing with this persona
-		if (otherSocialEngine == null) return;
+		if (otherDialog == null) return;
 		// tell the other to submit to this dialog request and see if they're ok
-		if (!otherSocialEngine.submitPassivelyToDialog(gameObject))  {
+		if (!otherDialog.submitPassivelyToDialog(gameObject))  {
 			// if there was some error in initalizing dialog
 			print("unable to establish dialog with other");
 			// forget that other's social engine
@@ -201,8 +233,6 @@ public class SocialEngine : MonoBehaviour {
 		areTalkingToSomeone = true;
 		// remember that I started this dialog
 		didInitiateDialog = true;
-		// remember who I'm talking to
-		otherPersona = other;
 		// remember who that Persona is
 		rememberOther(other);
 		// the dialog has opened, start the actual discussion
@@ -222,8 +252,6 @@ public class SocialEngine : MonoBehaviour {
 		didInitiateDialog = false;
 		// remember who that Persona is
 		rememberOther(other);
-		// get that other's SocialEngine
-		otherSocialEngine = other.GetComponent<SocialEngine>();
 		// remember where we were facing before
 		previousOrientation = transform.localRotation;
 		// turn to face that person
@@ -256,16 +284,16 @@ public class SocialEngine : MonoBehaviour {
 
 	void abortActive() {
 
-		speak("Goodbye " + otherPersona.name);
+		//speak("Goodbye " + otherPersona.name);
 		// tell the other it's over
-		otherSocialEngine.abortDialog();
+		otherDialog.abortDialog();
 
 	}
 
 
 	void abortPassive() {
 
-		speak("Goodbye " + otherPersona.name);
+		//speak("Goodbye " + otherPersona.name);
 
 		// turn back to whatever we were doing
 		transform.localRotation = previousOrientation;
@@ -275,10 +303,17 @@ public class SocialEngine : MonoBehaviour {
 	}
 
 
+	//////////////////////////
+
+
 	void rememberOther(GameObject other) {
 
 		// remember who that Persona is
 		otherPersona = other;
+		// get that other's Dialog
+		otherDialog = other.GetComponent<Dialog>();
+		// get that other's ID
+		otherId = other.GetInstanceID();
 
 	}
 
@@ -288,7 +323,8 @@ public class SocialEngine : MonoBehaviour {
 		areTalkingToSomeone = false;
 		didInitiateDialog = false;
 		otherPersona = null;
-		otherSocialEngine = null;
+		otherDialog = null;
+		otherId = 0;
 
 	}
 

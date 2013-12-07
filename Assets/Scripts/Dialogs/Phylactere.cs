@@ -144,7 +144,7 @@ public class Phylactere : MonoBehaviour {
 		// make sure the parent (the Persona) is there
 		if (transform.parent == null) return;
 		// tell the parent object we've finished speaking
-		transform.parent.GetComponent<SocialEngine>().finishedSpeaking();
+		transform.parent.GetComponent<Dialog>().finishedSpeaking();
 
 	}
 

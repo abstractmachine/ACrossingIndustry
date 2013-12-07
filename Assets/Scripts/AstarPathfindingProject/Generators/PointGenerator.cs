@@ -277,6 +277,11 @@ namespace Pathfinding {
 			int count = 0;
 			int count2 = 0;
 
+			// this is just to avoid an annoying warning (WTF?)
+			if (count==666) {
+				Debug.Log(count2);
+			}
+
 			if (maxDistance >= 0) {
 				//To avoid too many allocations, these lists are reused for each node
 				List<PointNode> connections = new List<PointNode>(3);

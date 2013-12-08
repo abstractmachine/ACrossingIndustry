@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // used for Dictionary
 
 public class Dialog : MonoBehaviour {
 
@@ -9,14 +8,14 @@ public class Dialog : MonoBehaviour {
 	GameObject phylactere = null;
 
 	bool areTalkingToSomeone = false;
-	bool didInitiateDialog = false;
+	bool initiatedDialog = false;
 
 	// a pointer to the other we're discussing with
 	GameObject otherPersona = null;
 	Dialog otherDialog = null;
-	int otherId = 0;
-	// a dictionary of all the <int>GameObject.GetInstanceID, and their <int>stateIndex
-    Dictionary<int,int> conversations = new Dictionary<int,int>();
+	// the dialogID is based on the active (initiator) objectId
+	// the IDs of the two dialoging objects
+	string dialogID = "";
 
 	// our previous rotation
 	Quaternion previousOrientation = Quaternion.identity;
@@ -27,26 +26,26 @@ public class Dialog : MonoBehaviour {
 
 	void OnApplicationQuit() {
 
-		killPhylacteres();
+		killPhylactere();
 
 	}
 
 
 	void OnDisable() {
 
-		killPhylacteres();
+		killPhylactere();
 
 	}
 
 
 	void OnDestroy() {
 
-		killPhylacteres();
+		killPhylactere();
 
 	}
 
 
-	void killPhylacteres() {
+	void killPhylactere() {
 
 		// if exists, kill it
 		if (phylactere != null) Destroy(phylactere);
@@ -68,38 +67,7 @@ public class Dialog : MonoBehaviour {
 	void startDialog() {
 
 		// tell the submissive other to start the actual talking
-		otherDialog.reply(speechIndex());
-
-	}
-
-
-
-	int speechIndex() {
-
-		// if we've never started this conversation
-		if (!conversations.ContainsKey(otherId)) {
-			// generate a dictionary entry for this instance
-			// start the index at 0 (beginning of phrasebook)
-			conversations.Add(otherId,0);
-		}
-
-		return conversations[otherId];
-
-	}
-
-
-	void setSpeechIndex(int index) {
-
-		conversations[otherId] = index;
-
-	}
-
-
-	void nextSpeechIndex() {
-
-		// TODO: check to see if this is at the end of the index
-
-		conversations[otherId]++;
+		otherDialog.reply();
 
 	}
 
@@ -108,7 +76,7 @@ public class Dialog : MonoBehaviour {
 	void speak(string phrase) {
 
 		// make sure we don't have any dangling phylacteres
-		killPhylacteres();
+		killPhylactere();
 
 		phylactere = (GameObject)Instantiate(phylacterePrefab);
 		phylactere.name = "Phylactere";
@@ -119,11 +87,9 @@ public class Dialog : MonoBehaviour {
 	}
 
 
-	void reply(int index) {
+	void reply() {
 
-		setSpeechIndex(index);
-
-		if (didInitiateDialog) replyActive();
+		if (initiatedDialog) replyActive();
 		else replyPassive();
 
 	}
@@ -131,27 +97,7 @@ public class Dialog : MonoBehaviour {
 
 	void replyPassive() {
 
-		string phrase = "";
-
-		switch(speechIndex()) {
-
-			case 0:
-			phrase = "Oh hey it's you. Hello " + otherPersona.name;
-			break;
-
-			case 1:
-			phrase = "How are you, " + otherPersona.name + "?";
-			break;
-
-			case 2:
-			phrase = "I'm doing ok.";
-			break;
-
-			default:
-			phrase = "...";
-			break;
-
-		}
+		string phrase = Scenario.Instance.GetPhrase(dialogID,false);
 
 		speak(phrase);
 
@@ -160,27 +106,7 @@ public class Dialog : MonoBehaviour {
 
 	void replyActive() {
 
-		string phrase = "";
-
-		switch(speechIndex()) {
-
-			case 0:
-			phrase = "Hello " + otherPersona.name;
-			break;
-
-			case 1:
-			phrase = "I'm fine, " + otherPersona.name + ". And you?";
-			break;
-
-			case 2:
-			phrase = "That's good.";
-			break;
-
-			default:
-			phrase = "...";
-			break;
-
-		}
+		string phrase = Scenario.Instance.GetPhrase(dialogID,true);
 
 		speak(phrase);
 
@@ -193,18 +119,18 @@ public class Dialog : MonoBehaviour {
 		if (otherPersona == null || otherDialog == null) return;
 
 		// if we're the subordinate one, let the initiator reply
-		if (!didInitiateDialog) {
+		if (!initiatedDialog) {
 			// tell the other to reply to use
-			otherDialog.reply(speechIndex());
+			otherDialog.reply();
 		}
 
 		// if we're the dominant one
-		if (didInitiateDialog) {
+		if (initiatedDialog) {
 
 			// increment the index by 1
-			nextSpeechIndex();
+			Scenario.Instance.Next(dialogID);
 			// tell the other to reply to use
-			otherDialog.reply(speechIndex());
+			otherDialog.reply();
 		} 
 
 	}
@@ -229,10 +155,8 @@ public class Dialog : MonoBehaviour {
 			forgetOther();
 			return;
 		}
-		// note that we're in a dialog
-		areTalkingToSomeone = true;
 		// remember that I started this dialog
-		didInitiateDialog = true;
+		initiatedDialog = true;
 		// remember who that Persona is
 		rememberOther(other);
 		// the dialog has opened, start the actual discussion
@@ -246,10 +170,8 @@ public class Dialog : MonoBehaviour {
 		// if we're already talking to someone
 		if (areTalkingToSomeone) return false;
 
-		// note that we're in a dialog
-		areTalkingToSomeone = true;
 		// remember that the other Persona started this dialog
-		didInitiateDialog = false;
+		initiatedDialog = false;
 		// remember who that Persona is
 		rememberOther(other);
 		// remember where we were facing before
@@ -265,13 +187,13 @@ public class Dialog : MonoBehaviour {
 	public void abortDialog() {
 
 		// if we initiated this dialog
-		if (didInitiateDialog) {
+		if (initiatedDialog) {
 			// stop talking
 			abortActive();
 		}
 
 		// if we were the passive responder to a dialog
-		if (!didInitiateDialog) {
+		if (!initiatedDialog) {
 			// stop being socially submissive! ;-)
 			abortPassive();
 		}
@@ -284,6 +206,8 @@ public class Dialog : MonoBehaviour {
 
 	void abortActive() {
 
+		// we've broken the conversation, stop talking to indicate this
+		killPhylactere();
 		//speak("Goodbye " + otherPersona.name);
 		// tell the other it's over
 		otherDialog.abortDialog();
@@ -308,23 +232,37 @@ public class Dialog : MonoBehaviour {
 
 	void rememberOther(GameObject other) {
 
+		// note that we're in a dialog
+		areTalkingToSomeone = true;
 		// remember who that Persona is
 		otherPersona = other;
 		// get that other's Dialog
 		otherDialog = other.GetComponent<Dialog>();
-		// get that other's ID
-		otherId = other.GetInstanceID();
 
+		// are we the active or passive one?
+		if (initiatedDialog) {
+			dialogID = "" + getId() + "," + otherDialog.getId();
+		} else {
+			dialogID = "" + otherDialog.getId() + "," + getId();
+		}
+
+	}
+
+
+	int getId() {
+		return GetInstanceID();
 	}
 
 
 	void forgetOther() {
 		
 		areTalkingToSomeone = false;
-		didInitiateDialog = false;
+		initiatedDialog = false;
+
 		otherPersona = null;
 		otherDialog = null;
-		otherId = 0;
+
+		dialogID = "";
 
 	}
 

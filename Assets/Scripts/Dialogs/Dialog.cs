@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // required for List
 
 public class Dialog : MonoBehaviour {
 
@@ -7,12 +8,13 @@ public class Dialog : MonoBehaviour {
 	public GameObject phylacterePrefab;
 	GameObject phylactere = null;
 
-	bool areTalkingToSomeone = false;
-	bool initiatedDialog = false;
+	public bool IsTalking() { return otherDialog != null; }
 
 	// a pointer to the other we're discussing with
 	GameObject otherPersona = null;
 	Dialog otherDialog = null;
+	// are we the active one who initiated the conversation
+	bool initiatedDialog = false;
 	// the dialogID is based on the active (initiator) objectId
 	// the IDs of the two dialoging objects
 	string dialogID = "";
@@ -48,7 +50,10 @@ public class Dialog : MonoBehaviour {
 	void killPhylactere() {
 
 		// if exists, kill it
-		if (phylactere != null) Destroy(phylactere);
+		if (phylactere != null) {
+			phylactere.GetComponent<Phylactere>().abortReply();
+			Destroy(phylactere);
+		}
 
 	}
 
@@ -73,7 +78,15 @@ public class Dialog : MonoBehaviour {
 
 
 
-	void speak(string phrase) {
+	void speak(List<string> phrases) {
+
+		createPhylactere();
+		phylactere.GetComponent<Phylactere>().speak(phrases);
+
+	}
+
+
+	void createPhylactere() {
 
 		// make sure we don't have any dangling phylacteres
 		killPhylactere();
@@ -82,7 +95,6 @@ public class Dialog : MonoBehaviour {
 		phylactere.name = "Phylactere";
 		phylactere.transform.parent = this.transform;
 		phylactere.transform.localPosition = new Vector3(0,1.5f,0);
-		phylactere.GetComponent<Phylactere>().speak(phrase,-1);
 
 	}
 
@@ -97,18 +109,44 @@ public class Dialog : MonoBehaviour {
 
 	void replyPassive() {
 
-		string phrase = Scenario.Instance.GetPhrase(dialogID,false);
+		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,false);
 
-		speak(phrase);
+		// if error
+		if (phrases.Count == 0) return;
+
+		// if there are several possible phrases, randomly choose one
+		if (phrases.Count > 1) {
+			string phrase = phrases[(int)Random.Range(0,phrases.Count)];
+			// empty the list
+			phrases = new List<string>();
+			phrases.Add(phrase);
+		}
+
+		speak(phrases);
 
 	}
 
 
 	void replyActive() {
 
-		string phrase = Scenario.Instance.GetPhrase(dialogID,true);
+		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,true);
 
-		speak(phrase);
+		// if error
+		if (phrases.Count == 0) return;
+
+		speak(phrases);
+
+	}
+
+
+	public void finishedSpeaking(int choiceIndex) {
+
+		// if there's no more other, we must have finished speaking. No need to reply
+		if (otherPersona == null || otherDialog == null) return;
+		// tell the dialogue engine we've made a choice
+		Scenario.Instance.Choose(dialogID, choiceIndex);
+		// tell the other to reply
+		otherDialog.reply();
 
 	}
 
@@ -129,9 +167,37 @@ public class Dialog : MonoBehaviour {
 
 			// increment the index by 1
 			Scenario.Instance.Next(dialogID);
-			// tell the other to reply to use
+			// tell the other to reply
 			otherDialog.reply();
 		} 
+
+	}
+
+
+
+	public void ClickAccelerate() {
+
+		// if we're not talking, get outta here
+		if (!IsTalking()) return;
+
+		// if we're the one talking
+		if (phylactere != null) phylactere.GetComponent<Phylactere>().ClickAccelerate();
+
+		// otherwise it's the other one that's probably talking
+		else otherDialog.ClickAccelerateFromOther();
+
+	}
+
+
+	public void ClickAccelerateFromOther() {
+
+		// if we're not talking, get outta here
+		if (!IsTalking()) return;
+
+		// if we're the one talking
+		if (phylactere != null) phylactere.GetComponent<Phylactere>().ClickAccelerate();
+
+		// avoid infinite loop of recursive accelerators
 
 	}
 
@@ -159,6 +225,8 @@ public class Dialog : MonoBehaviour {
 		initiatedDialog = true;
 		// remember who that Persona is
 		rememberOther(other);
+		// kill any previous phylacteres
+		killPhylactere();
 		// the dialog has opened, start the actual discussion
 		startDialog();
 
@@ -168,12 +236,17 @@ public class Dialog : MonoBehaviour {
 	public bool submitPassivelyToDialog(GameObject other) {
 
 		// if we're already talking to someone
-		if (areTalkingToSomeone) return false;
+		if (IsTalking()) {
+			print("Already Talking");
+			return false;
+		}
 
 		// remember that the other Persona started this dialog
 		initiatedDialog = false;
 		// remember who that Persona is
 		rememberOther(other);
+		// kill any previous phylacteres
+		killPhylactere();
 		// remember where we were facing before
 		previousOrientation = transform.localRotation;
 		// turn to face that person
@@ -185,6 +258,8 @@ public class Dialog : MonoBehaviour {
 
 
 	public void abortDialog() {
+
+		if (!IsTalking()) return;
 
 		// if we initiated this dialog
 		if (initiatedDialog) {
@@ -208,7 +283,6 @@ public class Dialog : MonoBehaviour {
 
 		// we've broken the conversation, stop talking to indicate this
 		killPhylactere();
-		//speak("Goodbye " + otherPersona.name);
 		// tell the other it's over
 		otherDialog.abortDialog();
 
@@ -216,8 +290,6 @@ public class Dialog : MonoBehaviour {
 
 
 	void abortPassive() {
-
-		//speak("Goodbye " + otherPersona.name);
 
 		// turn back to whatever we were doing
 		transform.localRotation = previousOrientation;
@@ -232,8 +304,6 @@ public class Dialog : MonoBehaviour {
 
 	void rememberOther(GameObject other) {
 
-		// note that we're in a dialog
-		areTalkingToSomeone = true;
 		// remember who that Persona is
 		otherPersona = other;
 		// get that other's Dialog
@@ -256,7 +326,6 @@ public class Dialog : MonoBehaviour {
 
 	void forgetOther() {
 		
-		areTalkingToSomeone = false;
 		initiatedDialog = false;
 
 		otherPersona = null;

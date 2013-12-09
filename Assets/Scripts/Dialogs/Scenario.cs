@@ -25,12 +25,49 @@ public class Scenario : MonoBehaviour {
 
 	// Access
 
-	public string GetPhrase(string dialogID, bool activeOrPassive) {
+	public List<string> GetPhrases(string dialogID, bool activeOrPassive) {
 
 		checkID(dialogID);
 
-		if (activeOrPassive) return GetPhraseActive(dialogID);
-		else return GetPhrasePassive(dialogID);
+		if (activeOrPassive) return GetPhrasesActive(dialogID);
+		else return GetPhrasesPassive(dialogID);
+
+	}
+
+
+	List<string> GetPhrasesActive(string dialogID) {
+
+		switch(Index(dialogID)) {
+
+			case 0 : return new List<string>(){"Hello"};
+			case 1 : return new List<string>(){"I'm fine. And you?", "Asshole, Go Fuck Off!", "I dunno. I think I broke my leg."};
+			case 2 : return new List<string>(){"That's good."};
+			default: return new List<string>(){"..."};
+
+		}
+
+	}
+
+
+	List<string> GetPhrasesPassive(string dialogID) {
+
+		switch(Index(dialogID)) {
+
+			case 0	: return new List<string>(){"Oh hey it's you. Hello", "Hello", "Hi There!", "Hey..."};
+			case 1	: return new List<string>(){"It's a nice day isn't it. How are you?"};
+			case 2	: return new List<string>(){"I'm doing ok."};
+			default	: return new List<string>(){"..."};
+
+		}
+
+	}
+
+
+	public void Choose(string dialogID, int index) {
+
+		print("Multiple choice answer:" + index + "\n" + GetPhrasesActive(dialogID)[index]);
+
+		SetIndex(dialogID, Index(dialogID)+1);
 
 	}
 
@@ -73,34 +110,6 @@ public class Scenario : MonoBehaviour {
 		// generate a dictionary entry for this instance
 		// start the index at 0 (beginning of phrasebook)
 		conversations.Add(dialogID, new Conversation(dialogID));
-
-	}
-
-
-	string GetPhraseActive(string dialogID) {
-
-		switch(Index(dialogID)) {
-
-			case 0 : return "Hello";
-			case 1 : return "I'm fine. And you?";
-			case 2 : return "That's good.";
-			default: return "...";
-
-		}
-
-	}
-
-
-	string GetPhrasePassive(string dialogID) {
-
-		switch(Index(dialogID)) {
-
-			case 0	: return "Oh hey it's you. Hello";
-			case 1	: return "How are you?";
-			case 2	: return "I'm doing ok.";
-			default	: return "...";
-
-		}
 
 	}
 

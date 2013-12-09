@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Linq;
 using System.Collections.Generic; // required for List<>
 using Pathfinding; // Pathfinding include
 
@@ -201,13 +200,12 @@ public class Walking : MonoBehaviour {
         // remove first element if list is too big
         if (latestDistances.Count > 10) latestDistances.RemoveAt(0);
 
-        /*
         // get the average of all that (previously used .Average(), but this required Linq which is overkill)
         float average = 0.0f;
         foreach(float f in latestDistances) average += f;
         average /= (float)latestDistances.Count;
-        */
-        float average = latestDistances.Average();
+        
+        //float average = latestDistances.Average();
 
         // is the average movement large enough?
         if (average > 0.001f) {
@@ -242,7 +240,7 @@ public class Walking : MonoBehaviour {
 
     void OnTriggerEnter(Collider other){
 
-        if ("Persona" == other.gameObject.tag) {
+        if ("Persona" == other.gameObject.tag && isCloseEnoughToTarget(other.gameObject)) {
             abortWalking();
             addToCollisionList(other.gameObject);
             dialog.activateDialog(other.gameObject);
@@ -262,6 +260,15 @@ public class Walking : MonoBehaviour {
             removeFromCollisionList(other.gameObject);
             dialog.abortDialog();
         }
+
+    }
+
+
+
+    bool isCloseEnoughToTarget(GameObject obj) {
+
+        if (Vector3.Distance(targetPosition, obj.transform.position) < nextPointRadius) return true;
+        else return false;
 
     }
 
@@ -459,6 +466,9 @@ public class Walking : MonoBehaviour {
         // remove previous path
         clearPath();
 
+        // stop any current dialogs
+        dialog.abortDialog();
+
         targetPosition = newTarget;
 
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
@@ -521,7 +531,7 @@ public class Walking : MonoBehaviour {
 
     }
 
-
+    /*
     // MARK: Linq function
 
     void whoIsAroundMe(float radius) {
@@ -535,6 +545,6 @@ public class Walking : MonoBehaviour {
             print(t);
         }
 
-    }
+    }*/
 
 } 

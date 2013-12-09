@@ -1089,8 +1089,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100048}
-  m_LocalRotation: {x: -.499999642, y: .500000358, z: .499999642, w: .500000358}
-  m_LocalPosition: {x: 8.881784e-18, y: 2.7755575e-19, z: 0}
+  m_LocalRotation: {x: -.411767721, y: .574845493, z: .411767751, w: .574845493}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: .99999994, z: .99999994}
   m_Children:
   - {fileID: 400006}
@@ -1120,7 +1120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100030}
   m_LocalRotation: {x: 0, y: -.718266845, z: 0, w: .69576776}
-  m_LocalPosition: {x: -171.396042, y: .5, z: -83.4656219}
+  m_LocalPosition: {x: -161.450653, y: .5, z: -83.1490555}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 400010}
@@ -1923,7 +1923,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.75
+  m_Radius: 1.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
@@ -1937,7 +1937,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 42c9dfd3d29394e6fa7ce80f5ea55de5, type: 2}
+  - {fileID: 2100000, guid: 263d585a48c5c41d385a7018bfd0cfea, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

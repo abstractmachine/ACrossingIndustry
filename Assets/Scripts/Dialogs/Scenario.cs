@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic; // used for Dictionary
+using System.Text.RegularExpressions; // used for Regex
+using System.Linq;
 
 public class Scenario : MonoBehaviour {
 
@@ -13,6 +15,13 @@ public class Scenario : MonoBehaviour {
         get { 
             return instance ?? (instance = new GameObject("Scenario").AddComponent<Scenario>()); 
         }
+    }
+
+
+    public void LoadDialogues() {
+
+    	Parser.Instance.LoadDialogues();
+
     }
 
 
@@ -39,9 +48,9 @@ public class Scenario : MonoBehaviour {
 
 		switch(Index(dialogID)) {
 
-			case 0 : return new List<string>(){"Hello"};
-			case 1 : return new List<string>(){"I'm fine. And you?", "Asshole, Go Fuck Off!", "I dunno. I think I broke my leg."};
-			case 2 : return new List<string>(){"That's good."};
+			case 0 : return new List<string>(){"Greeting"};
+			case 1 : return new List<string>(){"Multiple-choice reply #1", "Reply #2", "Reply #3"};
+			case 2 : return new List<string>(){"Response"};
 			default: return new List<string>(){"..."};
 
 		}
@@ -53,9 +62,9 @@ public class Scenario : MonoBehaviour {
 
 		switch(Index(dialogID)) {
 
-			case 0	: return new List<string>(){"Oh hey it's you. Hello", "Hello", "Hi There!", "Hey..."};
-			case 1	: return new List<string>(){"It's a nice day isn't it. How are you?"};
-			case 2	: return new List<string>(){"I'm doing ok."};
+			case 0	: return new List<string>(){"Greeting #1", "Greeting #2", "Greeting #3", "Greeting #4"};
+			case 1	: return new List<string>(){"A question?"};
+			case 2	: return new List<string>(){"Another query."};
 			default	: return new List<string>(){"..."};
 
 		}

@@ -20,6 +20,13 @@ public class GameState : MonoBehaviour {
 
 	}
 
+
+	void Awake() {
+
+		Scenario.Instance.LoadDialogues();
+
+	}
+
 	void Update() {
 
 		updateDaylight();

@@ -4,6 +4,7 @@ using System.Collections;
 public class Daylight : MonoBehaviour {
 
 	public Light lightPtr;
+	public GameObject surfacePtr;
 
 	// Use this for initialization
 	void Start () {
@@ -15,18 +16,16 @@ public class Daylight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		drawBackground();
-
-	}
-
-
-	void drawBackground() {
-
 		float timeSaturation = GameState.Instance.getTimeSaturation();
-		Camera.main.backgroundColor = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
+
+		Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
+
+		Camera.main.backgroundColor = c;
 
 		float lightAngle = 180.0f + (timeSaturation * 180.0f);
 		lightPtr.transform.rotation = Quaternion.Euler(60.0f, lightAngle, 120.0f);
+
+		surfacePtr.renderer.material.color = c;
 
 	}
 

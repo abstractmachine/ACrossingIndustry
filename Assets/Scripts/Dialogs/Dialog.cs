@@ -250,7 +250,7 @@ public class Dialog : MonoBehaviour {
 		// remember where we were facing before
 		previousOrientation = transform.localRotation;
 		// turn to face that person
-		transform.LookAt(other.transform, Vector3.up);
+		transform.LookAt(other.transform.position, Vector3.up);
 		// ok, we are free to start dialog with the other
 		return true;
 

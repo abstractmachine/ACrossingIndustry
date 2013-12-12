@@ -145,7 +145,7 @@ public class ClickTouch : MonoBehaviour {
 	void setClickTarget(Vector3 loc) {
 
 		// just in case
-		loc.y = 0;
+		loc.y = 0.01f;
 		// kill all other clicks
 		GameObject[] otherClicks;
     	otherClicks = GameObject.FindGameObjectsWithTag("ClickTouch");

@@ -17,7 +17,7 @@ public class Parser : MonoBehaviour {
         }
     }
 
-
+/*
     class SpeechAct {
    		public int index;
    		public List<SpeechItem> speeches;
@@ -37,7 +37,7 @@ public class Parser : MonoBehaviour {
    		public string condition;
    		public List<int> next;
    	}
-
+*/
 
 
     public void LoadDialogues() {
@@ -67,12 +67,12 @@ public class Parser : MonoBehaviour {
 
 		// the line numbers continue over several lines
 		int currentIndex = 0;
-		string currentPersonaSays = "";
+		/*string currentPersonaSays = "";
 		string currentPlayerSays = "";
 		string currentPersonaAction = "";
 		string currentPlayerAction = "";
 		string currentCondition = "";
-		string currentNextIndex = "";
+		string currentNextIndex = "";*/
 
 		// go through the data
 		for(int i=1; i<grid.GetUpperBound(1); i++) {
@@ -82,11 +82,11 @@ public class Parser : MonoBehaviour {
 			if (index != "") currentIndex = System.Convert.ToInt32(index);
 
 			string personaSays = parseString(grid[1,i]);
-			string playerSays = parseString(grid[2,i]);
-			string personaAction = grid[3,i];
-			string playerAction = grid[4,i];
-			string condition = grid[5,i];
-			string nextIndex = grid[6,i];
+//			string playerSays = parseString(grid[2,i]);
+//			string personaAction = grid[3,i];
+//			string playerAction = grid[4,i];
+//			string condition = grid[5,i];
+//			string nextIndex = grid[6,i];
 
 			if (personaSays == "") {
 

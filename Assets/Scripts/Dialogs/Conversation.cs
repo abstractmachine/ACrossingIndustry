@@ -8,7 +8,7 @@ public class Conversation {
 
 	// the last timestamp of the conversation
 	public float lastTime { get; set; }
-	public float timeoutLength = 3600.0f; // 60 minutes
+	public float timeoutLength = 300.0f; // 5 minutes
 
 	// the state of their conversation
 	int index = 0;

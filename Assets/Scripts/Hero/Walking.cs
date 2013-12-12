@@ -23,6 +23,8 @@ public class Walking : MonoBehaviour {
     public Vector3 targetPosition;
     Vector3 lastPosition;
     List<float> latestDistances = new List<float>();
+    List<Vector3> targetHistory = new List<Vector3>();
+    public int targetHistoryMax = 100;
     
     //The AI's speed per second
     public float speed = 100;
@@ -45,6 +47,10 @@ public class Walking : MonoBehaviour {
     float stuckTimeDelay = 0.1f;
     float stuckTimeout = 0.0f;
 
+    // the time it takes to get bored and randomly click somewhere
+    public float impatienceDelay = 120.0f; // two minutes
+    float impatienceCountdown = 0f;
+
     // where is the endPoint in the vectorPath?
     int endPointIndex = -1;
     //The waypoint we are currently moving towards
@@ -55,6 +61,9 @@ public class Walking : MonoBehaviour {
 
     // others I'm currently in collision with
     List<GameObject> collisions = new List<GameObject>();
+
+    // state accessor
+    public bool IsWalking() { return path != null; }
 
 
     // MARK: Init
@@ -67,6 +76,8 @@ public class Walking : MonoBehaviour {
         follow = Camera.main.GetComponent<Follow>();
 
         resetWaitingForPathDelay();
+
+        ResetImpatience();
 
     }
 
@@ -84,6 +95,9 @@ public class Walking : MonoBehaviour {
         // update pathfinding
         updateSeeker();
 
+        // update impatience timer
+        UpdateImpatience();
+
         // if we have no path to move to, nothing to do
         if (path == null) return;
 
@@ -92,6 +106,9 @@ public class Walking : MonoBehaviour {
 
         // in case we anulled walk during updatePosition
         if (path == null) return;
+
+        // we must be walking
+        ResetImpatience();
 
         // zoom in/out based on our proximity to endPoint
         updateCamera();
@@ -184,6 +201,19 @@ public class Walking : MonoBehaviour {
             snapToTarget();
             // stop walking animation; clear path
             abortWalking();
+        }
+
+    }
+
+
+    void UpdateImpatience() {
+
+        impatienceCountdown -= Time.deltaTime;
+
+        // if we run out of patience
+        if (impatienceCountdown <= 0.0f) {
+            // randomly click somewhere for us
+            SetRandomTarget();
         }
 
     }
@@ -483,7 +513,52 @@ public class Walking : MonoBehaviour {
         // create an x-spot where we clicked
         Instantiate(xSpot, newTarget, Quaternion.identity);
 
+        // record this position
+        RecordTargetHistory(newTarget);
+
+        // reset the "I'm bored" countdown
+        ResetImpatience();
+
     }
+
+
+    void RecordTargetHistory(Vector3 newTarget) {
+
+        // append a new value to the end of our List<Vector3>
+        targetHistory.Add(newTarget);
+
+        // if too many elements in list
+        if (targetHistory.Count > targetHistoryMax) {
+            // remove from beginning of list (i.e. the oldest in the list)
+            targetHistory.RemoveAt(0);
+        }
+
+    }
+
+
+
+    void SetRandomTarget() {
+
+        // if no history, forget it
+        if (targetHistory.Count == 0) return;
+
+        // if we're walking, wait until we're done
+        if (IsWalking()) return;
+
+        // extract a random position from the list
+        Vector3 randomPosition = targetHistory[(int)Random.Range(0,targetHistory.Count)];
+
+        // if target is too close to us, abort. We'll chose another on the next cycle
+        if (Vector3.Distance(transform.position,randomPosition) < 15) {
+            return;
+        }
+
+        // set that position
+        setTargetPosition(randomPosition);
+
+    }
+
+
     
     public void OnPathComplete (Path p) {
 
@@ -501,6 +576,14 @@ public class Walking : MonoBehaviour {
             // ok, we're seeking
             isWaitingForSeeker = false;
         }
+
+    }
+
+
+
+    public void ResetImpatience() {
+
+        impatienceCountdown = impatienceDelay;
 
     }
 

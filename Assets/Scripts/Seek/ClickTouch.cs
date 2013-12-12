@@ -42,6 +42,9 @@ public class ClickTouch : MonoBehaviour {
 					phylactere = null;
 				}
 
+				// tell the hero that there's been some activity
+				walking.ResetImpatience();
+
 			}
 
 		} else {
@@ -51,14 +54,24 @@ public class ClickTouch : MonoBehaviour {
 				checkHit(Input.mousePosition);
 				lastTouchPosition = Input.mousePosition;
 
+				// tell the hero that there's been some activity
+				walking.ResetImpatience();
+
 			} else if (phylactere != null && Input.GetMouseButton(0)) { 	// if we're interacting with a phylactere
 				if (Vector3.Distance(lastTouchPosition,Input.mousePosition) > 0) phylactere.touchMoved(Input.mousePosition);
 				lastTouchPosition = Input.mousePosition;
+
+				// tell the hero that there's been some activity
+				walking.ResetImpatience();
 			
 			} else if (phylactere != null && Input.GetMouseButtonUp(0)) {	// if we're interacting with a phylactere
 				phylactere.touchUp(Input.mousePosition);
 				lastTouchPosition = Vector3.zero;
 				phylactere = null;
+
+				// tell the hero that there's been some activity
+				walking.ResetImpatience();
+				
 			}
 
 		}

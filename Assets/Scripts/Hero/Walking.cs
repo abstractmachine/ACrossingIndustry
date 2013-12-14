@@ -491,7 +491,7 @@ public class Walking : MonoBehaviour {
 
     // MARK: Path Targeting
 
-    public void setTargetPosition(Vector3 newTarget) {
+    public void setTargetPosition(Vector3 newTarget, bool record=true) {
 
         // remove previous path
         clearPath();
@@ -514,7 +514,7 @@ public class Walking : MonoBehaviour {
         Instantiate(xSpot, newTarget, Quaternion.identity);
 
         // record this position
-        RecordTargetHistory(newTarget);
+        if (record) RecordTargetHistory(newTarget);
 
         // reset the "I'm bored" countdown
         ResetImpatience();
@@ -554,7 +554,7 @@ public class Walking : MonoBehaviour {
         }
 
         // set that position
-        setTargetPosition(randomPosition);
+        setTargetPosition(randomPosition,false);
 
     }
 

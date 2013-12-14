@@ -78,6 +78,7 @@ public class GameState : MonoBehaviour {
 			if (null == instance) {
 				// instantiate it
 				instance = new GameObject("GameState").AddComponent<GameState>();
+				GameObject.Find("GameState").GetComponent<GameState>().enabled = true;
 			}
 			// get the pointer to the instance
 			return instance;

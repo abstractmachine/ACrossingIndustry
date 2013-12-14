@@ -18,85 +18,81 @@ public class Scenario : MonoBehaviour {
     }
 
 
-    public void LoadDialogues() {
-
-    	Parser.Instance.LoadDialogues();
-
-    }
-
-
 
     // Database
 
 	Dictionary<string,Conversation> conversations = new Dictionary<string,Conversation>();
 
 
+    public void LoadDialogues() {
+
+    	AddConversation("Ouvrier", "Pivert");
+
+    }
+
+
 
 	// Access
 
-	public List<string> GetPhrases(string dialogID, bool activeOrPassive) {
+	public List<string> GetPhrases(string dialogID, bool isPlayer) {
 
-		checkID(dialogID);
-
-		if (activeOrPassive) return GetPhrasesActive(dialogID);
-		else return GetPhrasesPassive(dialogID);
-
-	}
-
-
-	List<string> GetPhrasesActive(string dialogID) {
-
-		switch(Index(dialogID)) {
-
-			case 0 : return new List<string>(){"Greeting"};
-			case 1 : return new List<string>(){"Multiple-choice reply #1", "Reply #2", "Reply #3"};
-			case 2 : return new List<string>(){"Response"};
-			default: return new List<string>(){"..."};
-
+		// if there is nothing with this key
+		if (!checkID(dialogID)) {
+			print("Error: unknown key in Dictionary (" + dialogID + ")");
+			return new List<string>();
 		}
 
-	}
+		Conversation conversation = conversations[dialogID];
 
-
-	List<string> GetPhrasesPassive(string dialogID) {
-
-		switch(Index(dialogID)) {
-
-			case 0	: return new List<string>(){"Greeting #1", "Greeting #2", "Greeting #3", "Greeting #4"};
-			case 1	: return new List<string>(){"A question?"};
-			case 2	: return new List<string>(){"Another query."};
-			default	: return new List<string>(){"..."};
-
-		}
+		return conversation.GetPhrases(isPlayer);
 
 	}
 
 
-	public void Choose(string dialogID, int index) {
+	public void Choose(string dialogID, string chosenPhrase) {
 
-		print("Multiple choice answer:" + index + "\n" + GetPhrasesActive(dialogID)[index]);
+		Conversation conversation = conversations[dialogID];
+		int index = conversation.getNextSpeechActIndex(chosenPhrase);
+		SetIndex(dialogID, index);
 
-		SetIndex(dialogID, Index(dialogID)+1);
+		//SetIndex(dialogID, Index(dialogID)+1);
 
 	}
 
 
+/*
 	public void Next(string dialogID) {
 
-		checkID(dialogID);
+		if (!checkID(dialogID)) return;
 
-		// TODO: check to see if this is at the end of the index
+		Conversation conversation = conversations[dialogID];
+		int index = conversation.getNextSpeechActIndex();
+		SetIndex(dialogID, index);
 
-		SetIndex(dialogID, Index(dialogID)+1);
+		//SetIndex(dialogID, Index(dialogID)+1);
 
 	}
+	*/
+
+
+	public bool IsNeutral(string dialogID) {
+
+		return (Index(dialogID) == 0);
+	
+	}
+
 
 
 	public void Reset(string dialogID) {
 
-		checkID(dialogID);
-
 		SetIndex(dialogID,0);
+
+	}
+
+
+	public void StartConversation(string dialogID) {
+
+		SetIndex(dialogID,1);
 
 	}
 
@@ -104,21 +100,23 @@ public class Scenario : MonoBehaviour {
 
 	// Internals
 
-	void checkID(string dialogID) {
+	bool checkID(string dialogID) {
+
+		// ok, found the key
+		if (conversations.ContainsKey(dialogID)) return true;
 
 		// if we've never started this conversation
-		if (!conversations.ContainsKey(dialogID)) {
-			AddConversation(dialogID);
-		}
+		return false;
 
 	}
 
 
-	void AddConversation(string dialogID) {
-		
+	void AddConversation(string playerId, string personaId) {
+
+		string dialogID = playerId + "-" + personaId;
+
 		// generate a dictionary entry for this instance
-		// start the index at 0 (beginning of phrasebook)
-		conversations.Add(dialogID, new Conversation(dialogID));
+		conversations.Add(dialogID, new Conversation(playerId,personaId));
 
 	}
 
@@ -137,8 +135,6 @@ public class Scenario : MonoBehaviour {
 
 
 	void SetIndex(string dialogID, int index) {
-
-		//conversations[dialogID] = index;
 
 		conversations[dialogID].Index = index;
 

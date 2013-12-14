@@ -399,9 +399,12 @@ public class Phylactere : MonoBehaviour {
 		// make sure the parent (the Persona) is there
 		if (transform.parent == null) return;
 		// if this is a multiple choice
-		if (speech.texts.Count > 1) transform.parent.GetComponent<Dialog>().finishedSpeaking(speech.textIndex);
+		//if (speech.texts.Count > 1) transform.parent.GetComponent<Dialog>().finishedSpeaking(speech.textIndex);
 		// tell the parent object we've finished speaking
-		transform.parent.GetComponent<Dialog>().finishedSpeaking();
+		//else transform.parent.GetComponent<Dialog>().finishedSpeaking();
+
+		// tell the parent object which phrase we chose
+		transform.parent.GetComponent<Dialog>().finishedSpeaking(speech.text);
 
 	}
 
@@ -524,7 +527,7 @@ public class Phylactere : MonoBehaviour {
 		// calculate delta
 		float xDelta = (float)(touchStop.x - touchStart.x);
 
-		if (!spinner.spinning && Mathf.Abs(xDelta) > 100) {
+		if (!spinner.spinning && Mathf.Abs(xDelta) > 30) {
 			spinner.spinning = true;
 		}
 
@@ -535,7 +538,7 @@ public class Phylactere : MonoBehaviour {
 		if (Application.platform == RuntimePlatform.IPhonePlayer) {
 			rotations = (int)(xDelta / (Screen.width/10));
 		} else {
-			rotations = (int)(xDelta / (Screen.width/30));
+			rotations = (int)(xDelta / (Screen.width/15));
 		}
 
 		// if there is only one text, no need to calculate rotations

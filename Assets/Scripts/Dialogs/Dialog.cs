@@ -71,6 +71,11 @@ public class Dialog : MonoBehaviour {
 
 	void startDialog() {
 
+		// if the dialogue is currently at zero, start it
+		if (Scenario.Instance.IsNeutral(dialogID)) {
+			Scenario.Instance.StartConversation(dialogID);
+		}
+
 		// tell the submissive other to start the actual talking
 		otherDialog.reply();
 
@@ -111,8 +116,11 @@ public class Dialog : MonoBehaviour {
 
 		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,false);
 
-		// if error
-		if (phrases.Count == 0) return;
+		// if no reply
+		if (phrases.Count == 0) {
+			// set 
+			return;
+		}
 
 		// if there are several possible phrases, randomly choose one
 		if (phrases.Count > 1) {
@@ -131,26 +139,42 @@ public class Dialog : MonoBehaviour {
 
 		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,true);
 
-		// if error
-		if (phrases.Count == 0) return;
+		// if we don't have anything to reply
+		if (phrases.Count == 0) {
+			// set the conversation index back to zero
+			Scenario.Instance.Reset(dialogID);
+			// get outta here
+			return;
+		}
 
 		speak(phrases);
 
 	}
 
 
-	public void finishedSpeaking(int choiceIndex) {
+	public void finishedSpeaking(string chosenPhrase) {
 
 		// if there's no more other, we must have finished speaking. No need to reply
 		if (otherPersona == null || otherDialog == null) return;
-		// tell the dialogue engine we've made a choice
-		Scenario.Instance.Choose(dialogID, choiceIndex);
-		// tell the other to reply
-		otherDialog.reply();
+
+		// if we're the subordinate one, let the initiator reply
+		if (!initiatedDialog) {
+			// tell the other to reply to use
+			otherDialog.reply();
+		}
+
+		// if we're the dominant one
+		if (initiatedDialog) {
+			// tell the dialogue engine we've made a choice
+			Scenario.Instance.Choose(dialogID, chosenPhrase);
+			// tell the other to reply
+			otherDialog.reply();
+		} 
 
 	}
 
 
+	/*
 	public void finishedSpeaking() {
 
 		// if there's no more other, we must have finished speaking. No need to reply
@@ -164,7 +188,6 @@ public class Dialog : MonoBehaviour {
 
 		// if we're the dominant one
 		if (initiatedDialog) {
-
 			// increment the index by 1
 			Scenario.Instance.Next(dialogID);
 			// tell the other to reply
@@ -172,7 +195,7 @@ public class Dialog : MonoBehaviour {
 		} 
 
 	}
-
+*/
 
 
 	public void ClickAccelerate() {
@@ -311,16 +334,17 @@ public class Dialog : MonoBehaviour {
 
 		// are we the active or passive one?
 		if (initiatedDialog) {
-			dialogID = "" + getId() + "," + otherDialog.getId();
+			dialogID = "" + getId() + "-" + otherDialog.getId();
 		} else {
-			dialogID = "" + otherDialog.getId() + "," + getId();
+			dialogID = "" + otherDialog.getId() + "-" + getId();
 		}
 
 	}
 
 
-	int getId() {
-		return GetInstanceID();
+	string getId() {
+		return gameObject.name;
+		//return GetInstanceID();
 	}
 
 

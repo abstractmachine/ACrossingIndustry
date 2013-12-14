@@ -6,7 +6,7 @@ public class GameStateLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Screen.showCursor = false;
+		//Screen.showCursor = false;
 
 		// if not yet instantiated
 		if (!GameState.isInstantiated) {

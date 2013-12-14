@@ -12,8 +12,8 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: ESAx
   productName: A Crossing Industry
-  defaultCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  defaultCursor: {fileID: 2800000, guid: 6899086fa7af24b6e9e4d3d4521fe57e, type: 3}
+  cursorHotspot: {x: 16, y: 16}
   defaultScreenWidth: 1440
   defaultScreenHeight: 900
   defaultScreenWidthWeb: 960

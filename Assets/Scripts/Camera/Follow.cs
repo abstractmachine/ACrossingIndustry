@@ -96,7 +96,10 @@ public class Follow : MonoBehaviour {
 
         foreach(RaycastHit hit in hits){
 
+            // only obstacles are transparent
             if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Obstacles")) continue;
+            // no transparency for Mountains
+            if (hit.collider.gameObject.tag == "Mountain") continue;
 
             // make sure we're not trying to hide the wrong object
         	//if (hit.collider.name == "Persona" || hit.collider.name == "Player" || hit.collider.name == "Ground" || hit.collider.name == "Clicker") continue;

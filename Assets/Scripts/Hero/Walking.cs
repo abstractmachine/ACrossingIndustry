@@ -168,7 +168,13 @@ public class Walking : MonoBehaviour {
 
     void updateCamera() {
 
-        follow.setZoom(currentDistanceToEndPoint * 1.0f);
+        //float zoomScale = (Screen.width/1680.0f);
+        float zoomScale = 1.0f;
+        float zoomDistance = currentDistanceToEndPoint * zoomScale;
+
+        zoomDistance = Mathf.Pow(zoomDistance,1.4f);
+
+        follow.setZoom(zoomDistance);
 
     }
 

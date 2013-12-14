@@ -62,7 +62,10 @@ public class Follow : MonoBehaviour {
 
     void updateZoom() {
 
-        float t = Time.deltaTime * zoomSpeed;
+        float t = Time.deltaTime;
+
+        if (zoomLevel-Camera.main.orthographicSize > 0) t *= (zoomSpeed * 1.0f);
+        else t *= (zoomSpeed * 2.0f);
 
         Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoomLevel, t);
 

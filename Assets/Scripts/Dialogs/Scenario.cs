@@ -27,6 +27,7 @@ public class Scenario : MonoBehaviour {
     public void LoadDialogues() {
 
     	AddConversation("Ouvrier", "Pivert");
+    	AddConversation("Ouvrier", "ColonAPied");
 
     }
 
@@ -58,21 +59,6 @@ public class Scenario : MonoBehaviour {
 		//SetIndex(dialogID, Index(dialogID)+1);
 
 	}
-
-
-/*
-	public void Next(string dialogID) {
-
-		if (!checkID(dialogID)) return;
-
-		Conversation conversation = conversations[dialogID];
-		int index = conversation.getNextSpeechActIndex();
-		SetIndex(dialogID, index);
-
-		//SetIndex(dialogID, Index(dialogID)+1);
-
-	}
-	*/
 
 
 	public bool IsNeutral(string dialogID) {

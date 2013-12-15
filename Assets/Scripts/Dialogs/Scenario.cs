@@ -6,11 +6,14 @@ using System.Linq;
 
 public class Scenario : MonoBehaviour {
 
+    // state
+    bool loaded = false;
+    // Database
+	Dictionary<string,Conversation> conversations = new Dictionary<string,Conversation>();
 
-	// Instance
 
+	// Singleton
     private static Scenario instance;
-
     public static Scenario Instance {
         get { 
             return instance ?? (instance = new GameObject("Scenario").AddComponent<Scenario>()); 
@@ -18,16 +21,15 @@ public class Scenario : MonoBehaviour {
     }
 
 
-
-    // Database
-
-	Dictionary<string,Conversation> conversations = new Dictionary<string,Conversation>();
-
-
     public void LoadDialogues() {
+
+    	// if we've already loaded, forget it
+    	if (loaded) return;
 
     	AddConversation("Ouvrier", "Pivert");
     	AddConversation("Ouvrier", "ColonAPied");
+
+    	loaded = true;
 
     }
 

@@ -22,6 +22,11 @@ public class Dialog : MonoBehaviour {
 	// our previous rotation
 	Quaternion previousOrientation = Quaternion.identity;
 
+	void Awake() {
+
+        Scenario.Instance.LoadDialogues();
+
+	}
 
 	//////////////////////////
 
@@ -172,30 +177,6 @@ public class Dialog : MonoBehaviour {
 		} 
 
 	}
-
-
-	/*
-	public void finishedSpeaking() {
-
-		// if there's no more other, we must have finished speaking. No need to reply
-		if (otherPersona == null || otherDialog == null) return;
-
-		// if we're the subordinate one, let the initiator reply
-		if (!initiatedDialog) {
-			// tell the other to reply to use
-			otherDialog.reply();
-		}
-
-		// if we're the dominant one
-		if (initiatedDialog) {
-			// increment the index by 1
-			Scenario.Instance.Next(dialogID);
-			// tell the other to reply
-			otherDialog.reply();
-		} 
-
-	}
-*/
 
 
 	public void ClickAccelerate() {

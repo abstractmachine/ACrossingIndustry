@@ -88,10 +88,10 @@ public class Dialog : MonoBehaviour {
 
 
 
-	void speak(List<string> phrases) {
+	void Speak(List<string> phrases) {
 
 		createPhylactere();
-		phylactere.GetComponent<Phylactere>().speak(phrases);
+		phylactere.GetComponent<Phylactere>().Speak(phrases);
 
 	}
 
@@ -123,19 +123,21 @@ public class Dialog : MonoBehaviour {
 
 		// if no reply
 		if (phrases.Count == 0) {
-			// set 
+			// stop talking
+			abortDialog();
+			// don't Speak
 			return;
 		}
 
 		// if there are several possible phrases, randomly choose one
 		if (phrases.Count > 1) {
-			string phrase = phrases[(int)Random.Range(0,phrases.Count)];
+			string randomPhrase = phrases[(int)Random.Range(0,phrases.Count)];
 			// empty the list
 			phrases = new List<string>();
-			phrases.Add(phrase);
+			phrases.Add(randomPhrase);
 		}
 
-		speak(phrases);
+		Speak(phrases);
 
 	}
 
@@ -148,18 +150,20 @@ public class Dialog : MonoBehaviour {
 		if (phrases.Count == 0) {
 			// set the conversation index back to zero
 			Scenario.Instance.Reset(dialogID);
+			// stop talking
+			abortDialog();
 			// get outta here
 			return;
 		}
 
-		speak(phrases);
+		Speak(phrases);
 
 	}
 
 
 	public void finishedSpeaking(string chosenPhrase) {
 
-		// if there's no more other, we must have finished speaking. No need to reply
+		// if there's no more other, we must have finished Speaking. No need to reply
 		if (otherPersona == null || otherDialog == null) return;
 
 		// if we're the subordinate one, let the initiator reply

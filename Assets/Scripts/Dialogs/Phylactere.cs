@@ -12,7 +12,7 @@ public class Phylactere : MonoBehaviour {
 	class Speech {
 		public GameObject frame; 						// a pointer to the frame around the text (since we need to resize it)
 		public List<string> texts = new List<string>();	// the text alternatives
-		public int textIndex = 0;						// which text are we displaying
+		public int index = 0;							// which text are we displaying
 		public string text = "";						// the actual text content
 		public int charIndex = 0;						// the current index of the character
 		public float charTimer = 0;						// the time remaining before next character
@@ -38,6 +38,7 @@ public class Phylactere : MonoBehaviour {
 
 	// a pointer to the text mesh component
 	TextMesh textMesh;
+	TextMesh textIndexMesh;
 	GameObject textObject;
 
 	Vector2 touchStart = new Vector2(-1,-1);
@@ -54,6 +55,9 @@ public class Phylactere : MonoBehaviour {
 		// the text we write into
 		textObject = spinner.gameObject.transform.Find("Speech").gameObject;
 		textMesh = textObject.GetComponent<TextMesh>();
+
+		// when there are multiple-choice possibilities, we display the current index
+		textIndexMesh = spinner.gameObject.transform.Find("Index").gameObject.GetComponent<TextMesh>();
 		
 		// the cadre of the text
 		speech.frame = spinner.gameObject.transform.Find("Bulle").Find("PlaneScaler").gameObject;
@@ -84,7 +88,7 @@ public class Phylactere : MonoBehaviour {
 	void OnDestroy() {
 
 		// if we need to reply to this phrase
-		// tell the parent gameObject that we've finished speaking
+		// tell the parent gameObject that we've finished Speaking
 		if (speech.shouldReply) finishedSpeaking();
 		
 		if (mat != null) DestroyImmediate(mat);
@@ -106,7 +110,7 @@ public class Phylactere : MonoBehaviour {
 
 		float deltaTime = Time.time - (spinner.startTime);
 		float sineTime = Mathf.Abs(Mathf.Sin(deltaTime * 0.1f));
-		sineTime *= 2.0f;
+		sineTime *= 4.0f;
 		sineTime += 0.75f;
 
 		Invoke("SwitchChoice", sineTime);
@@ -153,7 +157,7 @@ public class Phylactere : MonoBehaviour {
 
 		// calculate using line length
 		int lineCount = speech.text.Split('\n').Length;
-		float duration = 0.5f + (3.5f*lineCount);
+		float duration = 1.0f + (4.0f*lineCount);
 
 		Invoke("DestroyPhylactere", duration);
 
@@ -192,7 +196,7 @@ public class Phylactere : MonoBehaviour {
 		spinPhylactere();
 		
 		// if we still need to write out speech 
-		if (speech.charIndex < speech.text.Length) speakNextCharacter();
+		if (speech.charIndex < speech.text.Length) SpeakNextCharacter();
 
 	}
 
@@ -256,7 +260,7 @@ public class Phylactere : MonoBehaviour {
 	void textDisplayDidRotate() {
 
 		// if we're already at this text
-		if (spinner.index == speech.textIndex) return;
+		if (spinner.index == speech.index) return;
 
 		// show that text
 		speechForcePhrase(spinner.index);
@@ -267,9 +271,9 @@ public class Phylactere : MonoBehaviour {
 	// Speech Engine
 
 
-	// complex version: multiple-choice phrases to speak
+	// complex version: multiple-choice phrases to Speak
 
-	public void speak(List<string> phrases) {
+	public void Speak(List<string> phrases) {
 
 		// make sure we're actually supposed to say something
 		if (phrases.Count == 0) {
@@ -310,7 +314,7 @@ public class Phylactere : MonoBehaviour {
 	void speechSetPhrase(int index) {
 
 		speech.text = speech.texts[index];
-		speech.textIndex = index;
+		speech.index = index;
 		speech.charIndex = 0;
 
 		resizeFrame();
@@ -321,7 +325,7 @@ public class Phylactere : MonoBehaviour {
 	void speechForcePhrase(int index) {
 
 		speech.text = speech.texts[index];
-		speech.textIndex = index;
+		speech.index = index;
 
 		JumpToEndOfText();
 
@@ -350,7 +354,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	void speakNextCharacter() {
+	void SpeakNextCharacter() {
 
 		// count down
 		speech.charTimer -= Time.deltaTime;
@@ -388,6 +392,12 @@ public class Phylactere : MonoBehaviour {
 		//
 		//textMesh.text = parseString(speech.text);
 		textMesh.text = parseStringWithSpaces(speech.text);
+
+		// if there are multiple choice possibilities
+		if (speech.texts.Count > 1) {
+			// display
+			textIndexMesh.text = "" + speech.index;
+		}
 		//
 		resizeFrame();
 
@@ -399,8 +409,8 @@ public class Phylactere : MonoBehaviour {
 		// make sure the parent (the Persona) is there
 		if (transform.parent == null) return;
 		// if this is a multiple choice
-		//if (speech.texts.Count > 1) transform.parent.GetComponent<Dialog>().finishedSpeaking(speech.textIndex);
-		// tell the parent object we've finished speaking
+		//if (speech.texts.Count > 1) transform.parent.GetComponent<Dialog>().finishedSpeaking(speech.index);
+		// tell the parent object we've finished Speaking
 		//else transform.parent.GetComponent<Dialog>().finishedSpeaking();
 
 		// tell the parent object which phrase we chose

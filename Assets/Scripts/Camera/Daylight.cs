@@ -6,15 +6,11 @@ public class Daylight : MonoBehaviour {
 	public Light lightPtr;
 	public GameObject surfacePtr;
 
-
-
 	// time
 	public float daylightSpeed = 0.025f;
-
 	static float timePercent = 0.0f;
 	static float timeSaturation = 0.0f;
 	static int timeHour = 1;
-
 
 
 	// Use this for initialization
@@ -24,6 +20,7 @@ public class Daylight : MonoBehaviour {
 
 	}
 	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -34,6 +31,7 @@ public class Daylight : MonoBehaviour {
 		updateDaylight();
 
 	}
+
 
 	void updateDaylight() {
 
@@ -68,6 +66,7 @@ public class Daylight : MonoBehaviour {
 
 	}
 
+
 	// accessor methods
 
 	public int getTimeHour() {
@@ -83,7 +82,6 @@ public class Daylight : MonoBehaviour {
 	public float getTimePercent() {
 		return timePercent;
 	}
-
 
 
 	// Code tools

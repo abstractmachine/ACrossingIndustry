@@ -6,7 +6,6 @@ using Pathfinding; // Pathfinding include
 
 // class declaration
 public class Walking : MonoBehaviour {
- 
 
     // MARK: variable declarations
 
@@ -78,6 +77,8 @@ public class Walking : MonoBehaviour {
         resetWaitingForPathDelay();
 
         ResetImpatience();
+
+        setTargetPosition(transform.position);
 
     }
 
@@ -279,7 +280,7 @@ public class Walking : MonoBehaviour {
         if ("Persona" == other.gameObject.tag && isCloseEnoughToTarget(other.gameObject)) {
             abortWalking();
             addToCollisionList(other.gameObject);
-            dialog.activateDialog(other.gameObject);
+            StartTalking(other.gameObject);
         }
         
     }
@@ -294,8 +295,23 @@ public class Walking : MonoBehaviour {
         
         if ("Persona" == other.gameObject.tag) {
             removeFromCollisionList(other.gameObject);
-            dialog.abortDialog();
+            StopTalking(other.gameObject);
         }
+
+    }
+
+
+
+    public void StartTalking(GameObject other) {
+
+        dialog.activateDialog(other);
+
+    }
+
+
+    public void StopTalking(GameObject other) {
+
+        dialog.abortDialog();
 
     }
 

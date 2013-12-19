@@ -127,7 +127,7 @@ public class ClickTouch : MonoBehaviour {
         	if (hit.transform.gameObject.tag == "Player") {
         		// indicate that we clicked on the player
         		touchedPlayer(loc, hit.point);
-        			// ignore rest of click/touch
+        		// ignore rest of click/touch
         		return;
         	}
 
@@ -194,6 +194,10 @@ public class ClickTouch : MonoBehaviour {
 		// is someone talking?
 		if (dialog.IsTalking()) {
 			dialog.ClickAccelerate();
+		} else {
+
+			print("StartTalking " + persona);
+			walking.StartTalking(persona);
 		}
 
 	}

@@ -38,8 +38,9 @@ public class Phylactere : MonoBehaviour {
 
 	// a pointer to the text mesh component
 	TextMesh textMesh;
-	TextMesh textIndexMesh;
 	GameObject textObject;
+	TextMesh textIndexMesh;
+	GameObject textIndexObject;
 
 	Vector2 touchStart = new Vector2(-1,-1);
 	Vector2 touchStop = new Vector2(-1,-1);
@@ -52,12 +53,19 @@ public class Phylactere : MonoBehaviour {
 		// the object we use to spin the phylactere around
 		spinner.gameObject = transform.Find("Spinner").gameObject;
 
+		// set text mesh color to the background color
+		float timeSaturation = Camera.main.GetComponent<Daylight>().getTimeSaturation();
+		Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
+
 		// the text we write into
 		textObject = spinner.gameObject.transform.Find("Speech").gameObject;
 		textMesh = textObject.GetComponent<TextMesh>();
+		textMesh.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
 
 		// when there are multiple-choice possibilities, we display the current index
-		textIndexMesh = spinner.gameObject.transform.Find("Index").gameObject.GetComponent<TextMesh>();
+		textIndexObject = spinner.gameObject.transform.Find("Index").gameObject;
+		textIndexMesh = textIndexObject.GetComponent<TextMesh>();
+		textIndexMesh.color = c;
 		
 		// the cadre of the text
 		speech.frame = spinner.gameObject.transform.Find("Bulle").Find("PlaneScaler").gameObject;
@@ -243,12 +251,14 @@ public class Phylactere : MonoBehaviour {
 			// flip around text
 			textObject.transform.localRotation = Quaternion.Euler(0,180.0f,0);
 			textObject.transform.localPosition = new Vector3(1.35f, 0.4f, 0.0f);
+			textIndexObject.transform.localRotation = Quaternion.Euler(0,180.0f,0);
 			// if the last time we weren't in this rotation
 			if (spinner.lastRotation != 180) textDisplayDidRotate();
 			spinner.lastRotation = 180;
 		} else {
 			textObject.transform.localRotation = Quaternion.identity;
 			textObject.transform.localPosition = new Vector3(-1.35f, 0.4f, 0.0f);
+			textIndexObject.transform.localRotation = Quaternion.identity;
 			// if the last time we weren't in this rotation
 			if (spinner.lastRotation != 0) textDisplayDidRotate();
 			spinner.lastRotation = 0;

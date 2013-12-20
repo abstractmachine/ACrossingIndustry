@@ -48,6 +48,6 @@ Index,Says Persona,Replies Player,Action Persona,Action Player,Condition,Next,Re
 11,"""Oh! I have no idea!""/""I don't know""","""...""",,,,15,,
 ,,"""Can't you help me?""",,,,7,,
 14,"""We lost it""","""That was close""",,keeps going,,15,,
-15,"""...""",,,le joueur continue son chemin,,0,,
+15,"""…""",,,le joueur continue son chemin,,0,,
 16,"""...!?""",,tombe à terre,,,15,,
 20,"""Have you spoken with the contractor?""","""No, where is he?""",,,dans une colonie+près du contractor,10,,

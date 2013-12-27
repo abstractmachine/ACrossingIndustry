@@ -61,6 +61,9 @@ public class Walking : MonoBehaviour {
     // others I'm currently in collision with
     List<GameObject> collisions = new List<GameObject>();
 
+    // the cheat system
+    Cheat cheat;
+
     // state accessor
     public bool IsWalking() { return path != null; }
 
@@ -73,6 +76,8 @@ public class Walking : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         dialog = GetComponent<Dialog>();
         follow = Camera.main.GetComponent<Follow>();
+
+        cheat = GetComponent<Cheat>();
 
         resetWaitingForPathDelay();
 
@@ -90,29 +95,41 @@ public class Walking : MonoBehaviour {
 
 
     // MARK: Updates
+
+
+    void Update() {
+
+        // if no new keyboard inputs
+        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0)) {
+            // turn on/off cheat mode
+            cheat.KeyDown();
+        }
+
+    }
+
  
     public void FixedUpdate () {
 
-        // update pathfinding
-        updateSeeker();
+        // Update pathfinding
+        UpdateSeeker();
 
-        // update impatience timer
+        // Update impatience timer
         UpdateImpatience();
+
+        // zoom in/out based on our proximity to endPoint
+        UpdateCamera();
 
         // if we have no path to move to, nothing to do
         if (path == null) return;
 
         // calculate our position in relation to path
-        updatePosition();
+        UpdatePosition();
 
-        // in case we anulled walk during updatePosition
+        // in case we anulled walk during UpdatePosition
         if (path == null) return;
 
         // we must be walking
         ResetImpatience();
-
-        // zoom in/out based on our proximity to endPoint
-        updateCamera();
 
         // turn to face nextPoint
         turnTowardsTarget();
@@ -126,12 +143,12 @@ public class Walking : MonoBehaviour {
 
         // ok, if we're here, we're getting close
 
-        updateWaypoint();
+        UpdateWaypoint();
 
     }
 
 
-    void updateSeeker() {
+    void UpdateSeeker() {
 
         // are we still waiting for the seeker to reply with a new path?
         if (isWaitingForSeeker) {
@@ -149,7 +166,7 @@ public class Walking : MonoBehaviour {
     }
 
 
-    void updatePosition() {
+    void UpdatePosition() {
 
         // get position of feet on floor, taking into account that our center (pelvis) is at 0.5f on y axis
         Vector3 feetPosition = transform.position + new Vector3(0f,-0.5f,0f);
@@ -167,7 +184,7 @@ public class Walking : MonoBehaviour {
     }
 
 
-    void updateCamera() {
+    void UpdateCamera() {
 
         //float zoomScale = (Screen.width/1680.0f);
         float zoomScale = 1.0f;
@@ -181,7 +198,7 @@ public class Walking : MonoBehaviour {
 
 
 
-    void updateWaypoint() {
+    void UpdateWaypoint() {
 
         // if we aren't at the endpoint, proceed on to the next waypoint
         if (currentPointIndex != endPointIndex) {
@@ -446,6 +463,34 @@ public class Walking : MonoBehaviour {
             ; // print("Side collision");
         }
 
+        setCurrentDistanceToZero();
+
+    }
+
+
+    void jumpToTarget(Vector3 newTarget) {
+
+        targetPosition = newTarget;
+
+        turnToTarget(newTarget);
+
+        // get the position of the feet
+        Vector3 feetPosition = transform.position + new Vector3(0f,-0.5f,0f);
+        // get the delta vector of the target
+        Vector3 delta = newTarget - feetPosition;
+        // go directly to the final waypoint
+        //controller.Move(delta);
+        transform.position = transform.position + delta;
+
+        follow.forceZoomOut();
+        setCurrentDistanceToMax();
+
+        if (IsInvoking("setCurrentDistanceToZero")) {
+            CancelInvoke("setCurrentDistanceToZero");
+        }
+
+        Invoke("setCurrentDistanceToZero", 2.0f);
+
     }
 
 
@@ -458,6 +503,22 @@ public class Walking : MonoBehaviour {
         // ok, we've reached the end, no need to pathfind
         clearPath();
 
+        setCurrentDistanceToZero();
+
+    }
+
+
+    void setCurrentDistanceToZero() {
+
+        currentDistanceToEndPoint = 0.0f;
+
+    }
+
+
+    void setCurrentDistanceToMax() {
+
+        currentDistanceToEndPoint = follow.zoomMax;
+
     }
 
 
@@ -465,8 +526,21 @@ public class Walking : MonoBehaviour {
 
         // make sure there's a first point to point towards
         if (path.vectorPath.Count < 2) return;
+
+        turnToTarget(path.vectorPath[1]);
+        /*
         // get that first point
         Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[1]);
+        // point towards it without any restrictions
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, 360.0f);
+        */
+    }
+
+
+    void turnToTarget(Vector3 target) {
+
+        // get that first point
+        Quaternion lookTargetRotation = getTargetRotation(target);
         // point towards it without any restrictions
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, 360.0f);
 
@@ -521,6 +595,18 @@ public class Walking : MonoBehaviour {
         // stop any current dialogs
         dialog.abortDialog();
 
+        // reset the "I'm bored" countdown
+        ResetImpatience();
+
+        // record this position
+        if (record) RecordTargetHistory(newTarget);
+
+        // if cheat is on, just go there
+        if (cheat.IsOn) {
+            jumpToTarget(newTarget);
+            return;
+        }
+
         targetPosition = newTarget;
 
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
@@ -534,12 +620,6 @@ public class Walking : MonoBehaviour {
 
         // create an x-spot where we clicked
         Instantiate(xSpot, newTarget, Quaternion.identity);
-
-        // record this position
-        if (record) RecordTargetHistory(newTarget);
-
-        // reset the "I'm bored" countdown
-        ResetImpatience();
 
     }
 

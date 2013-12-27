@@ -28,6 +28,7 @@ public class Scenario : MonoBehaviour {
 
     	AddConversation("Ouvrier", "Pivert");
     	AddConversation("Ouvrier", "ColonAPied");
+    	AddConversation("Ouvrier", "PivertIndicateur");
 
     	loaded = true;
 
@@ -37,10 +38,10 @@ public class Scenario : MonoBehaviour {
 
 	// Access
 
-	public List<string> GetPhrases(string dialogID, bool isPlayer) {
+	public List<string> GetPhrases(string dialogID, string instanceID, bool isPlayer) {
 
 		// if there is nothing with this key
-		if (!checkID(dialogID)) {
+		if (!checkID(dialogID,instanceID)) {
 			print("Error: unknown key in Dictionary (" + dialogID + ")");
 			return new List<string>();
 		}
@@ -52,35 +53,35 @@ public class Scenario : MonoBehaviour {
 	}
 
 
-	public void Choose(string dialogID, string chosenPhrase) {
+	public void Choose(string dialogID, string instanceID, string chosenPhrase) {
 
 		Conversation conversation = conversations[dialogID];
 		int index = conversation.getNextSpeechActIndex(chosenPhrase);
-		SetIndex(dialogID, index);
+		SetIndex(dialogID,instanceID,index);
 
 		//SetIndex(dialogID, Index(dialogID)+1);
 
 	}
 
 
-	public bool IsNeutral(string dialogID) {
+	public bool IsNeutral(string dialogID, string instanceID) {
 
-		return (Index(dialogID) == 0);
+		return (Index(dialogID,instanceID) == 0);
 	
 	}
 
 
 
-	public void Reset(string dialogID) {
+	public void Reset(string dialogID, string instanceID) {
 
-		SetIndex(dialogID,0);
+		SetIndex(dialogID,instanceID,0);
 
 	}
 
 
-	public void StartConversation(string dialogID) {
+	public void StartConversation(string dialogID, string instanceID) {
 
-		SetIndex(dialogID,1);
+		SetIndex(dialogID,instanceID,1);
 
 	}
 
@@ -88,7 +89,7 @@ public class Scenario : MonoBehaviour {
 
 	// Internals
 
-	bool checkID(string dialogID) {
+	bool checkID(string dialogID, string instanceID) {
 
 		// ok, found the key
 		if (conversations.ContainsKey(dialogID)) return true;
@@ -110,11 +111,13 @@ public class Scenario : MonoBehaviour {
 
 
 
-	int Index(string dialogID) {
+	int Index(string dialogID, string instanceID) {
+
+		// TODO: replace dialogID in conversations[dialogID] with indexes[instanceId];
 
 		// has this conversation timed out?
 		if (conversations[dialogID].TimedOut()) {
-			Reset(dialogID);
+			Reset(dialogID,instanceID);
 		}
 
 		return conversations[dialogID].Index;
@@ -122,7 +125,9 @@ public class Scenario : MonoBehaviour {
 	}
 
 
-	void SetIndex(string dialogID, int index) {
+	void SetIndex(string dialogID, string instanceID, int index) {
+
+		// TODO: replace dialogID in conversations[dialogID] with indexes[instanceId];
 
 		conversations[dialogID].Index = index;
 

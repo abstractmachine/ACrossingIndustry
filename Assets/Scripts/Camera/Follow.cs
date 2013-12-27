@@ -14,6 +14,8 @@ public class Follow : MonoBehaviour {
     public float zoomMax = 30.0f;
     public float zoomMin = 5.0f;
 
+    public float cameraDistance = 30;  // this x/y/z distance of the camera to our persona
+
  	// previously hidden items
     private Dictionary<MeshRenderer, Material> hiddenMaterials;
     //This is the material with the Transparent/Diffuse With Shadow shader
@@ -49,6 +51,24 @@ public class Follow : MonoBehaviour {
 	}
 
 
+    public void forceZoomOut() {
+
+        forceZoom(zoomMax);
+
+    }
+
+
+    void forceZoom(float newZoom) {
+
+        setZoom(newZoom);
+
+        Camera.main.orthographicSize = zoomLevel;
+
+        forceTarget();
+
+    }
+
+
 
     public void setZoom(float newZoom) {
 
@@ -76,9 +96,16 @@ public class Follow : MonoBehaviour {
     void followTarget() {
 
         // the camera constantly follows the persona
-        float cameraDistance = 30;  // this x/y/z distance of the camera to our persona
         float t = 0.5f * Time.deltaTime;
         transform.position = Vector3.Lerp(transform.position, target.transform.position + new Vector3(-cameraDistance, cameraDistance*1.5f, -cameraDistance), t);
+        Camera.main.transform.LookAt(target.transform);
+
+    }
+
+
+    void forceTarget() {
+
+        transform.position = target.transform.position + new Vector3(-cameraDistance, cameraDistance*1.5f, -cameraDistance);
         Camera.main.transform.LookAt(target.transform);
 
     }

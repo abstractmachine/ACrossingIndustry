@@ -18,6 +18,7 @@ public class Dialog : MonoBehaviour {
 	// the dialogID is based on the active (initiator) objectId
 	// the IDs of the two dialoging objects
 	string dialogID = "";
+	string instanceID = "";
 
 	// our previous rotation
 	Quaternion previousOrientation = Quaternion.identity;
@@ -77,8 +78,8 @@ public class Dialog : MonoBehaviour {
 	void startDialog() {
 
 		// if the dialogue is currently at zero, start it
-		if (Scenario.Instance.IsNeutral(dialogID)) {
-			Scenario.Instance.StartConversation(dialogID);
+		if (Scenario.Instance.IsNeutral(dialogID,instanceID)) {
+			Scenario.Instance.StartConversation(dialogID,instanceID);
 		}
 
 		// tell the submissive other to start the actual talking
@@ -119,7 +120,7 @@ public class Dialog : MonoBehaviour {
 
 	void replyPassive() {
 
-		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,false);
+		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,instanceID,false);
 
 		// if no reply
 		if (phrases.Count == 0) {
@@ -144,12 +145,12 @@ public class Dialog : MonoBehaviour {
 
 	void replyActive() {
 
-		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,true);
+		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,instanceID,true);
 
 		// if we don't have anything to reply
 		if (phrases.Count == 0) {
 			// set the conversation index back to zero
-			Scenario.Instance.Reset(dialogID);
+			Scenario.Instance.Reset(dialogID,instanceID);
 			// stop talking
 			abortDialog();
 			// get outta here
@@ -175,7 +176,7 @@ public class Dialog : MonoBehaviour {
 		// if we're the dominant one
 		if (initiatedDialog) {
 			// tell the dialogue engine we've made a choice
-			Scenario.Instance.Choose(dialogID, chosenPhrase);
+			Scenario.Instance.Choose(dialogID,instanceID,chosenPhrase);
 			// tell the other to reply
 			otherDialog.reply();
 		} 
@@ -319,17 +320,18 @@ public class Dialog : MonoBehaviour {
 
 		// are we the active or passive one?
 		if (initiatedDialog) {
-			dialogID = "" + getId() + "-" + otherDialog.getId();
+			dialogID = "" + getID() + "-" + otherDialog.getID();
+			instanceID = "" + GetInstanceID() + "-" + otherDialog.GetInstanceID();
 		} else {
-			dialogID = "" + otherDialog.getId() + "-" + getId();
+			dialogID = "" + otherDialog.getID() + "-" + getID();
+			instanceID = "" + otherDialog.GetInstanceID() + "-" + GetInstanceID();
 		}
 
 	}
 
 
-	string getId() {
+	string getID() {
 		return gameObject.name;
-		//return GetInstanceID();
 	}
 
 
@@ -341,6 +343,7 @@ public class Dialog : MonoBehaviour {
 		otherDialog = null;
 
 		dialogID = "";
+		instanceID = "";
 
 	}
 

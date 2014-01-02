@@ -23,7 +23,12 @@ public class Cheat : MonoBehaviour {
 
 	public void KeyDown() {
 
-                // otherwise check to see if we match keycode pattern
+                // if we've started with up arrow key
+                if (index != 1 && index != 2 && Input.GetKeyDown(KeyCode.UpArrow)) {
+                        index = 1;
+                        TurnOff();
+                        return;
+                }
 
                 switch(index) {
 
@@ -43,35 +48,34 @@ public class Cheat : MonoBehaviour {
 
                 	case 4:
                 	case 6:
-                		if (Input.GetKeyDown(KeyCode.UpArrow)) index = 1;
-                		else if (Input.GetKeyDown(KeyCode.LeftArrow)) index++;
+                		if (Input.GetKeyDown(KeyCode.LeftArrow)) index++;
                 		else ResetIndex();
                 		break;
 
                 	case 5:
-                		if (Input.GetKeyDown(KeyCode.UpArrow)) index = 1;
-                		else if (Input.GetKeyDown(KeyCode.RightArrow)) index++;
+                        case 7:
+                		if (Input.GetKeyDown(KeyCode.RightArrow)) index++;
                 		else ResetIndex();
                 		break;
 
-                	case 7:
-                		if (Input.GetKeyDown(KeyCode.UpArrow)) index = 1;
-                		else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-                			index++;
-                			TurnOn();
-                		} else {
-                			ResetIndex();
-                		}
-                		break;
+                        case 8:
+                                if (Input.GetKeyDown(KeyCode.B)) index++;
+                                else ResetIndex();
+                                break;
+
+                        case 9:
+                                if (Input.GetKeyDown(KeyCode.A)) {
+                                        index++;
+                                        TurnOn();
+                                } else {
+                                        ResetIndex();
+                                }
+                                break;
 
                 	default:
-                		if (Input.GetKeyDown(KeyCode.UpArrow)) {
-                			TurnOff();
-                			index = 1;
-                		} else {
-                			TurnOff();
-                			ResetIndex();
-                		}
+                		if (Input.GetKeyDown(KeyCode.UpArrow)) index = 1;
+                		else ResetIndex();
+                                TurnOff();
                 		break;
                 	
                 }

@@ -15,6 +15,7 @@ ModelImporter:
     100018: ID38
     100020: ID4
     100022: Neutre
+    100024: Null
     400000: camera
     400002: //RootNode
     400004: Cube
@@ -27,6 +28,7 @@ ModelImporter:
     400018: ID38
     400020: ID4
     400022: Neutre
+    400024: Null
     2300000: Cube
     2300002: ID12
     2300004: ID20

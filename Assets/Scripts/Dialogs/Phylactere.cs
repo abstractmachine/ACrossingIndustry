@@ -60,7 +60,8 @@ public class Phylactere : MonoBehaviour {
 		// the text we write into
 		textObject = spinner.gameObject.transform.Find("Speech").gameObject;
 		textMesh = textObject.GetComponent<TextMesh>();
-		textMesh.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+		//textMesh.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+		textMesh.color = c;
 
 		// when there are multiple-choice possibilities, we display the current index
 		textIndexObject = spinner.gameObject.transform.Find("Index").gameObject;

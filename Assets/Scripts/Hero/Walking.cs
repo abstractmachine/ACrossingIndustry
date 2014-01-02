@@ -204,7 +204,7 @@ public class Walking : MonoBehaviour {
         if (currentPointIndex != endPointIndex) {
             
             // make sure we're playing the "walk" animation
-            animation.Play("walk");
+            animation.CrossFade("walk", 0.2f);
             // advance nextPointtarget
             currentPointIndex++;
             return;
@@ -415,7 +415,7 @@ public class Walking : MonoBehaviour {
     void stopWalkingAnimation() {
         
         // stop walking animation (in case we were previously walking)
-        animation.Play("idle");
+        animation.CrossFade("idle", 0.2f);
 
     }
 

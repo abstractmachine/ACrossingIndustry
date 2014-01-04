@@ -1,7 +1,7 @@
 ACrossingIndustry
 =================
 
-A Crossing Industry is a game currently in development by the Atelier Hypermédia, École supérieure d'art d'Aix en Provence in collaboration with IMéRA/CNRS-IREMAM. The project leads are Cedric Parizot (IMéRA/CNRS-IREMAM) and Douglas Edric Stanley (ESAAix). The code base was written by, and is maintained by, Douglas Edric Stanley. The following people have collaborated on this project (in alphabetical order): Benoît Espinola, Tristan Fraipont, Emilie Gervais, Matthieu Gonella, Martin Greffe, Bastien Hudé.
+A Crossing Industry is a game currently in development by the Atelier Hypermédia, École supérieure d'art d'Aix en Provence in collaboration with IMÉRA/CNRS-IREMAM. The project leads are Cedric Parizot (IMéRA/CNRS-IREMAM) and Douglas Edric Stanley (ESAAix). The code base was written by, and is maintained by, Douglas Edric Stanley. The following people have collaborated on this project (in alphabetical order): Benoît Espinola, Tristan Fraipont, Emilie Gervais, Matthieu Gonella, Martin Greffe, Bastien Hudé.
 
 The game is built using the "free" version of the Unity 3D Game Engine, and uses only freely available content, code and libraries for this development platform.
 

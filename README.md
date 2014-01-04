@@ -5,7 +5,7 @@ A Crossing Industry is a game currently in development by the Atelier Hypermédi
 
 The project was developed for [Anti-Atlas des frontières](http://www.antiatlas.net) and exhibited at [La companie, lieu de création](http://www.la-compagnie.org) from December 2013 to March 2014. AntiAtlas was developed within the Ulysses project of the [Frac](http://www.fracpaca.org) (Fonds régional d'art contemporain) for the [Cutural Capital Marseille Provence 2013](http://www.mp2013.fr). AntiAtlas is a co-production of The Mediterranean Institute for Advanced Research (IMéRA); The Aix en Provence School of Art (ESAA); The PACTE Laboratory (University of Grenoble-CNRS); La compagnie, le lieu de création. AntiAtlas is curated by Isabelle Arvers.
 
-The code base was written by, and is maintained by, [Douglas Edric Stanley](https://github.com/abstractmachine/). The following people have collaborated on this project (in alphabetical order): Benoît Espinola, Tristan Fraipont, [Emilie Gervais](http://www.emiliegervais.com), Matthieu Gonella, Martin Greffe, Bastien Hudé.
+The code base was written by, and is maintained by, [Douglas Edric Stanley](https://github.com/abstractmachine/). The following people have collaborated on this project (in alphabetical order): Benoît Espinola, [Tristan Fraipont](http://navicorp.org), [Emilie Gervais](http://www.emiliegervais.com), Matthieu Gonella, Martin Greffe, Bastien Hudé.
 
 The game is built using the "free" version of the Unity 3D Game Engine, and uses only freely available content, code and libraries for this development platform.
 

@@ -130,7 +130,7 @@ public class Conversation {
 	void ParsePhrases(string player, string persona) {
 
 		// figure out the filename by concatenating the two names
-		string filename = player + "-" + persona;
+		string filename = player + "-" + persona + "_csv";
 		// load this dialog tree
 		TextAsset txt = (TextAsset)Resources.Load(filename, typeof(TextAsset));
 		// error handling

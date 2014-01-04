@@ -28,7 +28,7 @@ public class Phylactere : MonoBehaviour {
 		public float currentAngle = 0.0f;		// where we currently are
 		public int index = 0;					// which rotation we're at
 		public int lastRotation = -1;			// tracks whether we're front/back (i.e. if we've changed orientation)
-		public float startTime = Time.time;		// when we started spinning
+		public float startTime = 0;				// when we started spinning
 	}
 
 	Spinner spinner = new Spinner();
@@ -52,21 +52,23 @@ public class Phylactere : MonoBehaviour {
 
 		// the object we use to spin the phylactere around
 		spinner.gameObject = transform.Find("Spinner").gameObject;
+		spinner.startTime = Time.time;
 
 		// set text mesh color to the background color
-		float timeSaturation = Camera.main.GetComponent<Daylight>().getTimeSaturation();
-		Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
+		//float timeSaturation = Camera.main.GetComponent<Daylight>().getTimeSaturation();
+		//Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
 
 		// the text we write into
 		textObject = spinner.gameObject.transform.Find("Speech").gameObject;
 		textMesh = textObject.GetComponent<TextMesh>();
-		//textMesh.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
-		textMesh.color = c;
+		textMesh.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+		//textMesh.color = c;
 
 		// when there are multiple-choice possibilities, we display the current index
 		textIndexObject = spinner.gameObject.transform.Find("Index").gameObject;
 		textIndexMesh = textIndexObject.GetComponent<TextMesh>();
-		textIndexMesh.color = c;
+		textIndexMesh.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+		//textIndexMesh.color = c;
 		
 		// the cadre of the text
 		speech.frame = spinner.gameObject.transform.Find("Bulle").Find("PlaneScaler").gameObject;
@@ -118,9 +120,10 @@ public class Phylactere : MonoBehaviour {
 	void StartChoice() {
 
 		float deltaTime = Time.time - (spinner.startTime);
+		deltaTime += 10.0f;
 		float sineTime = Mathf.Abs(Mathf.Sin(deltaTime * 0.1f));
 		sineTime *= 4.0f;
-		sineTime += 0.75f;
+		sineTime += 1.0f;
 
 		Invoke("SwitchChoice", sineTime);
 
@@ -407,7 +410,7 @@ public class Phylactere : MonoBehaviour {
 		// if there are multiple choice possibilities
 		if (speech.texts.Count > 1) {
 			// display
-			textIndexMesh.text = "" + speech.index;
+			textIndexMesh.text = "" + (speech.index+1);
 		}
 		//
 		resizeFrame();
@@ -513,7 +516,7 @@ public class Phylactere : MonoBehaviour {
 
 		int lineCount = textMesh.text.Split('\n').Length;
 
-		float scaleY = 0.01f * (20 + (29 * lineCount));
+		float scaleY = 0.01f * (29 + (29 * lineCount));
 		
 		Vector3 newScale = speech.frame.transform.localScale;
 		newScale.y = scaleY;

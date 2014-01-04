@@ -31,6 +31,8 @@ using Pathfinding;
  * or you have missed to pool some path somewhere in your code.
  * 
  * \see pooling
+ * 
+ * \todo Add field showing how many graph updates are being done right now
  */
 public class AstarDebugger : MonoBehaviour {
 	

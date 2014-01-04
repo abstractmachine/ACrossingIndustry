@@ -409,6 +409,7 @@ namespace Pathfinding
 		
 		/** Returns a new Int2 rotated 90*r degrees around the origin. */
 		public static Int2 Rotate ( Int2 v, int r ) {
+			r = r % 4;
 			return new Int2 ( v.x*Rotations[r*4+0] + v.y*Rotations[r*4+1], v.x*Rotations[r*4+2] + v.y*Rotations[r*4+3] );
 		}
 		

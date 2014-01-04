@@ -1,3 +1,7 @@
+#if UNITY_4_2 || UNITY_4_1 || UNITY_4_0 || UNITY_3_5 || UNITY_3_4 || UNITY_3_3
+	#define UNITY_LE_4_3
+#endif
+
 using Pathfinding;
 using UnityEditor;
 using UnityEngine;
@@ -180,6 +184,12 @@ namespace Pathfinding {
 			GUILayout.Space (2);*/
 			Separator ();
 			
+			collision.use2D = EditorGUILayout.Toggle (new GUIContent ("Use 2D Physics", "Use the Physics2D API for collision checking"), collision.use2D );
+			
+#if UNITY_LE_4_3
+			if ( collision.use2D ) EditorGUILayout.HelpBox ("2D Physics is only supported from Unity 4.3 and up", MessageType.Error);
+#endif
+			
 			/*GUILayout.BeginHorizontal ();
 			GUIStyle boxHeader = AstarPathEditor.astarSkin.FindStyle ("CollisionHeader");
 			GUILayout.Label ("Collision testing",boxHeader);
@@ -220,6 +230,10 @@ namespace Pathfinding {
 			
 			
 			GUI.enabled = preEnabledRoot;
+			
+			if ( collision.use2D ) {
+				GUI.enabled = false;
+			}
 			
 			collision.heightCheck = ToggleGroup ("Height testing",collision.heightCheck);
 			GUI.enabled = collision.heightCheck && GUI.enabled;

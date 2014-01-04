@@ -1,18 +1,47 @@
 /** \page changelog Changelog
- 
+
+- 3.4.0.4
+	- Removed RVOSimulatorEditor from the free version, it was causing compiler errors.
+	- Made PointGraph.nodes public.
+
+- 3.4.0.3
+	- Removed Local Avoidance due to licensing issues.
+		Agents will fall back to not avoiding each other.
+		I am working to get the local avoidance back as soon as possible.
+
+- 3.4.0.2
+	- Unity Asset Store forced me to increase version number.
+	
+- 3.4.0.1
+	- Fixed an ArrayIndexOutOfBounds exception which could be thrown by the ProceduralGridMover script in the Procedural example scene if the target was moved too quickly.
+	- The project no longer references assets from the Standard Assets folder (the package on the Unity Asset Store did so by mistake before).
+
+- 3.4
+	- Fixed a null reference exception when scanning recast graphs and rasterizing colliders.		
+	- Removed duplicate clipper_library.dll which was causing compiler errors.
+	- Support for 2D Physics collision testing when using Grid Graphs.
+	- Better warnings when using odd settings for Grid Graphs.
+	- Minor cleanups.
+	- Queued graph updates are no longer being performed when the AstarPath object is destroyed, this just took time.
+	- Fixed a bug introduced in 3.3.11 which forced grid graphs to be square in Unity versions earlier than 4.3.
+	- Fixed a null reference in BBTree ( used by RecastGraph).
+	- Fixed NavmeshGraph not rebuilding BBTree on cached start (causing performance issues on larger graphs).
+	
+	- Includes all changes from the beta releases below
+
 - Beta 3.3.14 ( available for everyone! )
 	- All dlls are now in namespaces (e.g Pathfinding.Ionic.Zip instead of just Ionic.Zip ) to avoid conflicts with other packages.
 	- Most scripts are now in namespaces to avoid conflicts with other packages.
 	- GridNodes now support custom connections.
-	- Cleanups, preparing for release
+	- Cleanups, preparing for release.
 	- Reverted to using an Int3 for GraphNode.position instead of an abstract Position property, the tiny memory gains were not worth it.
-
+	
 - Beta 3.3.13 ( 4.3 compatible only )
 	- Fixed an issue where deleting a NavmeshCut component would not update the underlaying graph.
 	- Better update checking.
 	
 - Beta 3.3.12 ( 4.3 compatible only )
-	- Fixed an infinite loop which could happen when scanning graphs during runtime ( not the first scan )
+	- Fixed an infinite loop which could happen when scanning graphs during runtime ( not the first scan ).
 	- NodeLink component is now working correctly.
 	- Added options for optimizations to the PointGraph.
 	- Improved TileHandler and navmesh cutting.

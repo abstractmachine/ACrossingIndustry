@@ -6,7 +6,7 @@ public class Fader : MonoBehaviour {
 	public Texture filler;
 
 	float fadeValue = 0.0f;
-	float fadeSpeed = 0.5f;
+	float fadeSpeed = 0.4f;
 
 	bool fading = false;
 	bool fadeIn = false;
@@ -21,7 +21,9 @@ public class Fader : MonoBehaviour {
 
 	void OnGUI() {
  
-		GUI.color = new Color(0.0f, 0.0f, 0.0f, 1.0f-fadeValue);
+ 		float v = 192.0f / 255.0f;
+ 		GUI.color = new Color(v, v, v, 1.0f-fadeValue);
+		//GUI.color = new Color(0.0f, 0.0f, 0.0f, 1.0f-fadeValue);
 		GUI.DrawTexture( new Rect(0, 0, Screen.width, Screen.height ), filler );
 
 	}

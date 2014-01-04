@@ -1,3 +1,7 @@
+#if UNITY_4_2 || UNITY_4_1 || UNITY_4_0 || UNITY_3_5 || UNITY_3_4 || UNITY_3_3
+	#define UNITY_LE_4_3
+#endif
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -484,7 +488,10 @@ namespace Pathfinding {
 	
 		/** Make nodes unwalkable when no ground was found with the height raycast. If height raycast is turned off, this doesn't affect anything. */
 		public bool unwalkableWhenNoGround = true;
-
+		
+		/** Use Unity 2D API */
+		public bool use2D = false;
+		
 //#if !PhotonImplementation
 		
 		/** Sets up several variables using the specified matrix and scale.
@@ -507,22 +514,35 @@ namespace Pathfinding {
 				return true;
 			}
 			
-			position += up*collisionOffset;
-			
-			switch (type) {
-				case ColliderType.Capsule:
-					return !Physics.CheckCapsule (position, position+upheight,finalRadius,mask);
-				case ColliderType.Sphere:
-					return !Physics.CheckSphere (position, finalRadius,mask);
-				default:
-					switch (rayDirection) {
-						case RayDirection.Both:
-							return !Physics.Raycast (position, up, height, mask) && !Physics.Raycast (position+upheight, -up, height, mask);
-						case RayDirection.Up:
-							return !Physics.Raycast (position, up, height, mask);
-						default:
-							return !Physics.Raycast (position+upheight, -up, height, mask);
-					}
+#if !UNITY_LE_4_3
+			if ( use2D ) {
+				switch (type) {
+					case ColliderType.Capsule:
+						throw new System.Exception ("Capsule mode cannot be used with 2D since capsules don't exist in 2D");
+					case ColliderType.Sphere:
+						return Physics2D.OverlapCircle (position, finalRadius, mask) == null;
+					default:
+						return Physics2D.OverlapPoint ( position, mask ) == null;
+				}
+			} else
+#endif
+			{
+				position += up*collisionOffset;
+				switch (type) {
+					case ColliderType.Capsule:
+						return !Physics.CheckCapsule (position, position+upheight,finalRadius,mask);
+					case ColliderType.Sphere:
+						return !Physics.CheckSphere (position, finalRadius,mask);
+					default:
+						switch (rayDirection) {
+							case RayDirection.Both:
+								return !Physics.Raycast (position, up, height, mask) && !Physics.Raycast (position+upheight, -up, height, mask);
+							case RayDirection.Up:
+								return !Physics.Raycast (position, up, height, mask);
+							default:
+								return !Physics.Raycast (position+upheight, -up, height, mask);
+						}
+				}
 			}
 		}
 		
@@ -538,7 +558,7 @@ namespace Pathfinding {
 		public Vector3 CheckHeight (Vector3 position, out RaycastHit hit, out bool walkable) {
 			walkable = true;
 			
-			if (!heightCheck) {
+			if (!heightCheck || use2D ) {
 				hit = new RaycastHit ();
 				return position;
 			}
@@ -571,7 +591,7 @@ namespace Pathfinding {
 		public Vector3 Raycast (Vector3 origin, out RaycastHit hit, out bool walkable) {
 			walkable = true;
 			
-			if (!heightCheck) {
+			if (!heightCheck || use2D ) {
 				hit = new RaycastHit ();
 				return origin -up*fromHeight;
 			}
@@ -628,7 +648,7 @@ namespace Pathfinding {
 			}
 			return hits;*/
 			
-			if (!heightCheck) {
+			if (!heightCheck || use2D) {
 				RaycastHit hit = new RaycastHit ();
 				hit.point = position;
 				hit.distance = 0;

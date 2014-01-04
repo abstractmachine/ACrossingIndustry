@@ -83,7 +83,7 @@ namespace Pathfinding
 		}
 		
 		public override string ToString () {
-			string s = name + " " + w.Elapsed.TotalMilliseconds.ToString("0.0 ms") + " avg: " + (w.Elapsed.TotalMilliseconds/counter).ToString("0.00 ms");
+			string s = name + " #" + counter + " " + w.Elapsed.TotalMilliseconds.ToString("0.0 ms") + " avg: " + (w.Elapsed.TotalMilliseconds/counter).ToString("0.00 ms");
 			if (PROFILE_MEM) {
 				s += " avg mem: " + (mem/(1.0*counter)).ToString("0 bytes");
 			}

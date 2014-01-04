@@ -112,7 +112,7 @@ namespace Pathfinding {
 			GUILayout.BeginHorizontal ();
 			GUILayout.BeginVertical ();
 			int newWidth = EditorGUILayout.IntField (new GUIContent ("Width (nodes)","Width of the graph in nodes"), graph.width);
-			int newDepth = EditorGUILayout.IntField (new GUIContent ("Depth (nodes)","Depth (or height you might also call it) of the graph in nodes"), graph.width);
+			int newDepth = EditorGUILayout.IntField (new GUIContent ("Depth (nodes)","Depth (or height you might also call it) of the graph in nodes"), graph.depth);
 			GUILayout.EndVertical ();
 	
 			lockRect = GUILayoutUtility.GetRect (lockStyle.fixedWidth,lockStyle.fixedHeight);
@@ -243,7 +243,7 @@ namespace Pathfinding {
 	
 	#if UNITY_LE_4_3
 			//Add some space to make the Rotation and postion fields be better aligned (instead of the pivot point selector)
-			GUILayout.Space (19+7);
+			//GUILayout.Space (19+7);
 	#endif
 			//GUILayout.EndHorizontal ();
 			
@@ -266,10 +266,15 @@ namespace Pathfinding {
 			//GUILayout.BeginHorizontal ();
 			//EditorGUILayout.PrefixLabel ("Max Climb");
 			graph.maxClimb = EditorGUILayout.FloatField (new GUIContent ("Max Climb","How high, relative to the graph, should a climbable level be. A zero (0) indicates infinity"),graph.maxClimb);
+			if ( graph.maxClimb < 0 ) graph.maxClimb = 0;
 			EditorGUI.indentLevel++;
 			graph.maxClimbAxis = EditorGUILayout.IntPopup (new GUIContent ("Climb Axis","Determines which axis the above setting should test on"),graph.maxClimbAxis,new GUIContent[3] {new GUIContent ("X"),new GUIContent ("Y"),new GUIContent ("Z")},new int[3] {0,1,2});
-			
 			EditorGUI.indentLevel--;
+			
+			if ( graph.maxClimb > 0 && Mathf.Abs((Quaternion.Euler (graph.rotation) * new Vector3 (graph.nodeSize,0,graph.nodeSize))[graph.maxClimbAxis]) > graph.maxClimb ) {
+				EditorGUILayout.HelpBox ("Nodes are spaced further apart than this in the grid. You might want to increase this value or change the axis", MessageType.Warning );
+			}
+			
 			//GUILayout.EndHorizontal ();
 			
 			graph.maxSlope = EditorGUILayout.Slider (new GUIContent ("Max Slope","Sets the max slope in degrees for a point to be walkable. Only enabled if Height Testing is enabled."),graph.maxSlope,0,90F);
@@ -291,6 +296,12 @@ namespace Pathfinding {
 				EditorGUI.indentLevel--;
 			}
 			DrawCollisionEditor (graph.collision);
+			
+			if ( graph.collision.use2D ) {
+				if ( Mathf.Abs ( Vector3.Dot ( Vector3.forward, Quaternion.Euler (graph.rotation) * Vector3.up ) ) < 0.9f ) {
+					EditorGUILayout.HelpBox ("When using 2D it is recommended to rotate the graph so that it aligns with the 2D plane.", MessageType.Warning );
+				}
+			}
 			
 			Separator ();
 			

@@ -767,9 +767,9 @@ AstarPath.active.Scan();
 			
 			bool walkable = true;
 
-			collision.CheckHeight ((Vector3)node.position, out hit, out walkable);
-			if (walkable)
-				node.position = GetNodePosition ( node.NodeInGridIndex, (int)((collision.fromHeight - hit.distance)*Int3.Precision) );
+			Vector3 position = collision.CheckHeight ((Vector3)node.position, out hit, out walkable);
+			//if (walkable)
+				node.position = (Int3)position;//GetNodePosition ( node.NodeInGridIndex, (int)((collision.fromHeight - hit.distance)*Int3.Precision) );
 			
 			if (resetPenalty)
 				node.Penalty = initialPenalty;//Mathf.RoundToInt (Random.value*100);

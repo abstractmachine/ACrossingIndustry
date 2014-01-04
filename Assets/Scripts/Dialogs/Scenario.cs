@@ -26,7 +26,7 @@ public class Scenario : MonoBehaviour {
     	// if we've already loaded, forget it
     	if (loaded) return;
 
-    	AddConversation("Ouvrier", "Pivert");
+    	AddConversation("Ouvrier", "PivertLambda");
     	AddConversation("Ouvrier", "ColonAPied");
     	AddConversation("Ouvrier", "PivertIndicateur");
 

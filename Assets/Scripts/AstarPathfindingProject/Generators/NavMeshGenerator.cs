@@ -351,11 +351,7 @@ and have a low memory footprint because of their smaller size to describe the sa
 		}
 		
 		
-		public static void UpdateArea (GraphUpdateObject o, NavGraph graph) {
-			
-			INavmesh navgraph = graph as INavmesh;
-			
-			if (navgraph == null) { Debug.LogError ("Update Area on NavMesh must be called with a graph implementing INavmesh"); return; }
+		public static void UpdateArea (GraphUpdateObject o, INavmesh graph) {
 			
 			//System.DateTime startTime = System.DateTime.UtcNow;
 				
@@ -819,6 +815,7 @@ and have a low memory footprint because of their smaller size to describe the sa
 				_vertices[i] = new Int3(ctx.reader.ReadInt32(), ctx.reader.ReadInt32(), ctx.reader.ReadInt32());
 				originalVertices[i] = new Vector3(ctx.reader.ReadSingle(), ctx.reader.ReadSingle(), ctx.reader.ReadSingle());
 			}
+			
 			
 			for (int i=0;i<c1;i++) {
 				nodes[i] = new TriangleMeshNode(active);

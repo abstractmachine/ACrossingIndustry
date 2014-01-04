@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Pathfinding;
+using System;
 
 // Note sure why anyone would want to use this...
 //#define ASTAR_MORE_PATH_IDS //Increases the number of pathIDs from 2^16 to 2^32. Uses more memory
@@ -28,7 +29,7 @@ public class AstarPath : MonoBehaviour {
 	 */
 	public static System.Version Version {
 		get {
-			return new System.Version (3,3,14);
+			return new System.Version (3,4,0,4);
 		}
 	}
 	
@@ -42,7 +43,7 @@ public class AstarPath : MonoBehaviour {
 	 * users of the development versions can get notifications of development
 	 * updates.
 	 */
-	public static readonly string Branch = "FeatureFreeze_Free";
+	public static readonly string Branch = "master_Free";
 
 	/** Used by the editor to show some Pro specific stuff.
 	 * Note that setting this to true will not grant you any additional features */
@@ -117,8 +118,7 @@ public class AstarPath : MonoBehaviour {
 	 * Use less debugging to improve performance (a bit) or just to get rid of the Console spamming.\n
 	 * Use more debugging (heavy) if you want more information about what the pathfinding is doing.\n
 	 * InGame will display the latest path log using in game GUI. */
-	//public PathLog logPathResults = PathLog.Normal;
-	public PathLog logPathResults = PathLog.None;
+	public PathLog logPathResults = PathLog.Normal;
 	
 	/** @} */
 #endregion
@@ -1174,37 +1174,20 @@ public class AstarPath : MonoBehaviour {
 	 */
 	public static int CalculateThreadCount (ThreadCount count) {
 		if (count == ThreadCount.AutomaticLowLoad || count == ThreadCount.AutomaticHighLoad) {
-			
 			int logicalCores = Mathf.Max (1,SystemInfo.processorCount);
 			int memory = SystemInfo.systemMemorySize;
 			
 			if ( memory <= 0 ) {
-				Debug.LogError ("Machine reporting that is has 0 bytes of RAM. This is definitely not true, assuming 1 GiB");
+				Debug.LogError ("Machine reporting that is has <= 0 bytes of RAM. This is definitely not true, assuming 1 GiB");
 				memory = 1024;
 			}
 			
-			if (logicalCores <= 1) return 0;
+			if ( logicalCores <= 1) return 0;
+			if ( memory <= 512) return 0;
 			
-			if (memory <= 512) return 0;
-			
-			if (count == ThreadCount.AutomaticHighLoad) {
-				if (memory <= 1024) logicalCores = System.Math.Min (logicalCores,2);
-			} else {
-				//Always run at at most processorCount-1 threads (one core reserved for unity thread).
-				// Many computers use hyperthreading, so dividing by two is used to remove the hyperthreading cores, pathfinding
-				// doesn't scale well past the number of physical cores anyway
-				logicalCores /= 2;
-				logicalCores = Mathf.Max (1, logicalCores);
-				
-				if (memory <= 1024) logicalCores = System.Math.Min (logicalCores,2);
-				
-				logicalCores = System.Math.Min (logicalCores,6);
-			}
-			
-			return logicalCores;
+			return 1;
 		} else {
-			int val = (int)count;
-			return val;
+			return (int)count > 0 ? 1 : 0;
 		}
 	}
 	
@@ -1235,6 +1218,13 @@ public class AstarPath : MonoBehaviour {
 		RelevantGraphSurface.FindAllGraphSurfaces ();
 		
 		int numThreads = CalculateThreadCount (threadCount);
+		
+		// Trying to prevent simple modding to add support for more than one thread
+		if ( numThreads > 1 ) {
+			threadCount = ThreadCount.One;
+			numThreads = 1;
+		}
+		
 		threads = new Thread[numThreads];
 		//Thread info, will contain at least one item since the coroutine "thread" is thought of as a real thread in this case
 		threadInfos = new PathThreadInfo[System.Math.Max(numThreads,1)];
@@ -1394,7 +1384,8 @@ public class AstarPath : MonoBehaviour {
 			Debug.Log ("Processing Eventual Work Items");
 		
 		// Process work items until done 
-		PerformBlockingActions (true);
+		// Nope, don't do this
+		//PerformBlockingActions (true);
 		
 		//Resume graph update thread, will cause it to terminate
 		graphUpdateAsyncEvent.Set();
@@ -2230,6 +2221,11 @@ AstarPath.RegisterSafeUpdate (delegate () {
 				//Max number of ticks we are allowed to continue working in one run
 				//One tick is 1/10000 of a millisecond
 				maxTicks = (long)(astar.maxFrameTime*10000);
+				
+				//Trying to prevent simple modding to allow more than one thread
+				if ( threadInfo.threadIndex > 0 ) {
+					throw new System.Exception ("Thread Error");
+				}
 				
 				AstarProfiler.StartFastProfile (0);
 				p.PrepareBase (runData);

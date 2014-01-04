@@ -1708,12 +1708,14 @@ public class AstarPathEditor : Editor {
 			script.threadCount = (ThreadCount)EditorGUILayout.EnumPopup (new GUIContent ("Thread Count","Number of threads to run the pathfinding in (if any). More threads" +
 				"can boost performance on multi core systems.\n" +
 				"Use None for debugging or if you dont use pathfinding that much.\n" +
-		                                                                "See docs for more info"),script.threadCount);
+	                                                                "See docs for more info"),script.threadCount);
 		
 			GUI.enabled = true;
 			int threads = AstarPath.CalculateThreadCount(script.threadCount);
-			if (threads > 0) EditorGUILayout.HelpBox ("Using " + threads +" thread(s)" + (script.threadCount < 0 ? " on your machine" : ""), MessageType.None);
+			if (threads > 0) EditorGUILayout.HelpBox ("Using " + threads +" thread(s)" + (script.threadCount < 0 ? " on your machine" : "") + ".\n" +
+				"The free version of the A* Pathfinding Project is limited to at most one thread.", MessageType.None);
 			else EditorGUILayout.HelpBox ("Using a single coroutine (no threads)" + (script.threadCount < 0 ? " on your machine" : ""), MessageType.None);
+			
 		/*
 			GUI.enabled = false;
 			EditorGUILayout.EnumPopup (new GUIContent ("Thread Count","Number of threads to run the pathfinding in (if any). More threads " +

@@ -247,7 +247,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Tumbleweed
-  m_TagString: Untagged
+  m_TagString: Tumbleweed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -793,8 +793,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15217935d8024f74b654779cf3698a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 0
-  hiddenCountdown: 0
   hiddenTime: 10
   strength: 100
 --- !u!135 &13500000

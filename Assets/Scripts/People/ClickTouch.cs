@@ -10,12 +10,16 @@ public class ClickTouch : MonoBehaviour {
 	GameObject player;
 
 	public float playerRadius = 1.0f;
+	public float tumbleweedRadius = 1.0f;
 
 	// if we're touching a phylactère, maintain a connection to the code component
 	Phylactere phylactere = null;
 	Vector3 lastTouchPosition = Vector3.zero;
 
-	// Use this for initialization
+
+
+	///////////////// Init
+
 	void Start () {
 
 		Input.simulateMouseWithTouches = false;
@@ -25,7 +29,10 @@ public class ClickTouch : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
+
+
+	///////////////// Loop
+
 	void Update () {
 
 		if (Application.platform == RuntimePlatform.IPhonePlayer) {
@@ -80,6 +87,8 @@ public class ClickTouch : MonoBehaviour {
 	}
 
 
+	///////////////// Touch
+
 	void checkHit(Vector2 loc) {
 
 		// cast ray down into the world from the screen touch point
@@ -100,7 +109,7 @@ public class ClickTouch : MonoBehaviour {
         	if (hit.transform.gameObject.tag == "Phylactere") {
 
         		// ok, we clicked on a phylactere, that's top priority
-        		touchedPhylactere(loc, hit.point, hit.transform.gameObject);
+        		TouchedPhylactere(loc, hit.point, hit.transform.gameObject);
         		// ignore rest of click/touch
         		return;
         	}
@@ -116,12 +125,12 @@ public class ClickTouch : MonoBehaviour {
         		// see if we're already talking to them
         		if (walking.isCollidingWith(hit.transform.gameObject)) {
         			// indicate that we clicked on a Persona
-        			touchedPersona(loc, hit.point, hit.transform.gameObject);
+        			TouchedPersona(loc, hit.point, hit.transform.gameObject);
         			// ignore rest of click/touch
         			return;
         		} else {
         			// otherwise, we've clicked on a player we're not already talking to, set target to here
-        			setClickTarget(hit.transform.position);
+        			TouchedGround(hit.transform.position);
         			// ignore rest of click/touch
         			return;
         		}
@@ -136,7 +145,7 @@ public class ClickTouch : MonoBehaviour {
         	// ok, now check for click on player
         	if (hit.transform.gameObject.tag == "Player") {
         		// indicate that we clicked on the player
-        		touchedPlayer(loc, hit.point);
+        		TouchedPlayer(loc, hit.point);
         		// ignore rest of click/touch
         		return;
         	}
@@ -144,9 +153,37 @@ public class ClickTouch : MonoBehaviour {
         	// finally check to see if this is a point near enough to the player
         	if (Vector3.Distance(hit.point,player.transform.position) < playerRadius) {
         		// indicate that we clicked on the player
-        		touchedPlayer(loc, hit.point);
+        		TouchedPlayer(loc, hit.point);
         		// ignore rest of click/touch
         		return;
+        	}
+
+        }
+
+        // ok, after all that see if we're clicking on a tumbleweed
+
+        // get a list of all the tumbleweeds
+        GameObject[] tumbleweeds = GameObject.FindGameObjectsWithTag("Tumbleweed");
+
+        // check in each hit
+        foreach(RaycastHit hit in hits) {
+
+        	// check for click directly on tumbleweed
+        	if (hit.transform.gameObject.tag == "Tumbleweed") {
+        		// indicate that we clicked on the tumbleweed
+        		TouchedTumbleweed(loc, hit.point, hit.transform.gameObject);
+        		// ignore rest of click/touch
+        		return;
+        	}
+
+        	foreach(GameObject tumbleweed in tumbleweeds) {
+				// check for proximity
+	        	if (Vector3.Distance(hit.point,tumbleweed.transform.position) < tumbleweedRadius) {
+        			// indicate that we clicked on the tumbleweed
+        			TouchedTumbleweed(loc, hit.point, tumbleweed);
+	        		// ignore rest of click/touch
+	        		return;
+	        	}
         	}
 
         }
@@ -158,7 +195,7 @@ public class ClickTouch : MonoBehaviour {
         	if (hit.transform.name != "Ground") continue;
 
 			// get the point on the plane where we clicked and go there
-			setClickTarget(hit.point);
+			TouchedGround(hit.point);
 			// ok, all done
 			return;
 
@@ -167,7 +204,10 @@ public class ClickTouch : MonoBehaviour {
  	}
 
 
-	void setClickTarget(Vector3 loc) {
+
+ 	///////////////// Actions
+
+	void TouchedGround(Vector3 loc) {
 
 		// just in case
 		loc.y = 0.01f;
@@ -187,7 +227,7 @@ public class ClickTouch : MonoBehaviour {
 	}
 
 
-	void touchedPlayer(Vector2 touchPoint, Vector3 hitPoint) {
+	void TouchedPlayer(Vector2 touchPoint, Vector3 hitPoint) {
 
 		Dialog dialog = player.GetComponent<Dialog>();
 
@@ -199,7 +239,7 @@ public class ClickTouch : MonoBehaviour {
 	}
 
 
-	void touchedPersona(Vector2 touchPoint, Vector3 hitPoint, GameObject persona) {
+	void TouchedPersona(Vector2 touchPoint, Vector3 hitPoint, GameObject persona) {
 
 		Dialog dialog = persona.GetComponent<Dialog>();
 
@@ -214,7 +254,7 @@ public class ClickTouch : MonoBehaviour {
 
 
 	// get the parent of the phylactere we clicked on
-	void touchedPhylactere(Vector2 touchPoint, Vector3 hitPoint, GameObject touchedObject) {
+	void TouchedPhylactere(Vector2 touchPoint, Vector3 hitPoint, GameObject touchedObject) {
     
     	// climb up parent chain until we hit the parent containing the Dialog engine
 		Transform topParent = touchedObject.transform.parent;
@@ -240,6 +280,17 @@ public class ClickTouch : MonoBehaviour {
     		//phylactere.ClickAccelerate();
     	}
 	
+	}
+
+
+	void TouchedTumbleweed(Vector2 touchPoint, Vector3 hitPoint, GameObject obj) {
+
+		// calculate direction
+		Vector3 direction = obj.transform.position - hitPoint;
+		direction.Normalize();
+
+		obj.GetComponent<Tumbleweed>().Jump(direction);
+
 	}
 
 }

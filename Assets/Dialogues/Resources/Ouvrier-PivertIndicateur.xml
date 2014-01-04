@@ -10,7 +10,7 @@
   <link href="https://spreadsheets.google.com/feeds/list/tMsoxb3JqyVrXGyw4pk21AA/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
   <link href="https://spreadsheets.google.com/feeds/list/tMsoxb3JqyVrXGyw4pk21AA/od6/private/values" rel="self" type="application/atom+xml" />
   <title type="text">Feuille 1</title>
-  <updated>2013-12-31T23:25:48+01:00</updated>
+  <updated>2014-01-03T03:07:38+01:00</updated>
   <entry>
     <gsx:index>-1</gsx:index>
     <gsx:sayspersona>"Have a nice day!..."</gsx:sayspersona>
@@ -27,7 +27,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Have a nice day!...", actionpersona: le guetteur se lève s'éloigne et disparait, next: 15</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>0</gsx:index>
@@ -45,7 +45,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Anodin</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>1</gsx:index>
@@ -63,12 +63,12 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Hi", repliesplayer: "Hi!", next: 2</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>2</gsx:index>
     <gsx:sayspersona>"What are you doing around here?"</gsx:sayspersona>
-    <gsx:repliesplayer>"I was told to got this way, there is a PASSAGE to the other side" </gsx:repliesplayer>
+    <gsx:repliesplayer>"I was told to go this way, there is a PASSAGE to the other side" </gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition>le joueur se rapproche d'un passage à travers le mur</gsx:condition>
@@ -80,8 +80,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tMsoxb3JqyVrXGyw4pk21AA/od6/private/values/cssly" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "What are you doing around here?", repliesplayer: "I was told to got this way, there is a PASSAGE to the other side" , condition: le joueur se rapproche d'un passage à travers le mur, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <content type="text">sayspersona: "What are you doing around here?", repliesplayer: "I was told to go this way, there is a PASSAGE to the other side" , condition: le joueur se rapproche d'un passage à travers le mur, next: 3</content>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -99,7 +99,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: le joueur s'éloigne d'un passage à travers le mur, next: 4</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -117,7 +117,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "It's not your business", next: -1</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>3</gsx:index>
@@ -135,7 +135,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "That's indeed the way. Yet be careful, you're not alone!", repliesplayer: "Thanks", next: 15</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -153,7 +153,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "What do you mean", next: 20</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>4</gsx:index>
@@ -171,7 +171,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "You are taking the wrong way.", repliesplayer: "Where should I go?", condition: the PASSAGE is northward, next: 6</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -189,7 +189,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: the PASSAGE is southward, next: 5</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -207,7 +207,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: the PASSAGE is eastward, next: 7</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -225,7 +225,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: the PASSAGE is westward, next: 8</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -243,7 +243,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "It's not your business", next: -1</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>5</gsx:index>
@@ -261,7 +261,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Take South", repliesplayer: "Thanks", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -279,7 +279,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 9</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>6</gsx:index>
@@ -297,7 +297,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Take North", repliesplayer: "Thanks", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -315,7 +315,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 10</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>7</gsx:index>
@@ -333,7 +333,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Take East", repliesplayer: "Thanks", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -351,7 +351,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 11</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>8</gsx:index>
@@ -369,7 +369,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Take West", repliesplayer: "Thanks", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -387,7 +387,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 12</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>9</gsx:index>
@@ -405,7 +405,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I told you South", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -423,7 +423,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 9</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>10</gsx:index>
@@ -441,7 +441,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I told you North", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -459,7 +459,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 10</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>11</gsx:index>
@@ -477,7 +477,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I told you East", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -495,7 +495,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 11</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>12</gsx:index>
@@ -513,7 +513,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I told you West", actionplayer: poursuit son chemin, condition: le joueur continue dans la bonne direction, next: 3</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -531,7 +531,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: poursuit son chemin, condition: le joueur se trompe de direction, next: 12</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>15</gsx:index>
@@ -549,7 +549,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "...", actionplayer: le joueur continue son chemin, next: 0</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>20</gsx:index>
@@ -567,7 +567,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I mean that you should check once in a while with people around. They know a bit about the whereabout of the army and the police", repliesplayer: "Can't you tell me more?", next: 21</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -585,7 +585,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "Ok", next: 15</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
   <entry>
     <gsx:index>21</gsx:index>
@@ -603,6 +603,6 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I'm just passing by not watching" , actionpersona: Le PNJ s'en va et disparaît, next: 15</content>
-    <updated>2013-12-31T23:25:48+01:00</updated>
+    <updated>2014-01-03T03:07:38+01:00</updated>
   </entry>
 </feed>

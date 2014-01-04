@@ -35,6 +35,32 @@ public class Tumbleweed : MonoBehaviour {
 	}
 
 
+	public void Jump() {
+
+		float jumpStrength = strength*5;
+
+		rigidbody.AddForce(0.0f, Random.Range(1.0f,jumpStrength), 0.0f);
+		rigidbody.AddForce(Random.Range(-jumpStrength,jumpStrength), 0.0f, Random.Range(-jumpStrength,jumpStrength));
+
+	}
+
+
+
+	public void Jump(Vector3 direction) {
+
+		// remove y direction
+		direction.y = 0.0f;
+
+		float jumpStrength = strength*5;
+
+		// jump up a bit
+		rigidbody.AddForce(0.0f, Random.Range(1.0f,strength), 0.0f);
+		// jump in direction opposite of hit
+		rigidbody.AddForce(direction * jumpStrength);
+
+	}
+
+
 
 	void pushTumbleweed() {
 
@@ -43,6 +69,7 @@ public class Tumbleweed : MonoBehaviour {
 		rigidbody.AddForce(Random.Range(-strength, strength), 0.0f, Random.Range(-strength,strength));
 
 	}
+
 
 
 	void pushTumbleweedUp() {

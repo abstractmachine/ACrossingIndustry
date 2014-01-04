@@ -10,12 +10,12 @@
   <link href="https://spreadsheets.google.com/feeds/list/trWZsWOw8W6UdXQHpU6h9lg/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
   <link href="https://spreadsheets.google.com/feeds/list/trWZsWOw8W6UdXQHpU6h9lg/od6/private/values" rel="self" type="application/atom+xml" />
   <title type="text">Feuille 1</title>
-  <updated>2014-01-02T00:49:55+01:00</updated>
+  <updated>2014-01-03T15:41:17+01:00</updated>
   <entry>
     <gsx:index>-1</gsx:index>
     <gsx:sayspersona>Sorry but we can't help you</gsx:sayspersona>
     <gsx:repliesplayer />
-    <gsx:actionpersona>hide()</gsx:actionpersona>
+    <gsx:actionpersona>Hide()</gsx:actionpersona>
     <gsx:actionplayer />
     <gsx:condition />
     <gsx:next>15</gsx:next>
@@ -26,8 +26,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/trWZsWOw8W6UdXQHpU6h9lg/od6/private/values/i58b3" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: Sorry but we can't help you, actionpersona: hide(), next: 15</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <content type="text">sayspersona: Sorry but we can't help you, actionpersona: Hide(), next: 15</content>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>0</gsx:index>
@@ -45,7 +45,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">next: 0</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>1</gsx:index>
@@ -63,7 +63,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Hello stranger, what do you want?</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -81,7 +81,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Need some help?, repliesplayer: Hello boys, do you know if there is a passage through the wall?, condition: Open(CheckpointCharlie), next: 2</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -99,7 +99,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: Closed(CheckpointCharlie), next: 3</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -117,7 +117,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Do you know someone who can find me a job?, next: -1</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -135,7 +135,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Nothing special, just having a walk, next: 15</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>2</gsx:index>
@@ -153,7 +153,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: It depends…</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -171,7 +171,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Sometimes..., repliesplayer: I've got what you want [$10], actionplayer: Give($20), condition: $&gt;=20, next: 5, result: $-=20</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -189,7 +189,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: I've got what you want [$20], actionplayer: Give($10), condition: $&gt;=10, next: 9, result: $-=10</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -207,7 +207,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: What do you mean?, next: 7</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>3</gsx:index>
@@ -225,7 +225,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: There are no passage here/We don't know, repliesplayer: That's strange, I don't trust you, condition: Open(CheckpointCharlie), next: 2</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -243,7 +243,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: Closed(CheckpointCharlie), next: -1</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -261,7 +261,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Okay anyway, is there someone you know who can give me a job ?, next: 2, comment: "if travail=0" ne marche pas comme condition</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>5</gsx:index>
@@ -279,7 +279,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Come with us we'll show you, repliesplayer: Thanks you, have a nice day boys, actionpersona: Goto(CheckpointCharlie), actionplayer: Follow(Persona), next: 0, result: $--</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>6</gsx:index>
@@ -297,7 +297,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: No, you'd better ask someone in the village, repliesplayer: ok, next: 15</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>7</gsx:index>
@@ -315,7 +315,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Help us, will help you, repliesplayer: How can I help you?, next: 8</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -333,7 +333,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: I've got what you want [$20], actionplayer: Give($20), condition: $, next: 5, result: $-=20</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -351,7 +351,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: I've got what you want [$10], actionplayer: Give($10), condition: $, next: 9, result: $-=10</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>8</gsx:index>
@@ -369,7 +369,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Maybe you have a little something for us?, repliesplayer: Take this [$20], actionplayer: Give($20), condition: $, next: 5</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -387,7 +387,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Take this [$10], actionplayer: Give($10), condition: $, next: 9</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -405,7 +405,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: I have nothing, I'm broke, next: -1</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>9</gsx:index>
@@ -423,7 +423,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Can't you be a little more generous?, repliesplayer: Ok [$20], actionplayer: Give($20), condition: $, next: 5</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -441,7 +441,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Ok [$10], actionplayer: Give($10), condition: $, next: -1</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
   <entry>
     <gsx:index>15</gsx:index>
@@ -459,6 +459,6 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">next: 0</content>
-    <updated>2014-01-02T00:49:55+01:00</updated>
+    <updated>2014-01-03T15:41:17+01:00</updated>
   </entry>
 </feed>

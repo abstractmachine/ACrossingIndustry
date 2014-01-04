@@ -2,44 +2,59 @@
 using System.Collections;
 using System.Collections.Generic; // <List>
 
-public class Persona : MonoBehaviour {
+public class Persona : Actor {
 
-	// the list of walking coordinates
+	// Actor's type as a string
+	public override string Type { get { return "Persona"; } }
+
+	// the list of walking coordinates for the Persona
 	List<Vector3> coordinates = new List<Vector3>();
 
-	float timeoutLength = 10.0f;
-	float timeoutValue;
+    public float personaImpatienceDelay = 30.0f;
 
-	void Start () {
 
-		// set the starting length to a random value
-		timeoutValue = timeoutLength * Random.Range(1.0f,5.0f);
+	////////////////// Init
+
+	protected override void Start () {
+
+		base.Start();
+
+        impatienceDelay = personaImpatienceDelay;
+        impatienceCountdown = Random.Range(1,impatienceDelay);
 
 	}
 
 
+	public void SetCoordinates(List<Vector3> newCoordinates) {
+
+		// remember this list of coordinates
+		coordinates = newCoordinates;
+		// set to the first coordinate
+		Vector3 targetCoordinate = GetTargetCoordinate(0);
+
+		SetTargetPosition(targetCoordinate);
+
+	}	
+
+
+	/////////////////// Loop
+
+	protected override void Update () {
+
+		base.Update();
+
+	}
+
+
+
+	///////////////////// Initialize Material to show which "clan/camp" this Persona blong to
 
 	public void SetMaterial(Material newMaterial) {
 
 		FindMaterialInChild(transform, newMaterial);
 
-		/*
-		// find the child containing the material
-		foreach(Transform child in transform) {
-			foreach(Transform subchild in child) {
-
-				// not the material layer
-	    		if(subchild.gameObject.tag != "Material") continue;
-	        		// change material color
-				subchild.gameObject.renderer.material = newMaterial;
-				print("Set Material");
-				break;
-
-			} // foreach(Transfrom subchild
-    	} // foreach(Transform child
-    		*/
-
 	}
+
 
 
 	void FindMaterialInChild(Transform child, Material newMaterial) {
@@ -58,53 +73,37 @@ public class Persona : MonoBehaviour {
 		}
 
 	}
-	
 
-	void Update () {
+
+	///////////////// Impatience
+
+	protected override void DoSomethingImpatient() { // overrides base class
+
+		SetNextTargetCoordinate();
 	
-		timeoutValue -= Time.deltaTime;
-		if (timeoutValue < 0.0f) SetRandomTargetCoordinate();
+	}
+
+
+	void SetNextTargetCoordinate() {
+
+		// there have to be at least two coordinates to change position
+		if (coordinates.Count <= 1) return;
+
+		int coordinateIndex = (int)Random.Range(0,coordinates.Count);
+		Vector3 targetCoordinate = GetTargetCoordinate(coordinateIndex);
+
+		SetTargetPosition(targetCoordinate);
 
 	}
 
 
-	void ResetTimeout() {
-	
-		timeoutValue = timeoutLength;
-
-	}
-
-
-	void SetRandomTargetCoordinate() {
-
-		int randomIndex = (int)Random.Range(0,coordinates.Count);
-		SetTargetCoordinate(randomIndex);
-		
-	}
-
-
-	void SetTargetCoordinate(int coordinateIndex) {
-
-		if (coordinates.Count == 0) return;
+	Vector3 GetTargetCoordinate(int coordinateIndex) {
 
 		Vector3 targetCoordinate = coordinates[coordinateIndex];
 		// remove any y axis translations
 		targetCoordinate.y = transform.position.y;
-		
-		// reset timeout
-		ResetTimeout();
 
-		//print("Set new target for " + gameObject.name + " to " + targetCoordinate);
-
-	}
-
-
-	public void SetCoordinates(List<Vector3> newCoordinates) {
-
-		// remember this list of coordinates
-		coordinates = newCoordinates;
-		// set to the first coordinate
-		SetTargetCoordinate(0);
+		return targetCoordinate;
 
 	}
 

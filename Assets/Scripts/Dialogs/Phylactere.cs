@@ -423,12 +423,12 @@ public class Phylactere : MonoBehaviour {
 		// make sure the parent (the Persona) is there
 		if (transform.parent == null) return;
 		// if this is a multiple choice
-		//if (speech.texts.Count > 1) transform.parent.GetComponent<Dialog>().finishedSpeaking(speech.index);
+		//if (speech.texts.Count > 1) transform.parent.GetComponent<Talk>().finishedSpeaking(speech.index);
 		// tell the parent object we've finished Speaking
-		//else transform.parent.GetComponent<Dialog>().finishedSpeaking();
+		//else transform.parent.GetComponent<Talk>().finishedSpeaking();
 
 		// tell the parent object which phrase we chose
-		transform.parent.GetComponent<Dialog>().finishedSpeaking(speech.text);
+		transform.parent.GetComponent<Talk>().finishedSpeaking(speech.text);
 
 	}
 

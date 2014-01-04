@@ -4,10 +4,10 @@ using System.Collections;
 public class ClickTouch : MonoBehaviour {
 
 	public GameObject exploder;
-	public GameObject xSpot;
 
-	Walking walking;
-	GameObject player;
+	Walk walk;
+	GameObject playerObject;
+	Player playerScript;
 
 	public float playerRadius = 1.0f;
 	public float tumbleweedRadius = 1.0f;
@@ -24,8 +24,9 @@ public class ClickTouch : MonoBehaviour {
 
 		Input.simulateMouseWithTouches = false;
 
-		walking = GameObject.FindWithTag("Player").GetComponent<Walking>();
-		player = GameObject.FindWithTag("Player");
+		playerObject = GameObject.FindWithTag("Player");
+		playerScript = playerObject.GetComponent<Player>();
+		walk = GameObject.FindWithTag("Player").GetComponent<Walk>();
 
 	}
 	
@@ -48,9 +49,9 @@ public class ClickTouch : MonoBehaviour {
 					phylactere.touchUp(Input.GetTouch(0).position);
 					phylactere = null;
 				}
-
+ 
 				// tell the hero that there's been some activity
-				walking.ResetImpatience();
+				playerScript.ResetImpatience();
 
 			}
 
@@ -61,14 +62,14 @@ public class ClickTouch : MonoBehaviour {
 				lastTouchPosition = Input.mousePosition;
 
 				// tell the hero that there's been some activity
-				walking.ResetImpatience();
+				playerScript.ResetImpatience();
 
 			} else if (phylactere != null && Input.GetMouseButton(0)) { 	// if we're interacting with a phylactere
 				if (Vector3.Distance(lastTouchPosition,Input.mousePosition) > 0) phylactere.touchMoved(Input.mousePosition);
 				lastTouchPosition = Input.mousePosition;
 
 				// tell the hero that there's been some activity
-				walking.ResetImpatience();
+				playerScript.ResetImpatience();
 			
 			} else if (phylactere != null && Input.GetMouseButtonUp(0)) {	// if we're interacting with a phylactere
 				phylactere.touchUp(Input.mousePosition);
@@ -76,7 +77,7 @@ public class ClickTouch : MonoBehaviour {
 				phylactere = null;
 
 				// tell the hero that there's been some activity
-				walking.ResetImpatience();
+				playerScript.ResetImpatience();
 				
 			}
 
@@ -123,7 +124,7 @@ public class ClickTouch : MonoBehaviour {
         	if (hit.transform.gameObject.tag == "Persona") {
 
         		// see if we're already talking to them
-        		if (walking.isCollidingWith(hit.transform.gameObject)) {
+        		if (walk.isCollidingWith(hit.transform.gameObject)) {
         			// indicate that we clicked on a Persona
         			TouchedPersona(loc, hit.point, hit.transform.gameObject);
         			// ignore rest of click/touch
@@ -151,7 +152,7 @@ public class ClickTouch : MonoBehaviour {
         	}
 
         	// finally check to see if this is a point near enough to the player
-        	if (Vector3.Distance(hit.point,player.transform.position) < playerRadius) {
+        	if (Vector3.Distance(hit.point,playerObject.transform.position) < playerRadius) {
         		// indicate that we clicked on the player
         		TouchedPlayer(loc, hit.point);
         		// ignore rest of click/touch
@@ -222,18 +223,18 @@ public class ClickTouch : MonoBehaviour {
 		clicker.name = "Clicker";
 
 		// tell the player where to start walking
-		walking.setTargetPosition(loc);
+		playerScript.SetTargetPosition(loc);
 
 	}
 
 
 	void TouchedPlayer(Vector2 touchPoint, Vector3 hitPoint) {
 
-		Dialog dialog = player.GetComponent<Dialog>();
+		Talk talk = playerObject.GetComponent<Talk>();
 
 		// is someone talking?
-		if (dialog.IsTalking()) {
-			dialog.ClickAccelerate();
+		if (talk.IsTalking()) {
+			talk.ClickAccelerate();
 		}
 
 	}
@@ -241,13 +242,13 @@ public class ClickTouch : MonoBehaviour {
 
 	void TouchedPersona(Vector2 touchPoint, Vector3 hitPoint, GameObject persona) {
 
-		Dialog dialog = persona.GetComponent<Dialog>();
+		Talk talk = persona.GetComponent<Talk>();
 
 		// is someone talking?
-		if (dialog.IsTalking()) {
-			dialog.ClickAccelerate();
+		if (talk.IsTalking()) {
+			talk.ClickAccelerate();
 		} else {
-			walking.StartTalking(persona);
+			playerScript.StartTalking(persona);
 		}
 
 	}
@@ -256,17 +257,17 @@ public class ClickTouch : MonoBehaviour {
 	// get the parent of the phylactere we clicked on
 	void TouchedPhylactere(Vector2 touchPoint, Vector3 hitPoint, GameObject touchedObject) {
     
-    	// climb up parent chain until we hit the parent containing the Dialog engine
+    	// climb up parent chain until we hit the parent containing the Talk engine
 		Transform topParent = touchedObject.transform.parent;
 		// recursive-ish loop
-		while(topParent.GetComponent<Dialog>() == null) {
+		while(topParent.GetComponent<Talk>() == null) {
 			topParent = topParent.parent;
 		}
     	// ok, we're at the top
     	GameObject obj = topParent.gameObject;
     	// is it the player?
     	if (obj.tag == "Player") {
-    		phylactere = player.GetComponentInChildren<Phylactere>();
+    		phylactere = playerObject.GetComponentInChildren<Phylactere>();
     		// tell the phylactère that we just clicked on it
     		phylactere.touchDown(touchPoint, hitPoint);
     		return;
@@ -274,7 +275,7 @@ public class ClickTouch : MonoBehaviour {
     	// or is it a computer-controller persona?
     	if (obj.tag == "Persona") {
     		// tell the phylactère to accelerate the dialogue
-    		obj.GetComponent<Dialog>().ClickAccelerate();
+    		obj.GetComponent<Talk>().ClickAccelerate();
     		//phylactere = obj.GetComponentInChildren<Phylactere>();
     		// tell the phylactère that we just clicked on it
     		//phylactere.ClickAccelerate();

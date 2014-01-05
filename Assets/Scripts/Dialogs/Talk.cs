@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // required for List
+using System.Collections.Generic; // required for List & Dictionary
 
 public class Talk : MonoBehaviour {
 
+	
+	// are we already talking to someone?
+	public bool IsTalking { get { return otherTalker != null; } }
+	// the history of each dialog <stringCombiningTwoInstancesIDs,indexOfDialog>
+	private static Dictionary<string,DialogHistory> histories;
 	// the prefab we use to generate dialog bubbles
 	public GameObject phylacterePrefab;
 	GameObject phylactere = null;
-
-	public bool IsTalking() { return otherTalker != null; }
-
 	// a pointer to the other we're discussing with
 	GameObject otherPersona = null;
 	Talk otherTalker = null;
@@ -19,9 +21,11 @@ public class Talk : MonoBehaviour {
 	// the IDs of the two dialoging objects
 	string dialogID = "";
 	string instanceID = "";
-
-	// our previous rotation
+	// our previous rotation before the dialog started
 	Quaternion previousOrientation = Quaternion.identity;
+
+
+	////////////////////// Init
 
 	void Awake() {
 
@@ -29,31 +33,31 @@ public class Talk : MonoBehaviour {
 
 	}
 
-	//////////////////////////
+	//////////////////////
 
 
 	void OnApplicationQuit() {
 
-		killPhylactere();
+		KillPhylactere();
 
 	}
 
 
 	void OnDisable() {
 
-		killPhylactere();
+		KillPhylactere();
 
 	}
 
 
 	void OnDestroy() {
 
-		killPhylactere();
+		KillPhylactere();
 
 	}
 
 
-	void killPhylactere() {
+	void KillPhylactere() {
 
 		// if exists, kill it
 		if (phylactere != null) {
@@ -75,7 +79,20 @@ public class Talk : MonoBehaviour {
 	//////////////////////////
 
 
-	void startDialog() {
+	void StartDialog() {
+
+		// if we haven't created the Dictionary yet
+		if (histories == null) histories = new Dictionary<string,DialogHistory>();
+
+		// check to see if there's already a key for this dialog couple
+		if (histories.ContainsKey(instanceID) && !histories[instanceID].IsTooOld()) {
+			histories[instanceID].ResetTimer();
+			print("Updating old dialog (" + dialogID + "/" + instanceID + ")");
+		} else {
+			// create the entry in the dictionary
+			histories[instanceID] = new DialogHistory(0);
+			print("Created new dialog (" + dialogID + "/" + instanceID + ")");
+		}
 
 		// if the dialogue is currently at zero, start it
 		if (Scenario.Instance.IsNeutral(dialogID,instanceID)) {
@@ -83,7 +100,7 @@ public class Talk : MonoBehaviour {
 		}
 
 		// tell the submissive other to start the actual talking
-		otherTalker.reply();
+		otherTalker.Reply();
 
 	}
 
@@ -91,16 +108,16 @@ public class Talk : MonoBehaviour {
 
 	void Speak(List<string> phrases) {
 
-		createPhylactere();
+		CreatePhylactere();
 		phylactere.GetComponent<Phylactere>().Speak(phrases);
 
 	}
 
 
-	void createPhylactere() {
+	void CreatePhylactere() {
 
 		// make sure we don't have any dangling phylacteres
-		killPhylactere();
+		KillPhylactere();
 
 		phylactere = (GameObject)Instantiate(phylacterePrefab);
 		phylactere.name = "Phylactere";
@@ -110,22 +127,22 @@ public class Talk : MonoBehaviour {
 	}
 
 
-	void reply() {
+	void Reply() {
 
-		if (initiatedDialog) replyActive();
-		else replyPassive();
+		if (initiatedDialog) ReplyActive();
+		else ReplyPassive();
 
 	}
 
 
-	void replyPassive() {
+	void ReplyPassive() {
 
 		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,instanceID,false);
 
-		// if no reply
+		// if no Reply
 		if (phrases.Count == 0) {
 			// stop talking
-			abortDialog();
+			AbortDialog();
 			// don't Speak
 			return;
 		}
@@ -143,16 +160,16 @@ public class Talk : MonoBehaviour {
 	}
 
 
-	void replyActive() {
+	void ReplyActive() {
 
 		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,instanceID,true);
 
-		// if we don't have anything to reply
+		// if we don't have anything to Reply
 		if (phrases.Count == 0) {
 			// set the conversation index back to zero
 			Scenario.Instance.Reset(dialogID,instanceID);
 			// stop talking
-			abortDialog();
+			AbortDialog();
 			// get outta here
 			return;
 		}
@@ -162,23 +179,23 @@ public class Talk : MonoBehaviour {
 	}
 
 
-	public void finishedSpeaking(string chosenPhrase) {
+	public void FinishedSpeaking(string chosenPhrase) {
 
-		// if there's no more other, we must have finished Speaking. No need to reply
+		// if there's no more other, we must have finished Speaking. No need to Reply
 		if (otherPersona == null || otherTalker == null) return;
 
-		// if we're the subordinate one, let the initiator reply
+		// if we're the subordinate one, let the initiator Reply
 		if (!initiatedDialog) {
-			// tell the other to reply to use
-			otherTalker.reply();
+			// tell the other to Reply to use
+			otherTalker.Reply();
 		}
 
 		// if we're the dominant one
 		if (initiatedDialog) {
 			// tell the dialogue engine we've made a choice
 			Scenario.Instance.Choose(dialogID,instanceID,chosenPhrase);
-			// tell the other to reply
-			otherTalker.reply();
+			// tell the other to Reply
+			otherTalker.Reply();
 		} 
 
 	}
@@ -187,7 +204,7 @@ public class Talk : MonoBehaviour {
 	public void ClickAccelerate() {
 
 		// if we're not talking, get outta here
-		if (!IsTalking()) return;
+		if (!IsTalking) return;
 
 		// if we're the one talking
 		if (phylactere != null) phylactere.GetComponent<Phylactere>().ClickAccelerate();
@@ -201,7 +218,7 @@ public class Talk : MonoBehaviour {
 	public void ClickAccelerateFromOther() {
 
 		// if we're not talking, get outta here
-		if (!IsTalking()) return;
+		if (!IsTalking) return;
 
 		// if we're the one talking
 		if (phylactere != null) phylactere.GetComponent<Phylactere>().ClickAccelerate();
@@ -214,38 +231,38 @@ public class Talk : MonoBehaviour {
 	//////////////////////////
 
 
-	// MARK: Start Dialog as Active (activateDialog) or Passive (submitPassivelyToDialog)
+	// MARK: Start Dialog as Active (activateDialog) or Passive (SubmitPassivelyToDialog)
 
-	public void activateDialog(GameObject other) {
+	public void ActivateDialog(GameObject other) {
 
 		// get that other's Dialog
 		otherTalker = other.GetComponent<Talk>();
 		// if no social engine, quit discussing with this persona
 		if (otherTalker == null) return;
 		// tell the other to submit to this dialog request and see if they're ok
-		if (!otherTalker.submitPassivelyToDialog(gameObject))  {
+		if (!otherTalker.SubmitPassivelyToDialog(gameObject))  {
 			// if there was some error in initalizing dialog
 			print("unable to establish dialog with other");
 			// forget that other's social engine
-			forgetOther();
+			ForgetOther();
 			return;
 		}
 		// remember that I started this dialog
 		initiatedDialog = true;
 		// remember who that Persona is
-		rememberOther(other);
+		RememberOther(other);
 		// kill any previous phylacteres
-		killPhylactere();
+		KillPhylactere();
 		// the dialog has opened, start the actual discussion
-		startDialog();
+		StartDialog();
 
 	}
 
 
-	public bool submitPassivelyToDialog(GameObject other) {
+	public bool SubmitPassivelyToDialog(GameObject other) {
 
 		// if we're already talking to someone
-		if (IsTalking()) {
+		if (IsTalking) {
 			print("Already Talking");
 			return false;
 		}
@@ -253,9 +270,9 @@ public class Talk : MonoBehaviour {
 		// remember that the other Persona started this dialog
 		initiatedDialog = false;
 		// remember who that Persona is
-		rememberOther(other);
+		RememberOther(other);
 		// kill any previous phylacteres
-		killPhylactere();
+		KillPhylactere();
 		// remember where we were facing before
 		previousOrientation = transform.localRotation;
 		// turn to face that person
@@ -266,39 +283,39 @@ public class Talk : MonoBehaviour {
 	}
 
 
-	public void abortDialog() {
+	public void AbortDialog() {
 
-		if (!IsTalking()) return;
+		if (!IsTalking) return;
 
 		// if we initiated this dialog
 		if (initiatedDialog) {
 			// stop talking
-			abortActive();
+			AbortActive();
 		}
 
 		// if we were the passive responder to a dialog
 		if (!initiatedDialog) {
 			// stop being socially submissive! ;-)
-			abortPassive();
+			AbortPassive();
 		}
 
 		// reset "other" flag
-		forgetOther();
+		ForgetOther();
 
 	}
 
 
-	void abortActive() {
+	void AbortActive() {
 
 		// we've broken the conversation, stop talking to indicate this
-		killPhylactere();
+		KillPhylactere();
 		// tell the other it's over
-		otherTalker.abortDialog();
+		otherTalker.AbortDialog();
 
 	}
 
 
-	void abortPassive() {
+	void AbortPassive() {
 
 		// turn back to whatever we were doing
 		transform.localRotation = previousOrientation;
@@ -311,7 +328,7 @@ public class Talk : MonoBehaviour {
 	//////////////////////////
 
 
-	void rememberOther(GameObject other) {
+	void RememberOther(GameObject other) {
 
 		// remember who that Persona is
 		otherPersona = other;
@@ -320,22 +337,22 @@ public class Talk : MonoBehaviour {
 
 		// are we the active or passive one?
 		if (initiatedDialog) {
-			dialogID = "" + getID() + "-" + otherTalker.getID();
-			instanceID = "" + GetInstanceID() + "-" + otherTalker.GetInstanceID();
+			dialogID = "" + GetID() + "-" + otherTalker.GetID();
+			instanceID = "" + GetInstanceID() + "_" + otherTalker.GetInstanceID();
 		} else {
-			dialogID = "" + otherTalker.getID() + "-" + getID();
-			instanceID = "" + otherTalker.GetInstanceID() + "-" + GetInstanceID();
+			dialogID = "" + otherTalker.GetID() + "-" + GetID();
+			instanceID = "" + otherTalker.GetInstanceID() + "_" + GetInstanceID();
 		}
 
 	}
 
 
-	string getID() {
+	string GetID() {
 		return gameObject.name;
 	}
 
 
-	void forgetOther() {
+	void ForgetOther() {
 		
 		initiatedDialog = false;
 

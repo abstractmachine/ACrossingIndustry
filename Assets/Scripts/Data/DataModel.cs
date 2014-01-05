@@ -42,6 +42,30 @@ public class PersonaData {
 /////////////////////////
 
 
+public class DialogHistory {
+
+	int index;
+	float time;
+	float timeDelay = 10.0f; // two minutes
+
+	public DialogHistory(int _index) {
+		index = _index;
+		ResetTimer();
+	}
+
+	public int Index { get { return index; } set { index = value; } }
+
+	public void ResetTimer() {
+		time = Time.time;
+	}
+
+	public bool IsTooOld() {
+		return (Time.time - time > timeDelay);
+	}
+
+}
+
+
 public class DialogData {
 
 	public string id;

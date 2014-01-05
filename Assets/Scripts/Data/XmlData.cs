@@ -202,9 +202,33 @@ public class XmlData : MonoBehaviour {
 
 		// load xml file from local storage
 		XmlDocument doc = new XmlDocument();
+
+#if UNITY_EDITOR
+
 		TextAsset xmlText = (TextAsset)Resources.Load("dialog_names", typeof(TextAsset));
 		doc.LoadXml(xmlText.text);
-		//doc.Load("dialog_names.xml");
+
+#elif UNITY_STANDALONE_OSX
+
+		string filepath = Application.dataPath + @"/Data/dialog_names.xml";
+		if (File.Exists(filepath)) {
+			doc.Load(filepath);
+		} else {
+			TextAsset xmlText = (TextAsset)Resources.Load("dialog_names", typeof(TextAsset));
+			doc.LoadXml(xmlText.text);
+		}
+
+#elif UNITY_STANDALONE_WIN
+
+		string filepath = Application.dataPath + @"/Data/dialog_names.xml";
+		if (File.Exists(filepath)) {
+			doc.Load(filepath);
+		} else {
+			TextAsset xmlText = (TextAsset)Resources.Load("dialog_names", typeof(TextAsset));
+			doc.LoadXml(xmlText.text);
+		}
+
+#endif
 
 		// go through each entry
 		XmlNodeList entries = doc.GetElementsByTagName("entry");
@@ -238,8 +262,34 @@ public class XmlData : MonoBehaviour {
 			DialogData dialogData = dialogEntry.Value;
 
 			XmlDocument doc = new XmlDocument();
+
+#if UNITY_EDITOR
+
 			TextAsset xmlText = (TextAsset)Resources.Load(dialogId, typeof(TextAsset));
 			doc.LoadXml(xmlText.text);
+
+#elif UNITY_STANDALONE_OSX
+
+			string filepath = Application.dataPath + @"/Data/Xml" + dialogId + ".xml";
+			if (File.Exists(filepath)) {
+				doc.Load(filepath);
+			} else {
+				TextAsset xmlText = (TextAsset)Resources.Load(dialogId, typeof(TextAsset));
+				doc.LoadXml(xmlText.text);
+			}
+
+#elif UNITY_STANDALONE_WIN
+
+			string filepath = Application.dataPath + @"/Data/Xml" + dialogId + ".xml";
+			if (File.Exists(filepath)) {
+				doc.Load(filepath);
+			} else {
+				TextAsset xmlText = (TextAsset)Resources.Load(dialogId, typeof(TextAsset));
+				doc.LoadXml(xmlText.text);
+			}
+
+#endif
+
 			//string filepath = System.IO.Path.Combine(@"./Assets/Xml/Ressources/", dialogId + ".xml");
 			//doc.Load(dialogId + ".xml");
 

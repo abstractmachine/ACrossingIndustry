@@ -20,6 +20,7 @@ public class Player : Actor {
     // the cheat system
     Cheat cheat;
 
+
 	///////////////// Init
 
 	protected override void Start () {
@@ -127,7 +128,7 @@ public class Player : Actor {
         if (targetHistory.Count == 0) return;
 
         // if we're walking, wait until we're done
-        if (walk.IsWalking()) return;
+        if (walk.IsWalking) return;
 
         // extract a random position from the list
         Vector3 randomPosition = targetHistory[(int)Random.Range(0,targetHistory.Count)];
@@ -181,7 +182,7 @@ public class Player : Actor {
 
     public override void StartTalking(GameObject other) {
 
-        talk.activateDialog(other);
+        talk.ActivateDialog(other);
 
     }
 
@@ -195,7 +196,7 @@ public class Player : Actor {
 
     public override void AbortDialog() {
 
-    	talk.abortDialog();
+    	talk.AbortDialog();
 
     }
 
@@ -205,14 +206,14 @@ public class Player : Actor {
 
     void setCurrentDistanceToZero() {
 
-        walk.setCurrentDistanceToZero();
+        walk.SetCurrentDistanceToZero();
 
     }
 
 
     void setCurrentDistanceToMax() {
 
-        walk.setCurrentDistance(follow.zoomMax);
+        walk.SetCurrentDistance(follow.zoomMax);
 
     }
 

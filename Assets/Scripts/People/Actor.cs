@@ -10,6 +10,10 @@ abstract public class Actor : MonoBehaviour {
     // are we Player or Persona?
     abstract public string Type { get; }
 
+	public bool IsWalking { get { return walk.IsWalking; } }
+	public bool IsPaused  { get { return walk.IsPaused; } }
+    public bool IsTalking { get { return talk.IsTalking; } }
+
     // the time it takes to get bored and randomly do something
     public float impatienceDelay = 60.0f; // two minutes
     protected float impatienceCountdown = 0f;
@@ -56,16 +60,17 @@ abstract public class Actor : MonoBehaviour {
 
 	///////////////// Walking
 
-	public bool IsWalking() {
 
-		return walk.IsWalking();
+	public void PauseWalking() {
+
+		walk.PauseWalking();
 
 	}
 
 
-	public void PauseWalking() {
+	public void ResumeWalking() {
 
-		AbortWalking();
+		walk.ResumeWalking();
 
 	}
 
@@ -89,12 +94,6 @@ abstract public class Actor : MonoBehaviour {
 
 
     //////////////////// Talking
-
-    public bool IsTalking() {
-
-    	return talk.IsTalking();
-
-    }
 
     public virtual void StartTalking(GameObject other) {
 
@@ -127,7 +126,7 @@ abstract public class Actor : MonoBehaviour {
 		if (walk == null) return;
 
 		// if we're active, don't get impatient
-		if (walk.IsWalking()) ResetImpatience();
+		if (walk.IsWalking) ResetImpatience();
 		//if (talk.IsTalking()) ResetImpatience();
 
         impatienceCountdown -= Time.deltaTime;

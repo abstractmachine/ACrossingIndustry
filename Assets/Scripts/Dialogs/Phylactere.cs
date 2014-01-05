@@ -100,7 +100,7 @@ public class Phylactere : MonoBehaviour {
 
 		// if we need to reply to this phrase
 		// tell the parent gameObject that we've finished Speaking
-		if (speech.shouldReply) finishedSpeaking();
+		if (speech.shouldReply) FinishedSpeaking();
 		
 		if (mat != null) DestroyImmediate(mat);
 
@@ -385,7 +385,7 @@ public class Phylactere : MonoBehaviour {
 		resizeFrame();
 
 		// are we at the end of the speech?
-		//if (speech.charIndex >= speech.text.Length) finishedSpeaking(speech.text);
+		//if (speech.charIndex >= speech.text.Length) FinishedSpeaking(speech.text);
 
 	}
 
@@ -418,17 +418,17 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	void finishedSpeaking() {
+	void FinishedSpeaking() {
 
 		// make sure the parent (the Persona) is there
 		if (transform.parent == null) return;
 		// if this is a multiple choice
-		//if (speech.texts.Count > 1) transform.parent.GetComponent<Talk>().finishedSpeaking(speech.index);
+		//if (speech.texts.Count > 1) transform.parent.GetComponent<Talk>().FinishedSpeaking(speech.index);
 		// tell the parent object we've finished Speaking
-		//else transform.parent.GetComponent<Talk>().finishedSpeaking();
+		//else transform.parent.GetComponent<Talk>().FinishedSpeaking();
 
 		// tell the parent object which phrase we chose
-		transform.parent.GetComponent<Talk>().finishedSpeaking(speech.text);
+		transform.parent.GetComponent<Talk>().FinishedSpeaking(speech.text);
 
 	}
 

@@ -30,14 +30,14 @@ public class GoogleDocs : MonoBehaviour {
 	SpreadsheetsService spreadsheetService = null;
 	SpreadsheetEntry spreadsheet = null;
 
-	XmlData xml;
+	Data data;
 
 	///////////////
 
 
 	void Awake () {
 
-		xml = gameObject.GetComponent<XmlData>();
+		data = gameObject.GetComponent<Data>();
 		
 	}
 
@@ -61,7 +61,7 @@ public class GoogleDocs : MonoBehaviour {
 				print("Couldn't import from Google Docs");
 			} else {
 				// reload the new local xml files
-				xml.LoadXml();
+				data.LoadXml();
 			}
 
 		}
@@ -79,7 +79,7 @@ public class GoogleDocs : MonoBehaviour {
 		// if some error, return false
 		if (!loaded) return false;
 		// update the list of available dialogs
-		Dictionary<string,DialogData> dialogs = xml.DialogNames();
+		Dictionary<string,DialogData> dialogs = data.DialogNames();
 
 		// get all the remote google dialogs
 		foreach(KeyValuePair<string,DialogData> dialogEntry in dialogs) {

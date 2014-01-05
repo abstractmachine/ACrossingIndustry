@@ -4,28 +4,80 @@ using System.Collections.Generic; // <List>
 using System.Text.RegularExpressions; // Regex
 
 /*
+
  * PersonaData
+ 	" name
+ 	" prefab
+ 	" faction
+ 	v coordinate
+ 	<v> coordinates
+
+* DialogHistory
+	" index
+	f time
+	f timeDelay
 
  * DialogData
  	" id
  	" player
  	" persona
-    <int,Utterance> utterances
-    				<SpeechAct> personaSpeechActs
-    							" action
-    							" phrase
-    				<SpeechAct> playerSpeechActs
-    							" action
-    							" phrase
-        						<Consequence> consequences
-        									  " condition
-        									  <"> nexts
-        									  " result
+    <i,Utterance> utterances
+    			  <SpeechAct> personaSpeechActs
+    						  " action
+    						  " phrase
+    			  <SpeechAct> playerSpeechActs
+    						  " action
+    						  " phrase
+        					  <Consequence> consequences
+        									" condition
+        									<"> nexts
+        									" result
 
 */
 
 
 /////////////////////////
+
+
+public class DataHistory {
+
+	int index;
+	float time;
+	public float delay = 120.0f; // should be two minutes
+
+	public bool IsTooOld { get { return Time.time - time > delay; } }
+	public bool IsNeutral { get { return index == 0; } }
+	
+	public int Index { 
+		get { 
+			if (IsTooOld) Reset();
+			else ResetTimer();
+			return index; 
+		} 
+		set { 
+			index = value; 
+			ResetTimer();
+		} 
+	}
+
+	public DataHistory() {
+		Reset();
+	}
+
+	public void Start() {
+		index = 1;
+	}
+
+	void Reset() {
+		index = 0;
+		ResetTimer();
+	}
+
+	void ResetTimer() {
+		time = Time.time;
+	}
+
+}
 
 
 public class PersonaData {
@@ -40,30 +92,6 @@ public class PersonaData {
 
 
 /////////////////////////
-
-
-public class DialogHistory {
-
-	int index;
-	float time;
-	float timeDelay = 10.0f; // two minutes
-
-	public DialogHistory(int _index) {
-		index = _index;
-		ResetTimer();
-	}
-
-	public int Index { get { return index; } set { index = value; } }
-
-	public void ResetTimer() {
-		time = Time.time;
-	}
-
-	public bool IsTooOld() {
-		return (Time.time - time > timeDelay);
-	}
-
-}
 
 
 public class DialogData {

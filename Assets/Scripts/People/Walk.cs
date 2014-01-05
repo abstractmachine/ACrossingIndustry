@@ -238,12 +238,13 @@ public class Walk : MonoBehaviour {
                 Actor otherActor = other.gameObject.GetComponent<Actor>();
                 // and I'm not talking and they're not talking
                 if (!actor.IsTalking && !otherActor.IsTalking) {
-
                     // and I'm close enough if they were walking
+
                     // or my target is close enough if they were standing still
-                    if ((otherActor.IsWalking  && IsPositionCloseEnoughTo(other.gameObject))
+                    if (IsPositionCloseEnoughTo(other.gameObject)
+                    && ((otherActor.IsWalking)
                     ||  (!otherActor.IsWalking && IsTargetCloseEnoughTo(other.gameObject))
-                    ){
+                    )) {
 
                         AbortWalking();
 
@@ -258,7 +259,7 @@ public class Walk : MonoBehaviour {
                         // tell the player (me) to start talking
                         actor.StartTalking(other.gameObject);
 
-                    } //
+                    } // if (IsPositionCloseEnoughTo
                 } // if (!actor.IsTalking
             } // if ("Player"
         } // if (collisionFlag
@@ -602,6 +603,8 @@ public class Walk : MonoBehaviour {
     // where am I going?
     Quaternion TargetRotation(Vector3 lookTarget) {
 
+        //float deltaY = lookTarget.y - transform.position.y;
+
         // make sure we remove any eventual y-axis transformations
         lookTarget.y = transform.position.y;
 
@@ -615,6 +618,7 @@ public class Walk : MonoBehaviour {
         return lookTargetRotation;
 
     }
+
 
 
     // this is used when the pathfinder takes too long to search (> 0.x seconds)
@@ -652,13 +656,11 @@ public class Walk : MonoBehaviour {
         endPointIndex = -1;
         currentPointIndex = -1;
         isWaitingForSeeker = false;
-
         paused = false;
-
         stuckTimeout = stuckTimeDelay;
 
         clearStuckPatternCheck();
-        
+
         actor.ClearTarget();
 
     }

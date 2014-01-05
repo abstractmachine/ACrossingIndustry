@@ -143,6 +143,7 @@ public class GoogleDocs : MonoBehaviour {
 
 		using (FileStream stream = File.Open(filepath, FileMode.Create)) {
 			listFeed.SaveToXml(stream);
+			print("Saving " + filepath);
 		}
 
 		return true;

@@ -9,22 +9,62 @@ using System.Xml;
 
 public class Data : MonoBehaviour {
 
+	// the dialog data, arranged by dialogID (Player.name + "_" + Persona.name)
 	Dictionary<string,DialogData> dialogs = new Dictionary<string,DialogData>();
 
+	// used for loading Persona GameObjects into Scene
+	GameObject personnagesObject;
 	public List<GameObject> prefabList = new List<GameObject>();
 	public List<Material> materialList = new List<Material>();
-
-	GameObject personnagesObject;
-	
 
 	////////////////// Accessor
 
 
-	DialogData GetDialogData(string dialogId) {
+	public DialogData GetDialogData(string dialogID) {
 
-		if (!dialogs.ContainsKey(dialogId)) return null;
+		if (!dialogs.ContainsKey(dialogID)) return null;
 
-		return dialogs[dialogId];
+		return dialogs[dialogID];
+
+	}
+
+
+	public Utterance GetUtteranceFromIndex(string dialogID, int index) {
+
+		// first extract all the data
+		DialogData dialogData = GetDialogData(dialogID);
+		// make sure that utterance has a key
+		if (!dialogData.utterances.ContainsKey(index)) return null;
+		// ok, found it
+		return dialogData.utterances[index];
+
+	}
+
+
+	public List<string> GetPersonaPhrasesFromIndex(string dialogID, int index) {
+
+		// the list of phrases can potentially include 0 (empty), 1 (single), or several (random/choice)
+		List<string> phrases = new List<string>();
+		// get the utterance for this index
+		Utterance utterance = GetUtteranceFromIndex(dialogID,index);
+		// if inexistant, return nothing
+		if (utterance == null) return phrases;
+		// now extract the proper speech act
+		return utterance.PersonaPhrases();
+
+	}
+
+
+	public List<string> GetPlayerPhrasesFromIndex(string dialogID, int index) {
+
+		// the list of phrases can potentially include 0 (empty), 1 (single), or several (random/choice)
+		List<string> phrases = new List<string>();
+		// get the utterance for this index
+		Utterance utterance = GetUtteranceFromIndex(dialogID,index);
+		// if inexistant, return nothing
+		if (utterance == null) return phrases;
+		// now extract the proper speech act
+		return utterance.PlayerPhrases();
 
 	}
 	
@@ -65,15 +105,6 @@ public class Data : MonoBehaviour {
 
 
 	void Update () {
-		
-		// reload the local xml files
-		if (Input.GetKeyDown(KeyCode.X)) {
-			LoadXml();
-		}
-
-		if (Input.GetKeyDown(KeyCode.T)) {
-			TestDialogData();
-		}
 	
 	}
 
@@ -147,39 +178,6 @@ public class Data : MonoBehaviour {
 	}
 
 
-	/////////////// Testing
-
-
-	void TestDialogData() {
-
-		// get the data of some random dialog
-		DialogData dialogData = GetDialogData("Ouvrier-Enfant");
-
-		if (dialogData == null) return;
-		// get an utterance
-		Utterance utterance = dialogData.GetUtterance(1);
-		// get a random persona phrase
-		int randomPersonaIndex = (int)UnityEngine.Random.Range(0,utterance.persona.Count);
-		// get that SpeechAct
-		SpeechAct personaSpeechAct = utterance.PersonaSpeechAct(randomPersonaIndex);
-		print(randomPersonaIndex + ": " + personaSpeechAct.phrase);
-		// chose a random player phrase
-		int randomPlayerIndex = (int)UnityEngine.Random.Range(0,utterance.player.Count);
-		// get that SpeechAct
-		SpeechAct playerSpeechAct = utterance.PlayerSpeechAct(randomPlayerIndex);
-		print(randomPlayerIndex + ": " + playerSpeechAct.phrase);
-		// print out possibilities
-		foreach(Consequence consequence in playerSpeechAct.consequences) {
-			string arguments = consequence.ConditionArguments();
-			string function = consequence.ConditionFunction();
-			print("function:" + function + "\targuments:" + arguments + "\tnext:" + consequence.Next());
-		}
-
-		//utterance.Dump();
-
-	}
-
-
 	////////////////// Text Parsing
 
 
@@ -237,12 +235,12 @@ public class Data : MonoBehaviour {
 			// if empty, forget the rest
 			if (!entry.HasChildNodes) continue;
 
-			string dialogId = entry["dialogid",gsxNamespace].InnerText;
+			string dialogID = entry["dialogid",gsxNamespace].InnerText;
 			string playerName = entry["playername",gsxNamespace].InnerText;
 			string personaName = entry["personaname",gsxNamespace].InnerText;
 
-			DialogData dialog = new DialogData(dialogId,playerName,personaName);
-			dialogs[dialogId] = dialog;
+			DialogData dialog = new DialogData(dialogID,playerName,personaName);
+			dialogs[dialogID] = dialog;
 			//dialogs.Add(dialog);
 
 		}
@@ -257,7 +255,7 @@ public class Data : MonoBehaviour {
 		//foreach(DialogData dialogData in dialogs) {
 
 			// extract id
-			string dialogId = dialogEntry.Key;
+			string dialogID = dialogEntry.Key;
 			// extract data
 			DialogData dialogData = dialogEntry.Value;
 
@@ -265,33 +263,33 @@ public class Data : MonoBehaviour {
 
 #if UNITY_EDITOR
 
-			TextAsset xmlText = (TextAsset)Resources.Load(dialogId, typeof(TextAsset));
+			TextAsset xmlText = (TextAsset)Resources.Load(dialogID, typeof(TextAsset));
 			doc.LoadXml(xmlText.text);
 
 #elif UNITY_STANDALONE_OSX
 
-			string filepath = Application.dataPath + @"/Data/Xml" + dialogId + ".xml";
+			string filepath = Application.dataPath + @"/Data/Xml" + dialogID + ".xml";
 			if (File.Exists(filepath)) {
 				doc.Load(filepath);
 			} else {
-				TextAsset xmlText = (TextAsset)Resources.Load(dialogId, typeof(TextAsset));
+				TextAsset xmlText = (TextAsset)Resources.Load(dialogID, typeof(TextAsset));
 				doc.LoadXml(xmlText.text);
 			}
 
 #elif UNITY_STANDALONE_WIN
 
-			string filepath = Application.dataPath + @"/Data/Xml" + dialogId + ".xml";
+			string filepath = Application.dataPath + @"/Data/Xml" + dialogID + ".xml";
 			if (File.Exists(filepath)) {
 				doc.Load(filepath);
 			} else {
-				TextAsset xmlText = (TextAsset)Resources.Load(dialogId, typeof(TextAsset));
+				TextAsset xmlText = (TextAsset)Resources.Load(dialogID, typeof(TextAsset));
 				doc.LoadXml(xmlText.text);
 			}
 
 #endif
 
-			//string filepath = System.IO.Path.Combine(@"./Assets/Xml/Ressources/", dialogId + ".xml");
-			//doc.Load(dialogId + ".xml");
+			//string filepath = System.IO.Path.Combine(@"./Assets/Xml/Ressources/", dialogID + ".xml");
+			//doc.Load(dialogID + ".xml");
 
 			string gsxNamespace = "http://schemas.google.com/spreadsheets/2006/extended";
 

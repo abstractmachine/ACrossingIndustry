@@ -10,42 +10,24 @@
   <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
   <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values" rel="self" type="application/atom+xml" />
   <title type="text">Sheet1</title>
-  <updated>2013-12-31T23:24:06+01:00</updated>
-  <entry>
-    <gsx:index>-2</gsx:index>
-    <gsx:sayspersona>"..."</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer>Après un trajet assez court, le joueur et le PNJ apperçoivent un checkpoint volant</gsx:actionplayer>
-    <gsx:condition />
-    <gsx:next>0</gsx:next>
-    <gsx:result />
-    <gsx:comment> flic/flic-jeep/soldat/soldat-jeep {1}</gsx:comment>
-    <title type="text">-2</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cre1l</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cre1l" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "...", actionplayer: Après un trajet assez court, le joueur et le PNJ apperçoivent un checkpoint volant, next: 0, comment:  flic/flic-jeep/soldat/soldat-jeep {1}</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
+  <updated>2014-01-05T21:38:21+01:00</updated>
   <entry>
     <gsx:index>-1</gsx:index>
-    <gsx:sayspersona>"I cannot take you there, I don't have a permit"</gsx:sayspersona>
+    <gsx:sayspersona>Good luck!/"God be with you"/"..."</gsx:sayspersona>
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>5</gsx:next>
+    <gsx:next>0</gsx:next>
     <gsx:result />
-    <gsx:comment />
+    <gsx:comment> flic/flic-jeep/soldat/soldat-jeep {1}</gsx:comment>
     <title type="text">-1</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/chk2m</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/chk2m" rel="self" type="application/atom+xml" />
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cre1l</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cre1l" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I cannot take you there, I don't have a permit", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Good luck!/"God be with you"/"...", next: 0, comment:  flic/flic-jeep/soldat/soldat-jeep {1}</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index>0</gsx:index>
@@ -54,43 +36,61 @@
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>0</gsx:next>
+    <gsx:next />
     <gsx:result />
     <gsx:comment />
     <title type="text">0</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ciyn3</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ciyn3" rel="self" type="application/atom+xml" />
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/chk2m</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/chk2m" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">next: 0</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text" />
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>99</gsx:index>
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
-    <gsx:actionpersona>une PNJ PIVERT s'approche du joueur</gsx:actionpersona>
+    <gsx:index>1</gsx:index>
+    <gsx:sayspersona>What are you doing around here?</gsx:sayspersona>
+    <gsx:repliesplayer>I'm looking for a job</gsx:repliesplayer>
+    <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
     <gsx:next>2</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">99</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ckd7g</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ckd7g" rel="self" type="application/atom+xml" />
+    <title type="text">1</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ciyn3</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ciyn3" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">actionpersona: une PNJ PIVERT s'approche du joueur, next: 2</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: What are you doing around here?, repliesplayer: I'm looking for a job, next: 2</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:repliesplayer>I'm looking for a way across the wall</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>contrebandier</gsx:condition>
-    <gsx:next>70</gsx:next>
+    <gsx:condition />
+    <gsx:next>20</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 5</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ckd7g</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ckd7g" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: I'm looking for a way across the wall, next: 20</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Just having a nice walk!</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>-1</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 6</title>
@@ -98,17 +98,17 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cyevm" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: contrebandier, next: 70</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: Just having a nice walk!, next: -1</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:repliesplayer>I'm looking for the bypass road</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>passeur</gsx:condition>
-    <gsx:next>40</gsx:next>
+    <gsx:condition />
+    <gsx:next>17</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 7</title>
@@ -116,17 +116,17 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cztg3" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: passeur, next: 40</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: I'm looking for the bypass road, next: 17</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:repliesplayer>I'm looking for a shop</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>voleur</gsx:condition>
-    <gsx:next>50</gsx:next>
+    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 8</title>
@@ -134,8 +134,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d180g" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: voleur, next: 50</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: I'm looking for a shop, condition: the PLACE is southward, next: 30</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -143,8 +143,8 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>paysan en tracteur</gsx:condition>
-    <gsx:next>2</gsx:next>
+    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 9</title>
@@ -152,35 +152,35 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d2mkx" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: paysan en tracteur, next: 2</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is northward, next: 31</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>1</gsx:index>
-    <gsx:sayspersona>"What are you doing around here?"/"Everything allright?"</gsx:sayspersona>
+    <gsx:index />
+    <gsx:sayspersona />
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next />
+    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">1</title>
+    <title type="text">Row: 10</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fhpn7</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fhpn7" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "What are you doing around here?"/"Everything allright?"</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is eastward, next: 32</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
-    <gsx:sayspersona>"Do you need some help?"</gsx:sayspersona>
-    <gsx:repliesplayer>"I'm looking for [PLACE], do you know where it is?"</gsx:repliesplayer>
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur s'arrête</gsx:actionplayer>
-    <gsx:condition>le joueur est dans PLACE</gsx:condition>
-    <gsx:next>11</gsx:next>
+    <gsx:actionplayer />
+    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 11</title>
@@ -188,53 +188,53 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cssly" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Do you need some help?", repliesplayer: "I'm looking for [PLACE], do you know where it is?", actionplayer: le joueur s'arrête, condition: le joueur est dans PLACE, next: 11</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is westward, next: 33</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:index>2</gsx:index>
+    <gsx:sayspersona>There are no jobs around here. This is why everybody get jobs on the other side!</gsx:sayspersona>
+    <gsx:repliesplayer>How is it possible to get such a job?</gsx:repliesplayer>
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur s'arrête</gsx:actionplayer>
-    <gsx:condition>PLACE est dans zone à intérieur du mur+le joueur est près de PLACE+et avance dans la direction de PLACE</gsx:condition>
-    <gsx:next>12</gsx:next>
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>3</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 12</title>
+    <title type="text">2</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cu76f</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cu76f" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">actionplayer: le joueur s'arrête, condition: PLACE est dans zone à intérieur du mur+le joueur est près de PLACE+et avance dans la direction de PLACE, next: 12</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: There are no jobs around here. This is why everybody get jobs on the other side!, repliesplayer: How is it possible to get such a job?, next: 3</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:index>3</gsx:index>
+    <gsx:sayspersona>You have to get some connections. No connections, no job</gsx:sayspersona>
+    <gsx:repliesplayer>How do you get such connection?</gsx:repliesplayer>
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur s'arrête</gsx:actionplayer>
-    <gsx:condition>PLACE est dans zone à intérieur du mur+le joueur est loin de PLACE+et avance dans la direction de PLACE</gsx:condition>
-    <gsx:next>18</gsx:next>
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>4</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 13</title>
+    <title type="text">3</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cvlqs</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cvlqs" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">actionplayer: le joueur s'arrête, condition: PLACE est dans zone à intérieur du mur+le joueur est loin de PLACE+et avance dans la direction de PLACE, next: 18</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: You have to get some connections. No connections, no job, repliesplayer: How do you get such connection?, next: 4</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:repliesplayer>What kind of connection?</gsx:repliesplayer>
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur s'arrête</gsx:actionplayer>
-    <gsx:condition>PLACE est dans zone à intérieur du mur+le joueur est loin de PLACE+et avance dans la direction opposé de PLACE</gsx:condition>
-    <gsx:next>18</gsx:next>
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>5</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 14</title>
@@ -242,35 +242,35 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cx0b9" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">actionplayer: le joueur s'arrête, condition: PLACE est dans zone à intérieur du mur+le joueur est loin de PLACE+et avance dans la direction opposé de PLACE, next: 18</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: What kind of connection?, next: 5</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:index>4</gsx:index>
+    <gsx:sayspersona>No idea. I'm too old for that.</gsx:sayspersona>
+    <gsx:repliesplayer>...</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>PLACE est situé de l'autre côté du mur</gsx:condition>
-    <gsx:next>-1</gsx:next>
+    <gsx:condition />
+    <gsx:next>15</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 15</title>
+    <title type="text">4</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d9ney</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d9ney" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: PLACE est situé de l'autre côté du mur, next: -1</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: No idea. I'm too old for that., repliesplayer: ..., next: 15</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer>"I'm having a walk thank you!"</gsx:repliesplayer>
+    <gsx:repliesplayer>Wait, what kind of connection are you speaking about?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>14</gsx:next>
+    <gsx:next>5</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 16</title>
@@ -278,300 +278,228 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/db1zf" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "I'm having a walk thank you!", next: 14</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: Wait, what kind of connection are you speaking about?, next: 5</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"..."</gsx:repliesplayer>
+    <gsx:index>5</gsx:index>
+    <gsx:sayspersona>Either a contractor living in the surrounding colonies or somebody living on the other side of the wall</gsx:sayspersona>
+    <gsx:repliesplayer>They can get me a legal job?</gsx:repliesplayer>
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur s'enfuit</gsx:actionplayer>
+    <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>15</gsx:next>
+    <gsx:next>6</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 17</title>
+    <title type="text">5</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dcgjs</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dcgjs" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "...", actionplayer: le joueur s'enfuit, next: 15</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Either a contractor living in the surrounding colonies or somebody living on the other side of the wall, repliesplayer: They can get me a legal job?, next: 6</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>3</gsx:index>
-    <gsx:sayspersona>"Well, here you are, this is [PLACE]"</gsx:sayspersona>
-    <gsx:repliesplayer>"Thank you, have a good day"</gsx:repliesplayer>
+    <gsx:index>6</gsx:index>
+    <gsx:sayspersona>Not necessaily legal, but at least a job</gsx:sayspersona>
+    <gsx:repliesplayer>I need to feed my family, we are broke!</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>5</gsx:next>
+    <gsx:next>7;8;9</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">3</title>
+    <title type="text">6</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d5fpr</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d5fpr" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Well, here you are, this is [PLACE]", repliesplayer: "Thank you, have a good day", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Not necessaily legal, but at least a job, repliesplayer: I need to feed my family, we are broke!, next: 7;8;9</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"I'm looking for SO and SO"</gsx:repliesplayer>
+    <gsx:index>7</gsx:index>
+    <gsx:sayspersona>Get a phone and call [******] on my behalf. He is a contractor</gsx:sayspersona>
+    <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>ne pas être dans/près/à l'entrée de PLACE de SO and SO</gsx:condition>
-    <gsx:next>6</gsx:next>
+    <gsx:condition />
+    <gsx:next>40</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 19</title>
+    <title type="text">7</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d6ua4</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d6ua4" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "I'm looking for SO and SO", condition: ne pas être dans/près/à l'entrée de PLACE de SO and SO, next: 6</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Get a phone and call [******] on my behalf. He is a contractor, repliesplayer: Thanks, next: 40</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:index>8</gsx:index>
+    <gsx:sayspersona>Get a phone and call [******] on my behalf. He is a contractor. He could even get you a permit</gsx:sayspersona>
+    <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>SO and SO est un PIVERT+dans la PLACE de SO and SO+près de SO and SO</gsx:condition>
-    <gsx:next>7</gsx:next>
+    <gsx:condition />
+    <gsx:next>42</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 20</title>
+    <title type="text">8</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d88ul</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d88ul" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: SO and SO est un PIVERT+dans la PLACE de SO and SO+près de SO and SO, next: 7</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Get a phone and call [******] on my behalf. He is a contractor. He could even get you a permit, repliesplayer: Thanks, next: 42</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:index>9</gsx:index>
+    <gsx:sayspersona>Get a phone and call [******] on my behalf. He might get you a job around here, for some days</gsx:sayspersona>
+    <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>SO and SO est un PIVERT+dans la PLACE de SO and SO+loin de SO and SO</gsx:condition>
-    <gsx:next>8</gsx:next>
+    <gsx:condition />
+    <gsx:next>43</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 21</title>
+    <title type="text">9</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dkvya</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dkvya" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: SO and SO est un PIVERT+dans la PLACE de SO and SO+loin de SO and SO, next: 8</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Get a phone and call [******] on my behalf. He might get you a job around here, for some days, repliesplayer: Thanks, next: 43</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:index>13</gsx:index>
+    <gsx:sayspersona>Mr. Stanley</gsx:sayspersona>
+    <gsx:repliesplayer>Where can I find him?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>SO and SO est un PIVERT+dans la PLACE de SO and SO+face à SO and SO</gsx:condition>
-    <gsx:next>0</gsx:next>
+    <gsx:condition />
+    <gsx:next>14</gsx:next>
     <gsx:result />
     <gsx:comment>voir rencontre avec SO and SO {1}</gsx:comment>
-    <title type="text">Row: 22</title>
+    <title type="text">13</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dmair</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dmair" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: SO and SO est un PIVERT+dans la PLACE de SO and SO+face à SO and SO, next: 0, comment: voir rencontre avec SO and SO {1}</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Mr. Stanley, repliesplayer: Where can I find him?, next: 14, comment: voir rencontre avec SO and SO {1}</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>5</gsx:index>
-    <gsx:sayspersona>"..."</gsx:sayspersona>
-    <gsx:repliesplayer />
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Ok, thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
     <gsx:next>15</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">5</title>
+    <title type="text">Row: 23</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dupz1</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/dupz1" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "...", next: 15</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: Ok, thanks, next: 15</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>6</gsx:index>
-    <gsx:sayspersona>"I'm sorry I cannot help you!"</gsx:sayspersona>
-    <gsx:repliesplayer />
+    <gsx:index>14</gsx:index>
+    <gsx:sayspersona>At the Blue Farm, North West</gsx:sayspersona>
+    <gsx:repliesplayer>How can I reach that place?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>5</gsx:next>
+    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">6</title>
+    <title type="text">14</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/e7d2q</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/e7d2q" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I'm sorry I cannot help you!", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: At the Blue Farm, North West, repliesplayer: How can I reach that place?, condition: the PLACE is southward, next: 30</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>7</gsx:index>
-    <gsx:sayspersona>"he lives at the corner"</gsx:sayspersona>
-    <gsx:repliesplayer>"Thanks"</gsx:repliesplayer>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur continue son chemin</gsx:actionplayer>
-    <gsx:condition />
-    <gsx:next>15</gsx:next>
+    <gsx:actionplayer />
+    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">7</title>
+    <title type="text">Row: 25</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ea67k</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ea67k" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "he lives at the corner", repliesplayer: "Thanks", actionplayer: le joueur continue son chemin, next: 15</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is northward, next: 31</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>8</gsx:index>
-    <gsx:sayspersona>"I have no idea where he lives"</gsx:sayspersona>
+    <gsx:index />
+    <gsx:sayspersona />
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>5</gsx:next>
+    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">8</title>
+    <title type="text">Row: 26</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/e1qt2</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/e1qt2" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I have no idea where he lives", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is eastward, next: 32</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>11</gsx:index>
-    <gsx:sayspersona>"Then, you reached your destination!"</gsx:sayspersona>
+    <gsx:index />
+    <gsx:sayspersona />
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>5</gsx:next>
+    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">11</title>
+    <title type="text">Row: 27</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/etu5e</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/etu5e" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Then, you reached your destination!", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is westward, next: 33</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>12</gsx:index>
-    <gsx:sayspersona>"I'll show you, it's not far from here."</gsx:sayspersona>
-    <gsx:repliesplayer>"Ok"</gsx:repliesplayer>
+    <gsx:index>15</gsx:index>
+    <gsx:sayspersona>…</gsx:sayspersona>
+    <gsx:repliesplayer />
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur suit le PNJ</gsx:actionplayer>
+    <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>0</gsx:next>
+    <gsx:next>-1</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">12</title>
+    <title type="text">15</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ewna8</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ewna8" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I'll show you, it's not far from here.", repliesplayer: "Ok", actionplayer: le joueur suit le PNJ, next: 0</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: …, next: -1</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"Where is it?"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition>le joueur est près de PLACE+et avance dans la direction de PLACE</gsx:condition>
-    <gsx:next>17</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 29</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ey1up</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ey1up" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "Where is it?", condition: le joueur est près de PLACE+et avance dans la direction de PLACE, next: 17</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition>le joueur est près de PLACE+et avance dans la direction opposé de PLACE</gsx:condition>
-    <gsx:next>16</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 30</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/eo7vq</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/eo7vq" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: le joueur est près de PLACE+et avance dans la direction opposé de PLACE, next: 16</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition>le joueur est loin de PLACE+et avance dans la direction de PLACE</gsx:condition>
-    <gsx:next>18</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 31</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/epmg7</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/epmg7" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: le joueur est loin de PLACE+et avance dans la direction de PLACE, next: 18</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition>le joueur est loin de PLACE+et avance dans la direction opposé de PLACE</gsx:condition>
-    <gsx:next>18</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 32</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/er10k</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/er10k" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: le joueur est loin de PLACE+et avance dans la direction opposé de PLACE, next: 18</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>14</gsx:index>
-    <gsx:sayspersona>"Have a good day!"</gsx:sayspersona>
+    <gsx:index>16</gsx:index>
+    <gsx:sayspersona>Oh, and you are looking for the bypass road</gsx:sayspersona>
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
@@ -579,108 +507,36 @@
     <gsx:next>15</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">14</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a832w</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a832w" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Have a good day!", next: 15</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>15</gsx:index>
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer>le joueur continue son chemin</gsx:actionplayer>
-    <gsx:condition />
-    <gsx:next>0</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">15</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/9znoe</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/9znoe" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">actionplayer: le joueur continue son chemin, next: 0</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>16</gsx:index>
-    <gsx:sayspersona>"It's right behind you!"</gsx:sayspersona>
-    <gsx:repliesplayer>"Ok, can you lead me there?"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>19</gsx:next>
-    <gsx:result />
-    <gsx:comment />
     <title type="text">16</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a2gt8</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a2gt8" rel="self" type="application/atom+xml" />
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ey1up</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ey1up" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "It's right behind you!", repliesplayer: "Ok, can you lead me there?", next: 19</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"Thanks, I'll manage"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>5</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 36</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/akq6p</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/akq6p" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "Thanks, I'll manage", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Oh, and you are looking for the bypass road, next: 15</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index>17</gsx:index>
-    <gsx:sayspersona>"It is the next settlement, straight ahead"</gsx:sayspersona>
-    <gsx:repliesplayer>"Ok, can you take me there?"</gsx:repliesplayer>
+    <gsx:sayspersona>I understand! Yet I'm not the one who could help you</gsx:sayspersona>
+    <gsx:repliesplayer>Who can then?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>19</gsx:next>
+    <gsx:next>18</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">17</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aaw7q</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aaw7q" rel="self" type="application/atom+xml" />
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/eo7vq</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/eo7vq" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "It is the next settlement, straight ahead", repliesplayer: "Ok, can you take me there?", next: 19</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"Thanks, I'll manage"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>5</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 38</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/acas7</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/acas7" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "Thanks, I'll manage", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: I understand! Yet I'm not the one who could help you, repliesplayer: Who can then?, next: 18</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index>18</gsx:index>
-    <gsx:sayspersona>"It's far from here, better come with me"</gsx:sayspersona>
-    <gsx:repliesplayer>"Ok, can you take me there?"</gsx:repliesplayer>
+    <gsx:sayspersona>Mr. Gonella the smuggler</gsx:sayspersona>
+    <gsx:repliesplayer>Where can I find him?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
@@ -688,57 +544,201 @@
     <gsx:result />
     <gsx:comment />
     <title type="text">18</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/epmg7</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/epmg7" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Mr. Gonella the smuggler, repliesplayer: Where can I find him?, next: 19</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Ok, thanks</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>-1</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 32</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/er10k</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/er10k" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Ok, thanks, next: -1</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>19</gsx:index>
+    <gsx:sayspersona>The Red Village between the farm and the wall</gsx:sayspersona>
+    <gsx:repliesplayer>How can I reach that place?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:next>30</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">19</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a832w</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a832w" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: The Red Village between the farm and the wall, repliesplayer: How can I reach that place?, condition: the PLACE is southward, next: 30</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:next>31</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 34</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/9znoe</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/9znoe" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">condition: the PLACE is northward, next: 31</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:next>32</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 35</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a2gt8</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a2gt8" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">condition: the PLACE is eastward, next: 32</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:next>33</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 36</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/akq6p</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/akq6p" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">condition: the PLACE is westward, next: 33</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>20</gsx:index>
+    <gsx:sayspersona>Then you need help!</gsx:sayspersona>
+    <gsx:repliesplayer>Can you help me?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>21</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">20</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aaw7q</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aaw7q" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Then you need help!, repliesplayer: Can you help me?, next: 21</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Who can help me?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>13;18;38</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 38</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/acas7</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/acas7" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Who can help me?, next: 13;18;38</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>No, I can manage myself</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>-1</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 39</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/arr0q</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/arr0q" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "It's far from here, better come with me", repliesplayer: "Ok, can you take me there?", next: 19</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: No, I can manage myself, next: -1</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"Thanks, I'll manage"</gsx:repliesplayer>
+    <gsx:index>21</gsx:index>
+    <gsx:sayspersona>Not me, but [****] might be able to do it</gsx:sayspersona>
+    <gsx:repliesplayer>Who is he?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>5</gsx:next>
+    <gsx:next>22;23</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 40</title>
+    <title type="text">21</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/at5l7</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/at5l7" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "Thanks, I'll manage", next: 5</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Not me, but [****] might be able to do it, repliesplayer: Who is he?, next: 22;23</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>19</gsx:index>
-    <gsx:sayspersona>"Follow me…"</gsx:sayspersona>
-    <gsx:repliesplayer />
+    <gsx:index>22</gsx:index>
+    <gsx:sayspersona>He lives in [VILLAGE]</gsx:sayspersona>
+    <gsx:repliesplayer>What does he do?</gsx:repliesplayer>
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur suit le PNJ</gsx:actionplayer>
+    <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>20</gsx:next>
+    <gsx:next>24</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">19</title>
+    <title type="text">22</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/auk5k</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/auk5k" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Follow me…", actionplayer: le joueur suit le PNJ, next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: He lives in [VILLAGE], repliesplayer: What does he do?, next: 24</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:repliesplayer>Where is [VILLAGE]?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>contrebandier</gsx:condition>
-    <gsx:next>70</gsx:next>
+    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 42</title>
@@ -746,8 +746,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/am4r2" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: contrebandier, next: 70</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: Where is [VILLAGE]?, condition: the PLACE is southward, next: 30</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -755,8 +755,8 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>passeur</gsx:condition>
-    <gsx:next>40</gsx:next>
+    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 43</title>
@@ -764,8 +764,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/anjbj" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: passeur, next: 40</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is northward, next: 31</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -773,8 +773,8 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>voleur</gsx:condition>
-    <gsx:next>50</gsx:next>
+    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 44</title>
@@ -782,8 +782,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aoxvw" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: voleur, next: 50</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is eastward, next: 32</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -791,8 +791,8 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>paysan en tracteur</gsx:condition>
-    <gsx:next>20</gsx:next>
+    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 45</title>
@@ -800,53 +800,53 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aqcgd" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: paysan en tracteur, next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is westward, next: 33</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>20</gsx:index>
-    <gsx:sayspersona>"..."</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona>Le PNJ reprend sa route avec le joueur qui le suit</gsx:actionpersona>
-    <gsx:actionplayer>ils font le trajet pour aller au point que le joueur à indiqué</gsx:actionplayer>
+    <gsx:index>23</gsx:index>
+    <gsx:sayspersona>He lives in the [COLONY]</gsx:sayspersona>
+    <gsx:repliesplayer>What does he do?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>21;-1</gsx:next>
+    <gsx:next>24</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">20</title>
+    <title type="text">23</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/b5sow</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/b5sow" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "...", actionpersona: Le PNJ reprend sa route avec le joueur qui le suit, actionplayer: ils font le trajet pour aller au point que le joueur à indiqué, next: 21;-1</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: He lives in the [COLONY], repliesplayer: What does he do?, next: 24</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>21</gsx:index>
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
+    <gsx:index>24</gsx:index>
+    <gsx:sayspersona>He might help you</gsx:sayspersona>
+    <gsx:repliesplayer>Should I tell him I come on your behalf?</gsx:repliesplayer>
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur entame une discussion avec le PNJ</gsx:actionplayer>
+    <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>0</gsx:next>
+    <gsx:next>25</gsx:next>
     <gsx:result />
     <gsx:comment>voir ouvrier+PIVERT lambda à pied</gsx:comment>
-    <title type="text">21</title>
+    <title type="text">24</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/axdae</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/axdae" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">actionplayer: le joueur entame une discussion avec le PNJ, next: 0, comment: voir ouvrier+PIVERT lambda à pied</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: He might help you, repliesplayer: Should I tell him I come on your behalf?, next: 25, comment: voir ouvrier+PIVERT lambda à pied</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer>"..."</gsx:repliesplayer>
+    <gsx:repliesplayer>Ok thanks!</gsx:repliesplayer>
     <gsx:actionpersona />
-    <gsx:actionplayer>le joueur ne dit rien</gsx:actionplayer>
+    <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>22</gsx:next>
+    <gsx:next>-1</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 48</title>
@@ -854,90 +854,89 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ayruv" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "...", actionplayer: le joueur ne dit rien, next: 22</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: Ok thanks!, next: -1</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>22</gsx:index>
-    <gsx:sayspersona>"Here you are chap!"</gsx:sayspersona>
-    <gsx:repliesplayer>"Thanks"</gsx:repliesplayer>
+    <gsx:index>25</gsx:index>
+    <gsx:sayspersona>You'd better tell him</gsx:sayspersona>
+    <gsx:repliesplayer>Why?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>voiture lambda</gsx:condition>
-    <gsx:next>15</gsx:next>
+    <gsx:condition />
+    <gsx:next>26</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">22</title>
+    <title type="text">25</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/b1kzp</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/b1kzp" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Here you are chap!", repliesplayer: "Thanks", actionpersona: 
-, condition: voiture lambda, next: 15</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>40</gsx:index>
-    <gsx:sayspersona>"Everything allright?"</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next />
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">40</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fkis1</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fkis1" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Everything allright?"</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona>"Do you need some help?"</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next />
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 51</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/faot2</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/faot2" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Do you need some help?"</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona>"What are you doing around here?"</gsx:sayspersona>
-    <gsx:repliesplayer>"Nothing, just going to visit some friends"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>41</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 52</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c6bhi</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c6bhi" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "What are you doing around here?", repliesplayer: "Nothing, just going to visit some friends", next: 41</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: You'd better tell him, repliesplayer: Why?, next: 26</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
     <gsx:sayspersona />
-    <gsx:repliesplayer>"Actually, I'm looking for SO and SO"</gsx:repliesplayer>
+    <gsx:repliesplayer>Ok, thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>42</gsx:next>
+    <gsx:next>-1</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 50</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fkis1</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fkis1" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Ok, thanks, next: -1</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>26</gsx:index>
+    <gsx:sayspersona>You usually help the people you know or the people who know your friends</gsx:sayspersona>
+    <gsx:repliesplayer>I understand, what's your name?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>27</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">26</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/faot2</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/faot2" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: You usually help the people you know or the people who know your friends, repliesplayer: I understand, what's your name?, next: 27</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>27</gsx:index>
+    <gsx:sayspersona>My name is [****]</gsx:sayspersona>
+    <gsx:repliesplayer>Ok, Where is [PLACE]?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition>the place is before the wall</gsx:condition>
+    <gsx:next>28</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">27</title>
+    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c6bhi</id>
+    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c6bhi" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: My name is [****], repliesplayer: Ok, Where is [PLACE]?, condition: the place is before the wall, next: 28</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition>the place is beyound the wall</gsx:condition>
+    <gsx:next>44</gsx:next>
     <gsx:result />
     <gsx:comment />
     <title type="text">Row: 53</title>
@@ -945,367 +944,187 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c7q1z" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "Actually, I'm looking for SO and SO", next: 42</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the place is beyound the wall, next: 44</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"I'm looking for a way to cross on the other side"</gsx:repliesplayer>
+    <gsx:index>28</gsx:index>
+    <gsx:sayspersona>...</gsx:sayspersona>
+    <gsx:repliesplayer>...</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>43</gsx:next>
+    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 54</title>
+    <title type="text">28</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c94mc</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c94mc" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "I'm looking for a way to cross on the other side", next: 43</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: ..., repliesplayer: ..., condition: the PLACE is southward, next: 30</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>41</gsx:index>
-    <gsx:sayspersona>"Fine"</gsx:sayspersona>
+    <gsx:index />
+    <gsx:sayspersona />
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>20</gsx:next>
+    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">41</title>
+    <title type="text">Row: 55</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/caj6t</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/caj6t" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Fine", next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is northward, next: 31</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>42</gsx:index>
-    <gsx:sayspersona>"I don't know that fellow"</gsx:sayspersona>
+    <gsx:index />
+    <gsx:sayspersona />
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>20</gsx:next>
+    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">42</title>
+    <title type="text">Row: 56</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hmyxm</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hmyxm" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I don't know that fellow", next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is eastward, next: 32</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>43</gsx:index>
+    <gsx:index />
     <gsx:sayspersona />
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>0</gsx:next>
+    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment>voir rencontre avec passeur pivert {1}</gsx:comment>
-    <title type="text">43</title>
+    <title type="text">Row: 57</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hps2g</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hps2g" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">next: 0, comment: voir rencontre avec passeur pivert {1}</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">condition: the PLACE is westward, next: 33, comment: voir rencontre avec passeur pivert {1}</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>50</gsx:index>
-    <gsx:sayspersona>"Everything allright?"</gsx:sayspersona>
-    <gsx:repliesplayer />
+    <gsx:index>30</gsx:index>
+    <gsx:sayspersona>Go South</gsx:sayspersona>
+    <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next />
+    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">50</title>
+    <title type="text">30</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fc3dj</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fc3dj" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Everything allright?"</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Go South, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona>"Do you need some help?"</gsx:sayspersona>
-    <gsx:repliesplayer />
+    <gsx:index>31</gsx:index>
+    <gsx:sayspersona>Go North</gsx:sayspersona>
+    <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next />
+    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 59</title>
+    <title type="text">31</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fdhxw</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fdhxw" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Do you need some help?"</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Go North, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona>"What are you doing around here?"</gsx:sayspersona>
-    <gsx:repliesplayer>"Nothing, just going to visit some friends"</gsx:repliesplayer>
+    <gsx:index>32</gsx:index>
+    <gsx:sayspersona>Go East</gsx:sayspersona>
+    <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>51</gsx:next>
+    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 60</title>
+    <title type="text">32</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hlkd9</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hlkd9" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "What are you doing around here?", repliesplayer: "Nothing, just going to visit some friends", next: 51</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Go East, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"Actually, I'm looking for SO and SO"</gsx:repliesplayer>
+    <gsx:index>33</gsx:index>
+    <gsx:sayspersona>Go West</gsx:sayspersona>
+    <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>52</gsx:next>
+    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 61</title>
+    <title type="text">33</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hy7gy</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hy7gy" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "Actually, I'm looking for SO and SO", next: 52</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Go West, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"I'm looking for a way to cross on the other side"</gsx:repliesplayer>
+    <gsx:index>38</gsx:index>
+    <gsx:sayspersona>Ms. [****], she is a smuggler. She can help you pass through the desert</gsx:sayspersona>
+    <gsx:repliesplayer>Where can I find her?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>0</gsx:next>
+    <gsx:next>39</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">Row: 62</title>
+    <title type="text">38</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hzm1f</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hzm1f" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "I'm looking for a way to cross on the other side", next: 0</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">sayspersona: Ms. [****], she is a smuggler. She can help you pass through the desert, repliesplayer: Where can I find her?, next: 39</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
   <entry>
-    <gsx:index>51</gsx:index>
-    <gsx:sayspersona>"Oh, I see"</gsx:sayspersona>
-    <gsx:repliesplayer />
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Ok, thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
     <gsx:condition />
-    <gsx:next>20</gsx:next>
+    <gsx:next>-1</gsx:next>
     <gsx:result />
     <gsx:comment />
-    <title type="text">51</title>
+    <title type="text">Row: 63</title>
     <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i2f69</id>
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i2f69" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Oh, I see", next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>52</gsx:index>
-    <gsx:sayspersona>"I don't know that fellow"</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>20</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">52</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hsl7a</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hsl7a" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I don't know that fellow", next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>53</gsx:index>
-    <gsx:sayspersona />
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>0</gsx:next>
-    <gsx:result />
-    <gsx:comment>rencontre avec un voleur {1}</gsx:comment>
-    <title type="text">53</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hvec4</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hvec4" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">next: 0, comment: rencontre avec un voleur {1}</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>70</gsx:index>
-    <gsx:sayspersona>"Everything allright?"</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next />
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">70</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fewid</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fewid" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Everything allright?"</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona>"Do you need some help?"</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next />
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 67</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/frjm2</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/frjm2" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Do you need some help?"</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona>"What are you doing around here?"</gsx:sayspersona>
-    <gsx:repliesplayer>"Nothing, just going to visit some friends"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>71</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 68</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/idnpl</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/idnpl" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "What are you doing around here?", repliesplayer: "Nothing, just going to visit some friends", next: 71</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"Actually, I'm looking for SO and SO"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>72</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 69</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i3tqm</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i3tqm" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "Actually, I'm looking for SO and SO", next: 72</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index />
-    <gsx:sayspersona />
-    <gsx:repliesplayer>"I'm looking for a way to cross on the other side"</gsx:repliesplayer>
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>0</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">Row: 70</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i58b3</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i58b3" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "I'm looking for a way to cross on the other side", next: 0</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>71</gsx:index>
-    <gsx:sayspersona>"Oh, I see"</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>20</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">71</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i81fx</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/i81fx" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "Oh, I see", next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>72</gsx:index>
-    <gsx:sayspersona>"I don't know that fellow"</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>20</gsx:next>
-    <gsx:result />
-    <gsx:comment />
-    <title type="text">72</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ikojm</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ikojm" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I don't know that fellow", next: 20</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:index>73</gsx:index>
-    <gsx:sayspersona>"..."</gsx:sayspersona>
-    <gsx:repliesplayer />
-    <gsx:actionpersona />
-    <gsx:actionplayer />
-    <gsx:condition />
-    <gsx:next>0</gsx:next>
-    <gsx:result />
-    <gsx:comment>rencontre avec contrebandier pivert {1}</gsx:comment>
-    <title type="text">73</title>
-    <id>https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/im343</id>
-    <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/im343" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "...", next: 0, comment: rencontre avec contrebandier pivert {1}</content>
-    <updated>2013-12-31T23:24:06+01:00</updated>
+    <content type="text">repliesplayer: Ok, thanks, next: -1</content>
+    <updated>2014-01-05T21:38:21+01:00</updated>
   </entry>
 </feed>

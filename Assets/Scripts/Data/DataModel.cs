@@ -68,7 +68,7 @@ public class DataHistory {
 		index = 1;
 	}
 
-	void Reset() {
+	public void Reset() {
 		index = 0;
 		ResetTimer();
 	}
@@ -78,6 +78,9 @@ public class DataHistory {
 	}
 
 }
+
+
+/////////////////////////
 
 
 public class PersonaData {
@@ -112,6 +115,10 @@ public class DialogData {
 		persona = _persona;
 		id = player + "-" + persona; 
 	}
+
+	// Accessor
+
+	public bool ContainsIndex(int index) { return utterances.ContainsKey(index); }
 
 	// Data extraction
 
@@ -155,10 +162,15 @@ public class DialogData {
 }
 
 
+/////////////////////////
+
+
 public class Utterance {
 
 	public List<SpeechAct> persona = new List<SpeechAct>();
 	public List<SpeechAct> player = new List<SpeechAct>();
+
+	////////////////////////////////////
 
 	List<SpeechAct> Whom(string whom) {
 		if (whom == "persona") return persona;
@@ -239,6 +251,9 @@ public class Utterance {
 }
 
 
+/////////////////////////
+
+
 public class SpeechAct {
 
 	public string action = null;
@@ -264,6 +279,9 @@ public class SpeechAct {
 }
 
 
+/////////////////////////
+
+
 public class Consequence {
 	
 	// consequence holds condition-associated next indexes and resulting changes
@@ -276,7 +294,7 @@ public class Consequence {
 		nexts.Add(next);
 	}
 	// get a random next
-	public int Next() {
+	public int RandomNext() {
 		if (nexts == null || nexts.Count == 0) return -1;
 		return nexts[(int)UnityEngine.Random.Range(0,nexts.Count)];
 	}

@@ -19,23 +19,14 @@ public class Talk : MonoBehaviour {
 	Talk otherTalker = null;
 	// are we the active one who initiated the conversation
 	bool initiatedDialog = false;
-	// the dialogID is based on the active (initiator) objectId
-	// the IDs of the two dialoging objects
+	// the dialogID is based on the active (Player) name + passive (Persona) name
 	string dialogID = "";
+	// the memory instance ID of the two dialoging objects
 	string instanceID = "";
 	// our previous rotation before the dialog started
 	Quaternion previousOrientation = Quaternion.identity;
 	// access to Data object
 	Data data;
-
-
-	////////////////////// Init
-
-	void Awake() {
-
-        Scenario.Instance.LoadDialogues(); // kill this
-
-	}
 
 
 	void Start() {
@@ -60,11 +51,8 @@ public class Talk : MonoBehaviour {
 		}
 
 		// if we need to start the dialog
-		if (histories[instanceID].IsNeutral) histories[instanceID].Start();
-
-		// if the dialogue is currently at zero, start it
-		if (Scenario.Instance.IsNeutral(dialogID,instanceID)) {			 // kill this
-			Scenario.Instance.StartConversation(dialogID,instanceID);
+		if (histories[instanceID].IsNeutral) {
+			histories[instanceID].Start();
 		}
 
 		// tell the submissive other to start the actual talking
@@ -92,7 +80,10 @@ public class Talk : MonoBehaviour {
 
 	void ReplyPassive() {
 
-		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,instanceID,false);		// kill this
+		// what is the current index of this conversation?
+		int index = histories[instanceID].Index;
+		// using current index level, get a List<> of possible phrases
+		List<string> phrases = data.GetPersonaPhrasesFromIndex(dialogID,index);
 
 		// if no Reply
 		if (phrases.Count == 0) {
@@ -107,6 +98,7 @@ public class Talk : MonoBehaviour {
 			string randomPhrase = phrases[(int)Random.Range(0,phrases.Count)];
 			// empty the list
 			phrases = new List<string>();
+			// add it back with the chosen phrase
 			phrases.Add(randomPhrase);
 		}
 
@@ -117,12 +109,15 @@ public class Talk : MonoBehaviour {
 
 	void ReplyActive() {
 
-		List<string> phrases = Scenario.Instance.GetPhrases(dialogID,instanceID,true);		// kill this
+		// what is the current index of this conversation?
+		int index = histories[instanceID].Index;
+		// using current index level, get a List<> of possible phrases
+		List<string> phrases = data.GetPlayerPhrasesFromIndex(dialogID,index);
 
 		// if we don't have anything to Reply
 		if (phrases.Count == 0) {
 			// set the conversation index back to zero
-			Scenario.Instance.Reset(dialogID,instanceID);									// kill this
+			histories[instanceID].Reset();
 			// stop talking
 			AbortDialog();
 			// get outta here
@@ -141,17 +136,94 @@ public class Talk : MonoBehaviour {
 
 		// if we're the subordinate one, let the initiator Reply
 		if (!initiatedDialog) {
+
+			// TODO: figure out Action based on chosen phrase (if it was randomly chosen)
+
 			// tell the other to Reply to use
 			otherTalker.Reply();
 		}
 
 		// if we're the dominant one
 		if (initiatedDialog) {
+
+			// figure out the index of the player's choice
+
+			// what is the current index of this conversation?
+			int index = histories[instanceID].Index;
+			// figure out the index of this player phrase
+			Utterance utterance = data.GetUtteranceFromIndex(dialogID,index);
+			// a flag to know if we found the phrase
+			bool foundPhrase = false;
+			// go through the player speech acts
+			foreach(SpeechAct speechAct in utterance.player) {
+				// if this is not our phrase, move on
+				if (speechAct.phrase != chosenPhrase) continue;
+				// ok, we found it
+				foundPhrase = true;
+				// get the list of consequences
+				SetNextDialogFromConsequences(speechAct.consequences);
+			}
+
+			// if we didn't find the phrase
+			if (!foundPhrase) {
+				// then that's some sort of error
+				print("Couldn't find phrase for index " + index + " in dialogID " + dialogID);
+				histories[instanceID].Reset();
+			}
+
 			// tell the dialogue engine we've made a choice
-			Scenario.Instance.Choose(dialogID,instanceID,chosenPhrase);		// kill this
+			//Scenario.Instance.Choose(dialogID,instanceID,chosenPhrase);		// kill this
 			// tell the other to Reply
 			otherTalker.Reply();
 		} 
+
+	}
+
+
+	void DoPlayerAction(string action, string arguments) {
+
+
+
+	}
+
+
+	void SetNextDialogFromConsequences(List<Consequence> consequences) {
+
+		// error trapping
+		if (consequences == null || consequences.Count == 0) {
+			print("No valid consequences for index " + histories[instanceID].Index + " in " + dialogID);
+			return;
+		}
+
+		/*
+		// TODO: choose consequence based on conditions
+		foreach(Consequence consequence in consequences) {
+
+			// get the condition
+			string function = consequence.ConditionFunction();
+			string arguments = consequence.ConditionArguments();
+			List<int> nextInts = consequence.nexts;
+
+		}*/
+
+		// for the moment, just choose the first consequence
+		int whichConsequence = 0;
+		// get that consequence
+		Consequence consequence = consequences[whichConsequence];
+		// extract next values
+		List<int> nextIndexes = consequence.nexts;
+		// choose one randomly
+		int nextIndex = nextIndexes[(int)UnityEngine.Random.Range(0,nextIndexes.Count)];
+		// set that to be our next dialog index
+		SetDialogIndex(nextIndex);
+
+	}
+
+
+	void SetDialogIndex(int nextIndex) {
+
+		// this will also automatically reset the timeout timer
+		histories[instanceID].Index = nextIndex;
 
 	}
 

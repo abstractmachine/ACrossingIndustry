@@ -208,7 +208,7 @@ public class Data : MonoBehaviour {
 
 #elif UNITY_STANDALONE_OSX
 
-		string filepath = Application.dataPath + @"/Data/dialog_names.xml";
+		string filepath = Application.dataPath + @"/Data/Xml/dialog_names.xml";
 		if (File.Exists(filepath)) {
 			doc.Load(filepath);
 		} else {
@@ -218,7 +218,7 @@ public class Data : MonoBehaviour {
 
 #elif UNITY_STANDALONE_WIN
 
-		string filepath = Application.dataPath + @"/Data/dialog_names.xml";
+		string filepath = Application.dataPath + @"\Data\Xml\dialog_names.xml";
 		if (File.Exists(filepath)) {
 			doc.Load(filepath);
 		} else {
@@ -268,7 +268,7 @@ public class Data : MonoBehaviour {
 
 #elif UNITY_STANDALONE_OSX
 
-			string filepath = Application.dataPath + @"/Data/Xml" + dialogID + ".xml";
+			string filepath = Application.dataPath + @"/Data/Xml/" + dialogID + ".xml";
 			if (File.Exists(filepath)) {
 				doc.Load(filepath);
 			} else {
@@ -278,7 +278,7 @@ public class Data : MonoBehaviour {
 
 #elif UNITY_STANDALONE_WIN
 
-			string filepath = Application.dataPath + @"/Data/Xml" + dialogID + ".xml";
+			string filepath = Application.dataPath + @"\Data\Xml\" + dialogID + ".xml";
 			if (File.Exists(filepath)) {
 				doc.Load(filepath);
 			} else {
@@ -427,8 +427,35 @@ public class Data : MonoBehaviour {
 
 		// create an xml document
 		XmlDocument doc = new XmlDocument();
+		// TextAsset xmlText = (TextAsset)Resources.Load("dialog_personae", typeof(TextAsset));
+		// doc.LoadXml(xmlText.text);
+
+#if UNITY_EDITOR
+
 		TextAsset xmlText = (TextAsset)Resources.Load("dialog_personae", typeof(TextAsset));
 		doc.LoadXml(xmlText.text);
+
+#elif UNITY_STANDALONE_OSX
+
+		string filepath = Application.dataPath + @"/Data/Xml/dialog_personae.xml";
+		if (File.Exists(filepath)) {
+			doc.Load(filepath);
+		} else {
+			TextAsset xmlText = (TextAsset)Resources.Load("dialog_personae", typeof(TextAsset));
+			doc.LoadXml(xmlText.text);
+		}
+
+#elif UNITY_STANDALONE_WIN
+
+		string filepath = Application.dataPath + @"\Data\Xml\dialog_personae.xml";
+		if (File.Exists(filepath)) {
+			doc.Load(filepath);
+		} else {
+			TextAsset xmlText = (TextAsset)Resources.Load("dialog_personae", typeof(TextAsset));
+			doc.LoadXml(xmlText.text);
+		}
+
+#endif
 
 		// go through each entry
 		XmlNodeList entries = doc.GetElementsByTagName("entry");

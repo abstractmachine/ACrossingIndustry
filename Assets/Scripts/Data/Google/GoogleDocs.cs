@@ -18,9 +18,9 @@ using System.Xml;
 using Google.GData.Client;
 using Google.GData.Extensions;
 using Google.GData.Spreadsheets;
-// Note: I replaced the buggy Newtonsoft.Json dll that Google furnished with the 2.0 equivalent downloaded from:
+// Note: IReplaced buggy Newtonsoft.Json dll Google furnished with the 2.0 equivalent downloaded from:
 // http://json.codeplex.com
-// Unfortunately, newer versions such as 3.5 or 4.0 caused other conflicts
+// Newer versions such as 3.5 or 4.0 caused other conflicts, notably with A* Pathfinding
 
 ////////////////////////
 
@@ -30,14 +30,14 @@ public class GoogleDocs : MonoBehaviour {
 	SpreadsheetsService spreadsheetService = null;
 	SpreadsheetEntry spreadsheet = null;
 
-	XmlData xml;
+	Data data;
 
 	///////////////
 
 
 	void Awake () {
 
-		xml = gameObject.GetComponent<XmlData>();
+		data = gameObject.GetComponent<Data>();
 		
 	}
 
@@ -61,7 +61,7 @@ public class GoogleDocs : MonoBehaviour {
 				print("Couldn't import from Google Docs");
 			} else {
 				// reload the new local xml files
-				xml.LoadXml();
+				data.LoadXml();
 			}
 
 		}
@@ -79,7 +79,7 @@ public class GoogleDocs : MonoBehaviour {
 		// if some error, return false
 		if (!loaded) return false;
 		// update the list of available dialogs
-		Dictionary<string,DialogData> dialogs = xml.DialogNames();
+		Dictionary<string,DialogData> dialogs = data.DialogNames();
 
 		// get all the remote google dialogs
 		foreach(KeyValuePair<string,DialogData> dialogEntry in dialogs) {
@@ -123,9 +123,27 @@ public class GoogleDocs : MonoBehaviour {
 		ListQuery listQuery = new ListQuery(listFeedLink.HRef.ToString());
 		ListFeed listFeed = spreadsheetService.Query(listQuery);
 
-		string filepath = Application.dataPath + "/Dialogues/Resources/" + xmlFilename;
+#if UNITY_EDITOR
+
+		string filepath = Application.dataPath + @"/Dialogues/Resources/" + xmlFilename;
+
+#elif UNITY_STANDALONE_OSX
+
+		string folderpath = Application.dataPath + @"/Data/Xml";
+		if (!System.IO.Directory.Exists(folderpath)) System.IO.Directory.CreateDirectory(folderpath);
+		string filepath = folderpath + @"/" + xmlFilename;
+
+#elif UNITY_STANDALONE_WIN
+
+		string folderpath = Application.dataPath + @"\Data\Xml";
+		if (!System.IO.Directory.Exists(folderpath)) System.IO.Directory.CreateDirectory(folderpath);
+		string filepath = folderpath + @"\" + xmlFilename;
+
+#endif
+
 		using (FileStream stream = File.Open(filepath, FileMode.Create)) {
 			listFeed.SaveToXml(stream);
+			//print("Saving " + filepath);
 		}
 
 		return true;
@@ -193,16 +211,15 @@ public class GoogleDocs : MonoBehaviour {
 		string login = GetLogin();
 		string pass = GetPassword();
 
-		print("login: " + login);
-		print("pass: " + pass);
-
 		if (login == "" || login == null) {
-			Debug.Log("Error: invalid/empty login");
+			Debug.Log("Error: invalid/empty login.");
+			//CreateLoginFile();
 			return;
 		}
 
 		if (pass == "" || pass == null) {
 			Debug.Log("Error: invalid/empty password");
+			//CreatePasswordFile();
 			return;
 		}
 
@@ -226,20 +243,149 @@ public class GoogleDocs : MonoBehaviour {
 
 	string GetLogin() {
 	
-		string login = GetFileContents(@"../Google/", "login.txt", "your_name_here@gmail.com");
+		string login = "";
+		string defaultString = "your_name_here@gmail.com";
+
+#if UNITY_EDITOR
+
+		login = GetFileContents(@"../Google/", "login.txt", defaultString);
+
+#elif UNITY_STANDALONE_OSX
+
+		string folderpath = Application.dataPath + @"/Data/Google/";
+		if (!System.IO.Directory.Exists(folderpath)) {
+			CreateLoginFile();
+			CreatePasswordFile();
+		}
+
+		if (System.IO.File.Exists(@"../../Google/login.txt"))  {
+			login = GetFileContents(@"../../Google/", "login.txt", defaultString);
+		} else {
+			login = GetFileContents(folderpath, "login.txt", defaultString);
+		}
+
+		/*if (!System.IO.Directory.Exists(folderpath))  {
+			string login = GetFileContents(@"./Google/", "login.txt", "your_name_here@gmail.com");
+		}*/
+
+#elif UNITY_STANDALONE_WIN
+
+		string folderpath = Application.dataPath + @"\Data\Google\";
+		if (!System.IO.Directory.Exists(folderpath)) {
+			CreateLoginFile();
+			CreatePasswordFile();
+		}
+
+		if (System.IO.File.Exists(@"..\..\Google\login.txt"))  {
+			login = GetFileContents(@"..\..\Google\", "login.txt", defaultString);
+		} else {
+			login = GetFileContents(folderpath, "login.txt", defaultString);
+		}
+		/*if (!System.IO.Directory.Exists(folderpath))  {
+			string login = GetFileContents(@".\Google\", "login.txt", "your_name_here@gmail.com");
+		}*/
+
+#endif
+
 		return login;
 	
 	}
 
 
+
+	void CreateLoginFile() {
+
+#if UNITY_EDITOR
+
+
+#elif UNITY_STANDALONE_OSX
+
+		string folderpath = Application.dataPath + @"/Data/Google";
+		if (!System.IO.Directory.Exists(folderpath)) System.IO.Directory.CreateDirectory(folderpath);
+		string filepath = folderpath + @"/" + "login.txt";
+		System.IO.File.WriteAllText(filepath, "google_login_here");
+
+#elif UNITY_STANDALONE_WIN
+
+		string folderpath = Application.dataPath + @"\Data\Google";
+		if (!System.IO.Directory.Exists(folderpath)) System.IO.Directory.CreateDirectory(folderpath);
+		string filepath = folderpath + @"\" + "login.txt";
+		System.IO.File.WriteAllText(filepath, "google_login_here");
+
+#endif
+		
+	}
+
+
+
 	string GetPassword() {
-
+	
+		string pass = "";
 		string defaultString = "app_specific_password cf: https://support.google.com/accounts/answer/185833?hl=en";
+	
+#if UNITY_EDITOR
 
-		string pass = GetFileContents(@"../Google/", "pass.txt", defaultString);
+		pass = GetFileContents(@"../Google/", "pass.txt", defaultString);
+
+#elif UNITY_STANDALONE_OSX
+
+		string folderpath = Application.dataPath + @"/Data/Google/";
+		if (!System.IO.Directory.Exists(folderpath)) {
+			CreateLoginFile();
+			CreatePasswordFile();
+		}
+
+		if (System.IO.File.Exists(@"../../Google/pass.txt"))  {
+			pass = GetFileContents(@"../../Google/", "pass.txt", defaultString);
+		} else {
+			pass = GetFileContents(folderpath, "pass.txt", defaultString);
+		}
+
+#elif UNITY_STANDALONE_WIN
+
+		string folderpath = Application.dataPath + @"\Data\Google\";
+		if (!System.IO.Directory.Exists(folderpath)) {
+			CreateLoginFile();
+			CreatePasswordFile();
+		}
+
+		if (System.IO.File.Exists(@"..\..\Google\pass.txt"))  {
+			pass = GetFileContents(@"..\..\Google\", "pass.txt", defaultString);
+		} else {
+			pass = GetFileContents(folderpath, "pass.txt", defaultString);
+		}
+
+#endif
+
 		return pass;
 
 	}
+
+
+
+	void CreatePasswordFile() {
+	
+#if UNITY_EDITOR
+
+
+#elif UNITY_STANDALONE_OSX
+
+		string folderpath = Application.dataPath + @"/Data/Google";
+		if (!System.IO.Directory.Exists(folderpath)) System.IO.Directory.CreateDirectory(folderpath);
+		string filepath = folderpath + @"/" + "pass.txt";
+		System.IO.File.WriteAllText(filepath, "google_app-specific_password_here");
+
+#elif UNITY_STANDALONE_WIN
+
+		string folderpath = Application.dataPath + @"\Data\Google";
+		if (!System.IO.Directory.Exists(folderpath)) System.IO.Directory.CreateDirectory(folderpath);
+		string filepath = folderpath + @"\" + "pass.txt";
+		System.IO.File.WriteAllText(filepath, "google_app-specific_password_here");
+
+#endif
+		
+	}
+
 
 
 	string GetFileContents(string folderPath, string filename, string defaultValue) {
@@ -249,7 +395,7 @@ public class GoogleDocs : MonoBehaviour {
 		// if it doesn't exist
 		if (!System.IO.Directory.Exists(folderPath)) {
 			// create it
-			System.IO.Directory.CreateDirectory(folderPath);
+			//System.IO.Directory.CreateDirectory(folderPath);
 			print("Please create Google credentials files 'login.txt' and 'pass.txt' in '../Google/' folder.");
 			// return empty string
 			return "";
@@ -260,7 +406,8 @@ public class GoogleDocs : MonoBehaviour {
 		// if it doesn't exist
 		if (!System.IO.File.Exists(filepath)) {
 			// create the file, fill it with default contents
-			System.IO.File.WriteAllText(folderPath,defaultValue);
+			print("Please create Google credentials files 'login.txt' and 'pass.txt' in '../Google/' folder.");
+			//System.IO.File.WriteAllText(folderPath,defaultValue);
 		}
 
 		return System.IO.File.ReadAllText(filepath);

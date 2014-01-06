@@ -124,7 +124,7 @@ public class ClickTouch : MonoBehaviour {
         	if (hit.transform.gameObject.tag == "Persona") {
 
         		// see if we're already talking to them
-        		if (walk.isCollidingWith(hit.transform.gameObject)) {
+        		if (walk.IsCollidingWith(hit.transform.gameObject)) {
         			// indicate that we clicked on a Persona
         			TouchedPersona(loc, hit.point, hit.transform.gameObject);
         			// ignore rest of click/touch
@@ -233,7 +233,7 @@ public class ClickTouch : MonoBehaviour {
 		Talk talk = playerObject.GetComponent<Talk>();
 
 		// is someone talking?
-		if (talk.IsTalking()) {
+		if (talk.IsTalking) {
 			talk.ClickAccelerate();
 		}
 
@@ -245,7 +245,7 @@ public class ClickTouch : MonoBehaviour {
 		Talk talk = persona.GetComponent<Talk>();
 
 		// is someone talking?
-		if (talk.IsTalking()) {
+		if (talk.IsTalking) {
 			talk.ClickAccelerate();
 		} else {
 			playerScript.StartTalking(persona);

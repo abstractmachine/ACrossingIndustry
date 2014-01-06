@@ -55,11 +55,18 @@ public class Walk : MonoBehaviour {
     List<GameObject> collisions = new List<GameObject>();
     bool collisionFlag = false;
 
+    bool paused = false;
+    public bool IsPaused { get { return paused; } }
+
     // state accessor
-    public bool IsWalking() { return path != null; }
+    public bool IsWalking { get { return path != null; } }
 
 
-    // MARK: Init
+
+
+
+
+    ////////////////// Init
  
     public void Start () {
 
@@ -74,7 +81,7 @@ public class Walk : MonoBehaviour {
         seeker = gameObject.GetComponent<Seeker>();
         controller = gameObject.GetComponent<CharacterController>();
 
-        resetWaitingForPathDelay();
+        ResetWaitingForPathDelay();
 
     }
 
@@ -85,8 +92,11 @@ public class Walk : MonoBehaviour {
     }
 
 
-    // MARK: Updates
 
+
+
+
+    //////////////// Loop
 
     void Update() {
 
@@ -102,18 +112,18 @@ public class Walk : MonoBehaviour {
         if (path == null) return;
 
         // calculate our position in relation to path
-        UpdatePosition();
+        if (!paused) UpdatePosition();
 
         // in case we anulled walk during UpdatePosition
         if (path == null) return;
 
         // turn to face nextPoint
-        turnTowardsTarget();
+        if (!paused) TurnTowardsTarget();
 
         // if we're not close enough
         if (currentDistanceToNextPoint > nextPointRadius) {
             // just keep walking
-            walkAStep();
+            if (!paused) WalkAStep();
             return;
         }
 
@@ -135,7 +145,7 @@ public class Walk : MonoBehaviour {
                 // turn off flag
                 isWaitingForSeeker = true;
                 // stop walking animation
-                stopWalkingAnimation();
+                StopWalkingAnimation();
             }
         }
 
@@ -170,8 +180,7 @@ public class Walk : MonoBehaviour {
         // if we aren't at the endpoint, proceed on to the next waypoint
         if (currentPointIndex != endPointIndex) {
             
-            // make sure we're playing the "walk" animation
-            animation.CrossFade("walk", 0.2f);
+            StartWalkingAnimation();
             // advance nextPointtarget
             currentPointIndex++;
             return;
@@ -199,7 +208,165 @@ public class Walk : MonoBehaviour {
     }
 
 
-    // MARK: Stuck Pattern check
+
+
+    ////////////////// Collision detection
+
+    void OnTriggerEnter(Collider other){
+        
+        // if I'm the player and they're a Persona
+        if ("Player" == gameObject.tag && "Persona" == other.gameObject.tag) {
+
+            // if they are walking
+            if (other.gameObject.GetComponent<Actor>().IsWalking) {
+                // this pauses the other actor's walking but starts again OnTriggerExit
+                other.gameObject.GetComponent<Actor>().PauseWalking();
+            }
+        }
+
+
+    }
+
+
+    void OnTriggerStay(Collider other){
+
+        // if we haven't already started the dialog
+        if (!collisionFlag) {
+            // if I'm the player, the other is a Persona
+            if ("Player" == gameObject.tag && "Persona" == other.gameObject.tag) {
+                // get access to other actor
+                Actor otherActor = other.gameObject.GetComponent<Actor>();
+                // and I'm not talking and they're not talking
+                if (!actor.IsTalking && !otherActor.IsTalking) {
+                    // and I'm close enough if they were walking
+
+                    // or my target is close enough if they were standing still
+                    if (IsPositionCloseEnoughTo(other.gameObject)
+                    && ((otherActor.IsWalking)
+                    ||  (!otherActor.IsWalking && IsTargetCloseEnoughTo(other.gameObject))
+                    )) {
+
+                        AbortWalking();
+
+                        // add to the list of people I'm in collision with
+                        AddToCollisionList(other.gameObject);
+
+                        //Actor otherActor = other.gameObject.GetComponent<Actor>();
+                        //if (otherActor.IsWalking() && !otherActor.IsPaused()) otherActor.AbortWalking();
+
+                        collisionFlag = true;
+
+                        // tell the player (me) to start talking
+                        actor.StartTalking(other.gameObject);
+
+                    } // if (IsPositionCloseEnoughTo
+                } // if (!actor.IsTalking
+            } // if ("Player"
+        } // if (collisionFlag
+
+    }
+
+
+    void OnTriggerExit(Collider other){
+
+        if ("Player" == gameObject.tag && "Persona" == other.gameObject.tag) {
+    
+            // if we interrupted the other actor
+            if (other.gameObject.GetComponent<Actor>().IsPaused) {
+                // tell them to start walking again
+                other.gameObject.GetComponent<Actor>().ResumeWalking();
+            }
+
+            RemoveFromCollisionList(other.gameObject);
+            actor.StopTalking(other.gameObject);
+            collisionFlag = false;
+
+        }
+
+    }
+
+
+
+    public bool IsNearEndpoint() {
+
+        if (currentDistanceToEndPoint < nextPointRadius/2.0f) return true;
+        return false;
+
+    }
+
+
+    bool IsPositionCloseEnoughTo(GameObject obj) {
+        
+        if (Vector3.Distance(transform.position, obj.transform.position) < nextPointRadius) return true;
+        else return false;
+
+    }
+
+
+
+    bool IsTargetCloseEnoughTo(GameObject obj) {
+
+        if (Vector3.Distance(targetPosition, obj.transform.position) < nextPointRadius) return true;
+        else return false;
+
+    }
+
+
+
+    void AddToCollisionList(GameObject other) {
+
+        // if it's not already listed, add to collision list
+        if (!IsCollidingWith(other)) collisions.Add(other);
+
+    }
+
+
+    void RemoveFromCollisionList(GameObject other) {
+
+        int count = collisions.Count;
+        int index = 0;
+
+        // go through all the objects
+        while(index < count) {
+
+            // if this object exists
+            if (collisions[index] == other) {
+                // remove it from our list
+                collisions.RemoveAt(index);
+                // adjust the number of objects to check
+                count = collisions.Count;
+                continue;
+            }
+            // iterate to next in list
+            index++;
+        }
+
+    }
+
+
+    public bool IsCollidingWith(GameObject other) {
+
+        // go through the list
+        foreach(GameObject o in collisions) {
+            // if this object is in the list, return TRUE
+            if (o == other) return true;
+        }
+        // otherwise, we didn't find it
+        return false;
+
+    }
+
+
+
+    bool isOnTarget() {
+
+        // if we're close enough to stop
+        if (currentDistanceToEndPoint <= snapToPointRadius) return true;
+        else return false; // not on top of target
+
+    }
+
+    
 
     void checkForStuckPattern(Vector3 position) {
 
@@ -246,158 +413,21 @@ public class Walk : MonoBehaviour {
     }
 
 
-    // MARK: Collision detection
 
-    void OnTriggerEnter(Collider other){
+
+
+    ///////////////////// Animation
+
+
+    void StartWalkingAnimation() {
         
-        // if I'm the player and they're a Persona
-        if ("Player" == gameObject.tag && "Persona" == other.gameObject.tag) {
-
-            // add to the list of people I'm in collision with
-            addToCollisionList(other.gameObject);
-            // if they are walking
-            if (other.gameObject.GetComponent<Actor>().IsWalking()) {
-                // stop them
-                // TODO: this should just be a pause that starts again OnTriggerExit
-                other.gameObject.GetComponent<Actor>().PauseWalking();
-            }
-        }
-
+        // make sure we're playing the "walk" animation
+        animation.CrossFade("walk", 0.2f);
 
     }
 
 
-    void OnTriggerStay(Collider other){
-
-        // if I'm the player, the other is a Persona
-        // and I'm not talking and they're not talking
-        // and I'm close enough
-
-        if ("Player" == gameObject.tag && "Persona" == other.gameObject.tag &&
-            !actor.IsTalking() && !other.gameObject.GetComponent<Actor>().IsTalking() &&
-            isCloseEnoughToTarget(other.gameObject) &&
-            !collisionFlag
-            ) {
-
-            AbortWalking();
-            other.gameObject.GetComponent<Actor>().AbortWalking();
-
-            collisionFlag = true;
-
-            // tell the player (me) to start talking
-            actor.StartTalking(other.gameObject);
-
-        }
-
-    }
-
-
-    void OnTriggerExit(Collider other){
-        
-        if ("Persona" == other.gameObject.tag) {
-            removeFromCollisionList(other.gameObject);
-            actor.StopTalking(other.gameObject);
-            collisionFlag = false;
-        }
-
-    }
-
-
-
-    public bool IsNearEndpoint() {
-        if (currentDistanceToEndPoint < nextPointRadius/2.0f) return true;
-        return false;
-    }
-
-
-    /*
-    public bool IsNearWaypoint() {
-        if (currentDistanceToEndPoint < nextPointRadius/2.0f) return true;
-        return false;
-    }*/
-
-
-
-    bool isCloseEnoughToTarget(GameObject obj) {
-
-        //if (Vector3.Distance(targetPosition, obj.transform.position) < nextPointRadius) return true;
-        if (Vector3.Distance(transform.position, obj.transform.position) < nextPointRadius) return true;
-        else return false;
-
-    }
-
-
-
-    void addToCollisionList(GameObject other) {
-
-        // if it's not already listed, add to collision list
-        if (!isCollidingWith(other)) collisions.Add(other);
-
-    }
-
-
-    void removeFromCollisionList(GameObject other) {
-
-        int count = collisions.Count;
-        int index = 0;
-
-        // go through all the objects
-        while(index < count) {
-
-            // if this object exists
-            if (collisions[index] == other) {
-                // remove it from our list
-                collisions.RemoveAt(index);
-                // adjust the number of objects to check
-                count = collisions.Count;
-                continue;
-            }
-            // iterate to next in list
-            index++;
-        }
-
-    }
-
-
-    public bool isCollidingWith(GameObject other) {
-
-        // go through the list
-        foreach(GameObject o in collisions) {
-            // if this object is in the list, return TRUE
-            if (o == other) return true;
-        }
-        // otherwise, we didn't find it
-        return false;
-
-    }
-
-    /*void OnControllerColliderHit(ControllerColliderHit hit) {
-
-        // don't worry about Ground
-        if (hit.gameObject.name == "Ground") return;
-
-        print(hit.gameObject);
-
-        // if we've just collided with a Persona
-        if ("Persona" == hit.gameObject.tag) {
-            AbortWalking();
-        }
-
-    }*/
-
-
-
-
-    bool isOnTarget() {
-
-        // if we're close enough to stop
-        if (currentDistanceToEndPoint <= snapToPointRadius) return true;
-        else return false; // not on top of target
-
-    }
-
-
-    void stopWalkingAnimation() {
+    void StopWalkingAnimation() {
         
         // stop walking animation (in case we were previously walking)
         animation.CrossFade("idle", 0.2f);
@@ -405,7 +435,7 @@ public class Walk : MonoBehaviour {
     }
 
 
-    void walkAStep() {
+    void WalkAStep() {
 
         // direction vector to the next waypoint without taking into account magnitude
         Vector3 dir = (path.vectorPath[currentPointIndex]-transform.position).normalized;
@@ -448,12 +478,14 @@ public class Walk : MonoBehaviour {
             ; // print("Side collision");
         }
 
-        setCurrentDistanceToZero();
+        SetCurrentDistanceToZero();
 
     }
 
 
-    // MARK: Path Targeting
+
+
+    ///////////////// Path Targeting
 
     public void SetTargetPosition(Vector3 newTarget) {
 
@@ -469,7 +501,7 @@ public class Walk : MonoBehaviour {
         seeker.StartPath(transform.position, targetPosition, OnPathComplete);
 
         // start a timer in case the path search takes too long
-        resetWaitingForPathDelay();
+        ResetWaitingForPathDelay();
 
         // flag that we're waiting for a reply from the seeker
         isWaitingForSeeker = true;
@@ -481,7 +513,7 @@ public class Walk : MonoBehaviour {
 
         targetPosition = newTarget;
 
-        turnToTarget(newTarget);
+        TurnToTarget(newTarget);
 
         // get the position of the feet
         Vector3 feetPosition = transform.position + new Vector3(0f,-0.5f,0f);
@@ -496,47 +528,70 @@ public class Walk : MonoBehaviour {
     public void AbortWalking() {
 
         // stop walk animation
-        stopWalkingAnimation();
+        StopWalkingAnimation();
 
         actor.DidAbortWalking();
 
         // ok, we've reached the end, no need to pathfind
         ClearPath();
 
-        setCurrentDistanceToZero();
+        SetCurrentDistanceToZero();
 
     }
 
 
-    void turnToTarget() {
+
+    public void PauseWalking() {
+
+        paused = true;
+
+        if (IsWalking) {
+            StopWalkingAnimation();
+        }
+
+    }
+
+
+    public void ResumeWalking() {
+
+        paused = false;
+
+        if (IsWalking) {
+            StartWalkingAnimation();
+        }
+
+    }
+
+
+    void TurnToTarget() {
 
         // make sure there's a first point to point towards
         if (path.vectorPath.Count < 2) return;
 
-        turnToTarget(path.vectorPath[1]);
+        TurnToTarget(path.vectorPath[1]);
         /*
         // get that first point
-        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[1]);
+        Quaternion lookTargetRotation = TargetRotation(path.vectorPath[1]);
         // point towards it without any restrictions
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, 360.0f);
         */
     }
 
 
-    void turnToTarget(Vector3 target) {
+    void TurnToTarget(Vector3 target) {
 
         // get that first point
-        Quaternion lookTargetRotation = getTargetRotation(target);
+        Quaternion lookTargetRotation = TargetRotation(target);
         // point towards it without any restrictions
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookTargetRotation, 360.0f);
 
     }
 
 
-    void turnTowardsTarget() {
+    void TurnTowardsTarget() {
 
         // get the quaternion that looks at the nextPoint
-        Quaternion lookTargetRotation = getTargetRotation(path.vectorPath[currentPointIndex]);
+        Quaternion lookTargetRotation = TargetRotation(path.vectorPath[currentPointIndex]);
         // use turnSpeed to limit turning
         float step = turnSpeed * Time.deltaTime;
         // turn to the resulting rotation
@@ -546,7 +601,9 @@ public class Walk : MonoBehaviour {
 
 
     // where am I going?
-    Quaternion getTargetRotation(Vector3 lookTarget) {
+    Quaternion TargetRotation(Vector3 lookTarget) {
+
+        //float deltaY = lookTarget.y - transform.position.y;
 
         // make sure we remove any eventual y-axis transformations
         lookTarget.y = transform.position.y;
@@ -563,8 +620,9 @@ public class Walk : MonoBehaviour {
     }
 
 
+
     // this is used when the pathfinder takes too long to search (> 0.x seconds)
-    void resetWaitingForPathDelay() {
+    void ResetWaitingForPathDelay() {
 
         waitingForSeekTimeout = waitForSeekDelay;
 
@@ -572,7 +630,7 @@ public class Walk : MonoBehaviour {
 
 
     
-    public void OnPathComplete (Path p) {
+    public void OnPathComplete(Path p) { // this is called by component <Phylactere> when it's done
 
         if (!p.error) {
             // make sure there's something in there
@@ -584,7 +642,7 @@ public class Walk : MonoBehaviour {
             //Reset the waypoint counter
             currentPointIndex = 0;
             // start by turning in the right direction
-            turnToTarget();
+            TurnToTarget();
             // ok, we're seeking
             isWaitingForSeeker = false;
         }
@@ -598,43 +656,27 @@ public class Walk : MonoBehaviour {
         endPointIndex = -1;
         currentPointIndex = -1;
         isWaitingForSeeker = false;
-
+        paused = false;
         stuckTimeout = stuckTimeDelay;
 
         clearStuckPatternCheck();
-        
+
         actor.ClearTarget();
 
     }
 
 
-    public void setCurrentDistanceToZero() {
+    public void SetCurrentDistanceToZero() {
 
         currentDistanceToEndPoint = 0.0f;
 
     }
 
 
-    public void setCurrentDistance(float value) {
+    public void SetCurrentDistance(float value) {
 
         currentDistanceToEndPoint = value;
 
     }
-
-    /*
-    // MARK: Linq function
-
-    void whoIsAroundMe(float radius) {
-        
-        var transformArray = GameObject.FindGameObjectsWithTag("Persona")
-        .Select(go => go.transform)
-        .Where(t => Vector3.Distance(t.position, transform.position) < radius)
-        .ToArray();
-
-        foreach(Transform t in transformArray) {
-            print(t);
-        }
-
-    }*/
 
 } 

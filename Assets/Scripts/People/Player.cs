@@ -10,7 +10,7 @@ public class Player : Actor {
 	// shows target of click/touch
     public GameObject xSpot;
 
-    public float playerImpatienceDelay = 120.0f;
+    public float playerImpatienceDelay = 10.0f;
     public int targetHistoryMax = 100;
     List<Vector3> targetHistory = new List<Vector3>();
 
@@ -125,10 +125,12 @@ public class Player : Actor {
     void SetRandomTarget() {
 
         // if no history, forget it
-        if (targetHistory.Count == 0) return;
+        if (targetHistory.Count <= 1) return;
 
         // if we're walking, wait until we're done
         if (walk.IsWalking) return;
+
+        if (cheat.IsOn) return;
 
         // extract a random position from the list
         Vector3 randomPosition = targetHistory[(int)Random.Range(0,targetHistory.Count)];
@@ -160,8 +162,8 @@ public class Player : Actor {
     ///////////////// Impatience
 
     protected override void DoSomethingImpatient() { // overrides base class
-    	
-    	SetRandomTarget();
+
+    	if (cheat.IsOff) SetRandomTarget();
 
     }
 

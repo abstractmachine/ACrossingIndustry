@@ -15,7 +15,7 @@ abstract public class Actor : MonoBehaviour {
     public bool IsTalking { get { return talk.IsTalking; } }
 
     // the time it takes to get bored and randomly do something
-    public float impatienceDelay = 60.0f; // two minutes
+    public float impatienceDelay = 120.0f; // two minutes
     protected float impatienceCountdown = 0f;
 
 
@@ -114,8 +114,6 @@ abstract public class Actor : MonoBehaviour {
 	///////////////// Impatience
 
     protected virtual void DoSomethingImpatient() {
-
-
 
     }
 

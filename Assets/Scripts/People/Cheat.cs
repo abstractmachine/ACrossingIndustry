@@ -14,6 +14,7 @@ public class Cheat : MonoBehaviour {
 
 	bool on = false;
 	public bool IsOn{ get { return on; } }
+        public bool IsOff { get { return !on; } }
 
         void Awake() {
                 coordinates = GameObject.Find("Coordinates");

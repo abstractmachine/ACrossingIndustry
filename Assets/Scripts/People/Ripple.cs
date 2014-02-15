@@ -6,7 +6,7 @@ public class Ripple : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		float timeSaturation = Camera.main.GetComponent<Daylight>().getTimeSaturation();
+		float timeSaturation = Camera.main.GetComponent<Daylight>().TimeSaturation;
 		timeSaturation = Mathf.Min(1.0f, 1.3f - timeSaturation);
 		Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
 		//renderer.material.color = c;

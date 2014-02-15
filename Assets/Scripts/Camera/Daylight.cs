@@ -13,6 +13,13 @@ public class Daylight : MonoBehaviour {
 	static int timeHour = 1;
 
 
+	// accessor methods
+
+	public int TimeHour { get { return timeHour; } }
+	public float TimeSaturation { get { return timeSaturation; } }
+	public float TimePercent { get { return timePercent; } }
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -29,18 +36,18 @@ public class Daylight : MonoBehaviour {
     	}
 
 		// set the time of the day
-		updateTime();
+		UpdateTime();
 
 		// 
-		updateDaylight();
+		UpdateDaylight();
 
 	}
 
 
-	void updateDaylight() {
+	void UpdateDaylight() {
 
 		//float timeSaturation = GameState.Instance.getTimeSaturation();
-		float timeSaturation = getTimeSaturation();
+		float timeSaturation = TimeSaturation;
 
 		Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
 
@@ -56,7 +63,7 @@ public class Daylight : MonoBehaviour {
 
 	// local methods
 
-	void updateTime() {
+	void UpdateTime() {
 
 		float t = Mathf.Repeat((Time.time*daylightSpeed), Mathf.PI*2);
 
@@ -65,32 +72,15 @@ public class Daylight : MonoBehaviour {
 		// the percentage 0.0f -> 1.0f
 		timePercent = Mathf.Repeat((Time.time*daylightSpeed), 1.0f);
 
-		timeHour = (int)map(t,0.0f, Mathf.PI*2, 0.0f, 24.0f);
+		timeHour = (int)Map(t,0.0f, Mathf.PI*2, 0.0f, 24.0f);
 		timeHour = (int)Mathf.Repeat(timeHour+6.0f, 24.0f);
 
 	}
 
 
-	// accessor methods
-
-	public int getTimeHour() {
-		return timeHour;
-	}
-
-
-	public float getTimeSaturation() {
-		return timeSaturation;
-	}
-
-
-	public float getTimePercent() {
-		return timePercent;
-	}
-
-
 	// Code tools
 
-	float map(float val, float low1, float high1, float low2, float high2) {
+	float Map(float val, float low1, float high1, float low2, float high2) {
 
 		return low2 + (val - low1) * (high2 - low2) / (high1 - low1);
 

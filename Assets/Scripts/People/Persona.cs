@@ -79,7 +79,8 @@ public class Persona : Actor {
 
 	protected override void DoSomethingImpatient() { // overrides base class
 
-		SetNextTargetCoordinate();
+		// if we're not walking already, or talking, start walking to a new coordinate
+		if (!walk.IsWalking && !talk.IsTalking) SetNextTargetCoordinate();
 	
 	}
 

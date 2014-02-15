@@ -10,7 +10,7 @@ public class Player : Actor {
 	// shows target of click/touch
     public GameObject xSpot;
 
-    public float playerImpatienceDelay = 10.0f;
+    public float playerImpatienceDelay = 120.0f;
     public int targetHistoryMax = 100;
     List<Vector3> targetHistory = new List<Vector3>();
 
@@ -77,7 +77,7 @@ public class Player : Actor {
         // record this position, if necessary
         if (record) RecordTargetHistory(newTarget);
 
-        cheat.setCoordinates(newTarget);
+        cheat.SetCoordinates(newTarget);
 
         // if cheat is on, just go there
         if (cheat.IsOn) {

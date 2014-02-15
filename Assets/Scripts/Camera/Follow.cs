@@ -22,14 +22,23 @@ public class Follow : MonoBehaviour {
     public Material HiderMaterial;
 
     
-
+    Camera mainCamera;
+    Camera overlayCamera;
+    Camera gervaisCamera;
 
 
 	// Use this for initialization
 	void Start () {
 
-        Camera.main.isOrthoGraphic = true;
-        Camera.main.transform.rotation = Quaternion.Euler(30, 45, 0);
+        mainCamera = Camera.main;
+        overlayCamera = transform.GetChild(1).GetComponent<Camera>();
+        gervaisCamera = transform.GetChild(0).GetComponent<Camera>();
+
+        mainCamera.isOrthoGraphic = true;
+        overlayCamera.isOrthoGraphic = true;
+        gervaisCamera.isOrthoGraphic = true;
+
+        mainCamera.transform.rotation = Quaternion.Euler(30, 45, 0);
 
         // set empty dictionary <object,material>
         hiddenMaterials = new Dictionary<MeshRenderer, Material>();
@@ -62,7 +71,9 @@ public class Follow : MonoBehaviour {
 
         setZoom(newZoom);
 
-        Camera.main.orthographicSize = zoomLevel;
+        mainCamera.orthographicSize = zoomLevel;
+        overlayCamera.orthographicSize = mainCamera.orthographicSize;
+        gervaisCamera.orthographicSize = mainCamera.orthographicSize;
 
         forceTarget();
 
@@ -87,7 +98,9 @@ public class Follow : MonoBehaviour {
         if (zoomLevel-Camera.main.orthographicSize > 0) t *= (zoomSpeed * 1.0f);
         else t *= (zoomSpeed * 1.0f);
 
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoomLevel, t);
+        mainCamera.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoomLevel, t);
+        overlayCamera.orthographicSize = mainCamera.orthographicSize;
+        gervaisCamera.orthographicSize = mainCamera.orthographicSize;
 
     }
 

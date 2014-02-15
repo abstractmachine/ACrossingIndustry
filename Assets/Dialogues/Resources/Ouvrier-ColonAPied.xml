@@ -10,7 +10,7 @@
   <link href="https://spreadsheets.google.com/feeds/list/t6FNut8jstqMwxbUzgJLY4g/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
   <link href="https://spreadsheets.google.com/feeds/list/t6FNut8jstqMwxbUzgJLY4g/od6/private/values" rel="self" type="application/atom+xml" />
   <title type="text">Sheet1</title>
-  <updated>2014-01-01T02:50:58+01:00</updated>
+  <updated>2014-02-15T11:40:13+01:00</updated>
   <entry>
     <gsx:index>-6</gsx:index>
     <gsx:sayspersona>"Bang! Bang!"</gsx:sayspersona>
@@ -27,7 +27,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Bang! Bang!", repliesplayer: "You shot me down…", actionpersona: shoot , condition: déjà blessé/pas encore blessé, next: -4;-6;15, result: mort/santé--</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>-5</gsx:index>
@@ -45,7 +45,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "We are under attack"/"Terrorist!"/"Help", actionplayer: le joueur s'enfuit, next: -6;14</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -63,7 +63,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: le joueur se rebelle, next: -6</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>-4</gsx:index>
@@ -81,7 +81,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionpersona: donne le joueur aux flics, next: -5</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>-3</gsx:index>
@@ -99,7 +99,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Go away from here", actionplayer: le joueur est expulsé de la colonie, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>-2</gsx:index>
@@ -107,7 +107,7 @@
     <gsx:repliesplayer>"Ok lead the way"</gsx:repliesplayer>
     <gsx:actionpersona>Le colon force le joueur à sortir</gsx:actionpersona>
     <gsx:actionplayer />
-    <gsx:condition>dans la colonie</gsx:condition>
+    <gsx:condition>Inside("VillageX")</gsx:condition>
     <gsx:next>-3</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -116,8 +116,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/t6FNut8jstqMwxbUzgJLY4g/od6/private/values/ckd7g" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: "I'll take you away from here", repliesplayer: "Ok lead the way", actionpersona: Le colon force le joueur à sortir, condition: dans la colonie, next: -3</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <content type="text">sayspersona: "I'll take you away from here", repliesplayer: "Ok lead the way", actionpersona: Le colon force le joueur à sortir, condition: Inside("VillageX"), next: -3</content>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -125,7 +125,7 @@
     <gsx:repliesplayer>"…"</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer>le joueur se rebelle</gsx:actionplayer>
-    <gsx:condition>dans la colonie</gsx:condition>
+    <gsx:condition>Inside("VillageX")</gsx:condition>
     <gsx:next>-1;-5;-3</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -134,8 +134,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/t6FNut8jstqMwxbUzgJLY4g/od6/private/values/clrrx" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: "…", actionplayer: le joueur se rebelle, condition: dans la colonie, next: -1;-5;-3</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <content type="text">repliesplayer: "…", actionplayer: le joueur se rebelle, condition: Inside("VillageX"), next: -1;-5;-3</content>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>-1</gsx:index>
@@ -153,7 +153,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Are you trying to fool me?"/"Take this"/"Eat it bastard!", actionpersona: Frappe joueur , actionplayer: s'en va, next: 15;-2, result: santé--</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -171,7 +171,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: le joueur se rebelle, next: -5;-6, result: santé--</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -189,7 +189,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: le joueur se rebelle, condition: arme/outil, next: 16;-1, result: santé--</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>0</gsx:index>
@@ -207,7 +207,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text" />
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>1</gsx:index>
@@ -225,7 +225,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Hey you! what are you doing here!?</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -243,7 +243,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: What the fuck are you doing here!?</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -261,7 +261,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Stop!, repliesplayer: "...", condition: à l'entrée d'une colonie, next: 2</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -279,7 +279,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: dans la colonie, next: 3</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -297,7 +297,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: sur la route qui mène à une colonie, next: 8</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -315,7 +315,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm looking for the Visa office", condition: le Visa office n'est pas dans la colonie, next: 9</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -333,7 +333,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: le Visa office est dans la colonie+loin du joueur, next: 11</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -351,7 +351,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: le Visa office est dans la colonie+près du joueur, next: 10</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -369,7 +369,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: Rencontre avec VISA Office, condition: le Visa office est dans la colonie+face au joueur, next: 0</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -387,7 +387,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm searching for help", condition: à l'entrée d'une colonie, next: 4</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -405,7 +405,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm lost", condition: à l'entrée d'une colonie, next: 7</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -423,7 +423,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm on my way to the check point", condition: à l'entrée d'une colonie, next: 9</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -441,7 +441,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm searching for [@] AND [@]", actionplayer: donner un nom , condition: SO and SO habite dans la colonie+près de SO and SO, next: 10</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -459,7 +459,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: SO and SO habite dans la colonie+loin de SO and SO, next: 11</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -477,7 +477,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: Rencontre avec SO and SO{1}, condition: SO and SO habite dans la colonie+face à SO and SO, next: 0</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -495,7 +495,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "Fuck you", next: -1</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>2</gsx:index>
@@ -513,7 +513,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I asked, what are you doing here?", repliesplayer: "I'm looking for help", condition: à l'entrée d'une colonie, next: 4</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -531,7 +531,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm lost", condition: à l'entrée d'une colonie, next: 7</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -549,7 +549,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm on my way to the check point", condition: à l'entrée d'une colonie, next: 9</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -567,7 +567,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm searching for a contractor", condition: à l'entrée d'une colonie, next: 5</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -585,7 +585,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "Fuck you", condition: à l'entrée d'une colonie, next: -1</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>3</gsx:index>
@@ -603,7 +603,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I asked, what are you doing here?", repliesplayer: "I'm lost", condition: dans une colonie, next: 6</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -621,7 +621,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm on my way home", condition: dans une colonie, next: 6;9</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -639,7 +639,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm searching for a contractor", condition: dans une colonie+près du contractor, next: 10</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -657,7 +657,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: dans une colonie+loin du contractor, next: 11</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -675,7 +675,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: voir contractor[1], condition: dans un colonie+face au contractor, next: 11</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -693,7 +693,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "...", actionplayer: le joueur s'enfuit, condition: dans une colonie, next: -6</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>4</gsx:index>
@@ -711,7 +711,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "What for?"/"What kind of help?", repliesplayer: "I'm looking for a job", condition: être près ou à l'entrée d'une colonie, next: 5</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -729,7 +729,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: être dans la colonie, next: 20</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -747,7 +747,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm looking for [@] and [@]", condition: avoir téléphoné à SO and SO/avoir été mis au courant du nom de SO and SO+ne pas être dans/près/à l'entrée de la colonie de SO and SO, next: 11</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -765,7 +765,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: avoir téléphoné à SO and SO/avoir été mis au courant du nom de SO and SO+dans la colonie de SO and SO+près de SO and SO, next: 10</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -783,7 +783,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: avoir téléphoné à SO and SO/avoir été mis au courant du nom de SO and SO+dans la colonie de SO and SO+loin de SO and SO, next: 11</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -802,7 +802,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: 
 , actionplayer: Rencontre avec SO and SO{1}, condition: avoir téléphoné à SO and SO/avoir été mis au courant du nom de SO and SO+dans la colonie de SO and SO+face à SO and SO, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>5</gsx:index>
@@ -820,7 +820,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Well, get in the settlement and ask for the contractor ", repliesplayer: "Ok thanks", next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>6</gsx:index>
@@ -838,7 +838,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Get away from here", repliesplayer: "Let me get in!", next: -2</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -856,7 +856,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "Ok", actionplayer: le joueur s'en va, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>7</gsx:index>
@@ -874,7 +874,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "It's not my business", repliesplayer: "Can't you help me?", condition: si le joueur n'a demandé qu'une fois, next: 7</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -892,7 +892,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Can't you help me?, condition: si le joueur demande une seconde fois, next: 6</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -910,7 +910,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "...", actionplayer: le joueur s'en va, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>8</gsx:index>
@@ -928,7 +928,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "I asked, what are you doing here?", repliesplayer: "I'm looking for help", condition: Sur la route d'une colonie, next: 4</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -946,7 +946,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm lost", condition: Sur la route d'une colonie, next: 7</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -964,7 +964,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm on my way home", condition: Sur la route d'une colonie, next: 9</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -982,7 +982,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm on my way to the check point", condition: Sur la route d'une colonie, next: 9</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -1000,7 +1000,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "I'm searching for a contractor", condition: Sur la route d'une colonie, next: 5</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -1018,7 +1018,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "Fuck you", condition: Sur la route d'une colonie, next: -1</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>9</gsx:index>
@@ -1036,7 +1036,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Obviously, this is not the way", actionplayer: le joueur fait demi-tour, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>10</gsx:index>
@@ -1054,7 +1054,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "There at the corner", next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>11</gsx:index>
@@ -1072,7 +1072,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Oh! I have no idea!"/"I don't know", repliesplayer: "...", next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -1090,7 +1090,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: "Can't you help me?", next: 7</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>14</gsx:index>
@@ -1108,7 +1108,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "We lost it", repliesplayer: "That was close", actionplayer: keeps going, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>15</gsx:index>
@@ -1126,7 +1126,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">actionplayer: le joueur continue son chemin, next: 0</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>16</gsx:index>
@@ -1144,7 +1144,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "...!?", actionpersona: tombe à terre, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index>20</gsx:index>
@@ -1162,7 +1162,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: "Have you spoken with the contractor?", repliesplayer: "No, where is he?", condition: dans une colonie+près du contractor, next: 10</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -1180,7 +1180,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: dans une colonie+loin du contractor, next: 11</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -1198,6 +1198,6 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">condition: dans un colonie+face au contractor, next: 15</content>
-    <updated>2014-01-01T02:50:58+01:00</updated>
+    <updated>2014-02-15T11:40:13+01:00</updated>
   </entry>
 </feed>

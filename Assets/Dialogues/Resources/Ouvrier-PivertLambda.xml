@@ -10,7 +10,7 @@
   <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
   <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values" rel="self" type="application/atom+xml" />
   <title type="text">Sheet1</title>
-  <updated>2014-01-06T10:06:31+01:00</updated>
+  <updated>2014-02-10T20:09:55+01:00</updated>
   <entry>
     <gsx:index>-1</gsx:index>
     <gsx:sayspersona>Good luck!/"God be with you"/"..."</gsx:sayspersona>
@@ -27,7 +27,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Good luck!/"God be with you"/"...", next: 0, comment:  flic/flic-jeep/soldat/soldat-jeep {1}</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>0</gsx:index>
@@ -45,11 +45,11 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text" />
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>1</gsx:index>
-    <gsx:sayspersona>What are you doing around here!!!?</gsx:sayspersona>
+    <gsx:sayspersona>What are you doing around here!?</gsx:sayspersona>
     <gsx:repliesplayer>I'm looking for a job</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
@@ -62,8 +62,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ciyn3" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: What are you doing around here!!!?, repliesplayer: I'm looking for a job, next: 2</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: What are you doing around here!?, repliesplayer: I'm looking for a job, next: 2</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -81,7 +81,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: I'm looking for a way across the wall, next: 20</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -99,7 +99,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Just having a nice walk!, next: -1</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -117,7 +117,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: I'm looking for the bypass road, next: 17</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -125,7 +125,7 @@
     <gsx:repliesplayer>I'm looking for a shop</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:condition>south("Place")</gsx:condition>
     <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -134,8 +134,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d180g" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: I'm looking for a shop, condition: the PLACE is southward, next: 30</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">repliesplayer: I'm looking for a shop, condition: south("Place"), next: 30</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -143,7 +143,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:condition>north("Place")</gsx:condition>
     <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -152,8 +152,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/d2mkx" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is northward, next: 31</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: north("Place"), next: 31</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -161,7 +161,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:condition>east("Place")</gsx:condition>
     <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -170,8 +170,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fhpn7" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is eastward, next: 32</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: east("Place"), next: 32</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -179,7 +179,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:condition>west("Place")</gsx:condition>
     <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -188,8 +188,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/cssly" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is westward, next: 33</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: west("Place"), next: 33</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>2</gsx:index>
@@ -207,7 +207,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: There are no jobs around here. This is why everybody get jobs on the other side!, repliesplayer: How is it possible to get such a job?, next: 3</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>3</gsx:index>
@@ -225,7 +225,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: You have to get some connections. No connections, no job, repliesplayer: How do you get such connection?, next: 4</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -243,7 +243,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: What kind of connection?, next: 5</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>4</gsx:index>
@@ -261,7 +261,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: No idea. I'm too old for that., repliesplayer: ..., next: 15</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -279,7 +279,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Wait, what kind of connection are you speaking about?, next: 5</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>5</gsx:index>
@@ -297,7 +297,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Either a contractor living in the surrounding colonies or somebody living on the other side of the wall, repliesplayer: They can get me a legal job?, next: 6</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>6</gsx:index>
@@ -315,7 +315,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Not necessaily legal, but at least a job, repliesplayer: I need to feed my family, we are broke!, next: 7;8;9</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>7</gsx:index>
@@ -333,7 +333,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Get a phone and call [******] on my behalf. He is a contractor, repliesplayer: Thanks, next: 40</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>8</gsx:index>
@@ -351,7 +351,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Get a phone and call [******] on my behalf. He is a contractor. He could even get you a permit, repliesplayer: Thanks, next: 42</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>9</gsx:index>
@@ -369,7 +369,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Get a phone and call [******] on my behalf. He might get you a job around here, for some days, repliesplayer: Thanks, next: 43</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>13</gsx:index>
@@ -387,7 +387,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Mr. Stanley, repliesplayer: Where can I find him?, next: 14, comment: voir rencontre avec SO and SO {1}</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -405,7 +405,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Ok, thanks, next: 15</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>14</gsx:index>
@@ -413,7 +413,7 @@
     <gsx:repliesplayer>How can I reach that place?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:condition>south("Place")</gsx:condition>
     <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -422,8 +422,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/e7d2q" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: At the Blue Farm, North West, repliesplayer: How can I reach that place?, condition: the PLACE is southward, next: 30</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: At the Blue Farm, North West, repliesplayer: How can I reach that place?, condition: south("Place"), next: 30</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -431,7 +431,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:condition>north("Place")</gsx:condition>
     <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -440,8 +440,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/ea67k" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is northward, next: 31</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: north("Place"), next: 31</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -449,7 +449,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:condition>east("Place")</gsx:condition>
     <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -458,8 +458,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/e1qt2" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is eastward, next: 32</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: east("Place"), next: 32</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -467,7 +467,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:condition>west("Place")</gsx:condition>
     <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -476,8 +476,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/etu5e" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is westward, next: 33</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: west("Place"), next: 33</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>15</gsx:index>
@@ -495,7 +495,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: …, next: -1</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>16</gsx:index>
@@ -513,7 +513,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Oh, and you are looking for the bypass road, next: 15</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>17</gsx:index>
@@ -531,7 +531,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: I understand! Yet I'm not the one who could help you, repliesplayer: Who can then?, next: 18</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>18</gsx:index>
@@ -549,7 +549,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Mr. Gonella the smuggler, repliesplayer: Where can I find him?, next: 19</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -567,7 +567,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Ok, thanks, next: -1</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>19</gsx:index>
@@ -575,7 +575,7 @@
     <gsx:repliesplayer>How can I reach that place?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:condition>south("Place")</gsx:condition>
     <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -584,8 +584,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a832w" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: The Red Village between the farm and the wall, repliesplayer: How can I reach that place?, condition: the PLACE is southward, next: 30</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: The Red Village between the farm and the wall, repliesplayer: How can I reach that place?, condition: south("Place"), next: 30</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -593,7 +593,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:condition>north("Place")</gsx:condition>
     <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -602,8 +602,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/9znoe" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is northward, next: 31</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: north("Place"), next: 31</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -611,7 +611,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:condition>east("Place")</gsx:condition>
     <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -620,8 +620,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/a2gt8" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is eastward, next: 32</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: east("Place"), next: 32</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -629,7 +629,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:condition>west("Place")</gsx:condition>
     <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -638,8 +638,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/akq6p" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is westward, next: 33</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: west("Place"), next: 33</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>20</gsx:index>
@@ -657,7 +657,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Then you need help!, repliesplayer: Can you help me?, next: 21</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -675,7 +675,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Who can help me?, next: 13;18;38</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -693,7 +693,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: No, I can manage myself, next: -1</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>21</gsx:index>
@@ -711,7 +711,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Not me, but [****] might be able to do it, repliesplayer: Who is he?, next: 22;23</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>22</gsx:index>
@@ -729,7 +729,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: He lives in [VILLAGE], repliesplayer: What does he do?, next: 24</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -737,7 +737,7 @@
     <gsx:repliesplayer>Where is [VILLAGE]?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:condition>south("Place")</gsx:condition>
     <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -746,8 +746,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/am4r2" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">repliesplayer: Where is [VILLAGE]?, condition: the PLACE is southward, next: 30</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">repliesplayer: Where is [VILLAGE]?, condition: south("Place"), next: 30</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -755,7 +755,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:condition>north("Place")</gsx:condition>
     <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -764,8 +764,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/anjbj" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is northward, next: 31</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: north("Place"), next: 31</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -773,7 +773,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:condition>east("Place")</gsx:condition>
     <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -782,8 +782,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aoxvw" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is eastward, next: 32</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: east("Place"), next: 32</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -791,7 +791,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:condition>west("Place")</gsx:condition>
     <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -800,8 +800,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/aqcgd" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is westward, next: 33</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: west("Place"), next: 33</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>23</gsx:index>
@@ -819,7 +819,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: He lives in the [COLONY], repliesplayer: What does he do?, next: 24</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>24</gsx:index>
@@ -837,7 +837,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: He might help you, repliesplayer: Should I tell him I come on your behalf?, next: 25, comment: voir ouvrier+PIVERT lambda à pied</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -855,7 +855,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Ok thanks!, next: -1</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>25</gsx:index>
@@ -873,7 +873,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: You'd better tell him, repliesplayer: Why?, next: 26</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -891,7 +891,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Ok, thanks, next: -1</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>26</gsx:index>
@@ -909,7 +909,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: You usually help the people you know or the people who know your friends, repliesplayer: I understand, what's your name?, next: 27</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>27</gsx:index>
@@ -917,7 +917,7 @@
     <gsx:repliesplayer>Ok, Where is [PLACE]?</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the place is before the wall</gsx:condition>
+    <gsx:condition>!accessible("Place")</gsx:condition>
     <gsx:next>28</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -926,8 +926,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c6bhi" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: My name is [****], repliesplayer: Ok, Where is [PLACE]?, condition: the place is before the wall, next: 28</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: My name is [****], repliesplayer: Ok, Where is [PLACE]?, condition: !accessible("Place"), next: 28</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -935,7 +935,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the place is beyound the wall</gsx:condition>
+    <gsx:condition>accessible("Place")</gsx:condition>
     <gsx:next>44</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -944,8 +944,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c7q1z" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the place is beyound the wall, next: 44</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: accessible("Place"), next: 44</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>28</gsx:index>
@@ -953,7 +953,7 @@
     <gsx:repliesplayer>...</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is southward</gsx:condition>
+    <gsx:condition>south("Place")</gsx:condition>
     <gsx:next>30</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -962,8 +962,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/c94mc" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: ..., repliesplayer: ..., condition: the PLACE is southward, next: 30</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: ..., repliesplayer: ..., condition: south("Place"), next: 30</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -971,7 +971,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is northward</gsx:condition>
+    <gsx:condition>north("Place")</gsx:condition>
     <gsx:next>31</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -980,8 +980,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/caj6t" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is northward, next: 31</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: north("Place"), next: 31</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -989,7 +989,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is eastward</gsx:condition>
+    <gsx:condition>east("Place")</gsx:condition>
     <gsx:next>32</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -998,8 +998,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hmyxm" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is eastward, next: 32</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: east("Place"), next: 32</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -1007,7 +1007,7 @@
     <gsx:repliesplayer />
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>the PLACE is westward</gsx:condition>
+    <gsx:condition>west("Place")</gsx:condition>
     <gsx:next>33</gsx:next>
     <gsx:result />
     <gsx:comment>voir rencontre avec passeur pivert {1}</gsx:comment>
@@ -1016,8 +1016,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hps2g" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">condition: the PLACE is westward, next: 33, comment: voir rencontre avec passeur pivert {1}</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">condition: west("Place"), next: 33, comment: voir rencontre avec passeur pivert {1}</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>30</gsx:index>
@@ -1025,7 +1025,7 @@
     <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:condition />
     <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -1034,8 +1034,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fc3dj" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: Go South, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: Go South, repliesplayer: Thanks, next: 15;16</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>31</gsx:index>
@@ -1043,7 +1043,7 @@
     <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:condition />
     <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -1052,8 +1052,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/fdhxw" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: Go North, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: Go North, repliesplayer: Thanks, next: 15;16</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>32</gsx:index>
@@ -1061,7 +1061,7 @@
     <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:condition />
     <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -1070,8 +1070,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hlkd9" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: Go East, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: Go East, repliesplayer: Thanks, next: 15;16</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>33</gsx:index>
@@ -1079,7 +1079,7 @@
     <gsx:repliesplayer>Thanks</gsx:repliesplayer>
     <gsx:actionpersona />
     <gsx:actionplayer />
-    <gsx:condition>le joueur continue dans la bonne direction</gsx:condition>
+    <gsx:condition />
     <gsx:next>15;16</gsx:next>
     <gsx:result />
     <gsx:comment />
@@ -1088,8 +1088,8 @@
     <link href="https://spreadsheets.google.com/feeds/list/tfehDnQCP7i9b2oHHNHbPAA/od6/private/values/hy7gy" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">sayspersona: Go West, repliesplayer: Thanks, condition: le joueur continue dans la bonne direction, next: 15;16</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <content type="text">sayspersona: Go West, repliesplayer: Thanks, next: 15;16</content>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index>38</gsx:index>
@@ -1107,7 +1107,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">sayspersona: Ms. [****], she is a smuggler. She can help you pass through the desert, repliesplayer: Where can I find her?, next: 39</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
   <entry>
     <gsx:index />
@@ -1125,6 +1125,6 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">repliesplayer: Ok, thanks, next: -1</content>
-    <updated>2014-01-06T10:06:31+01:00</updated>
+    <updated>2014-02-10T20:09:55+01:00</updated>
   </entry>
 </feed>

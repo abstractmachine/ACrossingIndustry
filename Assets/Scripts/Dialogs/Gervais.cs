@@ -2,65 +2,104 @@
 using System.Collections;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Collections.Generic; // Dictionary,List
 
 public class Gervais : MonoBehaviour {
 
+	TextMesh parentMesh;
+	TextMesh gervaisMesh;
 
+	string parentText = "";
 
-	public static string obscurify(string inputString) {
+	//List<string> masks = new List<string> { " ", "#" };
+	//int maskLevel = 0;
 
-		StringBuilder outputString = new StringBuilder(inputString);
+	void Start() {
 
-		int wordCount = Regex.Matches(inputString, @"[\S]+").Count;
-		int randomWordIndex = (int)Random.Range(0,wordCount);
+		gervaisMesh = GetComponent<TextMesh>();
+		parentMesh = transform.parent.gameObject.GetComponent<TextMesh>();
 
-		int wordIndex = 0;
+		gervaisMesh.text = "";
 
-		for(int i=0; i<inputString.Length; i++) {
-
-			char c = outputString[i];
-
-			// keep digits as is
-			if (char.IsDigit(c)) continue;
-
-			// count words
-			if (char.IsSeparator(c)) {
-				wordIndex++;
-				continue;
-			}
-
-			// randomly let one word through
-			if (randomWordIndex == wordIndex) continue;
-
-			switch((int)Random.Range(0.0f,10.0f)) {
-				case 0 :	outputString[i] = '#';	break;
-				case 1 :	outputString[i] = '#';	break;
-				case 2 :	outputString[i] = '.';	break;
-				case 3 :	outputString[i] = ';';	break;
-				case 4 :	outputString[i] = ':';	break;
-				case 5 :	outputString[i] = '%';	break;
-				case 6 :	outputString[i] = '*';	break;
-				case 7 :	outputString[i] = '$';	break;
-				case 8 :	outputString[i] = '*';	break;
-				case 9 :	outputString[i] = '&';	break;
-			}
-		}
-
-		return outputString.ToString();
+		gervaisMesh.color = parentMesh.color;
 
 	}
 
 
+	void Update() {
 
-	public static string colorize(string inputString) {
+		// if the parent text changed it's contents, do something
+		if (parentMesh.text != parentText) ParentTextDidChange();
 
-		string outputString = "";
+	}
 
-		foreach (char str in inputString) {
-	    	outputString += "<color=#FF0000>" + str + "</color>";
+
+	void ParentTextDidChange() {
+
+		parentText = parentMesh.text;
+
+		// if it's an empty text
+		if (parentMesh.text == "") {
+			EmptyText();
+			return;
 		}
 
-		return outputString;
+		// otherwise, overlay something
+		//Obscurify();
+
+	}
+
+
+	void EmptyText() {
+
+		gervaisMesh.text = "";
+
+	}
+
+
+	void Obscurify() {
+
+		string newText = gervaisMesh.text;
+
+		//maskLevel = (int)Random.Range(1,masks.Count);
+		//bool maskOn = false;
+
+		for(int i=gervaisMesh.text.Length; i<parentText.Length; i++) {
+
+			char thisChar = parentText[i];
+/*
+			// if we're at first, or a space/break
+			if (i==0 || thisChar==' ' || thisChar=='\n') {
+				// choose new maskOn state
+				if (Random.Range(0,10) < 5) maskOn = true;
+				else maskOn = false;
+			} // if (i==0
+*/
+
+			switch(thisChar) {
+
+				case ' ' :
+					newText += " ";
+					break;
+				case '\n':
+					newText += "\n";
+					break;
+				default  :
+					newText += "#";
+					//if (!maskOn) newText += " ";
+					//else newText += masks[maskLevel];
+					break;
+
+			} // switch(thisChar
+			
+		} // for(int i
+
+		gervaisMesh.text += newText;
+
+	}
+
+
+	void Blinkify(TextMesh textMesh) {
 
 	}
 

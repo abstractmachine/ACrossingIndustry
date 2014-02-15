@@ -13,6 +13,8 @@ using System;
 using System.IO;
 using System.Xml;
 
+#if UNITY_IPHONE
+#else
 // Google Doc dll libraries were downlaoded from:
 // https://code.google.com/p/google-gdata/downloads/detail?name=Google_Data_API_Setup_2.2.0.0.msi
 using Google.GData.Client;
@@ -21,14 +23,19 @@ using Google.GData.Spreadsheets;
 // Note: IReplaced buggy Newtonsoft.Json dll Google furnished with the 2.0 equivalent downloaded from:
 // http://json.codeplex.com
 // Newer versions such as 3.5 or 4.0 caused other conflicts, notably with A* Pathfinding
+#endif
 
 ////////////////////////
 
 public class GoogleDocs : MonoBehaviour {
 
 	bool connected = false;
+
+#if UNITY_IPHONE
+#else
 	SpreadsheetsService spreadsheetService = null;
 	SpreadsheetEntry spreadsheet = null;
+#endif
 
 	Data data;
 
@@ -47,6 +54,12 @@ public class GoogleDocs : MonoBehaviour {
 	
 	void Update () {
 		
+#if UNITY_IPHONE
+
+	// do nothing
+
+#else
+
 		// List all available spreadsheet documents on GoogleDocs
 		if (Input.GetKeyDown(KeyCode.L)) {
 			DumpListOfSpreadsheets();
@@ -65,6 +78,8 @@ public class GoogleDocs : MonoBehaviour {
 			}
 
 		}
+
+#endif
 		
 	}
 
@@ -111,6 +126,9 @@ public class GoogleDocs : MonoBehaviour {
 
 		if (!loadSpreadsheet(spreadsheetName)) return false;
 
+#if UNITY_IPHONE
+		return false;
+#else
 		// get the feed containing all the worksheets in this spreadsheet
 		WorksheetFeed worksheetFeed = spreadsheet.Worksheets;
 		// Get the first worksheet of the first spreadsheet.
@@ -118,10 +136,14 @@ public class GoogleDocs : MonoBehaviour {
 
 		// Define the URL to request the list feed of the worksheet.
 		AtomLink listFeedLink = worksheetEntry.Links.FindService(GDataSpreadsheetsNameTable.ListRel, null);
+#endif
 
+#if UNITY_IPHONE
+#else
 		// Fetch the list feed of the worksheet.
 		ListQuery listQuery = new ListQuery(listFeedLink.HRef.ToString());
 		ListFeed listFeed = spreadsheetService.Query(listQuery);
+#endif
 
 #if UNITY_EDITOR
 
@@ -133,6 +155,8 @@ public class GoogleDocs : MonoBehaviour {
 		if (!System.IO.Directory.Exists(folderpath)) System.IO.Directory.CreateDirectory(folderpath);
 		string filepath = folderpath + @"/" + xmlFilename;
 
+		print("saving " + spreadsheetName + "\t" + xmlFilename + "\t" + filepath);
+
 #elif UNITY_STANDALONE_WIN
 
 		string folderpath = Application.dataPath + @"\Data\Xml";
@@ -141,10 +165,13 @@ public class GoogleDocs : MonoBehaviour {
 
 #endif
 
+#if UNITY_IPHONE
+#else
 		using (FileStream stream = File.Open(filepath, FileMode.Create)) {
 			listFeed.SaveToXml(stream);
 			//print("Saving " + filepath);
 		}
+#endif
 
 		return true;
 
@@ -153,6 +180,8 @@ public class GoogleDocs : MonoBehaviour {
 
 	bool loadSpreadsheet(string spreadsheetName) {
 
+#if UNITY_IPHONE
+#else
 		// reset current spreadsheet
 		spreadsheet = null;
 
@@ -168,7 +197,7 @@ public class GoogleDocs : MonoBehaviour {
 				return true;
 			}
 		}
-
+#endif
 		// Sheet not found
 		Debug.LogError("Could not find spreadsheet named " + spreadsheetName);
 		return false;
@@ -183,6 +212,10 @@ public class GoogleDocs : MonoBehaviour {
 		// if we couldn't connect, abort
 		if (!connected) return false;
 
+#if UNITY_IPHONE
+		return false;
+#else
+
 		// Create query to get all spreadsheets.
 		SpreadsheetQuery getSpreadsheetsQuery = new SpreadsheetQuery();
 		// Call to API to get all spreadsheets.
@@ -194,6 +227,7 @@ public class GoogleDocs : MonoBehaviour {
 		}
 
 		return true;
+#endif
 
 	}
 
@@ -223,6 +257,8 @@ public class GoogleDocs : MonoBehaviour {
 			return;
 		}
 
+#if UNITY_IPHONE
+#else
 		SecurityCertificatePolicy.Instate();
         spreadsheetService = new SpreadsheetsService("ACrossingIndustry");
 		spreadsheetService.setUserCredentials(login, pass);
@@ -234,6 +270,7 @@ public class GoogleDocs : MonoBehaviour {
 		}
 
 		connected = true;
+#endif
 
 	}
 

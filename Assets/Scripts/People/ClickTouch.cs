@@ -44,9 +44,9 @@ public class ClickTouch : MonoBehaviour {
 				if (Input.GetTouch(0).phase == TouchPhase.Began) {	// touch screen to change position
 					checkHit(Input.GetTouch(0).position);
 				} else if (phylactere != null && Input.GetTouch(0).phase == TouchPhase.Moved) {
-					phylactere.touchMoved(Input.GetTouch(0).position);
+					phylactere.TouchMoved(Input.GetTouch(0).position);
 				} else if (phylactere != null && Input.GetTouch(0).phase == TouchPhase.Ended) {
-					phylactere.touchUp(Input.GetTouch(0).position);
+					phylactere.TouchUp(Input.GetTouch(0).position);
 					phylactere = null;
 				}
  
@@ -65,14 +65,14 @@ public class ClickTouch : MonoBehaviour {
 				playerScript.ResetImpatience();
 
 			} else if (phylactere != null && Input.GetMouseButton(0)) { 	// if we're interacting with a phylactere
-				if (Vector3.Distance(lastTouchPosition,Input.mousePosition) > 0) phylactere.touchMoved(Input.mousePosition);
+				if (Vector3.Distance(lastTouchPosition,Input.mousePosition) > 0) phylactere.TouchMoved(Input.mousePosition);
 				lastTouchPosition = Input.mousePosition;
 
 				// tell the hero that there's been some activity
 				playerScript.ResetImpatience();
 			
 			} else if (phylactere != null && Input.GetMouseButtonUp(0)) {	// if we're interacting with a phylactere
-				phylactere.touchUp(Input.mousePosition);
+				phylactere.TouchUp(Input.mousePosition);
 				lastTouchPosition = Vector3.zero;
 				phylactere = null;
 
@@ -269,7 +269,7 @@ public class ClickTouch : MonoBehaviour {
     	if (obj.tag == "Player") {
     		phylactere = playerObject.GetComponentInChildren<Phylactere>();
     		// tell the phylactère that we just clicked on it
-    		phylactere.touchDown(touchPoint, hitPoint);
+    		phylactere.TouchDown(touchPoint, hitPoint);
     		return;
     	}
     	// or is it a computer-controller persona?

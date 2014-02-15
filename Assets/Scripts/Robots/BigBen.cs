@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Text;
+using System.Text.RegularExpressions;
 
 public class BigBen : MonoBehaviour {
 
@@ -34,32 +36,32 @@ public class BigBen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		lookAtMainCamera();
+		LookAtMainCamera();
 
 		if (praseIndex > -1 && praseIndex < phrase.Length) {
-			spellString();
+			SpellString();
 		} else if (praseIndex > -1 && praseIndex >= phrase.Length) {
 			finishedCountDown -= Time.deltaTime;
-			if (finishedCountDown < 0.0f) eraseString();
+			if (finishedCountDown < 0.0f) EraseString();
 		}
 
 		if (praseIndex > -1 && finishedCountDown < 0.0f) {
-			eraseString();
+			EraseString();
 		}
 
 		// is this a new hour?
-		if (currentHour == daylight.getTimeHour()) return;
-		currentHour = daylight.getTimeHour();
+		if (currentHour == daylight.TimeHour) return;
+		currentHour = daylight.TimeHour;
 
-		string speech = createString("The time is " + currentHour + " o'clock");
+		string speech = CreateString("The time is " + currentHour + " o'clock");
 
 		// create the phrase we have to speak
-		speakString(speech);
+		SpeakString(speech);
 
 	}
 
 
-	void lookAtMainCamera() {
+	void LookAtMainCamera() {
 
 		transform.LookAt(Camera.main.transform, Vector3.up);
 		transform.Rotate(0.0f,180.0f,0.0f);
@@ -67,27 +69,27 @@ public class BigBen : MonoBehaviour {
 	}
 
 
-	string createString(string newString) {
+	string CreateString(string newString) {
 
 		return newString;
 
 	}
 
 
-	void speakString(string newString) {
+	void SpeakString(string newString) {
 
 		praseIndex = 0;
 		indexCountDown = indexCountDownDuration;
 		finishedCountDown = finishedDuration;
 
-		phrase = Gervais.obscurify(newString);
+		phrase = Obscurify(newString);
 
 		//line.gameObject.SetActive(true);
 
 	}
 
 
-	void spellString() {
+	void SpellString() {
 
 		indexCountDown -= Time.deltaTime;
 
@@ -97,10 +99,10 @@ public class BigBen : MonoBehaviour {
 			praseIndex++;
 
 			string drawText = phrase.Substring(0,praseIndex);
-			drawText = Gervais.colorize(drawText);
+			drawText = Colorize(drawText);
 			textMesh.text = drawText;
 
-			float sat = daylight.getTimeSaturation();
+			float sat = daylight.TimeSaturation;
 
 			// black or white? contrast with background
 			if (sat > 0.55) { // FIXME: this seems backwards
@@ -113,13 +115,71 @@ public class BigBen : MonoBehaviour {
 
 		} // if (indexCountDown < 0)
 
-	} // spellString()
+	} // SpellString()
 
 
-	void eraseString() {
+	void EraseString() {
 
 		textMesh.text = "";
 		//line.gameObject.SetActive(false);
+
+	}
+
+
+	string Obscurify(string inputString) {
+
+		StringBuilder outputString = new StringBuilder(inputString);
+
+		int wordCount = Regex.Matches(inputString, @"[\S]+").Count;
+		int randomWordIndex = (int)Random.Range(0,wordCount);
+
+		int wordIndex = 0;
+
+		for(int i=0; i<inputString.Length; i++) {
+
+			char c = outputString[i];
+
+			// keep digits as is
+			if (char.IsDigit(c)) continue;
+
+			// count words
+			if (char.IsSeparator(c)) {
+				wordIndex++;
+				continue;
+			}
+
+			// randomly let one word through
+			if (randomWordIndex == wordIndex) continue;
+
+			switch((int)Random.Range(0.0f,10.0f)) {
+				case 0 :	outputString[i] = '#';	break;
+				case 1 :	outputString[i] = '#';	break;
+				case 2 :	outputString[i] = '.';	break;
+				case 3 :	outputString[i] = ';';	break;
+				case 4 :	outputString[i] = ':';	break;
+				case 5 :	outputString[i] = '%';	break;
+				case 6 :	outputString[i] = '*';	break;
+				case 7 :	outputString[i] = '$';	break;
+				case 8 :	outputString[i] = '*';	break;
+				case 9 :	outputString[i] = '&';	break;
+			}
+		}
+
+		return outputString.ToString();
+
+	}
+
+
+
+	string Colorize(string inputString) {
+
+		string outputString = "";
+
+		foreach (char str in inputString) {
+	    	outputString += "<color=#FF0000>" + str + "</color>";
+		}
+
+		return outputString;
 
 	}
 

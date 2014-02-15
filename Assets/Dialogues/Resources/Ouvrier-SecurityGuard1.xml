@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:gsx="http://schemas.google.com/spreadsheets/2006/extended" xmlns:gd="http://schemas.google.com/g/2005">
+  <author>
+    <name>cedric.parizot</name>
+    <email>cedric.parizot@gmail.com</email>
+  </author>
+  <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+  <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values</id>
+  <link href="https://spreadsheets.google.com/ccc?key=ttJMOk7rU5YOwDxX6Luub3A" rel="alternate" type="text/html" />
+  <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
+  <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values" rel="self" type="application/atom+xml" />
+  <title type="text">Feuille 1</title>
+  <updated>2014-01-20T15:01:30+01:00</updated>
+  <entry>
+    <gsx:index>-7</gsx:index>
+    <gsx:sayspersona>You are under arrest</gsx:sayspersona>
+    <gsx:repliesplayer>...</gsx:repliesplayer>
+    <gsx:actionpersona>Arrest(Player)</gsx:actionpersona>
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>19</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">-7</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bl8zb</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bl8zb" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: You are under arrest, repliesplayer: ..., actionpersona: Arrest(Player), next: 19</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>-6</gsx:index>
+    <gsx:sayspersona>You are under temporary arrest</gsx:sayspersona>
+    <gsx:repliesplayer>No, Sir please, don't put me under arrest</gsx:repliesplayer>
+    <gsx:actionpersona>Arrest(Player)</gsx:actionpersona>
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>18</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">-6</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bctkt</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bctkt" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: You are under temporary arrest, repliesplayer: No, Sir please, don't put me under arrest, actionpersona: Arrest(Player), next: 18</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
+    <gsx:actionpersona />
+    <gsx:actionplayer>Rebel()</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>-3;-1</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 4</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bpgoi</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bpgoi" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">actionplayer: Rebel(), next: -3;-1</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>-4</gsx:index>
+    <gsx:sayspersona>You cannot pass, go away!/You have no right to cross!/You are not allowed to cross/Move away!</gsx:sayspersona>
+    <gsx:repliesplayer>Ok then/Ok Sir/I understand</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer>Leave("Checkpoint")</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>0</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">-4</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/btodt</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/btodt" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: You cannot pass, go away!/You have no right to cross!/You are not allowed to cross/Move away!, repliesplayer: Ok then/Ok Sir/I understand, actionplayer: Leave("Checkpoint"), next: 0</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>-3</gsx:index>
+    <gsx:sayspersona>Bang, bang!</gsx:sayspersona>
+    <gsx:repliesplayer>Aaargh</gsx:repliesplayer>
+    <gsx:actionpersona>Shoot(Player)</gsx:actionpersona>
+    <gsx:actionplayer>Stop()</gsx:actionplayer>
+    <gsx:condition>Wounded(Player)</gsx:condition>
+    <gsx:next>0</gsx:next>
+    <gsx:result>GameOver</gsx:result>
+    <gsx:comment />
+    <title type="text">-3</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cokwr</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cokwr" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Bang, bang!, repliesplayer: Aaargh, actionpersona: Shoot(Player), actionplayer: Stop(), condition: Wounded(Player), next: 0, result: GameOver</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Aaargh, stop it!/Aaargh, please stop it!</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer>Stop()</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>-7</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 7</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bjueu</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bjueu" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Aaargh, stop it!/Aaargh, please stop it!, actionplayer: Stop(), next: -7</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>You won't get me</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer>Flee()</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>6;-3</gsx:next>
+    <gsx:result>santé--</gsx:result>
+    <gsx:comment />
+    <title type="text">Row: 8</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cpzh4</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cpzh4" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: You won't get me, actionplayer: Flee(), next: 6;-3, result: santé--</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>-2</gsx:index>
+    <gsx:sayspersona>I'll catch you!</gsx:sayspersona>
+    <gsx:repliesplayer>...</gsx:repliesplayer>
+    <gsx:actionpersona>Chase(Player)</gsx:actionpersona>
+    <gsx:actionplayer>Flee()</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>-1; -3; -6; 6</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">-2</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/ciyn3</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/ciyn3" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: I'll catch you!, repliesplayer: ..., actionpersona: Chase(Player), actionplayer: Flee(), next: -1; -3; -6; 6</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>-1</gsx:index>
+    <gsx:sayspersona>Bloody bastard!/Take this then/I'll teach you!/Are you trying to fool me?!</gsx:sayspersona>
+    <gsx:repliesplayer />
+    <gsx:actionpersona>Beat(Player)</gsx:actionpersona>
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>-6</gsx:next>
+    <gsx:result>santé--</gsx:result>
+    <gsx:comment />
+    <title type="text">-1</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/ckd7g</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/ckd7g" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Bloody bastard!/Take this then/I'll teach you!/Are you trying to fool me?!, actionpersona: Beat(Player), next: -6, result: santé--</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>0</gsx:index>
+    <gsx:sayspersona />
+    <gsx:repliesplayer />
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next />
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">0</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/clrrx</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/clrrx" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text" />
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>1</gsx:index>
+    <gsx:sayspersona>Everything alright?/Are you allright?/Stop</gsx:sayspersona>
+    <gsx:repliesplayer>Yes </gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>2</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">1</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cyevm</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cyevm" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Everything alright?/Are you allright?/Stop, repliesplayer: Yes , next: 2</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Can't I pass through the car lane?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>13</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 13</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/b8lvi</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/b8lvi" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Can't I pass through the car lane?, next: 13</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Get lost!</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer>GoTo(Checkpoint)</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>-2; -3; -6</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 14</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cztg3</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cztg3" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Get lost!, actionplayer: GoTo(Checkpoint), next: -2; -3; -6</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>2</gsx:index>
+    <gsx:sayspersona>Get though the barrack lane!/Take the corridor/Enter the corridor</gsx:sayspersona>
+    <gsx:repliesplayer>Ok (I'll enter that corridor then)</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer>GoTo("Corridor")</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>5</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">2</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cu76f</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cu76f" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Get though the barrack lane!/Take the corridor/Enter the corridor, repliesplayer: Ok (I'll enter that corridor then), actionplayer: GoTo("Corridor"), next: 5</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>No way! (I'll try to force my way through)</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer>GoTo(Checkpoint)</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>-2</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 16</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cvlqs</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cvlqs" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: No way! (I'll try to force my way through), actionplayer: GoTo(Checkpoint), next: -2</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>I'm looking for the car lane</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>13</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 17</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bo245</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bo245" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: I'm looking for the car lane, next: 13</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>5</gsx:index>
+    <gsx:sayspersona>...</gsx:sayspersona>
+    <gsx:repliesplayer />
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>0</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">5</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/d5fpr</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/d5fpr" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: ..., next: 0</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>6</gsx:index>
+    <gsx:sayspersona>Bastard!</gsx:sayspersona>
+    <gsx:repliesplayer>...</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>5</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">6</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/d88ul</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/d88ul" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Bastard!, repliesplayer: ..., next: 5</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>13</gsx:index>
+    <gsx:sayspersona>You Piverts don't have the right to pass throught the car lane/Move away!</gsx:sayspersona>
+    <gsx:repliesplayer>Why?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>14</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">13</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c3ico</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c3ico" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: You Piverts don't have the right to pass throught the car lane/Move away!, repliesplayer: Why?, next: 14</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Ok</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer>Leave()</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>2</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 21</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c4wx5</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c4wx5" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Ok, actionplayer: Leave(), next: 2</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Come on, can't you be nice today?</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>20</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 22</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c23sb</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c23sb" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Come on, can't you be nice today?, next: 20</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>14</gsx:index>
+    <gsx:sayspersona>Don't you know the rules! </gsx:sayspersona>
+    <gsx:repliesplayer>Explain me</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>16</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">14</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c0p7u</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/c0p7u" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Don't you know the rules! , repliesplayer: Explain me, next: 16</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Sure I know them and you're telling me crap</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>-1</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 24</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bv2y6</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bv2y6" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Sure I know them and you're telling me crap, next: -1</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>16</gsx:index>
+    <gsx:sayspersona>Don't play with me, do you?"</gsx:sayspersona>
+    <gsx:repliesplayer>... (I'd better do as he says)</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>2</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">16</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bwhin</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bwhin" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Don't play with me, do you?", repliesplayer: ... (I'd better do as he says), next: 2</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>You are not even even a soldier or a police officier!</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>-1</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 26</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bxw30</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/bxw30" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: You are not even even a soldier or a police officier!, next: -1</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>18</gsx:index>
+    <gsx:sayspersona>You'll stay here for few hours/Stay here for a while/Don't move until I come back</gsx:sayspersona>
+    <gsx:repliesplayer>...</gsx:repliesplayer>
+    <gsx:actionpersona>Take(Player)GoTo(Jail)</gsx:actionpersona>
+    <gsx:actionplayer>Enter(Jail)</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>0</gsx:next>
+    <gsx:result>temps--</gsx:result>
+    <gsx:comment />
+    <title type="text">18</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cbxr6</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cbxr6" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: You'll stay here for few hours/Stay here for a while/Don't move until I come back, repliesplayer: ..., actionpersona: Take(Player)GoTo(Jail), actionplayer: Enter(Jail), next: 0, result: temps--</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>19</gsx:index>
+    <gsx:sayspersona>It's over for you now</gsx:sayspersona>
+    <gsx:repliesplayer />
+    <gsx:actionpersona>Take(Player)GoTo(Jail)</gsx:actionpersona>
+    <gsx:actionplayer>Enter(Jail)</gsx:actionplayer>
+    <gsx:condition />
+    <gsx:next>0</gsx:next>
+    <gsx:result>GameOver</gsx:result>
+    <gsx:comment />
+    <title type="text">19</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cdcbn</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cdcbn" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: It's over for you now, actionpersona: Take(Player)GoTo(Jail), actionplayer: Enter(Jail), next: 0, result: GameOver</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index>20</gsx:index>
+    <gsx:sayspersona>Are you making fun of me?</gsx:sayspersona>
+    <gsx:repliesplayer>No, sorry (I'd better do as he says)</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>5</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">20</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/ceqw0</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/ceqw0" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">sayspersona: Are you making fun of me?, repliesplayer: No, sorry (I'd better do as he says), next: 5</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:index />
+    <gsx:sayspersona />
+    <gsx:repliesplayer>Nope, I'm just looking for a way to pass</gsx:repliesplayer>
+    <gsx:actionpersona />
+    <gsx:actionplayer />
+    <gsx:condition />
+    <gsx:next>16</gsx:next>
+    <gsx:result />
+    <gsx:comment />
+    <title type="text">Row: 30</title>
+    <id>https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cg5gh</id>
+    <link href="https://spreadsheets.google.com/feeds/list/ttJMOk7rU5YOwDxX6Luub3A/od6/private/values/cg5gh" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">repliesplayer: Nope, I'm just looking for a way to pass, next: 16</content>
+    <updated>2014-01-20T15:01:30+01:00</updated>
+  </entry>
+</feed>

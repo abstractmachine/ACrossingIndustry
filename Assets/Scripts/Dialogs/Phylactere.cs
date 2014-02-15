@@ -107,7 +107,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	public void abortReply() {
+	public void AbortReply() {
 
 		speech.shouldReply = false;
 
@@ -154,7 +154,7 @@ public class Phylactere : MonoBehaviour {
 			spinner.currentAngle = -1 * 180;
 		}
 
-		speechForcePhrase(spinner.index);
+		SpeechForcePhrase(spinner.index);
 
 		// start the timer on the next switch
 		StartChoice();
@@ -205,7 +205,7 @@ public class Phylactere : MonoBehaviour {
 	void Update () {
 
 		LookAtCamera();
-		spinPhylactere();
+		SpinPhylactere();
 		
 		// if we still need to write out speech 
 		if (speech.charIndex < speech.text.Length) SpeakNextCharacter();
@@ -225,7 +225,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	void spinPhylactere() {
+	void SpinPhylactere() {
 
 		// loop around from negative to highest value positive
 		if (spinner.index < 0) {
@@ -257,27 +257,27 @@ public class Phylactere : MonoBehaviour {
 			textObject.transform.localPosition = new Vector3(1.35f, 0.4f, 0.0f);
 			textIndexObject.transform.localRotation = Quaternion.Euler(0,180.0f,0);
 			// if the last time we weren't in this rotation
-			if (spinner.lastRotation != 180) textDisplayDidRotate();
+			if (spinner.lastRotation != 180) TextDisplayDidRotate();
 			spinner.lastRotation = 180;
 		} else {
 			textObject.transform.localRotation = Quaternion.identity;
 			textObject.transform.localPosition = new Vector3(-1.35f, 0.4f, 0.0f);
 			textIndexObject.transform.localRotation = Quaternion.identity;
 			// if the last time we weren't in this rotation
-			if (spinner.lastRotation != 0) textDisplayDidRotate();
+			if (spinner.lastRotation != 0) TextDisplayDidRotate();
 			spinner.lastRotation = 0;
 		}
 
 	}
 
 
-	void textDisplayDidRotate() {
+	void TextDisplayDidRotate() {
 
 		// if we're already at this text
 		if (spinner.index == speech.index) return;
 
 		// show that text
-		speechForcePhrase(spinner.index);
+		SpeechForcePhrase(spinner.index);
 
 	}
 
@@ -295,14 +295,14 @@ public class Phylactere : MonoBehaviour {
 			return;
 		}
 
-		setColor();
+		SetColor();
 
 		// if there's only one phrase
 		if (phrases.Count == 1) {
 			// there is only one phrase to add
 			speech.texts.Add(phrases[0]);
 			// just use that phrase
-			speechSetPhrase(0);
+			SpeechSetPhrase(0);
 			// we destroy the phylactere when time's up
 			StartDestroy();
 			// forget the rest
@@ -315,7 +315,7 @@ public class Phylactere : MonoBehaviour {
 		}
 
 		// start with phrase #0
-		speechForcePhrase(0);
+		SpeechForcePhrase(0);
 
 		StartChoice();
 
@@ -325,18 +325,18 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	void speechSetPhrase(int index) {
+	void SpeechSetPhrase(int index) {
 
 		speech.text = speech.texts[index];
 		speech.index = index;
 		speech.charIndex = 0;
 
-		resizeFrame();
+		ResizeFrame();
 
 	}
 
 
-	void speechForcePhrase(int index) {
+	void SpeechForcePhrase(int index) {
 
 		speech.text = speech.texts[index];
 		speech.index = index;
@@ -346,12 +346,12 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	void setColor() {
+	void SetColor() {
 
 		// create the color material for this phylactère
 		mat = new Material(Shader.Find("Self-Illumin/Diffuse"));
 		// get the color of the Persona
-		mat.color = getParentColor();
+		mat.color = GetParentColor();
 
 		spinner.gameObject.transform.Find("Bulle").Find("Triangle").gameObject.renderer.material = mat;
 		spinner.gameObject.transform.Find("Bulle").Find("PlaneScaler").Find("Rectangle").gameObject.renderer.material = mat;
@@ -360,7 +360,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	Color getParentColor() {
+	Color GetParentColor() {
 
 		Material m = transform.parent.GetComponentInChildren<Renderer>().material;
 		return m.color;
@@ -379,10 +379,10 @@ public class Phylactere : MonoBehaviour {
 		// increment index
 		speech.charIndex++;
 		// write out text
-		//textMesh.text = parseString(speech.text.Substring(0,speech.charIndex));
-		textMesh.text = parseStringWithSpaces(speech.text.Substring(0,speech.charIndex));
+		//textMesh.text = ParseString(speech.text.Substring(0,speech.charIndex));
+		textMesh.text = ParseStringWithSpaces(speech.text.Substring(0,speech.charIndex));
 		// resize since we've drawn text
-		resizeFrame();
+		ResizeFrame();
 
 		// are we at the end of the speech?
 		//if (speech.charIndex >= speech.text.Length) FinishedSpeaking(speech.text);
@@ -404,8 +404,8 @@ public class Phylactere : MonoBehaviour {
 		// just to the end of the phrase
 		speech.charIndex = speech.text.Length;
 		//
-		//textMesh.text = parseString(speech.text);
-		textMesh.text = parseStringWithSpaces(speech.text);
+		//textMesh.text = ParseString(speech.text);
+		textMesh.text = ParseStringWithSpaces(speech.text);
 
 		// if there are multiple choice possibilities
 		if (speech.texts.Count > 1) {
@@ -413,7 +413,7 @@ public class Phylactere : MonoBehaviour {
 			textIndexMesh.text = "" + (speech.index+1);
 		}
 		//
-		resizeFrame();
+		ResizeFrame();
 
 	}
 
@@ -433,7 +433,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	string parseString(string inputString) {
+	string ParseString(string inputString) {
 
 		string finalString = "";
 		int lineLength = 0;
@@ -462,7 +462,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	string parseStringWithSpaces(string inputString) {
+	string ParseStringWithSpaces(string inputString) {
 
 		string finalString = "";
 		int lineLength = 0;
@@ -512,7 +512,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	void resizeFrame() {
+	void ResizeFrame() {
 
 		int lineCount = textMesh.text.Split('\n').Length;
 
@@ -527,7 +527,7 @@ public class Phylactere : MonoBehaviour {
 
 	// Click/Touch
 
-	public void touchDown(Vector2 touchPoint, Vector3 hitPoint) {
+	public void TouchDown(Vector2 touchPoint, Vector3 hitPoint) {
 
 		JumpToEndOfText();
 
@@ -541,7 +541,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	public void touchMoved(Vector2 touchPoint) {
+	public void TouchMoved(Vector2 touchPoint) {
 
 		// delta
 		//Vector2 delta = touchPoint - touchStop;
@@ -581,7 +581,7 @@ public class Phylactere : MonoBehaviour {
 	}
 
 
-	public void touchUp(Vector2 touchPoint) {
+	public void TouchUp(Vector2 touchPoint) {
 
 		// delta
 		//Vector2 delta = touchPoint - touchStop;
@@ -591,7 +591,7 @@ public class Phylactere : MonoBehaviour {
 		// if we're spinning, then we haven't selected this one yet
 		if (spinner.spinning) {
 
-			// ok, we're done spinning, the next touchUp should select this phylactere
+			// ok, we're done spinning, the next TouchUp should select this phylactere
 		 	spinner.spinning = false;
 		 	// if there's are multiple choices, go back to spinning the choices
 			if (speech.texts.Count > 1) ResumeChoice();

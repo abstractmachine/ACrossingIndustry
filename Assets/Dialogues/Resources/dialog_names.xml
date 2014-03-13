@@ -10,7 +10,7 @@
   <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
   <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values" rel="self" type="application/atom+xml" />
   <title type="text">Sheet1</title>
-  <updated>2014-02-13T02:00:20+01:00</updated>
+  <updated>2014-02-23T07:28:36+01:00</updated>
   <entry>
     <gsx:dialogid>Ouvrier-Enfant</gsx:dialogid>
     <gsx:playername>Ouvrier</gsx:playername>
@@ -21,19 +21,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: Enfant</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
-  </entry>
-  <entry>
-    <gsx:dialogid>Ouvrier-PivertLambda</gsx:dialogid>
-    <gsx:playername>Ouvrier</gsx:playername>
-    <gsx:personaname>PivertLambda</gsx:personaname>
-    <title type="text">Ouvrier-PivertLambda</title>
-    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/cpzh4</id>
-    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/cpzh4" rel="self" type="application/atom+xml" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
-    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">playername: Ouvrier, personaname: PivertLambda</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-PivertIndicateur</gsx:dialogid>
@@ -45,7 +33,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: PivertIndicateur</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-ColonAPied</gsx:dialogid>
@@ -57,7 +45,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: ColonAPied</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-SecurityGuard</gsx:dialogid>
@@ -69,7 +57,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: SecurityGuard</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-SecurityGuard1</gsx:dialogid>
@@ -81,7 +69,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: SecurityGuard1</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-Scanner</gsx:dialogid>
@@ -93,7 +81,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: Scanner</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-MarchandStand1</gsx:dialogid>
@@ -105,7 +93,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: MarchandStand1</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-MarchandStand2</gsx:dialogid>
@@ -117,7 +105,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: MarchandStand2</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-MarchandStand3</gsx:dialogid>
@@ -129,7 +117,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: MarchandStand3</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-MinibusDriverStables</gsx:dialogid>
@@ -141,7 +129,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: MnibusDriverStables</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-MinibusDriverSheepfold</gsx:dialogid>
@@ -153,7 +141,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: MinibusDriverSheepfold</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-MinibusDriverSandgate</gsx:dialogid>
@@ -165,7 +153,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: MinibusDriverSandgate</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-CorridorToScanner1</gsx:dialogid>
@@ -177,7 +165,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: CorridorToScanner1</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-CorridorToScanner2</gsx:dialogid>
@@ -189,7 +177,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: CorridorToScanner2</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-LeffeCrook1</gsx:dialogid>
@@ -201,7 +189,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: LeffeCrook1</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-MinibusDriverStables</gsx:dialogid>
@@ -213,7 +201,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: MnibusDriverStables</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-SoldatTour</gsx:dialogid>
@@ -225,7 +213,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: SoldatTour</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-Stranger</gsx:dialogid>
@@ -237,7 +225,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: Stranger</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
   <entry>
     <gsx:dialogid>Ouvrier-Neutral</gsx:dialogid>
@@ -249,6 +237,114 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">playername: Ouvrier, personaname: Neutral</content>
-    <updated>2014-02-13T02:00:20+01:00</updated>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-PivertPremier</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>PivertPremier</gsx:personaname>
+    <title type="text">Ouvrier-PivertPremier</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hy7gy</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hy7gy" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: PivertPremier</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-ColonAPiedOutpost</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>ColonAPiedOutpost</gsx:personaname>
+    <title type="text">Ouvrier-ColonAPiedOutpost</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hzm1f</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hzm1f" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: ColonAPiedOutpost</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-PivertWorkerOutpost1</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>PivertWorkerOutpost1</gsx:personaname>
+    <title type="text">Ouvrier-PivertWorkerOutpost1</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/i10ls</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/i10ls" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: PivertWorkerOutpost1</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-PivertWorkerOutpost2</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>PivertWorkerOutpost2</gsx:personaname>
+    <title type="text">Ouvrier-PivertWorkerOutpost2</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/i2f69</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/i2f69" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: PivertWorkerOutpost2</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-PivertWorkerOutpost3</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>PivertWorkerOutpost3</gsx:personaname>
+    <title type="text">Ouvrier-PivertWorkerOutpost3</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/htzrr</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/htzrr" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: PivertWorkerOutpost3</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-EnfantColonOutpost</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>EnfantColonOutpost</gsx:personaname>
+    <title type="text">Ouvrier-EnfantColonOutpost</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hvec4</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hvec4" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: EnfantColonOutpost</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-Stanley</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>Stanley</gsx:personaname>
+    <title type="text">Ouvrier-Stanley</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hwswl</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/hwswl" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: Stanley</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-SecurityGuardOutpost</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>SecurityGuardOutpost</gsx:personaname>
+    <title type="text">Ouvrier-SecurityGuardOutpost</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/i9g0a</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/i9g0a" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: SecurityGuardOutpost</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
+  </entry>
+  <entry>
+    <gsx:dialogid>Ouvrier-PivertWorkerOutpost4</gsx:dialogid>
+    <gsx:playername>Ouvrier</gsx:playername>
+    <gsx:personaname>PivertWorkerOutpost4</gsx:personaname>
+    <title type="text">Ouvrier-PivertWorkerOutpost4</title>
+    <id>https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/iaukr</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t1lxekGtCJkLNs2FKOhL5XQ/od6/private/values/iaukr" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">playername: Ouvrier, personaname: PivertWorkerOutpost4</content>
+    <updated>2014-02-23T07:28:36+01:00</updated>
   </entry>
 </feed>

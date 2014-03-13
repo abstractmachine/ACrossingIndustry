@@ -35,8 +35,8 @@ public class Condition : MonoBehaviour {
 				return result;
 		
 		}
-
-
+		
+		
 		public bool Check(string key, string value) {
 		
 				// figure out if we're using a negation operator
@@ -45,11 +45,6 @@ public class Condition : MonoBehaviour {
 						isNot = true;
 						// remove negation
 						key.TrimStart(new char[]{ '!' });
-				}
-				
-				bool hasQuotes = false;
-				if (value.Length > 0 && value[0] == '"') {
-						hasQuotes = true;
 				}
 		
 				// the result of the comparison
@@ -110,20 +105,32 @@ public class Condition : MonoBehaviour {
 				return isNot ? result : !result;
 		
 		}
-	
-	
+		
+		
+		
+		bool HasQuotes(string value) {
+		
+				if (value.Length > 0 && value[0] == '"') {
+						return true;
+				}
+		
+				return false;
+		
+		}
+		
+		
 		bool Amount(string value) {
 		
 				return false;			
 		}
-	
-	
+		
+		
 		bool Close(string value) {
 		
 				return false;			
 		}
-	
-	
+		
+		
 		bool East(string value) {
 		
 				if (Direction(value) == "East")
@@ -132,8 +139,8 @@ public class Condition : MonoBehaviour {
 						return false;
 		
 		}
-	
-	
+		
+		
 		bool Far(string value) {
 				return false;
 		}
@@ -147,20 +154,20 @@ public class Condition : MonoBehaviour {
 		bool Inside(string value) {
 				return false;			
 		}
-	
-	
+		
+		
 		bool Know(string value) {
 				return false;			
 		
 		}
-	
-	
+		
+		
 		bool Near(string value) {
 		
 				return false;			
 		}
-	
-	
+		
+		
 		bool North(string value) {
 		
 				if (Direction(value) == "North")
@@ -169,8 +176,8 @@ public class Condition : MonoBehaviour {
 						return false;
 		
 		}
-	
-	
+		
+		
 		bool South(string value) {
 		
 				if (Direction(value) == "South")
@@ -179,8 +186,8 @@ public class Condition : MonoBehaviour {
 						return false;
 		
 		}
-	
-	
+		
+		
 		bool West(string value) {
 		
 				if (Direction(value) == "West")

@@ -24,8 +24,9 @@ public class Condition : MonoBehaviour {
 						bool thisResult = Check(key, value);
 					
 						// if any one of these false, return false
-						if (!thisResult)
+						if (!thisResult) {
 								return false;
+						}
 						
 						// check for true in the others
 						result = true;
@@ -102,7 +103,7 @@ public class Condition : MonoBehaviour {
 				}
 		
 				// re-calculate result based on not operator
-				return isNot ? result : !result;
+				return isNot ? !result : result;
 		
 		}
 		
@@ -128,16 +129,6 @@ public class Condition : MonoBehaviour {
 		bool Close(string value) {
 		
 				return false;			
-		}
-		
-		
-		bool East(string value) {
-		
-				if (Direction(value) == "East")
-						return true;
-				else
-						return false;
-		
 		}
 		
 		
@@ -186,6 +177,16 @@ public class Condition : MonoBehaviour {
 						return false;
 		
 		}
+	
+	
+		bool East(string value) {
+		
+				if (Direction(value) == "East")
+						return true;
+				else
+						return false;
+		
+		}
 		
 		
 		bool West(string value) {
@@ -210,23 +211,24 @@ public class Condition : MonoBehaviour {
 				// get the position of the object
 				Vector3 targetPosition = target.transform.position;
 				
-				print(targetPosition);
-				print(transform.position);
-				
 				float horizontal = targetPosition.x - transform.position.x;
 				float vertical = targetPosition.z - transform.position.z;
+		
+				// figure out angle
+				float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
+				// for better readability (for us), stay inside of 0° > 360°
+				if (angle < 0) {
+						angle += 360.0f;
+				}
 				
-				// are we on the vertical axis?
-				if (Mathf.Abs(horizontal) < Mathf.Abs(vertical)) {
-						if (vertical > 0)
-								return "North";
-						else
-								return "South";
-				} else { // ok, must be the horizontal axis
-						if (horizontal > 0)
-								return "East";
-						else
-								return "West";
+				if (angle > 315 || angle < 45) {
+						return "North";
+				} else if (angle >= 45 && angle < 135) {
+						return "West";
+				} else if (angle >= 135 && angle < 225) {
+						return "South";
+				} else {
+						return "East";
 				}
 				
 		}

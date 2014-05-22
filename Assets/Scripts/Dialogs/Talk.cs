@@ -265,12 +265,14 @@ public class Talk : MonoBehaviour {
 						if (condition.Check(consequence.RawString)) {
 								// ok
 								whichConsequence = i;
+								//print("Chose consequence #" + i);
 						}	
 			
 				}
 		
 				// if there was no chosen consequence, just choose one at random
 				if (whichConsequence == -1) {
+						//print("Randomly chosen Consequence");
 						// choose the first
 						whichConsequence = (int)UnityEngine.Random.Range(0, consequences.Count);
 				}

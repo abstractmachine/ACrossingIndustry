@@ -81,6 +81,7 @@ public class Cheat : MonoBehaviour {
 						if (Input.GetKeyDown(KeyCode.A)) {
 								index++;
 								TurnOn();
+Debug.Log("cheating");
 						} else {
 								ResetIndex();
 						}

@@ -10,13 +10,14 @@
   <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values" rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" />
   <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values" rel="self" type="application/atom+xml" />
   <title type="text">Sheet1</title>
-  <updated>2014-02-23T07:21:14+01:00</updated>
+  <updated>2014-09-08T13:53:33+02:00</updated>
   <entry>
     <gsx:name>ColonAPied</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Colon</gsx:faction>
     <gsx:coordinate>-111.67,1.07</gsx:coordinate>
     <gsx:coordinates>-162.70,73.35; -23.57,-36.88</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">ColonAPied</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cpzh4</id>
@@ -24,7 +25,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Colon, coordinate: -111.67,1.07, coordinates: -162.70,73.35; -23.57,-36.88</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Enfant</gsx:name>
@@ -32,6 +33,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>85.58,-19.98</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">Enfant</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cre1l</id>
@@ -39,7 +41,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Enfant, faction: Pivert, coordinate: 85.58,-19.98</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Enfant</gsx:name>
@@ -47,6 +49,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>86.02,-17.18</gsx:coordinate>
     <gsx:coordinates>70.49,-22.00</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">Enfant</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/chk2m</id>
@@ -54,7 +57,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Enfant, faction: Pivert, coordinate: 86.02,-17.18, coordinates: 70.49,-22.00</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Enfant</gsx:name>
@@ -62,14 +65,15 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>89.83,-25.90</gsx:coordinate>
     <gsx:coordinates>110.62,-32.19; 109.33,-37.03; 83.51,25.47</gsx:coordinates>
-    <gsx:timing />
+    <gsx:time>08:00-12:00</gsx:time>
+    <gsx:timing>110.62,-32.19 (~##:10); 90.62,-35.19 (~##:15); 109.33,-37.03 (~:7); 83.51,25.47 (10:00-11:00)</gsx:timing>
     <title type="text">Enfant</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ciyn3</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ciyn3" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Enfant, faction: Pivert, coordinate: 89.83,-25.90, coordinates: 110.62,-32.19; 109.33,-37.03; 83.51,25.47</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Enfant, faction: Pivert, coordinate: 89.83,-25.90, coordinates: 110.62,-32.19; 109.33,-37.03; 83.51,25.47, time: 08:00-12:00, timing: 110.62,-32.19 (~##:10); 90.62,-35.19 (~##:15); 109.33,-37.03 (~:7); 83.51,25.47 (10:00-11:00)</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Enfant</gsx:name>
@@ -77,6 +81,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>73.33,-26.12</gsx:coordinate>
     <gsx:coordinates>97.03,-33.76</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">Enfant</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/clrrx</id>
@@ -84,7 +89,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Enfant, faction: Pivert, coordinate: 73.33,-26.12, coordinates: 97.03,-33.76</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>PivertIndicateur</gsx:name>
@@ -92,6 +97,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-41.77,-35.93</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">PivertIndicateur</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cztg3</id>
@@ -99,112 +105,119 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -41.77,-35.93</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>SecurityGuard</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Security</gsx:faction>
-    <gsx:coordinate>-68.57,-104.97</gsx:coordinate>
+    <gsx:coordinate>-76.95,-105.62</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time>12:00-22:00</gsx:time>
     <gsx:timing />
     <title type="text">SecurityGuard</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cu76f</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cu76f" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Security, coordinate: -68.57,-104.97</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Security, coordinate: -76.95,-105.62, time: 12:00-22:00</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>SecurityGuard1</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Security</gsx:faction>
-    <gsx:coordinate>-78.44, -98.49</gsx:coordinate>
-    <gsx:coordinates>-76.44,-100.49</gsx:coordinates>
+    <gsx:coordinate>-91.37, -105.58</gsx:coordinate>
+    <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">SecurityGuard1</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cvlqs</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cvlqs" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Security, coordinate: -78.44, -98.49, coordinates: -76.44,-100.49</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Security, coordinate: -91.37, -105.58</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Scanner</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Security</gsx:faction>
-    <gsx:coordinate>-71.91,-101.27</gsx:coordinate>
+    <gsx:coordinate>-82.1,-105.8</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">Scanner</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cx0b9</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/cx0b9" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Security, coordinate: -71.91,-101.27</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Security, coordinate: -82.1,-105.8</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>MarchandStand1</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Pivert</gsx:faction>
-    <gsx:coordinate>-82.48,-99.04</gsx:coordinate>
+    <gsx:coordinate>-101.88,-102.99</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time>03:00-18:00</gsx:time>
     <gsx:timing />
     <title type="text">MarchandStand1</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d9ney</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d9ney" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Pivert, coordinate: -82.48,-99.04</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -101.88,-102.99, time: 03:00-18:00</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>MarchandStand2</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Pivert</gsx:faction>
-    <gsx:coordinate>-82.01,-101.10</gsx:coordinate>
+    <gsx:coordinate>-98.70,-105.91</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time>02:59-18:01</gsx:time>
     <gsx:timing />
     <title type="text">MarchandStand2</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/db1zf</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/db1zf" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Pivert, coordinate: -82.01,-101.10</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -98.70,-105.91, time: 02:59-18:01</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>MarchandStand3</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Pivert</gsx:faction>
-    <gsx:coordinate>-82.11,-104.39</gsx:coordinate>
+    <gsx:coordinate>-94.87,-106.48</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time>03:15-18:15</gsx:time>
     <gsx:timing />
     <title type="text">MarchandStand3</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dcgjs</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dcgjs" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Pivert, coordinate: -82.11,-104.39</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -94.87,-106.48, time: 03:15-18:15</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>MinibusDriverStables</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-84.10,-105.43</gsx:coordinate>
-    <gsx:coordinates>-86.27,-105.26; -90.27,-104.95</gsx:coordinates>
+    <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">MinibusDriverStables</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ddv49</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ddv49" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Pivert, coordinate: -84.10,-105.43, coordinates: -86.27,-105.26; -90.27,-104.95</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -84.10,-105.43</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>MinibusDriverSheepfold</gsx:name>
@@ -212,6 +225,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-87.02,-101.01</gsx:coordinate>
     <gsx:coordinates>-87.07,-99.24; -83.79,-96.93; -83.70,-95.90</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">MinibusDriverSheepfold</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d415a</id>
@@ -219,7 +233,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -87.02,-101.01, coordinates: -87.07,-99.24; -83.79,-96.93; -83.70,-95.90</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>MinibusDriverSandgate</gsx:name>
@@ -227,6 +241,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-91.18,-102.01</gsx:coordinate>
     <gsx:coordinates>-94.36,-101.89; -92.04,-101.71; -90.90,-101.30; -91.02,-97.55</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">MinibusDriverSandgate</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d5fpr</id>
@@ -234,52 +249,71 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -91.18,-102.01, coordinates: -94.36,-101.89; -92.04,-101.71; -90.90,-101.30; -91.02,-97.55</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>CorridorToScanner1</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Pivert</gsx:faction>
-    <gsx:coordinate>-75.59,-98.36</gsx:coordinate>
+    <gsx:coordinate>-93.30,-105.63</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">CorridorToScanner1</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d6ua4</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d6ua4" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Pivert, coordinate: -75.59,-98.36</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -93.30,-105.63</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>CorridorToScanner2</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Pivert</gsx:faction>
-    <gsx:coordinate>-74.44,-99.27</gsx:coordinate>
+    <gsx:coordinate>-74.44,-102.96</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">CorridorToScanner2</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d88ul</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/d88ul" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Pivert, coordinate: -74.44,-99.27</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -74.44,-102.96</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
+  </entry>
+  <entry>
+    <gsx:name>CorridorToScanner3</gsx:name>
+    <gsx:prefab>Persona</gsx:prefab>
+    <gsx:faction>Pivert</gsx:faction>
+    <gsx:coordinate>-89.62,-105.53</gsx:coordinate>
+    <gsx:coordinates />
+    <gsx:time />
+    <gsx:timing />
+    <title type="text">CorridorToScanner3</title>
+    <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/b8lvi</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/b8lvi" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -89.62,-105.53</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>LeffeCrook1</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Pivert</gsx:faction>
-    <gsx:coordinate>-87.03,-98.37</gsx:coordinate>
-    <gsx:coordinates>-82.38,-106.07; -88.60,-100.76; -82.86,-102.51</gsx:coordinates>
+    <gsx:coordinate>-83.91,-100.7</gsx:coordinate>
+    <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">LeffeCrook1</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dkvya</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dkvya" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Pivert, coordinate: -87.03,-98.37, coordinates: -82.38,-106.07; -88.60,-100.76; -82.86,-102.51</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -83.91,-100.7</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>MinibusDriverStables</gsx:name>
@@ -287,6 +321,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-149.89,-94.65</gsx:coordinate>
     <gsx:coordinates>-151.14,-96.46</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">MinibusDriverStables</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dmair</id>
@@ -294,22 +329,23 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -149.89,-94.65, coordinates: -151.14,-96.46</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>SoldatTour</gsx:name>
     <gsx:prefab>Persona</gsx:prefab>
     <gsx:faction>Military</gsx:faction>
-    <gsx:coordinate>-87.67,-27.63</gsx:coordinate>
+    <gsx:coordinate>-75.78,-110.25</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">SoldatTour</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dnp34</id>
     <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dnp34" rel="self" type="application/atom+xml" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
-    <content type="text">prefab: Persona, faction: Military, coordinate: -87.67,-27.63</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <content type="text">prefab: Persona, faction: Military, coordinate: -75.78,-110.25</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Stranger</gsx:name>
@@ -317,6 +353,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>133.32,98.19</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">Stranger</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dp3nl</id>
@@ -324,7 +361,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: 133.32,98.19</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Neutral</gsx:name>
@@ -332,6 +369,7 @@
     <gsx:faction>Neutral</gsx:faction>
     <gsx:coordinate>167.39,61.07</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">Neutral</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/df9om</id>
@@ -339,7 +377,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Neutral, coordinate: 167.39,61.07</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Neutral</gsx:name>
@@ -347,6 +385,7 @@
     <gsx:faction>Neutral</gsx:faction>
     <gsx:coordinate>-27.59,85.64</gsx:coordinate>
     <gsx:coordinates>9.01,23.31; 82.00,-28.85</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">Neutral</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dgo93</id>
@@ -354,7 +393,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Neutral, coordinate: -27.59,85.64, coordinates: 9.01,23.31; 82.00,-28.85</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Neutral</gsx:name>
@@ -362,6 +401,7 @@
     <gsx:faction>Neutral</gsx:faction>
     <gsx:coordinate>-86.56,129.88</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">Neutral</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/di2tg</id>
@@ -369,7 +409,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Neutral, coordinate: -86.56,129.88</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Neutral</gsx:name>
@@ -377,6 +417,7 @@
     <gsx:faction>Neutral</gsx:faction>
     <gsx:coordinate>-25.17,83.47</gsx:coordinate>
     <gsx:coordinates>10.34,25.87</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">Neutral</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/djhdx</id>
@@ -384,7 +425,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Neutral, coordinate: -25.17,83.47, coordinates: 10.34,25.87</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>PivertPremier</gsx:name>
@@ -392,6 +433,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-135.43,-91.66</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">PivertPremier</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dw4je</id>
@@ -399,7 +441,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -135.43,-91.66</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>ColonAPiedOutpost</gsx:name>
@@ -407,6 +449,7 @@
     <gsx:faction>Colon</gsx:faction>
     <gsx:coordinate>-158.16, 50.40</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">ColonAPiedOutpost</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dxj3v</id>
@@ -414,7 +457,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Colon, coordinate: -158.16, 50.40</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>PivertWorkerOutpost1</gsx:name>
@@ -422,6 +465,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-171.18, 52.25</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">PivertWorkerOutpost1</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dyxo8</id>
@@ -429,7 +473,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -171.18, 52.25</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>PivertWorkerOutpost2</gsx:name>
@@ -437,6 +481,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-164.86, 57.10</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">PivertWorkerOutpost2</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/e0c8p</id>
@@ -444,7 +489,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -164.86, 57.10</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>PivertWorkerOutpost3</gsx:name>
@@ -452,6 +497,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-168.23, 64.99</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">PivertWorkerOutpost3</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dqi9q</id>
@@ -459,7 +505,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -168.23, 64.99</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>EnfantColonOutpost</gsx:name>
@@ -467,6 +513,7 @@
     <gsx:faction>Colon</gsx:faction>
     <gsx:coordinate>-163.84, 63.85</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">EnfantColonOutpost</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/drwu7</id>
@@ -474,7 +521,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Enfant, faction: Colon, coordinate: -163.84, 63.85</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>Stanley</gsx:name>
@@ -482,6 +529,7 @@
     <gsx:faction>Colon</gsx:faction>
     <gsx:coordinate>-159.84, 61.71</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">Stanley</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dtbek</id>
@@ -489,7 +537,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Colon, coordinate: -159.84, 61.71</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>SecurityGuardOutpost</gsx:name>
@@ -497,6 +545,7 @@
     <gsx:faction>Security</gsx:faction>
     <gsx:coordinate>-154.90, 49.92</gsx:coordinate>
     <gsx:coordinates>-155.54, 70.14; -160.56, 72.24; -174.88, 70.27; -175.75, 57.38; -169.39, 40.83</gsx:coordinates>
+    <gsx:time />
     <gsx:timing />
     <title type="text">SecurityGuardOutpost</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/dupz1</id>
@@ -504,7 +553,7 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Security, coordinate: -154.90, 49.92, coordinates: -155.54, 70.14; -160.56, 72.24; -174.88, 70.27; -175.75, 57.38; -169.39, 40.83</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
   <entry>
     <gsx:name>PivertWorkerOutpost4</gsx:name>
@@ -512,6 +561,7 @@
     <gsx:faction>Pivert</gsx:faction>
     <gsx:coordinate>-173.96, 48.18</gsx:coordinate>
     <gsx:coordinates />
+    <gsx:time />
     <gsx:timing />
     <title type="text">PivertWorkerOutpost4</title>
     <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/e7d2q</id>
@@ -519,6 +569,70 @@
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
     <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
     <content type="text">prefab: Persona, faction: Pivert, coordinate: -173.96, 48.18</content>
-    <updated>2014-02-23T07:21:14+01:00</updated>
+    <updated>2014-09-08T13:53:33+02:00</updated>
+  </entry>
+  <entry>
+    <gsx:name>LambdaContexte1</gsx:name>
+    <gsx:prefab>Persona</gsx:prefab>
+    <gsx:faction>Pivert</gsx:faction>
+    <gsx:coordinate>-155.77, -80.87</gsx:coordinate>
+    <gsx:coordinates>-162.24, -88.39; -155.40, -90.65</gsx:coordinates>
+    <gsx:time />
+    <gsx:timing />
+    <title type="text">LambdaContexte1</title>
+    <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/e8rn7</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/e8rn7" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -155.77, -80.87, coordinates: -162.24, -88.39; -155.40, -90.65</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
+  </entry>
+  <entry>
+    <gsx:name>LambdaRelation2 </gsx:name>
+    <gsx:prefab>Persona</gsx:prefab>
+    <gsx:faction>Pivert</gsx:faction>
+    <gsx:coordinate>-143.80, -83.29</gsx:coordinate>
+    <gsx:coordinates />
+    <gsx:time />
+    <gsx:timing />
+    <title type="text">LambdaRelation2 </title>
+    <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ea67k</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ea67k" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -143.80, -83.29</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
+  </entry>
+  <entry>
+    <gsx:name>LambdaRelation3</gsx:name>
+    <gsx:prefab>Persona</gsx:prefab>
+    <gsx:faction>Pivert</gsx:faction>
+    <gsx:coordinate>-173.86, 66.44</gsx:coordinate>
+    <gsx:coordinates />
+    <gsx:time />
+    <gsx:timing />
+    <title type="text">LambdaRelation3</title>
+    <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ebks1</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/ebks1" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -173.86, 66.44</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
+  </entry>
+  <entry>
+    <gsx:name>PivertRoadFence</gsx:name>
+    <gsx:prefab>Persona</gsx:prefab>
+    <gsx:faction>Pivert</gsx:faction>
+    <gsx:coordinate>-100.09 ,8.87</gsx:coordinate>
+    <gsx:coordinates />
+    <gsx:time />
+    <gsx:timing />
+    <title type="text">PivertRoadFence</title>
+    <id>https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/e1qt2</id>
+    <link href="https://spreadsheets.google.com/feeds/list/t__gB7yNg4rhbgyBnlOLjXg/od6/private/values/e1qt2" rel="self" type="application/atom+xml" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/g/2005#kind" />
+    <category term="http://schemas.google.com/spreadsheets/2006#list" scheme="http://schemas.google.com/spreadsheets/2006" />
+    <content type="text">prefab: Persona, faction: Pivert, coordinate: -100.09 ,8.87</content>
+    <updated>2014-09-08T13:53:33+02:00</updated>
   </entry>
 </feed>

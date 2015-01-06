@@ -1050,6 +1050,7 @@ Transform:
   m_Children:
   - {fileID: 400114}
   m_Father: {fileID: 400002}
+  m_RootOrder: 2
 --- !u!1002 &400001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1067,6 +1068,7 @@ Transform:
   - {fileID: 400110}
   - {fileID: 400000}
   m_Father: {fileID: 400004}
+  m_RootOrder: 0
 --- !u!1002 &400003
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1082,6 +1084,7 @@ Transform:
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 400006}
+  m_RootOrder: 2
 --- !u!1002 &400005
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1099,6 +1102,7 @@ Transform:
   - {fileID: 400106}
   - {fileID: 400004}
   m_Father: {fileID: 400008}
+  m_RootOrder: 0
 --- !u!1002 &400007
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1114,6 +1118,7 @@ Transform:
   m_Children:
   - {fileID: 400006}
   m_Father: {fileID: 400010}
+  m_RootOrder: 0
 --- !u!1002 &400009
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1129,6 +1134,7 @@ Transform:
   m_Children:
   - {fileID: 400008}
   m_Father: {fileID: 400012}
+  m_RootOrder: 0
 --- !u!1002 &400011
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1144,6 +1150,7 @@ Transform:
   m_Children:
   - {fileID: 400010}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1002 &400013
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1162,6 +1169,7 @@ Transform:
   m_Children:
   - {fileID: 400018}
   m_Father: {fileID: 400110}
+  m_RootOrder: 0
 --- !u!1002 &400017
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1177,6 +1185,7 @@ Transform:
   m_Children:
   - {fileID: 400020}
   m_Father: {fileID: 400016}
+  m_RootOrder: 0
 --- !u!1002 &400019
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1196,6 +1205,7 @@ Transform:
   - {fileID: 400040}
   - {fileID: 400046}
   m_Father: {fileID: 400018}
+  m_RootOrder: 0
 --- !u!1002 &400021
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1211,6 +1221,7 @@ Transform:
   m_Children:
   - {fileID: 400024}
   m_Father: {fileID: 400020}
+  m_RootOrder: 0
 --- !u!1002 &400023
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1226,6 +1237,7 @@ Transform:
   m_Children:
   - {fileID: 400026}
   m_Father: {fileID: 400022}
+  m_RootOrder: 0
 --- !u!1002 &400025
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1240,6 +1252,7 @@ Transform:
   m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1}
   m_Children: []
   m_Father: {fileID: 400024}
+  m_RootOrder: 0
 --- !u!1002 &400027
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1255,6 +1268,7 @@ Transform:
   m_Children:
   - {fileID: 400030}
   m_Father: {fileID: 400020}
+  m_RootOrder: 1
 --- !u!1002 &400029
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1270,6 +1284,7 @@ Transform:
   m_Children:
   - {fileID: 400032}
   m_Father: {fileID: 400028}
+  m_RootOrder: 0
 --- !u!1002 &400031
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1284,6 +1299,7 @@ Transform:
   m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
   m_Children: []
   m_Father: {fileID: 400030}
+  m_RootOrder: 0
 --- !u!1002 &400033
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1299,6 +1315,7 @@ Transform:
   m_Children:
   - {fileID: 400036}
   m_Father: {fileID: 400020}
+  m_RootOrder: 2
 --- !u!1002 &400035
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1314,6 +1331,7 @@ Transform:
   m_Children:
   - {fileID: 400038}
   m_Father: {fileID: 400034}
+  m_RootOrder: 0
 --- !u!1002 &400037
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1328,6 +1346,7 @@ Transform:
   m_LocalScale: {x: 1.00000012, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400036}
+  m_RootOrder: 0
 --- !u!1002 &400039
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1343,6 +1362,7 @@ Transform:
   m_Children:
   - {fileID: 400042}
   m_Father: {fileID: 400020}
+  m_RootOrder: 3
 --- !u!1002 &400041
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1358,6 +1378,7 @@ Transform:
   m_Children:
   - {fileID: 400044}
   m_Father: {fileID: 400040}
+  m_RootOrder: 0
 --- !u!1002 &400043
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1372,6 +1393,7 @@ Transform:
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 400042}
+  m_RootOrder: 0
 --- !u!1002 &400045
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1387,6 +1409,7 @@ Transform:
   m_Children:
   - {fileID: 400048}
   m_Father: {fileID: 400020}
+  m_RootOrder: 4
 --- !u!1002 &400047
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1402,6 +1425,7 @@ Transform:
   m_Children:
   - {fileID: 400050}
   m_Father: {fileID: 400046}
+  m_RootOrder: 0
 --- !u!1002 &400049
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1416,6 +1440,7 @@ Transform:
   m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
   m_Children: []
   m_Father: {fileID: 400048}
+  m_RootOrder: 0
 --- !u!1002 &400051
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1431,6 +1456,7 @@ Transform:
   m_Children:
   - {fileID: 400054}
   m_Father: {fileID: 400114}
+  m_RootOrder: 0
 --- !u!1002 &400053
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1451,6 +1477,7 @@ Transform:
   - {fileID: 400080}
   - {fileID: 400086}
   m_Father: {fileID: 400052}
+  m_RootOrder: 0
 --- !u!1002 &400055
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1466,6 +1493,7 @@ Transform:
   m_Children:
   - {fileID: 400058}
   m_Father: {fileID: 400054}
+  m_RootOrder: 0
 --- !u!1002 &400057
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1481,6 +1509,7 @@ Transform:
   m_Children:
   - {fileID: 400060}
   m_Father: {fileID: 400056}
+  m_RootOrder: 0
 --- !u!1002 &400059
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1495,6 +1524,7 @@ Transform:
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 400058}
+  m_RootOrder: 0
 --- !u!1002 &400061
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1510,6 +1540,7 @@ Transform:
   m_Children:
   - {fileID: 400064}
   m_Father: {fileID: 400054}
+  m_RootOrder: 1
 --- !u!1002 &400063
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1525,6 +1556,7 @@ Transform:
   m_Children:
   - {fileID: 400066}
   m_Father: {fileID: 400062}
+  m_RootOrder: 0
 --- !u!1002 &400065
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1539,6 +1571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: .999999881}
   m_Children: []
   m_Father: {fileID: 400064}
+  m_RootOrder: 0
 --- !u!1002 &400067
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1554,6 +1587,7 @@ Transform:
   m_Children:
   - {fileID: 400070}
   m_Father: {fileID: 400054}
+  m_RootOrder: 2
 --- !u!1002 &400069
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1569,6 +1603,7 @@ Transform:
   m_Children:
   - {fileID: 400072}
   m_Father: {fileID: 400068}
+  m_RootOrder: 0
 --- !u!1002 &400071
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1583,6 +1618,7 @@ Transform:
   m_LocalScale: {x: 1.00000012, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400070}
+  m_RootOrder: 0
 --- !u!1002 &400073
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1598,6 +1634,7 @@ Transform:
   m_Children:
   - {fileID: 400076}
   m_Father: {fileID: 400054}
+  m_RootOrder: 3
 --- !u!1002 &400075
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1613,6 +1650,7 @@ Transform:
   m_Children:
   - {fileID: 400078}
   m_Father: {fileID: 400074}
+  m_RootOrder: 0
 --- !u!1002 &400077
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1627,6 +1665,7 @@ Transform:
   m_LocalScale: {x: 1, y: .99999994, z: 1.00000012}
   m_Children: []
   m_Father: {fileID: 400076}
+  m_RootOrder: 0
 --- !u!1002 &400079
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1642,6 +1681,7 @@ Transform:
   m_Children:
   - {fileID: 400082}
   m_Father: {fileID: 400054}
+  m_RootOrder: 4
 --- !u!1002 &400081
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1657,6 +1697,7 @@ Transform:
   m_Children:
   - {fileID: 400084}
   m_Father: {fileID: 400080}
+  m_RootOrder: 0
 --- !u!1002 &400083
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1671,6 +1712,7 @@ Transform:
   m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
   m_Children: []
   m_Father: {fileID: 400082}
+  m_RootOrder: 0
 --- !u!1002 &400085
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1685,6 +1727,7 @@ Transform:
   m_LocalScale: {x: 1.00000024, y: 1, z: .99999994}
   m_Children: []
   m_Father: {fileID: 400054}
+  m_RootOrder: 5
 --- !u!1002 &400087
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1699,6 +1742,7 @@ Transform:
   m_LocalScale: {x: .999999583, y: .999999762, z: 1.00000012}
   m_Children: []
   m_Father: {fileID: 400112}
+  m_RootOrder: 0
 --- !u!1002 &400089
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1714,6 +1758,7 @@ Transform:
   m_Children:
   - {fileID: 400092}
   m_Father: {fileID: 400108}
+  m_RootOrder: 0
 --- !u!1002 &400091
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1729,6 +1774,7 @@ Transform:
   m_Children:
   - {fileID: 400094}
   m_Father: {fileID: 400090}
+  m_RootOrder: 0
 --- !u!1002 &400093
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1743,6 +1789,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400092}
+  m_RootOrder: 0
 --- !u!1002 &400095
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1757,6 +1804,7 @@ Transform:
   m_LocalScale: {x: .999999583, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400108}
+  m_RootOrder: 1
 --- !u!1002 &400097
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1772,6 +1820,7 @@ Transform:
   m_Children:
   - {fileID: 400100}
   m_Father: {fileID: 400106}
+  m_RootOrder: 0
 --- !u!1002 &400099
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1787,6 +1836,7 @@ Transform:
   m_Children:
   - {fileID: 400102}
   m_Father: {fileID: 400098}
+  m_RootOrder: 0
 --- !u!1002 &400101
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1801,6 +1851,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400100}
+  m_RootOrder: 0
 --- !u!1002 &400103
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1815,6 +1866,7 @@ Transform:
   m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1.00000036}
   m_Children: []
   m_Father: {fileID: 400106}
+  m_RootOrder: 1
 --- !u!1002 &400105
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1831,6 +1883,7 @@ Transform:
   - {fileID: 400098}
   - {fileID: 400104}
   m_Father: {fileID: 400006}
+  m_RootOrder: 1
 --- !u!1002 &400107
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1847,6 +1900,7 @@ Transform:
   - {fileID: 400090}
   - {fileID: 400096}
   m_Father: {fileID: 400006}
+  m_RootOrder: 0
 --- !u!1002 &400109
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1862,6 +1916,7 @@ Transform:
   m_Children:
   - {fileID: 400016}
   m_Father: {fileID: 400002}
+  m_RootOrder: 1
 --- !u!1002 &400111
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1877,6 +1932,7 @@ Transform:
   m_Children:
   - {fileID: 400088}
   m_Father: {fileID: 400002}
+  m_RootOrder: 0
 --- !u!1002 &400113
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1892,6 +1948,7 @@ Transform:
   m_Children:
   - {fileID: 400052}
   m_Father: {fileID: 400000}
+  m_RootOrder: 0
 --- !u!1002 &400115
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1913,9 +1970,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1002 &2300001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1965,15 +2021,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea67c3f37e0434a5ba92b938e9c08674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpot: {fileID: 100000, guid: 8b4d723489f6740c69fbca5fb7f927e8, type: 2}
   targetPosition: {x: 0, y: 0, z: 0}
-  targetHistoryMax: 100
   speed: 100
   turnSpeed: 180
   nextPointRadius: 1
   snapToPointRadius: .100000001
   waitForSeekDelay: .100000001
-  impatienceDelay: 120
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -2040,7 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87aa3f4fef4934a0d8e49d78700f3086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phylacterePrefab: {fileID: 100010, guid: be9dec480e4ec41c5a47ca18869fb1b2, type: 2}
+  phylacterePrefab: {fileID: 100006, guid: 7916e1c671c304156816907eb12c0b16, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2059,9 +2112,8 @@ SkinnedMeshRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0

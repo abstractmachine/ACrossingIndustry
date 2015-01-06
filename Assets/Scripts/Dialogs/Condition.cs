@@ -24,9 +24,8 @@ public class Condition : MonoBehaviour {
 						bool thisResult = Check(key, value);
 					
 						// if any one of these false, return false
-						if (!thisResult) {
+						if (!thisResult)
 								return false;
-						}
 						
 						// check for true in the others
 						result = true;
@@ -36,8 +35,8 @@ public class Condition : MonoBehaviour {
 				return result;
 		
 		}
-		
-		
+
+
 		public bool Check(string key, string value) {
 		
 				// figure out if we're using a negation operator
@@ -47,6 +46,11 @@ public class Condition : MonoBehaviour {
 						// remove negation
 						key.TrimStart(new char[]{ '!' });
 				}
+				
+				/*bool hasQuotes = false;
+				if (value.Length > 0 && value[0] == '"') {
+						hasQuotes = true;
+				}*/
 		
 				// the result of the comparison
 				bool result = false;
@@ -103,35 +107,33 @@ public class Condition : MonoBehaviour {
 				}
 		
 				// re-calculate result based on not operator
-				return isNot ? !result : result;
+				return isNot ? result : !result;
 		
 		}
-		
-		
-		
-		bool HasQuotes(string value) {
-		
-				if (value.Length > 0 && value[0] == '"') {
-						return true;
-				}
-		
-				return false;
-		
-		}
-		
-		
+	
+	
 		bool Amount(string value) {
 		
 				return false;			
 		}
-		
-		
+	
+	
 		bool Close(string value) {
 		
 				return false;			
 		}
+	
+	
+		bool East(string value) {
 		
+				if (Direction(value) == "East")
+						return true;
+				else
+						return false;
 		
+		}
+	
+	
 		bool Far(string value) {
 				return false;
 		}
@@ -145,20 +147,20 @@ public class Condition : MonoBehaviour {
 		bool Inside(string value) {
 				return false;			
 		}
-		
-		
+	
+	
 		bool Know(string value) {
 				return false;			
 		
 		}
-		
-		
+	
+	
 		bool Near(string value) {
 		
 				return false;			
 		}
-		
-		
+	
+	
 		bool North(string value) {
 		
 				if (Direction(value) == "North")
@@ -167,8 +169,8 @@ public class Condition : MonoBehaviour {
 						return false;
 		
 		}
-		
-		
+	
+	
 		bool South(string value) {
 		
 				if (Direction(value) == "South")
@@ -179,16 +181,6 @@ public class Condition : MonoBehaviour {
 		}
 	
 	
-		bool East(string value) {
-		
-				if (Direction(value) == "East")
-						return true;
-				else
-						return false;
-		
-		}
-		
-		
 		bool West(string value) {
 		
 				if (Direction(value) == "West")
@@ -211,24 +203,23 @@ public class Condition : MonoBehaviour {
 				// get the position of the object
 				Vector3 targetPosition = target.transform.position;
 				
+				print(targetPosition);
+				print(transform.position);
+				
 				float horizontal = targetPosition.x - transform.position.x;
 				float vertical = targetPosition.z - transform.position.z;
-		
-				// figure out angle
-				float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
-				// for better readability (for us), stay inside of 0° > 360°
-				if (angle < 0) {
-						angle += 360.0f;
-				}
 				
-				if (angle > 315 || angle < 45) {
-						return "North";
-				} else if (angle >= 45 && angle < 135) {
-						return "West";
-				} else if (angle >= 135 && angle < 225) {
-						return "South";
-				} else {
-						return "East";
+				// are we on the vertical axis?
+				if (Mathf.Abs(horizontal) < Mathf.Abs(vertical)) {
+						if (vertical > 0)
+								return "North";
+						else
+								return "South";
+				} else { // ok, must be the horizontal axis
+						if (horizontal > 0)
+								return "East";
+						else
+								return "West";
 				}
 				
 		}

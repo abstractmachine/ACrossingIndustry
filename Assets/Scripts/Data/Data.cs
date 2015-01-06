@@ -34,13 +34,6 @@ public class Data : MonoBehaviour {
 
 				// first extract all the data
 				DialogData dialogData = GetDialogData(dialogID);
-				
-				if (dialogData == null) {
-						Debug.Log("Error: dialogData == null");
-						return null;
-						
-				}
-				
 				// make sure that utterance has a key
 				if (!dialogData.utterances.ContainsKey(index)) {
 						Debug.Log("Error: GetUtteranceFromIndex: " + dialogID + "\t" + index);

@@ -35,7 +35,6 @@ public class ClickTouch : MonoBehaviour {
 	///////////////// Loop
 
 	void Update () {
-
 		if (Application.platform == RuntimePlatform.IPhonePlayer) {
 
 			// if there is touch activity
@@ -46,7 +45,8 @@ public class ClickTouch : MonoBehaviour {
 				} else if (phylactere != null && Input.GetTouch(0).phase == TouchPhase.Moved) {
 					phylactere.TouchMoved(Input.GetTouch(0).position);
 				} else if (phylactere != null && Input.GetTouch(0).phase == TouchPhase.Ended) {
-					phylactere.TouchUp(Input.GetTouch(0).position);
+					//phylactere.TouchUp(Input.GetTouch(0).position);
+					phylactere.TouchUp();
 					phylactere = null;
 				}
  
@@ -67,12 +67,12 @@ public class ClickTouch : MonoBehaviour {
 			} else if (phylactere != null && Input.GetMouseButton(0)) { 	// if we're interacting with a phylactere
 				if (Vector3.Distance(lastTouchPosition,Input.mousePosition) > 0) phylactere.TouchMoved(Input.mousePosition);
 				lastTouchPosition = Input.mousePosition;
-
 				// tell the hero that there's been some activity
 				playerScript.ResetImpatience();
 			
 			} else if (phylactere != null && Input.GetMouseButtonUp(0)) {	// if we're interacting with a phylactere
-				phylactere.TouchUp(Input.mousePosition);
+				//phylactere.TouchUp(Input.mousePosition);
+				phylactere.TouchUp();
 				lastTouchPosition = Vector3.zero;
 				phylactere = null;
 
@@ -105,7 +105,6 @@ public class ClickTouch : MonoBehaviour {
 
         // interate through all the intersections with that ray
         foreach(RaycastHit hit in hits) {
-
         	// first check to see if we're interacting a speech balloon
         	if (hit.transform.gameObject.tag == "Phylactere") {
 
@@ -269,7 +268,7 @@ public class ClickTouch : MonoBehaviour {
     	if (obj.tag == "Player") {
     		phylactere = playerObject.GetComponentInChildren<Phylactere>();
     		// tell the phylactère that we just clicked on it
-    		phylactere.TouchDown(touchPoint, hitPoint);
+    		phylactere.TouchDown();
     		return;
     	}
     	// or is it a computer-controller persona?

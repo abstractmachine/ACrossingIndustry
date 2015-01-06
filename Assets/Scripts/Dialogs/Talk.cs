@@ -75,9 +75,9 @@ public class Talk : MonoBehaviour {
 		void Speak(List<string> phrases) {
 		
 				CreatePhylactere();
+				//phylactere.GetComponent<Phylactere>().Speak(phrases);
 				phylactere.GetComponent<Phylactere>().Speak(phrases);
-		
-		}
+	}
 	
 	
 		void Reply() {
@@ -111,12 +111,10 @@ public class Talk : MonoBehaviour {
 				//List<string> phrases = new List<string>();
 				
 				// TODO: go through the list of Persona SpeechActs
-				foreach(SpeechAct speechAct in utterance.PersonaSpeechActs) {
-						
-						
-						
+/*				foreach(SpeechAct speechAct in utterance.PersonaSpeechActs) {
+
 				}
-		
+*/		
 				// using current index level, get a List<> of possible phrases
 				List<string> phrases = data.GetPersonaPhrasesFromIndex(dialogName, index);
 		
@@ -168,17 +166,17 @@ public class Talk : MonoBehaviour {
 		public void FinishedSpeaking(string chosenPhrase) {
 		
 				// if there's no more other, we must have finished Speaking. No need to Reply
-				if (otherPerson == null || otherTalker == null)
+				if (otherPerson == null || otherTalker == null){
 						return;
-		
+				}
 				// if we're the subordinate one, let the initiator Reply
-				if (!initiatedDialog)
+				if (!initiatedDialog){
 						FinishedSpeakingPersona(chosenPhrase);
-		
+				}
 				// if we're the dominant one
-				if (initiatedDialog)
+				if (initiatedDialog){
 						FinishedSpeakingPlayer(chosenPhrase);
-		
+				}
 		}
 	
 	
@@ -265,14 +263,12 @@ public class Talk : MonoBehaviour {
 						if (condition.Check(consequence.RawString)) {
 								// ok
 								whichConsequence = i;
-								//print("Chose consequence #" + i);
 						}	
 			
 				}
 		
 				// if there was no chosen consequence, just choose one at random
 				if (whichConsequence == -1) {
-						//print("Randomly chosen Consequence");
 						// choose the first
 						whichConsequence = (int)UnityEngine.Random.Range(0, consequences.Count);
 				}
@@ -332,7 +328,6 @@ public class Talk : MonoBehaviour {
 		
 				// if we're already talking to someone
 				if (IsTalking) {
-						print("Already Talking");
 						return false;
 				}
 		
@@ -345,6 +340,7 @@ public class Talk : MonoBehaviour {
 				// remember where we were facing before
 				previousOrientation = transform.localRotation;
 				// other position
+//	Souldn't this be other.transform.position?
 				Vector3 otherPosition = other.transform.position;
 				// annul y translation
 				otherPosition.y = transform.position.y;
@@ -380,7 +376,6 @@ public class Talk : MonoBehaviour {
 	
 	
 		void AbortActive() {
-		
 				// we've broken the conversation, stop talking to indicate this
 				KillPhylactere();
 				// tell the other it's over
@@ -390,7 +385,7 @@ public class Talk : MonoBehaviour {
 	
 	
 		void AbortPassive() {
-		
+				KillPhylactere();
 				// turn back to whatever we were doing
 				transform.localRotation = previousOrientation;
 				// clear Previous Orientation variable
@@ -441,11 +436,16 @@ public class Talk : MonoBehaviour {
 		
 				// make sure we don't have any dangling phylacteres
 				KillPhylactere();
-		
+		/*
 				phylactere = (GameObject)Instantiate(phylacterePrefab);
 				phylactere.name = "Phylactere";
 				phylactere.transform.parent = this.transform;
-				phylactere.transform.localPosition = new Vector3(0, 1.5f, 0);
+				phylactere.transform.localPosition = new Vector3 (0, 1.62f, 0);
+		*/
+		phylactere = (GameObject)Instantiate(phylacterePrefab);
+		phylactere.name = "Phylactere";
+		phylactere.transform.parent = this.transform;
+		phylactere.transform.localPosition = new Vector3 (0, 7.88f, 0);
 		
 		}
 	
@@ -454,6 +454,9 @@ public class Talk : MonoBehaviour {
 		
 				// if exists, kill it
 				if (phylactere != null) {
+		/*				phylactere.GetComponent<Phylactere>().AbortReply();
+						Destroy(phylactere);
+		*/		
 						phylactere.GetComponent<Phylactere>().AbortReply();
 						Destroy(phylactere);
 				}
@@ -471,9 +474,10 @@ public class Talk : MonoBehaviour {
 						return;
 		
 				// if we're the one talking
-				if (phylactere != null)
+				if (phylactere != null){
+						//phylactere.GetComponent<Phylactere>().ClickAccelerate();
 						phylactere.GetComponent<Phylactere>().ClickAccelerate();
-		
+				}
 		// otherwise it's the other one that's probably talking
 		else
 						otherTalker.ClickAccelerateFromOther();
@@ -489,6 +493,7 @@ public class Talk : MonoBehaviour {
 		
 				// if we're the one talking
 				if (phylactere != null)
+						//phylactere.GetComponent<Phylactere>().ClickAccelerate();
 						phylactere.GetComponent<Phylactere>().ClickAccelerate();
 		
 				// avoid infinite loop of recursive accelerators

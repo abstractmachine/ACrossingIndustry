@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: d6a4663e4174c44f39f1a8232ce8cc4a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group_0
+    100004: group_1
+    100006: group_10
+    100008: group_2
+    100010: group_4
+    100012: group_4 1
+    100014: group_4 2
+    100016: group_4 3
+    100018: group_4 4
+    100020: group_4 5
+    100022: group_4 6
+    100024: group_4 7
+    100026: group_5
+    100028: group_5 1
+    100030: group_5 2
+    100032: group_5 3
+    100034: group_5 4
+    100036: group_5 5
+    100038: group_5 6
+    100040: group_5 7
+    100042: group_7
+    100044: group_8
+    100046: ID101
+    100048: ID107
+    400000: //RootNode
+    400002: group_0
+    400004: group_1
+    400006: group_10
+    400008: group_2
+    400010: group_4
+    400012: group_4 1
+    400014: group_4 2
+    400016: group_4 3
+    400018: group_4 4
+    400020: group_4 5
+    400022: group_4 6
+    400024: group_4 7
+    400026: group_5
+    400028: group_5 1
+    400030: group_5 2
+    400032: group_5 3
+    400034: group_5 4
+    400036: group_5 5
+    400038: group_5 6
+    400040: group_5 7
+    400042: group_7
+    400044: group_8
+    400046: ID101
+    400048: ID107
+    2300000: group_0
+    2300002: group_1
+    2300004: group_2
+    2300006: group_4 4
+    2300008: group_4 5
+    2300010: group_4 6
+    2300012: group_4 7
+    2300014: group_5 4
+    2300016: group_5 5
+    2300018: group_5 6
+    2300020: group_5 7
+    2300022: group_7
+    2300024: group_8
+    2300026: ID101
+    2300028: ID107
+    3300000: group_0
+    3300002: group_1
+    3300004: group_2
+    3300006: group_4 4
+    3300008: group_4 5
+    3300010: group_4 6
+    3300012: group_4 7
+    3300014: group_5 4
+    3300016: group_5 5
+    3300018: group_5 6
+    3300020: group_5 7
+    3300022: group_7
+    3300024: group_8
+    3300026: ID101
+    3300028: ID107
+    4300000: group_8
+    4300002: group_7
+    4300004: group_2
+    4300006: group_1
+    4300008: group_0
+    4300010: ID107
+    4300012: ID101
+    4300014: group_5
+    4300016: group_4
+    4300018: group_5
+    4300020: group_4
+    4300022: group_5
+    4300024: group_4
+    4300026: group_5
+    4300028: group_4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

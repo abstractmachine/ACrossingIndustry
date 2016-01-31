@@ -31,12 +31,12 @@ public class DialogSpin : MonoBehaviour {
 				transform.FindChild("Text").gameObject.SetActive(true);
 			}
 			// apply a rotation for this angle locally
-			GetComponent<RectTransform>().localRotation = Quaternion.Euler(0.0f, angle, 0.0f);
+			GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation * Quaternion.Euler(0.0f, angle, 0.0f);
 			// show frame
 			yield return new WaitForEndOfFrame();         
 		}      
 		// apply a rotation for this angle locally
-		GetComponent<RectTransform>().localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+		GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation * Quaternion.Euler(0.0f, 0.0f, 0.0f);
 		// all done
 		yield return null;      
 	}

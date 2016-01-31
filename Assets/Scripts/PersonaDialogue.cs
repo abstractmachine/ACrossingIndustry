@@ -5,7 +5,6 @@ public class PersonaDialogue : MonoBehaviour {
 
 	GameObject currentPlayer = null;
 
-
 	void OnMouseDown() {
 
 		// if we're still intersecting with another person
@@ -57,4 +56,5 @@ public class PersonaDialogue : MonoBehaviour {
 		}
       
 	}
+
 }

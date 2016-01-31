@@ -9,7 +9,6 @@ public class PlayerDialogue : MonoBehaviour {
 	Flowchart currentFlowchart = null;
 	GameObject currentPersona = null;
 
-
 	public void Click() {
 		OnMouseDown();
 	}
@@ -22,7 +21,7 @@ public class PlayerDialogue : MonoBehaviour {
 		}
 
 		// get our menuDialog gameObject
-		GameObject playerMenuDialog = transform.FindChild("Dialogues/MenuDialog").gameObject;
+		GameObject playerMenuDialog = transform.FindChild("Dialogues/Player_MenuDialog").gameObject;
 
 		// if we currently have a menuDialog active
 		if (playerMenuDialog.activeSelf) {
@@ -32,7 +31,7 @@ public class PlayerDialogue : MonoBehaviour {
 		// ok, we do NOT have a menuDialog active
 
 		// get the sayDialog gameobject
-		GameObject playerSayDialog = this.transform.FindChild("Dialogues/SayDialog").gameObject;
+		GameObject playerSayDialog = this.transform.FindChild("Dialogues/Player_SayDialog").gameObject;
 
 		// are we talking?
 		if (playerSayDialog.activeSelf) {
@@ -41,8 +40,9 @@ public class PlayerDialogue : MonoBehaviour {
 			return; // all done
 		}
 
+		string personaDialogPath = "Dialogues/" + currentPersona.name + "_SayDialog";
 		// is the Persona talking?
-		GameObject otherSayDialog = currentPersona.transform.FindChild("Dialogues/SayDialog").gameObject;
+		GameObject otherSayDialog = currentPersona.transform.FindChild(personaDialogPath).gameObject;
 		// is it active?
 		if (otherSayDialog.activeSelf) {
 			// push dat button!
@@ -57,15 +57,14 @@ public class PlayerDialogue : MonoBehaviour {
 				// try to force restart that previous dialogue
 				StartFlowchart(currentPersona);
 			} else {
-				print("currentPersona == null");         
+//				Debug.LogWarning("currentPersona == null");
 			}    
-			return;         
+			return;
 		}
 
-		print("End of OnMouseDown()");
+		//		Debug.LogWarning("End of OnMouseDown()");
 
 	}
-
 
 
 	void OnTriggerEnter(Collider other) {
@@ -89,14 +88,14 @@ public class PlayerDialogue : MonoBehaviour {
 		if (other.gameObject.tag != "Persona") {
 			return;
 		}
-
-		HideCurrentFlowchart();
       
 		// make sure this is the actual person we were interacting with
 		if (other.gameObject != currentPersona) {
-			Debug.LogWarning("OnTriggerExit()\tother.gameObject != currentPersona");
+//			Debug.LogWarning("OnTriggerExit()\tother.gameObject != currentPersona");
 			return;
 		}
+
+		HideCurrentFlowchart();
 
 		currentPersona = null;
 		currentFlowchart = null;
@@ -109,7 +108,7 @@ public class PlayerDialogue : MonoBehaviour {
 		currentPersona = other;
 
 		currentFlowchart = GetFlowchart(other.name);
-      
+
 		// if we found this persona
 		if (currentFlowchart != null) {
 			Fungus.Flowchart.BroadcastFungusMessage(other.name);
@@ -126,41 +125,49 @@ public class PlayerDialogue : MonoBehaviour {
 		}
 
 		// hide any possible menus of our own
-		Transform playerSayTransform = transform.FindChild("Dialogues/SayDialog");
+		Transform playerSayTransform = transform.FindChild("Dialogues/Player_SayDialog");
 
 		if (playerSayTransform != null) {
 			playerSayTransform.gameObject.SetActive(false);
 		}
 
-		Transform playerMenuTransform = transform.FindChild("Dialogues/MenuDialog");
+		Transform playerMenuTransform = transform.FindChild("Dialogues/Player_MenuDialog");
 
 		if (playerMenuTransform != null) {
 
 			GameObject playerMenu = playerMenuTransform.gameObject;
 
 			if (playerMenu != null) {
-				if (playerMenu.transform.FindChild("ButtonGroup/TimeoutSlider").gameObject.activeInHierarchy)
-					playerMenu.transform.FindChild("ButtonGroup/TimeoutSlider").gameObject.SetActive(false);
-				if (playerMenu.transform.FindChild("ButtonGroup/OptionButton0").gameObject.activeInHierarchy)
-					playerMenu.transform.FindChild("ButtonGroup/OptionButton0").gameObject.SetActive(false);
-				if (playerMenu.transform.FindChild("ButtonGroup/OptionButton1").gameObject.activeInHierarchy)
-					playerMenu.transform.FindChild("ButtonGroup/OptionButton1").gameObject.SetActive(false);
-				if (playerMenu.transform.FindChild("ButtonGroup/OptionButton2").gameObject.activeInHierarchy)
-					playerMenu.transform.FindChild("ButtonGroup/OptionButton2").gameObject.SetActive(false);
-				if (playerMenu.transform.FindChild("ButtonGroup/OptionButton3").gameObject.activeInHierarchy)
-					playerMenu.transform.FindChild("ButtonGroup/OptionButton3").gameObject.SetActive(false);
-				if (playerMenu.transform.FindChild("ButtonGroup/OptionButton4").gameObject.activeInHierarchy)
-					playerMenu.transform.FindChild("ButtonGroup/OptionButton4").gameObject.SetActive(false);
-				if (playerMenu.transform.FindChild("ButtonGroup/OptionButton5").gameObject.activeInHierarchy)
-					playerMenu.transform.FindChild("ButtonGroup/OptionButton5").gameObject.SetActive(false);
-//				if (playerMenu.transform.FindChild("Triangle").gameObject.activeSelf)
-//					playerMenu.transform.FindChild("Triangle").gameObject.SetActive(false);
+				if (ChildIsActive(playerMenu, "TimeoutSlider"))
+					SetActive(playerMenu, "TimeoutSlider", false);
+				if (ChildIsActive(playerMenu, "ButtonGroup/OptionButton0"))
+					SetActive(playerMenu, "ButtonGroup/OptionButton0", false);
+				if (ChildIsActive(playerMenu, "ButtonGroup/OptionButton1"))
+					SetActive(playerMenu, "ButtonGroup/OptionButton1", false);
+				if (ChildIsActive(playerMenu, "ButtonGroup/OptionButton2"))
+					SetActive(playerMenu, "ButtonGroup/OptionButton2", false);
+				if (ChildIsActive(playerMenu, "ButtonGroup/OptionButton3"))
+					SetActive(playerMenu, "ButtonGroup/OptionButton3", false);
+				if (ChildIsActive(playerMenu, "ButtonGroup/OptionButton4"))
+					SetActive(playerMenu, "ButtonGroup/OptionButton4", false);
+				if (ChildIsActive(playerMenu, "ButtonGroup/OptionButton5"))
+					SetActive(playerMenu, "ButtonGroup/OptionButton5", false);
 				if (playerMenu.activeInHierarchy)
 					playerMenu.SetActive(false);
 			}
 
 		}
 
+	}
+
+
+	bool ChildIsActive(GameObject parentObject, string path) {
+		return parentObject.transform.FindChild(path).gameObject.activeInHierarchy;
+	}
+
+
+	void SetActive(GameObject parentObject, string path, bool newState) {
+		parentObject.transform.FindChild(path).gameObject.SetActive(newState);
 	}
 
 
@@ -186,7 +193,7 @@ public class PlayerDialogue : MonoBehaviour {
 
 		// if we couldn't find this persona
 		if (persona == null) {
-			Debug.LogError("could find persona " + name);
+//			Debug.LogError("could find persona " + name);
 			return null;
 		}
 
@@ -202,18 +209,17 @@ public class PlayerDialogue : MonoBehaviour {
 
 		GameObject personae = GameObject.Find("Personae");
 		if (personae == null) {
-			Debug.LogError("personae == null");
+//			Debug.LogError("personae == null");
 			return null;
 		}
 		GameObject persona = personae.transform.FindChild(name).gameObject;
 		if (persona == null) {
-			Debug.LogError("persona == null");
+//			Debug.LogError("persona == null");
 			return null;
 		}
 
 		return persona;
 
 	}
-
 
 }

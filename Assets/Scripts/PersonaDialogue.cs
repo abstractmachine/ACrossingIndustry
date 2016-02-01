@@ -16,6 +16,17 @@ public class PersonaDialogue : MonoBehaviour {
 				playerDialogue.Click();
 			}
 
+		} else { // currentPlayer == null
+
+			// get our position
+			Vector3 ourPosition = transform.position;
+			// ground that position
+			ourPosition.y = 0.0f;
+			// get the player
+			GameObject ground = GameObject.FindGameObjectWithTag("Ground");
+			// tell the player to come here
+			ground.GetComponent<Ground>().TouchedGround(ourPosition);
+
 		}
 
 	}

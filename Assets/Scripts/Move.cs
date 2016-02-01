@@ -3,33 +3,35 @@ using System.Collections;
 
 public class Move : MonoBehaviour {
 
-	float speed = 0.2f;
+	public Vector3 goal;
+	NavMeshAgent agent;
 
-	void Update() {
+	void Start() {
 
-		UpdateJoystick();
-		UpdateKeys();
+		agent = GetComponent<NavMeshAgent>();
 
 	}
 
-	void UpdateJoystick() {
-         
-	}
 
-	void UpdateKeys() {
+	void OnTriggerEnter(Collider other) {
 
-		if (Input.GetKey(KeyCode.LeftArrow)) {
-			transform.Translate(0, 0, speed);
-		}
-		if (Input.GetKey(KeyCode.RightArrow)) {
-			transform.Translate(0, 0, -speed);
-		}      
-		if (Input.GetKey(KeyCode.UpArrow)) {
-			transform.Translate(speed, 0, 0);
-		} 
-		if (Input.GetKey(KeyCode.DownArrow)) {
-			transform.Translate(-speed, 0, 0);
+		if (other.gameObject.tag == "Persona") {
+			StopWalking();
 		}
 
 	}
+
+	void StopWalking() {
+
+		GoToPosition(transform.position);
+
+	}
+
+	public void GoToPosition(Vector3 newPosition) {
+
+		goal = newPosition;
+		agent.destination = goal; 
+
+	}
+
 }

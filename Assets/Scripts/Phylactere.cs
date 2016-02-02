@@ -10,6 +10,7 @@ public class Phylactere : MonoBehaviour, IWriterListener {
 	bool visible = false;
 	Text storyText;
 	RectTransform panelRectTransform;
+	public float lineHeight = 59.0f;
 
 	#endregion
 
@@ -113,7 +114,7 @@ public class Phylactere : MonoBehaviour, IWriterListener {
 
 			if (panelRectTransform != null) {
 				Vector2 sizeDelta = panelRectTransform.sizeDelta;
-				sizeDelta.y = panelMargins + (lineCount * 59.0f);
+				sizeDelta.y = panelMargins + (lineCount * lineHeight);
 				panelRectTransform.sizeDelta = sizeDelta;
 			}
 

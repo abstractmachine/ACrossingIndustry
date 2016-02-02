@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PersonaDialogue : MonoBehaviour {
+public class Persona : MonoBehaviour {
 
 	GameObject currentPlayer = null;
 
@@ -10,7 +10,7 @@ public class PersonaDialogue : MonoBehaviour {
 		// if we're still intersecting with another person
 		if (currentPlayer != null) {
 
-			PlayerDialogue playerDialogue = currentPlayer.GetComponent<PlayerDialogue>();
+			Player playerDialogue = currentPlayer.GetComponent<Player>();
 
 			if (playerDialogue != null) {
 				playerDialogue.Click();
@@ -18,14 +18,15 @@ public class PersonaDialogue : MonoBehaviour {
 
 		} else { // currentPlayer == null
 
-			// get our position
-			Vector3 ourPosition = transform.position;
-			// ground that position
-			ourPosition.y = 0.0f;
+//			// get our position
+//			Vector3 ourPosition = transform.position;
+//			// ground that position
+//			ourPosition.y = 0.0f;
 			// get the player
 			GameObject ground = GameObject.FindGameObjectWithTag("Ground");
 			// tell the player to come here
-			ground.GetComponent<Ground>().TouchedGround(ourPosition);
+//			ground.GetComponent<Ground>().TouchedGround(ourPosition);
+			ground.GetComponent<Ground>().TouchedObject(this.gameObject);
 
 		}
 

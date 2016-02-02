@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Fungus;
 
-public class PlayerDialogue : MonoBehaviour {
+public class Player : MonoBehaviour {
 
 	Flowchart currentFlowchart = null;
 	GameObject currentPersona = null;

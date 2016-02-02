@@ -9,8 +9,6 @@ public class Ground : MonoBehaviour, IPointerClickHandler {
 
 	public void OnPointerClick(PointerEventData eventData) {
 
-		print("OnPointerClick");
-
 		checkHit(eventData.position);
 
 	}
@@ -43,25 +41,57 @@ public class Ground : MonoBehaviour, IPointerClickHandler {
 			}
 		}
 
-		if (didHitGround) {      
-			print("Ground\tOnMouseDown");
+		if (didHitGround) {
 			// get the point on the plane where we clicked and go there
 			TouchedGround(groundHitPoint);
 		}
 
 	}
 
-   
-	public void TouchedGround(Vector3 position) {
-		
+
+	public void TouchedObject(GameObject other) {
+
+		// get the position of the other object
+		Vector3 position = other.transform.position;
 		// reposition to ground
 		position.y = 0.01f;
+		// if we were already showing a click exploder
+		RemovePreviousClicks();
+		// show click
+		ShowClick(position);
+		// tell the player who to start walking to
+		player.GetComponent<Move>().GoToObject(other);
+
+	}
+
+   
+	public void TouchedGround(Vector3 position) {
+
+		// reposition to ground
+		position.y = 0.01f;
+		// if we were already showing a click exploder
+		RemovePreviousClicks();
+		// show click
+		ShowClick(position);
+		// tell the player where to start walking
+		player.GetComponent<Move>().GoToPosition(position);
+
+	}
+
+
+	void RemovePreviousClicks() {
 		// kill all other clicks
 		GameObject[] otherClicks;
 		otherClicks = GameObject.FindGameObjectsWithTag("TouchPoint");
 		foreach (GameObject obj in otherClicks) {
 			Destroy(obj);
 		}
+
+	}
+
+
+	void ShowClick(Vector3 position) {
+
 		// montrer où on a cliqué
 		GameObject touchPoint = Instantiate(touchPointPrefab, position, Quaternion.Euler(90, 0, 0)) as GameObject;
 		touchPoint.name = "TouchPoint";
@@ -69,19 +99,16 @@ public class Ground : MonoBehaviour, IPointerClickHandler {
 		// blow up in a co-routine
 		StartCoroutine(Explode(touchPoint));
 
-		// tell the player where to start walking
-		player.GetComponent<Move>().GoToPosition(position);
-
 	}
 
 
 	IEnumerator Explode(GameObject touchPoint) {
-		
+
+//		// match background color for the sprite color
 //		float timeSaturation = Camera.main.GetComponent<Daylight>().TimeSaturation;
 //		timeSaturation = Mathf.Min(1.0f, 1.3f - timeSaturation);
 //		Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
-		//renderer.material.color = c;
-//		GetComponent<Renderer>().material.SetColor("_Emission", c);
+//		GetComponent<SpriteRenderer>().color = c;
 
 		float explosionSpeed = 0.025f;
 

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using Fungus;
 
-public class DialogPhylactere : MonoBehaviour, IWriterListener {
+public class Phylactere : MonoBehaviour, IWriterListener {
 
 	#region Variables
 

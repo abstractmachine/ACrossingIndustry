@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 
-public class Ground : MonoBehaviour {
+public class Ground : MonoBehaviour, IPointerClickHandler {
 
 	public GameObject player;
 	public GameObject touchPointPrefab;
 
-	void OnMouseDown() {
+	public void OnPointerClick(PointerEventData eventData) {
 
-		checkHit(Input.mousePosition);
+		print("OnPointerClick");
+
+		checkHit(eventData.position);
 
 	}
 
@@ -29,15 +32,21 @@ public class Ground : MonoBehaviour {
 			return;
 		}
 
+		bool didHitGround = false;
+		Vector3 groundHitPoint = Vector3.zero;
+
 		foreach (RaycastHit hit in hits) {      
-			// ignore ground click/touch
-			if (hit.transform.name != "Ground") {
-				continue;
-			}         
+			// make sure it's a ground click/touch
+			if (hit.transform.name == "Ground") {
+				didHitGround = true;
+				groundHitPoint = hit.point;
+			}
+		}
+
+		if (didHitGround) {      
+			print("Ground\tOnMouseDown");
 			// get the point on the plane where we clicked and go there
-			TouchedGround(hit.point);
-			// ok, all done
-			return;         
+			TouchedGround(groundHitPoint);
 		}
 
 	}

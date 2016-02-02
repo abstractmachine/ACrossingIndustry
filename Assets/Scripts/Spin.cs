@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DialogSpin : MonoBehaviour {
+public class Spin : MonoBehaviour {
 
 
 	void Start() {

@@ -10,7 +10,9 @@ public class PlayerDialogue : MonoBehaviour {
 	GameObject currentPersona = null;
 
 	public void Click() {
+
 		OnMouseDown();
+
 	}
 
 	void OnMouseDown() {

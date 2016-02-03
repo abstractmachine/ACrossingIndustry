@@ -11,10 +11,34 @@ public class Player : MonoBehaviour {
 	Flowchart currentFlowchart = null;
 	GameObject currentPersona = null;
 
-	public GameObject targetObject;
-	public Vector3 goal;
+	GameObject targetObject;
+	Vector3 goal;
+
+	public GameObject touchPointPrefab;
+	public GameObject xSpotPrefab;
+
+	NavMeshAgent agent;
 
 	#endregion
+
+
+	#region getter/setter
+
+	bool IsWalking { get { return agent.velocity.sqrMagnitude > 0.01f; } }
+
+	#endregion
+
+
+	#region Init
+
+	void Start() {
+
+		agent = GetComponent<NavMeshAgent>();
+
+	}
+
+	#endregion
+
 
 	#region Interaction
 
@@ -28,6 +52,13 @@ public class Player : MonoBehaviour {
 
 		// if we're not talking to anyone
 		if (currentFlowchart == null || currentPersona == null) {
+
+			// are we walking?
+			if (IsWalking) {
+				StopWalking();
+				return;
+			}
+
 			return;
 		}
 
@@ -100,15 +131,26 @@ public class Player : MonoBehaviour {
 
 
 	void OnTriggerStay(Collider other) {
+
 		// if we're interacting with another character
 		if (other.gameObject.tag == "Persona" && other.gameObject == targetObject) {
 			// get our distance to that character
-			float distance = CalculateDistance(other.gameObject);
+			float distance = CalculateDistanceToObject(other.gameObject);
 			// if too close
 			if (distance < 2.5f) {
+				// stop current movement
 				StopWalking();
+				// if we were already showing a click exploder
+				RemovePreviousClicks();
 			}
 		}
+
+		// if we're touch the xSpot && we're at the end
+		if (other.gameObject.tag == "xSpot" && IsAtDestination()) {
+			// get rid of the xSpo
+			Destroy(other.gameObject);         
+		}
+
 	}
 
 
@@ -136,30 +178,16 @@ public class Player : MonoBehaviour {
 
 	#region NavMesh
 
-	float CalculateDistance(GameObject other) {
-		// get their position
-		Vector3 personaPosition = other.transform.position;
-		// annul y
-		personaPosition.y = 0f;
-		// get our position
-		Vector3 playerPosition = this.transform.position;
-		// annul y
-		playerPosition.y = 0f;
-		// get the distance
-		return Vector3.Magnitude(playerPosition - personaPosition);      
-	}
-
-	void StopWalking() {
-
-		GoToPosition(transform.position);
-
-	}
-
-	public void GoToPosition(Vector3 newPosition) {
+	public void GoToPosition(Vector3 position) {
 
 		targetObject = null;
-		goal = newPosition;
+		goal = position;
 		GetComponent<NavMeshAgent>().destination = goal; 
+
+		// if we were already showing a click exploder
+		RemovePreviousClicks();
+		// show click
+		ShowClick(position);
 
 	}
 
@@ -172,7 +200,62 @@ public class Player : MonoBehaviour {
 		position.y = 0.01f;
 		goal = position;
 		GetComponent<NavMeshAgent>().destination = goal;
+      
+		// if we were already showing a click exploder
+		RemovePreviousClicks();
+		// show click
+		ShowClick(position);
 
+	}
+
+	void StopWalking() {
+
+		// go to where we already are
+		targetObject = null;
+		goal = transform.position;
+		GetComponent<NavMeshAgent>().destination = goal; 
+
+	}
+
+	bool IsAtDestination() {
+      
+		if (agent.pathPending) {
+			return true;
+		}
+
+		if (agent.remainingDistance <= agent.stoppingDistance) {
+			if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
+				// Done
+				//Debug.Log("Executes 2 times");
+				/*if (goal >= points.Length - 1) { // if it's a last point
+                        targetPoint = 0;
+                    } else {
+                        targetPoint++;
+                    }*/
+				return true;
+			}
+		}
+
+		return false;
+
+	}
+
+	#endregion
+
+
+	#region Tools
+
+	float CalculateDistanceToObject(GameObject other) {
+		// get their position
+		Vector3 personaPosition = other.transform.position;
+		// annul y
+		personaPosition.y = 0f;
+		// get our position
+		Vector3 playerPosition = this.transform.position;
+		// annul y
+		playerPosition.y = 0f;
+		// get the distance
+		return Vector3.Magnitude(playerPosition - personaPosition);      
 	}
 
 	#endregion
@@ -299,6 +382,77 @@ public class Player : MonoBehaviour {
 
 	}
 
+
+	#endregion
+
+
+	#region Clicks
+
+
+
+
+	void RemovePreviousClicks() {
+
+		// kill all other clicks
+		GameObject[] otherClicks;
+		// first exploders
+		otherClicks = GameObject.FindGameObjectsWithTag("TouchPoint");
+		foreach (GameObject obj in otherClicks) {
+			Destroy(obj);
+		}
+
+		RemoveXSpot();
+
+	}
+
+
+	public void RemoveXSpot() {
+
+		GameObject[] otherClicks;
+		// then xSpots
+		otherClicks = GameObject.FindGameObjectsWithTag("xSpot");
+		foreach (GameObject obj in otherClicks) {
+			Destroy(obj);
+		}
+
+	}
+
+
+	void ShowClick(Vector3 position) {
+
+		// show xSpot
+		GameObject xSpot = Instantiate(xSpotPrefab, position, Quaternion.Euler(90, 0, 0)) as GameObject;
+		xSpot.name = "xSpot";
+		xSpot.transform.parent = GameObject.Find("Ground").transform;
+
+		// montrer où on a cliqué
+		GameObject touchPoint = Instantiate(touchPointPrefab, position, Quaternion.Euler(90, 0, 0)) as GameObject;
+		touchPoint.name = "TouchPoint";
+		touchPoint.transform.parent = GameObject.Find("Ground").transform;
+		// blow up in a co-routine
+		StartCoroutine(Explode(touchPoint));
+
+	}
+
+
+	IEnumerator Explode(GameObject touchPoint) {
+
+//      // match background color for the sprite color
+//      float timeSaturation = Camera.main.GetComponent<Daylight>().TimeSaturation;
+//      timeSaturation = Mathf.Min(1.0f, 1.3f - timeSaturation);
+//      Color c = new Color(timeSaturation, timeSaturation, timeSaturation, 1.0f);
+//      GetComponent<SpriteRenderer>().color = c;
+
+		float explosionSpeed = 0.025f;
+
+		while (touchPoint != null && touchPoint.transform.localScale.x < 0.5f) {      
+			touchPoint.transform.localScale = touchPoint.transform.localScale + new Vector3(explosionSpeed, explosionSpeed, explosionSpeed);
+			yield return new WaitForEndOfFrame();
+		}
+
+		Destroy(touchPoint);
+
+	}
 
 	#endregion
 

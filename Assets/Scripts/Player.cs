@@ -51,14 +51,13 @@ public class Player : MonoBehaviour {
 	void OnMouseDown() {
 
 		// if we're not talking to anyone
-		if (currentFlowchart == null || currentPersona == null) {
-
+		if (currentFlowchart == null || currentPersona == null) {      
 			// are we walking?
 			if (IsWalking) {
-				StopWalking();
-				return;
-			}
-
+				StopWalking();            
+				// if we were already showing a click exploder
+				RemovePreviousClicks();
+			}         
 			return;
 		}
 
@@ -98,13 +97,9 @@ public class Player : MonoBehaviour {
 			if (currentPersona != null) {
 				// try to force restart that previous dialogue
 				StartFlowchart(currentPersona);
-			} else {
-//				Debug.LogWarning("currentPersona == null");
-			}    
+			}   
 			return;
 		}
-
-		//		Debug.LogWarning("End of OnMouseDown()");
 
 	}
 

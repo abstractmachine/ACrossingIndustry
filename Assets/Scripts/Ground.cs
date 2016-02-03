@@ -60,7 +60,7 @@ public class Ground : MonoBehaviour, IPointerClickHandler {
 		// show click
 		ShowClick(position);
 		// tell the player who to start walking to
-		player.GetComponent<Move>().GoToObject(other);
+		player.GetComponent<Player>().GoToObject(other);
 
 	}
 
@@ -74,7 +74,7 @@ public class Ground : MonoBehaviour, IPointerClickHandler {
 		// show click
 		ShowClick(position);
 		// tell the player where to start walking
-		player.GetComponent<Move>().GoToPosition(position);
+		player.GetComponent<Player>().GoToPosition(position);
 
 	}
 

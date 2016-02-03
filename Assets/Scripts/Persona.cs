@@ -18,19 +18,15 @@ public class Persona : MonoBehaviour {
 
 		} else { // currentPlayer == null
 
-//			// get our position
-//			Vector3 ourPosition = transform.position;
-//			// ground that position
-//			ourPosition.y = 0.0f;
-			// get the player
+			// get the ground object
 			GameObject ground = GameObject.FindGameObjectWithTag("Ground");
 			// tell the player to come here
-//			ground.GetComponent<Ground>().TouchedGround(ourPosition);
 			ground.GetComponent<Ground>().TouchedObject(this.gameObject);
 
 		}
 
 	}
+
 
 	void OnTriggerEnter(Collider other) {
 
@@ -39,7 +35,7 @@ public class Persona : MonoBehaviour {
 			return;
 		}
 
-		// make sure we're not already talk to this player
+		// make sure we're not already talking to this player
 		if (currentPlayer == other.gameObject) {
 			return;
 		}
@@ -68,5 +64,6 @@ public class Persona : MonoBehaviour {
 		}
       
 	}
+ 
 
 }

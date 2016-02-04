@@ -4,6 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Fungus;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Animator))]
+
 public class Player : MonoBehaviour {
 
 	#region Variables
@@ -18,6 +21,12 @@ public class Player : MonoBehaviour {
 	public GameObject xSpotPrefab;
 
 	NavMeshAgent agent;
+	Animator animator;
+
+	Vector2 smoothDeltaPosition = Vector2.zero;
+	Vector2 velocity = Vector2.zero;
+
+	bool idleBoredom = false;
 
 	#endregion
 
@@ -33,8 +42,72 @@ public class Player : MonoBehaviour {
 
 	void Start() {
 
+		// get components   
+		animator = GetComponent<Animator>();
 		agent = GetComponent<NavMeshAgent>();
+		// Don’t update position automatically
+		agent.updatePosition = false;
 
+	}
+
+	#endregion
+
+
+	#region Animation
+
+	void Update() {
+
+		UpdateIdle();
+		UpdatePosition();
+
+	}
+
+
+	void UpdateIdle() {
+
+		if (Random.Range(0, 500) < 1) {
+			idleBoredom = !idleBoredom;
+			animator.SetBool("bored", idleBoredom);
+		}
+
+	}
+
+	void UpdatePosition() {
+
+		Vector3 worldDeltaPosition = agent.nextPosition - transform.position;
+
+		// Map 'worldDeltaPosition' to local space
+		float dx = Vector3.Dot(transform.right, worldDeltaPosition);
+		float dy = Vector3.Dot(transform.forward, worldDeltaPosition);
+		Vector2 deltaPosition = new Vector2(dx, dy);
+
+		// Low-pass filter the deltaMove
+		float smooth = Mathf.Min(1.0f, Time.deltaTime / 0.15f);
+		smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
+
+		// Update velocity if time advances
+		if (Time.deltaTime > 1e-5f)
+			velocity = smoothDeltaPosition / Time.deltaTime;
+
+//		bool shouldMove = velocity.magnitude > 0.5f && agent.remainingDistance > agent.radius;
+
+		// Update animation parameters
+		animator.SetFloat("velocity", velocity.magnitude);
+
+//		print(animator.rootPosition);
+
+		// move head      
+		//GetComponent<LookAt>().lookAtTargetPosition = agent.steeringTarget + transform.forward;
+	}
+
+	void OnAnimatorMove() {
+		// Update position to agent position
+		transform.position = agent.nextPosition;
+
+		// Update position based on animation movement using navigation surface height
+//		Vector3 position = animator.rootPosition;
+//		position.y = agent.nextPosition.y;
+//		transform.position = position;
 	}
 
 	#endregion
@@ -42,63 +115,69 @@ public class Player : MonoBehaviour {
 
 	#region Interaction
 
-	public void Click() {
-
-		OnMouseDown();
-
-	}
 
 	void OnMouseDown() {
 
+		OnClick(null);
+
+	}
+
+	public void OnClick(GameObject clickedObject) {
+      
 		// if we're not talking to anyone
 		if (currentFlowchart == null || currentPersona == null) {      
 			// are we walking?
 			if (IsWalking) {
 				StopWalking();            
-				// if we were already showing a click exploder
-				RemovePreviousClicks();
 			}         
 			return;
 		}
 
-		// get our menuDialog gameObject
-		GameObject playerMenuDialog = transform.FindChild("Dialogues/Player_MenuDialog").gameObject;
-
 		// if we currently have a menuDialog active
-		if (playerMenuDialog.activeSelf) {
+		if (transform.FindChild("Dialogues/Player_MenuDialog").gameObject.activeSelf) {
 			return;
 		}
 
 		// ok, we do NOT have a menuDialog active
 
-		// get the sayDialog gameobject
-		GameObject playerSayDialog = this.transform.FindChild("Dialogues/Player_SayDialog").gameObject;
-
-		// are we talking?
-		if (playerSayDialog.activeSelf) {
-			// push dat button!
-			playerSayDialog.GetComponent<SayDialog>().continueButton.onClick.Invoke();
-			return; // all done
-		}
-
-		string personaDialogPath = "Dialogues/" + currentPersona.name + "_SayDialog";
-		// is the Persona talking?
-		GameObject otherSayDialog = currentPersona.transform.FindChild(personaDialogPath).gameObject;
-		// is it active?
-		if (otherSayDialog.activeSelf) {
-			// push dat button!
-			otherSayDialog.GetComponent<SayDialog>().continueButton.onClick.Invoke();
-			return; // all done
-		}
-
-		// try to advance the current dialogue
+		// if there is no current dialogue
 		if (!currentFlowchart.HasExecutingBlocks()) {   
 			// if we're still in collision with a Persona
 			if (currentPersona != null) {
 				// try to force restart that previous dialogue
-				StartFlowchart(currentPersona);
-			}   
+				TryToStartFlowchart(currentPersona);
+			}
+			// whatever the case, leave this method
 			return;
+		}
+
+		List<GameObject> charactersInFlowchart = GetCharactersInFlowchart(currentFlowchart);
+
+		// if the clicked object isn't even in the current dialog
+		if (!charactersInFlowchart.Contains(clickedObject) && clickedObject != null) {
+			Debug.LogWarning("Character " + GetPath(this.gameObject.transform) + " isn't in flowchart " + currentFlowchart.name);
+			return;
+		}
+
+		// go through each persona we're potentially talking to
+		foreach (GameObject characterObject in charactersInFlowchart) {
+
+			// make sure that object isn't us
+//			if (characterObject.name == this.gameObject.name) {
+//				continue;
+//			}
+			// get the path to their SayDialog
+			SayDialog personaSayDialog = characterObject.GetComponentInChildren<SayDialog>();
+			// if this dialog is actually something
+			if (personaSayDialog != null) {
+				// check to see if that dialog object is active
+				if (personaSayDialog.gameObject.activeSelf) {
+					// ok, push dat button!
+					personaSayDialog.continueButton.onClick.Invoke();
+					// all done
+					return;
+				}
+			}
 		}
 
 	}
@@ -120,7 +199,7 @@ public class Player : MonoBehaviour {
 			return;
 		}
 
-		StartFlowchart(other.gameObject);
+		TryToStartFlowchart(other.gameObject);
 
 	}
 
@@ -135,12 +214,10 @@ public class Player : MonoBehaviour {
 			if (distance < 2.5f) {
 				// stop current movement
 				StopWalking();
-				// if we were already showing a click exploder
-				RemovePreviousClicks();
 			}
 		}
 
-		// if we're touch the xSpot && we're at the end
+		// if we're touching the xSpot && we're at the end
 		if (other.gameObject.tag == "xSpot" && IsAtDestination()) {
 			// get rid of the xSpo
 			Destroy(other.gameObject);         
@@ -209,6 +286,8 @@ public class Player : MonoBehaviour {
 		targetObject = null;
 		goal = transform.position;
 		GetComponent<NavMeshAgent>().destination = goal; 
+		// if we were already showing a click exploder
+		RemovePreviousClicks();
 
 	}
 
@@ -238,34 +317,16 @@ public class Player : MonoBehaviour {
 	#endregion
 
 
-	#region Tools
-
-	float CalculateDistanceToObject(GameObject other) {
-		// get their position
-		Vector3 personaPosition = other.transform.position;
-		// annul y
-		personaPosition.y = 0f;
-		// get our position
-		Vector3 playerPosition = this.transform.position;
-		// annul y
-		playerPosition.y = 0f;
-		// get the distance
-		return Vector3.Magnitude(playerPosition - personaPosition);      
-	}
-
-	#endregion
-
-
 	#region Flowchart
 
-	void StartFlowchart(GameObject other) {
-       
-		currentPersona = other;
+	void TryToStartFlowchart(GameObject other) {
 
-		currentFlowchart = GetFlowchart(other.name);
+		Flowchart flowchart = GetFlowchart(other.name); 
 
-		// if we found this persona
-		if (currentFlowchart != null) {
+		// if we found this persona's flowchart
+		if (flowchart != null) {
+			currentPersona = other;
+			currentFlowchart = flowchart;
 			Fungus.Flowchart.BroadcastFungusMessage(other.name);
 		}
 
@@ -326,56 +387,146 @@ public class Player : MonoBehaviour {
 	}
 
 
+	Flowchart GetFlowchart(GameObject gameObject) {
+
+		return GetFlowchart(gameObject.name);
+
+	}
+
+
 	Flowchart GetFlowchart(string name) {
 
 		// get the flowchart with this person's name
 		GameObject flowcharts = GameObject.Find("Flowcharts");
-		GameObject flowchartObject = flowcharts.transform.FindChild(name).gameObject;
-
-		if (flowchartObject == null) {
+		// try to find the flowchart using this name
+		Transform flowchartTransform = flowcharts.transform.FindChild(name);
+		if (flowchartTransform == null) {
 			return null;
 		}
+		// get the game object
+		GameObject flowchartObject = flowchartTransform.gameObject;
+      
 
 		return flowchartObject.GetComponent<Flowchart>();
 
 	}
 
 
-	GameObject FindDialogues(string name) {
+	// TODO: Add all characters in all blocks
+	List<GameObject> GetCharactersInFlowchart(Flowchart flowchart) {
 
-		// get the flowchart with this person's name
-		GameObject persona = FindPersona(name);
+		List<GameObject> possiblePersonaObjects = new List<GameObject>();
 
-		// if we couldn't find this persona
-		if (persona == null) {
-//			Debug.LogError("could find persona " + name);
-			return null;
+		if (flowchart == null) {
+			Debug.LogError("Flowchart == null");
+			return possiblePersonaObjects;
 		}
 
-		// get that persona's SayDialog
-		GameObject dialogues = persona.transform.FindChild("Dialogues").gameObject;
+		// FIXME: This doesn't work when there is no executing block
+		// if we have a currently executing block
+		List<Block> blocks = flowchart.GetExecutingBlocks();
+		// go through each executing block
+		foreach (Block block in blocks) {
+			// get the command list
+			List<Command> commands = block.commandList;
+			// go through the command list
+			foreach (Command command in commands) {
+				// if this is a say command
+				if (command.GetType().ToString() == "Fungus.Say") {
+					// force type to say
+					Say sayCommand = (Say)command;
+					// get the gameobject attached to this character
+					GameObject persona = sayCommand.character.gameObject.transform.parent.gameObject;
+					// make sure this one isn't already in the list
+					if (possiblePersonaObjects.Contains(persona)) {
+						continue;
+					}
+					// ok, add it to the list of possible people we're talking to
+					possiblePersonaObjects.Add(persona);
+				} // if type
+			} // foreach Command
+		} // foreach(Block
 
-		return dialogues;
+		// if this list doesn't contain the player
+		if (!possiblePersonaObjects.Contains(this.gameObject)) {
+//			print("Force-add Player");
+			possiblePersonaObjects.Add(this.gameObject);
+		}
+
+		return possiblePersonaObjects;
 
 	}
 
 
-	GameObject FindPersona(string name) {
+	public bool IsCharacterInFlowchart(GameObject character) {
 
-		GameObject personae = GameObject.Find("Personae");
-		if (personae == null) {
-//			Debug.LogError("personae == null");
-			return null;
-		}
-		GameObject persona = personae.transform.FindChild(name).gameObject;
-		if (persona == null) {
-//			Debug.LogError("persona == null");
-			return null;
+		// if there's no current persona we're interacting with
+		if (currentPersona == null) {
+			return false;
 		}
 
-		return persona;
+		Flowchart flowchart = null;
+
+		// if there isn't even a flowchart, forget it
+		if (currentFlowchart != null) {
+			flowchart = currentFlowchart;
+		} else {
+			// try to get a flowchart from the current persona
+			flowchart = GetFlowchart(currentPersona.name);
+		}
+		// still no flowchart? null
+		if (flowchart == null) {
+			return false;
+		}
+		// ok, we've got a flowchart, who's in it?
+		List<GameObject> characters = GetCharactersInFlowchart(currentFlowchart);
+
+		// is this character in it?
+		if (characters.Contains(character)) {
+			return true;
+		}
+		// if we're here, then the answer is no
+		return false;
 
 	}
+
+
+
+	//	GameObject FindDialogues(string name) {
+	//
+	//		// get the flowchart with this person's name
+	//		GameObject persona = FindPersona(name);
+	//
+	//		// if we couldn't find this persona
+	//		if (persona == null) {
+	////			Debug.LogError("could find persona " + name);
+	//			return null;
+	//		}
+	//
+	//		// get that persona's SayDialog
+	//		GameObject dialogues = persona.transform.FindChild("Dialogues").gameObject;
+	//
+	//		return dialogues;
+	//
+	//	}
+
+
+	//	GameObject FindPersona(string name) {
+	//
+	//		GameObject personae = GameObject.Find("Personae");
+	//		if (personae == null) {
+	////			Debug.LogError("personae == null");
+	//			return null;
+	//		}
+	//		GameObject persona = personae.transform.FindChild(name).gameObject;
+	//		if (persona == null) {
+	////			Debug.LogError("persona == null");
+	//			return null;
+	//		}
+	//
+	//		return persona;
+	//
+	//	}
 
 
 	#endregion
@@ -447,6 +598,30 @@ public class Player : MonoBehaviour {
 
 		Destroy(touchPoint);
 
+	}
+
+	#endregion
+
+
+	#region Tools
+
+	float CalculateDistanceToObject(GameObject other) {
+		// get their position
+		Vector3 personaPosition = other.transform.position;
+		// annul y
+		personaPosition.y = 0f;
+		// get our position
+		Vector3 playerPosition = this.transform.position;
+		// annul y
+		playerPosition.y = 0f;
+		// get the distance
+		return Vector3.Magnitude(playerPosition - personaPosition);      
+	}
+
+	public static string GetPath(Transform current) {
+		if (current.parent == null)
+			return "/" + current.name;
+		return GetPath(current.parent) + "/" + current.name;
 	}
 
 	#endregion

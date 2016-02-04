@@ -7,23 +7,33 @@ public class Persona : MonoBehaviour {
 
 	void OnMouseDown() {
 
-		// if we're still intersecting with another person
-		if (currentPlayer != null) {
+		// get access to player
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-			Player playerDialogue = currentPlayer.GetComponent<Player>();
-
-			if (playerDialogue != null) {
-				playerDialogue.Click();
-			}
-
-		} else { // currentPlayer == null
-
-			// get the ground object
-			GameObject ground = GameObject.FindGameObjectWithTag("Ground");
-			// tell the player to come here
-			ground.GetComponent<Ground>().TouchedObject(this.gameObject);
-
+		if (player == null) {
+			Debug.LogWarning("Player doesn't exist!");
+			return;
 		}
+
+		// FIXME: The player shouldn't always have to be in the flowchart
+		// if we're in the current flowchart discussion
+		if (player.GetComponent<Player>().IsCharacterInFlowchart(this.gameObject)) {
+			player.GetComponent<Player>().OnClick(this.gameObject);
+			return;
+		}
+
+		// if we're currently talking to the player
+		if (currentPlayer != null) {
+			currentPlayer.GetComponent<Player>().OnClick(this.gameObject);
+			return;
+		}
+
+		// ok we're not part of the current discussion
+
+		// get the ground object
+		GameObject ground = GameObject.FindGameObjectWithTag("Ground");
+		// tell the player to come here
+		ground.GetComponent<Ground>().TouchedObject(this.gameObject);
 
 	}
 

@@ -135,6 +135,7 @@ public class Player : MonoBehaviour {
 
 		// if we currently have a menuDialog active
 		if (transform.FindChild("Dialogues/Player_MenuDialog").gameObject.activeSelf) {
+			print("menuDialog still active");
 			return;
 		}
 
@@ -154,7 +155,7 @@ public class Player : MonoBehaviour {
 		List<GameObject> charactersInFlowchart = GetCharactersInFlowchart(currentFlowchart);
 
 		// if the clicked object isn't even in the current dialog
-		if (!charactersInFlowchart.Contains(clickedObject) && clickedObject != null) {
+		if (clickedObject != null && !charactersInFlowchart.Contains(clickedObject)) {
 			Debug.LogWarning("Character " + GetPath(this.gameObject.transform) + " isn't in flowchart " + currentFlowchart.name);
 			return;
 		}
@@ -207,7 +208,7 @@ public class Player : MonoBehaviour {
 	void OnTriggerStay(Collider other) {
 
 		// if we're interacting with another character
-		if (other.gameObject.tag == "Persona" && other.gameObject == targetObject) {
+		if (IsWalking && other.gameObject.tag == "Persona" && other.gameObject == targetObject) {
 			// get our distance to that character
 			float distance = CalculateDistanceToObject(other.gameObject);
 			// if too close
@@ -234,7 +235,7 @@ public class Player : MonoBehaviour {
       
 		// make sure this is the actual person we were interacting with
 		if (other.gameObject != currentPersona) {
-//			Debug.LogWarning("OnTriggerExit()\tother.gameObject != currentPersona");
+			Debug.LogWarning("OnTriggerExit()\tother.gameObject != currentPersona");
 			return;
 		}
 
